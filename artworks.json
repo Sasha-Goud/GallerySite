@@ -1,0 +1,25 @@
+[
+    {
+      "id": "image_1",
+      "title": "First Test Piece",
+      "src": "assets/image_1/context1.PNG",
+      "thumb": "assets/image_1/context1.PNG",
+      "tags": ["Abstract", "Blue"],
+      "description": "Short description for item 1.",
+      "video": "assets/image_1/paper-demo.m4v",
+      "context1": "assets/image_1/context1.PNG",
+      "context2": "assets/image_1/context2.PNG",
+      "context3": "assets/image_1/context3.PNG",
+      "context4": "assets/image_1/context4.PNG"
+    },
+  {
+    "id": "image_2",
+    "title": "Second Test Piece",
+    "src": "assets/image_2/context1.PNG",
+    "thumb": "assets/image_2/context2.PNG",
+    "tags": ["Monochrome", "Minimal"],
+    "description": "Short description for item 2.",
+    "context1": "assets/image_2/context1.jpg",
+    "context2": "assets/image_2/context2.jpg"
+  }
+]
