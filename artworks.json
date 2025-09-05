@@ -92,7 +92,9 @@
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
     "video": "assets/image_3/paper-demo.m4v",
     "context1": "assets/image_3/context1.PNG",
-    "context2": "assets/image_3/context2.PNG"
+    "context2": "assets/image_3/context2.PNG",
+    "context3": "assets/image_3/context3.png",
+    "context4": "assets/image_3/context4.png"
   },
   {
     "id": "image_4",
