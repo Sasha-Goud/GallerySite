@@ -158,7 +158,11 @@ function fetchJSON(url){
 
 // Always load from the local artworks.json file at project root
 function fetchArtworks(){ 
-  return fetchJSON('artworks.json');
+  return fetch('./artworks.json', { cache: 'no-store' })
+    .then(function(res){
+      if (!res.ok) throw new Error('Failed to load artworks.json');
+      return res.json();
+    });
 }
 
 function fetchArtworkDetail(id){ 
