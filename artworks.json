@@ -105,7 +105,8 @@
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
     "video": "assets/image_4/paper-demo.m4v",
     "context1": "assets/image_4/context1.PNG",
-    "context2": "assets/image_4/context2.PNG"
+    "context2": "assets/image_4/context2.PNG",
+    "context3": "assets/image_4/context3.png"
   },
   {
     "id": "image_5",
