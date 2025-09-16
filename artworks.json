@@ -122,10 +122,14 @@
   },
   {
     "id": "image_6",
-    "title": "Untitled (image_6)",
+    "title": "All the Pictures that you can possibly imagine",
     "src": "images/image_6.PNG",
     "thumb": "images/image_6.PNG",
     "tags": [],
-    "description": ""
+    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
+    "video": "assets/image_6/paper-demo.m4v",
+    "context1": "assets/image_6/context1.PNG",
+    "context2": "assets/image_6/context2.PNG",
+    "context3": "assets/image_6/context3.PNG"
   }
 ]

@@ -1,0 +1,37 @@
+{
+  "enforceExplicitSelection": true,
+
+  "sizes": ["A4", "A3", "A2"],
+  "materials": ["Matte", "Canvas", "Velvet"],
+  "kinds": ["Print", "Framed", "Canvas"],
+  "frames": ["None", "Type A", "Type B"],
+
+  "basePrice": {
+    "A4": 15,
+    "A3": 20,
+    "A2": 30
+  },
+
+  "modifiers": {
+    "material": {
+      "Matte": 10,      // +10%
+      "Canvas": 15,     // +15%
+      "Velvet": 25      // +25% (example)
+    },
+    "frame": {
+      "None": 0,
+      "Type A": 20,     // +20%
+      "Type B": 25      // +25%
+    },
+    "kind": {
+      "Print": 0,
+      "Framed": 0,      // you can put an extra % here if needed
+      "Canvas": 0
+    }
+  },
+
+  "disallow": [
+    // Optional: block any combo (e.g., Canvas material with Framed kind)
+    // { "material": "Canvas", "kind": "Framed" }
+  ]
+}
