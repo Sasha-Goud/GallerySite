@@ -5,7 +5,7 @@
 cd "$(dirname "$0")" || exit 1
 
 echo "🔄 Rebuilding artworks.json..."
-python3 server.py --export-json || { echo "❌ build failed"; exit 1; }
+python3 tools/build_artworks.py || { echo "❌ build failed"; exit 1; }
 
 echo "📂 Adding changes to git..."
 git add -A
