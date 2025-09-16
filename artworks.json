@@ -2,134 +2,55 @@
   {
     "id": "image_1",
     "title": "This Picture",
-    "src": "images/image_1.PNG",
-    "thumb": "thumbs/image_1.PNG",
+    "src": "assets/image_1/context1.PNG",
+    "thumb": "thumbs/context1.PNG",
     "tags": [
       "Red",
       "Human",
       "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "video": "assets/image_1/paper-demo.m4v",
-    "context1": "assets/image_1/context1.PNG",
-    "context2": "assets/image_1/context2.PNG",
-    "context3": "assets/image_1/context3.PNG",
-    "context4": "assets/image_1/context4.PNG",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
+    ]
   },
   {
     "id": "image_2",
     "title": "That Picture",
-    "src": "images/image_2.PNG",
-    "thumb": "thumbs/image_2.PNG",
+    "src": "assets/image_2/context1.PNG",
+    "thumb": "thumbs/context1.PNG",
     "tags": [
       "Blue",
       "Dog",
       "Real"
-    ],
-    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/image_2/paper-demo.m4v",
-    "context1": "assets/image_2/context1.PNG",
-    "context2": "assets/image_2/context2.PNG"
+    ]
   },
   {
     "id": "image_3",
     "title": "Other Picture",
-    "src": "images/image_3.PNG",
-    "thumb": "thumbs/image_3.PNG",
+    "src": "assets/image_3/context1.PNG",
+    "thumb": "thumbs/context1.PNG",
     "tags": [
       "Green",
       "Cat",
       "Sureal"
-    ],
-    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/image_3/paper-demo.m4v",
-    "context1": "assets/image_3/context1.PNG",
-    "context2": "assets/image_3/context2.PNG",
-    "context3": "assets/image_3/context3.png",
-    "context4": "assets/image_3/context4.png"
+    ]
   },
   {
     "id": "image_4",
     "title": "Another Picture",
-    "src": "images/image_4.PNG",
-    "thumb": "thumbs/image_4.PNG",
-    "tags": [],
-    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/image_4/paper-demo.m4v",
-    "context1": "assets/image_4/context1.PNG",
-    "context2": "assets/image_4/context2.PNG",
-    "context3": "assets/image_4/context3.png"
+    "src": "assets/image_4/context1.PNG",
+    "thumb": "thumbs/context1.PNG",
+    "tags": []
   },
   {
     "id": "image_5",
     "title": "All the Pictures that you can possibly imagine",
-    "src": "images/image_5.PNG",
-    "thumb": "thumbs/image_5.PNG",
-    "tags": [],
-    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/image_5/paper-demo.m4v",
-    "context1": "assets/image_5/context1.PNG",
-    "context2": "assets/image_5/context2.PNG",
-    "context3": "assets/image_5/context3.PNG"
+    "src": "assets/image_5/context1.PNG",
+    "thumb": "thumbs/context1.PNG",
+    "tags": []
   },
   {
     "id": "image_6",
     "title": "All the Pictures that you can possibly imagine",
-    "src": "images/image_6.PNG",
-    "thumb": "images/image_6.PNG",
-    "tags": [],
-    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/image_6/paper-demo.m4v",
-    "context1": "assets/image_6/context1.PNG",
-    "context2": "assets/image_6/context2.PNG",
-    "context3": "assets/image_6/context3.PNG"
+    "src": "assets/image_6/context1.PNG",
+    "thumb": "thumbs/context1.PNG",
+    "tags": []
   }
 ]

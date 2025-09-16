@@ -309,12 +309,10 @@ def export_artworks_json(dest="artworks.json"):
     Path(dest).write_text(_flask_json.dumps(items, indent=2), encoding="utf-8")
     print(f"Wrote {dest} with {len(items)} items.")
     
-    
+        
 if __name__ == '__main__':
     import sys
-    if '--build' in sys.argv:
-        # build-only mode
-        from tools.build_artworks import main as build_main
-        build_main()
+    if '--build' in sys.argv or '--export-json' in sys.argv:
+        export_artworks_json('artworks.json')
     else:
         app.run(debug=True)
