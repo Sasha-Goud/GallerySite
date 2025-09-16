@@ -279,36 +279,88 @@ def serve_asset(art_id, filename):
 
 
 def export_artworks_json(dest="artworks.json"):
-    from flask import json as _flask_json
-    # Build the same list as /api/artworks, but without starting the server
+    """Scan assets/* and write artworks.json with src, thumb, tags, description, video, and context1..6."""
     items = []
+
+    def find_first_matching(folder: Path, base: str, exts: set[str]) -> str | None:
+        # Try exact basenames (with any ext/case)
+        for ext in exts:
+            p = folder / f"{base}{ext}"
+            if p.exists():
+                return p.as_posix()
+        return None
+
+    def find_contexts(folder: Path) -> list[str]:
+        out = []
+        name_patterns = []
+        for i in range(1, 7):
+            name_patterns.extend([f"context{i}", f"context_{i}", f"context-{i}"])
+        for base in name_patterns:
+            hit = find_first_matching(folder, base, IMAGE_EXTS)
+            if hit:
+                out.append(hit)
+        return out[:6]
+
     if ASSETS_DIR.exists():
         for folder in sorted(ASSETS_DIR.iterdir(), key=lambda x: x.name.lower()):
             if not folder.is_dir():
                 continue
-            art_id = folder.name
+
+            art_id   = folder.name
             base_img = find_main_image_in_asset_dir(folder)
             if not base_img:
                 continue
+
             title_txt = read_text_file(folder / 'title.txt')
-            title = title_txt if title_txt is not None else nice_title(art_id)
-            tags = parse_tags_file(folder / 'tags.txt') if (folder / 'tags.txt').exists() else []
-            src_rel = (folder / base_img.name).as_posix()
-            thumb_path = ensure_thumb_for(base_img)
-            thumb_rel = thumb_path.as_posix() if thumb_path else None
+            title     = title_txt if title_txt is not None else nice_title(art_id)
+            tags      = parse_tags_file(folder / 'tags.txt') if (folder / 'tags.txt').exists() else []
+            desc_txt  = read_text_file(folder / 'desc.txt')
+            desc      = desc_txt if desc_txt is not None else ""
+
+            # main src + thumb (preserve actual filename case)
+            src_rel     = (folder / base_img.name).as_posix()
+            thumb_path  = ensure_thumb_for(base_img)
+            thumb_rel   = thumb_path.as_posix() if thumb_path else None
             if thumb_rel and THUMBS_DIR.name not in thumb_rel:
-                from pathlib import Path as _P
-                thumb_rel = (THUMBS_DIR / _P(thumb_rel).name).as_posix()
-            items.append({
-                "id": art_id,
+                thumb_rel = (THUMBS_DIR / Path(thumb_rel).name).as_posix()
+
+            # video: paper-demo.* (any common video ext, any case)
+            video_rel = None
+            for ext in VIDEO_EXTS:
+                p = folder / f"paper-demo{ext}"
+                if p.exists():
+                    video_rel = p.as_posix()
+                    break
+
+            # contexts: support context1 / context_1 / context-1 … up to 6
+            ctxs = find_contexts(folder)
+
+            # options.json passthrough (if present/valid)
+            options = read_json_file(folder / 'options.json')
+
+            item = {
+                "id":    art_id,
                 "title": title,
-                "src": src_rel.replace('\\', '/'),
+                "src":   src_rel.replace('\\', '/'),
                 "thumb": (thumb_rel if thumb_rel else f"thumbs/{base_img.name}").replace('\\', '/'),
-                "tags": tags
-            })
-    Path(dest).write_text(_flask_json.dumps(items, indent=2), encoding="utf-8")
+                "tags":  tags,
+                "description": desc,
+            }
+            if video_rel:
+                item["video"] = video_rel.replace('\\', '/')
+            # add context1..6 keys in order
+            for i, c in enumerate(ctxs, 1):
+                item[f"context{i}"] = c.replace('\\', '/')
+            if options is not None:
+                item["options"] = options
+
+            items.append(item)
+
+    Path(dest).write_text(json.dumps(items, indent=2), encoding="utf-8")
     print(f"Wrote {dest} with {len(items)} items.")
-    
+  
+  
+  
         
 if __name__ == '__main__':
     import sys
