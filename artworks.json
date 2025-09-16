@@ -10,7 +10,7 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "video": "assets/juggler/paper-demo.M4V",
+    "video": "assets/juggler/paper-demo.m4v",
     "context1": "assets/juggler/context1.PNG",
     "context2": "assets/juggler/context2.PNG",
     "context3": "assets/juggler/context3.PNG",
@@ -75,7 +75,7 @@
       "Real"
     ],
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/lisa/paper-demo.M4V",
+    "video": "assets/lisa/paper-demo.m4v",
     "context1": "assets/lisa/context1.PNG",
     "context2": "assets/lisa/context2.PNG"
   },
@@ -86,7 +86,7 @@
     "thumb": "thumbs/motionagraphy.PNG",
     "tags": [],
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/motionagraphy/paper-demo.M4V",
+    "video": "assets/motionagraphy/paper-demo.m4v",
     "context1": "assets/motionagraphy/context1.PNG",
     "context2": "assets/motionagraphy/context2.PNG",
     "context3": "assets/motionagraphy/context3.PNG"
@@ -102,7 +102,7 @@
       "Sureal"
     ],
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/porto_venere/paper-demo.M4V",
+    "video": "assets/porto_venere/paper-demo.m4v",
     "context1": "assets/porto_venere/context1.PNG",
     "context2": "assets/porto_venere/context2.PNG",
     "context3": "assets/porto_venere/context3.PNG",
@@ -115,7 +115,7 @@
     "thumb": "thumbs/positano3.PNG",
     "tags": [],
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/positano3/paper-demo.M4V",
+    "video": "assets/positano3/paper-demo.m4v",
     "context1": "assets/positano3/context1.PNG",
     "context2": "assets/positano3/context2.PNG",
     "context3": "assets/positano3/context3.PNG"
@@ -127,7 +127,7 @@
     "thumb": "thumbs/sib.PNG",
     "tags": [],
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/sib/paper-demo.M4V",
+    "video": "assets/sib/paper-demo.m4v",
     "context1": "assets/sib/context1.PNG",
     "context2": "assets/sib/context2.PNG",
     "context3": "assets/sib/context3.PNG"
