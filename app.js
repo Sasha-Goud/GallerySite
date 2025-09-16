@@ -491,13 +491,12 @@ strip.innerHTML = '';
 
 (function(){
   // Collect media strictly from JSON keys (no filename probing)
-  var images = [];
+   var images = [];
+  if (data.src) images.push(String(data.src));          // ← always lead with the hero
   for (var i = 1; i <= 6; i++) {
     var key = 'context' + i;
     if (data[key]) images.push(String(data[key]));
   }
-  // Fallback to main src if no contexts present
-  if (!images.length && data.src) images.push(String(data.src));
 
   // Build the items list: images → optional video → description
   var items = images.map(function(src, i){
