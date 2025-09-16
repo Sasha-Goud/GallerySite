@@ -1,9 +1,9 @@
 [
   {
-    "id": "image_1",
+    "id": "Juggler-Lo",
     "title": "This Picture",
-    "src": "assets/image_1/context1.PNG",
-    "thumb": "thumbs/context1.PNG",
+    "src": "assets/Juggler-Lo/Juggler-Lo.PNG",
+    "thumb": "thumbs/Juggler-Lo.PNG",
     "tags": [
       "Red",
       "Human",
@@ -11,10 +11,10 @@
     ]
   },
   {
-    "id": "image_2",
+    "id": "Lisa Stripes full shaded fin-Lo",
     "title": "That Picture",
-    "src": "assets/image_2/context1.PNG",
-    "thumb": "thumbs/context1.PNG",
+    "src": "assets/Lisa Stripes full shaded fin-Lo/Lisa Stripes full shaded fin-Lo.PNG",
+    "thumb": "thumbs/Lisa Stripes full shaded fin-Lo.PNG",
     "tags": [
       "Blue",
       "Dog",
@@ -22,10 +22,17 @@
     ]
   },
   {
-    "id": "image_3",
+    "id": "Motionagraphy-Lo",
+    "title": "Another Picture",
+    "src": "assets/Motionagraphy-Lo/Motionagraphy-Lo.PNG",
+    "thumb": "thumbs/Motionagraphy-Lo.PNG",
+    "tags": []
+  },
+  {
+    "id": "Porto Venere- Lo",
     "title": "Other Picture",
-    "src": "assets/image_3/context1.PNG",
-    "thumb": "thumbs/context1.PNG",
+    "src": "assets/Porto Venere- Lo/Porto Venere- Lo.PNG",
+    "thumb": "thumbs/Porto Venere- Lo.PNG",
     "tags": [
       "Green",
       "Cat",
@@ -33,24 +40,17 @@
     ]
   },
   {
-    "id": "image_4",
-    "title": "Another Picture",
-    "src": "assets/image_4/context1.PNG",
-    "thumb": "thumbs/context1.PNG",
+    "id": "Positano3-Lo",
+    "title": "All the Pictures that you can possibly imagine",
+    "src": "assets/Positano3-Lo/Positano3-Lo.PNG",
+    "thumb": "thumbs/Positano3-Lo.PNG",
     "tags": []
   },
   {
-    "id": "image_5",
+    "id": "Sib-Lo",
     "title": "All the Pictures that you can possibly imagine",
-    "src": "assets/image_5/context1.PNG",
-    "thumb": "thumbs/context1.PNG",
-    "tags": []
-  },
-  {
-    "id": "image_6",
-    "title": "All the Pictures that you can possibly imagine",
-    "src": "assets/image_6/context1.PNG",
-    "thumb": "thumbs/context1.PNG",
+    "src": "assets/Sib-Lo/Sib-Lo.PNG",
+    "thumb": "thumbs/Sib-Lo.PNG",
     "tags": []
   }
 ]
