@@ -8,7 +8,61 @@
       "Red",
       "Human",
       "Abstract"
-    ]
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "video": "assets/Juggler-Lo/paper-demo.m4v",
+    "context1": "assets/Juggler-Lo/context1.png",
+    "context2": "assets/Juggler-Lo/context2.png",
+    "context3": "assets/Juggler-Lo/context3.png",
+    "context4": "assets/Juggler-Lo/context4.png",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
   },
   {
     "id": "Lisa Stripes full shaded fin-Lo",
@@ -19,14 +73,23 @@
       "Blue",
       "Dog",
       "Real"
-    ]
+    ],
+    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
+    "video": "assets/Lisa Stripes full shaded fin-Lo/paper-demo.m4v",
+    "context1": "assets/Lisa Stripes full shaded fin-Lo/context1.png",
+    "context2": "assets/Lisa Stripes full shaded fin-Lo/context2.png"
   },
   {
     "id": "Motionagraphy-Lo",
     "title": "Another Picture",
     "src": "assets/Motionagraphy-Lo/Motionagraphy-Lo.png",
     "thumb": "thumbs/Motionagraphy-Lo.png",
-    "tags": []
+    "tags": [],
+    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
+    "video": "assets/Motionagraphy-Lo/paper-demo.m4v",
+    "context1": "assets/Motionagraphy-Lo/context1.png",
+    "context2": "assets/Motionagraphy-Lo/context2.png",
+    "context3": "assets/Motionagraphy-Lo/context3.png"
   },
   {
     "id": "Porto Venere- Lo",
@@ -37,20 +100,36 @@
       "Green",
       "Cat",
       "Sureal"
-    ]
+    ],
+    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
+    "video": "assets/Porto Venere- Lo/paper-demo.m4v",
+    "context1": "assets/Porto Venere- Lo/context1.png",
+    "context2": "assets/Porto Venere- Lo/context2.png",
+    "context3": "assets/Porto Venere- Lo/context3.png",
+    "context4": "assets/Porto Venere- Lo/context4.png"
   },
   {
     "id": "Positano3-Lo",
     "title": "All the Pictures that you can possibly imagine",
     "src": "assets/Positano3-Lo/Positano3-Lo.png",
     "thumb": "thumbs/Positano3-Lo.png",
-    "tags": []
+    "tags": [],
+    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
+    "video": "assets/Positano3-Lo/paper-demo.m4v",
+    "context1": "assets/Positano3-Lo/context1.png",
+    "context2": "assets/Positano3-Lo/context2.png",
+    "context3": "assets/Positano3-Lo/context3.png"
   },
   {
     "id": "Sib-Lo",
     "title": "All the Pictures that you can possibly imagine",
     "src": "assets/Sib-Lo/Sib-Lo.png",
     "thumb": "thumbs/Sib-Lo.png",
-    "tags": []
+    "tags": [],
+    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
+    "video": "assets/Sib-Lo/paper-demo.m4v",
+    "context1": "assets/Sib-Lo/context1.png",
+    "context2": "assets/Sib-Lo/context2.png",
+    "context3": "assets/Sib-Lo/context3.png"
   }
 ]
