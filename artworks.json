@@ -1,20 +1,20 @@
 [
   {
-    "id": "Juggler-Lo",
+    "id": "juggler",
     "title": "This Picture",
-    "src": "assets/Juggler-Lo/Juggler-Lo.PNG",
-    "thumb": "thumbs/Juggler-Lo.PNG",
+    "src": "assets/juggler/juggler.PNG",
+    "thumb": "thumbs/juggler.PNG",
     "tags": [
       "Red",
       "Human",
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "video": "assets/Juggler-Lo/paper-demo.M4V",
-    "context1": "assets/Juggler-Lo/context1.PNG",
-    "context2": "assets/Juggler-Lo/context2.PNG",
-    "context3": "assets/Juggler-Lo/context3.PNG",
-    "context4": "assets/Juggler-Lo/context4.PNG",
+    "video": "assets/juggler/paper-demo.M4V",
+    "context1": "assets/juggler/context1.PNG",
+    "context2": "assets/juggler/context2.PNG",
+    "context3": "assets/juggler/context3.PNG",
+    "context4": "assets/juggler/context4.PNG",
     "options": {
       "basePrices": {
         "A4": 20,
@@ -65,71 +65,71 @@
     }
   },
   {
-    "id": "Lisa_Stripes-Lo",
+    "id": "lisa",
     "title": "That Picture",
-    "src": "assets/Lisa_Stripes-Lo/Lisa_Stripes-Lo.PNG",
-    "thumb": "thumbs/Lisa_Stripes-Lo.PNG",
+    "src": "assets/lisa/lisa.PNG",
+    "thumb": "thumbs/lisa.PNG",
     "tags": [
       "Blue",
       "Dog",
       "Real"
     ],
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/Lisa_Stripes-Lo/paper-demo.M4V",
-    "context1": "assets/Lisa_Stripes-Lo/context1.PNG",
-    "context2": "assets/Lisa_Stripes-Lo/context2.PNG"
+    "video": "assets/lisa/paper-demo.M4V",
+    "context1": "assets/lisa/context1.PNG",
+    "context2": "assets/lisa/context2.PNG"
   },
   {
-    "id": "Motionagraphy-Lo",
+    "id": "motionagraphy",
     "title": "Another Picture",
-    "src": "assets/Motionagraphy-Lo/Motionagraphy-Lo.PNG",
-    "thumb": "thumbs/Motionagraphy-Lo.PNG",
+    "src": "assets/motionagraphy/motionagraphy.PNG",
+    "thumb": "thumbs/motionagraphy.PNG",
     "tags": [],
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/Motionagraphy-Lo/paper-demo.M4V",
-    "context1": "assets/Motionagraphy-Lo/context1.PNG",
-    "context2": "assets/Motionagraphy-Lo/context2.PNG",
-    "context3": "assets/Motionagraphy-Lo/context3.PNG"
+    "video": "assets/motionagraphy/paper-demo.M4V",
+    "context1": "assets/motionagraphy/context1.PNG",
+    "context2": "assets/motionagraphy/context2.PNG",
+    "context3": "assets/motionagraphy/context3.PNG"
   },
   {
-    "id": "Porto_Venere-Lo",
+    "id": "porto_venere",
     "title": "Other Picture",
-    "src": "assets/Porto_Venere-Lo/Porto_Venere-Lo.PNG",
-    "thumb": "thumbs/Porto_Venere-Lo.PNG",
+    "src": "assets/porto_venere/porto_venere.PNG",
+    "thumb": "thumbs/porto_venere.PNG",
     "tags": [
       "Green",
       "Cat",
       "Sureal"
     ],
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/Porto_Venere-Lo/paper-demo.M4V",
-    "context1": "assets/Porto_Venere-Lo/context1.PNG",
-    "context2": "assets/Porto_Venere-Lo/context2.PNG",
-    "context3": "assets/Porto_Venere-Lo/context3.PNG",
-    "context4": "assets/Porto_Venere-Lo/context4.PNG"
+    "video": "assets/porto_venere/paper-demo.M4V",
+    "context1": "assets/porto_venere/context1.PNG",
+    "context2": "assets/porto_venere/context2.PNG",
+    "context3": "assets/porto_venere/context3.PNG",
+    "context4": "assets/porto_venere/context4.PNG"
   },
   {
-    "id": "Positano3-Lo",
+    "id": "positano3",
     "title": "All the Pictures that you can possibly imagine",
-    "src": "assets/Positano3-Lo/Positano3-Lo.PNG",
-    "thumb": "thumbs/Positano3-Lo.PNG",
+    "src": "assets/positano3/positano3.PNG",
+    "thumb": "thumbs/positano3.PNG",
     "tags": [],
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/Positano3-Lo/paper-demo.M4V",
-    "context1": "assets/Positano3-Lo/context1.PNG",
-    "context2": "assets/Positano3-Lo/context2.PNG",
-    "context3": "assets/Positano3-Lo/context3.PNG"
+    "video": "assets/positano3/paper-demo.M4V",
+    "context1": "assets/positano3/context1.PNG",
+    "context2": "assets/positano3/context2.PNG",
+    "context3": "assets/positano3/context3.PNG"
   },
   {
-    "id": "Sib-Lo",
+    "id": "sib",
     "title": "All the Pictures that you can possibly imagine",
-    "src": "assets/Sib-Lo/Sib-Lo.PNG",
-    "thumb": "thumbs/Sib-Lo.PNG",
+    "src": "assets/sib/sib.PNG",
+    "thumb": "thumbs/sib.PNG",
     "tags": [],
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/Sib-Lo/paper-demo.M4V",
-    "context1": "assets/Sib-Lo/context1.PNG",
-    "context2": "assets/Sib-Lo/context2.PNG",
-    "context3": "assets/Sib-Lo/context3.PNG"
+    "video": "assets/sib/paper-demo.M4V",
+    "context1": "assets/sib/context1.PNG",
+    "context2": "assets/sib/context2.PNG",
+    "context3": "assets/sib/context3.PNG"
   }
 ]
