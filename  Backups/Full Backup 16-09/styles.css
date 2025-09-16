@@ -1,0 +1,1571 @@
+/* ==== Base reset & tokens ==== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* Prevent header/nav shift when vertical scrollbar appears/disappears */
+html {
+  scrollbar-gutter: stable both-edges;  /* modern browsers */
+  overflow-y: scroll;                    /* fallback to always reserve gutter */
+}
+
+:root {
+  --bg: rgb(11, 12, 14);
+  --panel: rgb(17, 19, 24);
+  --panel-2: rgb(21, 25, 35);
+  --text: rgb(233, 236, 241);
+  --muted: rgb(166, 175, 189);
+  --brand: rgb(122, 162, 255);
+  --brand-2: rgb(61, 108, 243);
+  --danger: rgb(255, 107, 107);
+  --ring: rgba(122, 162, 255, 0.35);
+  --border: rgb(32, 36, 49);
+
+  --line-strong: rgba(150, 150, 150, 0.35);
+  --line-bright: rgba(150, 150, 150, 0.55);
+  --ink-bright: rgb(227, 232, 243);
+
+  --radius: 16px;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.hidden{ display: none !important; }
+
+body{
+  font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+/* ==== Header / Nav ==== */
+.site-header{
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: saturate(140%) blur(8px);
+  background: rgba(11, 12, 14, 0.7);
+  border-bottom: 1px solid var(--line-strong);
+}
+.header-inner,
+.section{
+  max-width: min(1600px, 92vw);
+  margin: 0 auto;
+  padding-left: clamp(12px, 3vw, 24px);
+  padding-right: clamp(12px, 3vw, 24px);
+}
+.header-inner{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding-top: 24px;
+  padding-bottom: 4px;
+}
+.site-header .brand{
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 0 0 0;
+  color: var(--text); text-decoration: none;
+  font-weight: 700; letter-spacing: .4px;
+}
+.site-header .brand img{ height: 28px; width: auto; display: block; }
+.brand-fallback{ display: none; }
+
+/* Primary nav – text-only, active = bold */
+.nav{
+  display: flex; gap: 18px;
+  justify-content: flex-start;
+  padding: 12px 0 0 0;
+}
+.nav-link{
+  color: var(--muted); text-decoration: none;
+  padding: 0; border-radius: 0;
+}
+.nav-link:hover{ color: var(--text); }
+.nav-link.active{ color: var(--text); font-weight: 800; }
+
+/* ==== Cart (inline SVG) ==== */
+.cart-link{
+  justify-self: end;
+  display: inline-flex; align-items: center;
+  padding: 6px 0; border-radius: 10px;
+  color: var(--ink-bright);
+  line-height: 1;
+}
+.cart-link:hover{ opacity: .95; }
+.cart-svg{ width: 50px; height: 50px; display: block; }
+
+.cart-stroke{
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cart-wheel{
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.8px;
+}
+
+/* Badge */
+.cart-badge{ fill: rgb(255, 59, 48); }
+.cart-badge-text{
+  fill: rgb(255, 255, 255);
+  font-size: 13.5px;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  alignment-baseline: middle;
+  transform: translateY(0);
+}
+
+/* ==== Layout helpers ==== */
+.section{ padding-top: 16px; padding-bottom: 24px; }
+h1{ font-size: clamp(28px, 2.6vw, 36px); line-height: 1.15; margin: 16px 0 18px; }
+h2{ font-size: clamp(20px, 2vw, 26px); margin: 24px 0 12px; }
+.sub{ color: var(--muted); font-size: 0.95rem; }
+code{
+  background: rgb(15, 19, 32);
+  padding: 2px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  color: rgb(196, 209, 255);
+}
+
+/* ==== Filter area (below header line) ==== */
+#filters{ margin: 12px 0 18px; }
+
+/* Icon-only filter button */
+.btn-filter{
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  background: transparent;
+  border: 1px solid var(--line-bright);
+  border-radius: 10px;
+  color: rgb(199, 204, 214); /* icon via currentColor */
+  user-select: none;
+  cursor: pointer;
+}
+.btn-filter:hover{ background: rgba(255, 255, 255, 0.05); }
+.btn-filter svg{ width: 22px; height: 22px; display: block; }
+.btn-filter svg *{
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+/* Dropdown panel (flows and pushes layout) */
+.filter-panel{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  box-shadow: var(--shadow);
+  margin-top: 10px;
+  max-width: 820px;
+}
+
+/* Tag grid */
+.filter-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+}
+
+/* Tag row */
+.tagcheck{
+  display: flex; align-items: center; gap: 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+/* Label text inside tagcheck */
+.tagcheck span {
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Border-only checkboxes (light gray), white tick */
+.tagcheck input[type="checkbox"]{
+  -webkit-appearance: none;
+  appearance: none;
+  inline-size: 14px;
+  block-size: 14px;
+  border: 2px solid rgb(199, 204, 214);
+  border-radius: 4px;
+  background: transparent;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  transition: border-color .12s ease;
+}
+.tagcheck input[type="checkbox"]:hover{ border-color: rgb(217, 222, 231); }
+.tagcheck input[type="checkbox"]::after{
+  content: "×";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  color: rgb(255, 255, 255);
+  transform: scale(0);
+  transition: transform .12s ease;
+}
+.tagcheck input[type="checkbox"]:checked::after{ transform: scale(1); }
+
+/* Clear / Close as text-only */
+.filter-actions{
+  display: flex; justify-content: flex-end; gap: 16px;
+  margin-top: 10px;
+}
+.filter-clear, .filter-close{
+  background: none; border: none; padding: 0;
+  font: inherit; cursor: pointer;
+}
+.filter-clear{ color: var(--brand); }
+.filter-clear:hover{ text-decoration: underline; color: var(--brand-2); }
+.filter-close{ color: var(--danger); }
+.filter-close:hover{ text-decoration: underline; }
+
+/* ==== Gallery grid (Comfy) ==== */
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+/* Soft entry fade */
+@keyframes image-in { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Card */
+.card{
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .2s ease, filter .18s ease;
+  cursor: pointer;
+}
+.card:hover{ filter: brightness(1.5); border-color: rgba(122, 162, 255, 0.35); }
+
+/* No cropping */
+.card img{
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  animation: image-in .35s ease-out both;
+}
+
+/* Caption below image */
+.card .meta{
+  position: static;
+  padding: 6px 10px;
+  background: transparent;
+  border-top: none;
+  margin-top: 6px;
+  transform: none; opacity: 1;
+}
+.card .title{
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card .sub{ display: none; }
+
+/* ==== Item (Detail) — HERO + media bar ==== */
+.hero-wrap{ /* wraps the hero + media bar */ }
+.hero-media{
+  width: 100%;
+  height: min(78vh, 1000px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+}
+.hero-media img,
+.hero-media video{
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+}
+
+/* Controls for description styling */
+:root{
+  --desc-ink: rgba(255, 255, 255, 0.7); /* = ~70–80% white */
+  --desc-bg: transparent;
+  --desc-spacing: 0.6px;
+}
+
+/* Centered description box, text left/vertically centered */
+.hero-media .hero-desc{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(320px, 40%, 780px);
+  max-height: 80vh;
+  padding: 18px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  font-weight: 300;
+
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  line-height: 1.6;
+  letter-spacing: 0.9px;     /* numeric control */
+  border: none;
+  border-radius: 0;
+  overflow: auto;
+  z-index: 2;
+}
+
+.media-bar{
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* thumbs left, button right */
+  gap: 12px;
+}
+.thumb-strip{
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center; 
+}
+.thumb{
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* brighter border */
+  background: transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.thumb img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* Base icon style */
+.thumb .thumb-icon{
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.8);
+}
+/* Description “i” thumbnail only */
+.thumb .thumb-icon-desc{
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.8);
+}
+/* Video play icon thumbnail only */
+.thumb .thumb-icon-video{
+  font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+.thumb.active{
+  border-color: rgba(122, 162, 255, 0.8);
+  box-shadow: 0 0 0 2px rgba(122, 162, 255, 0.25) inset;
+}
+
+/* Purchase button (PayPal-like gold) */
+.btn-purchase{
+  background: rgb(255, 196, 57);
+  color: rgb(17, 19, 24);
+  border: 1px solid rgb(215, 165, 0);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(215, 165, 0, 0.28);
+}
+.btn-purchase:hover{ background: rgb(255, 205, 75); }
+
+/* ==== Item page legacy bits kept for compatibility ==== */
+.ctx-grid{
+  display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  margin-bottom: 8px;
+}
+.ctx-grid img.ctx{
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+  border: 1px solid var(--border);
+  background: rgb(15, 17, 22);
+  cursor: zoom-in;
+  animation: image-in .35s ease-out both;
+}
+.paper-video{
+  width: 100%; max-height: 60vh; background: rgb(15, 17, 22);
+  border: 1px solid var(--border); border-radius: 12px;
+}
+
+/* Buy panel (not used on new item layout; left for compatibility) */
+.buy-panel{ display: none; }
+
+/* ==== Cart table ==== */
+.cartwrap{ background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; }
+.cart{ width: 100%; border-collapse: collapse; }
+.cart th, .cart td{ padding: 0px; border-bottom: 1px solid var(--border); }
+.cart th{ text-align: left; color: var(--muted); font-weight: 600; }
+.cart td.num{ text-align: right; }
+
+.qtycell{ display: flex; align-items: center; gap: 6px; }
+.qtybtn{
+  width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--panel-2);
+}
+.qtyinput{ width: 56px; text-align: center; }
+
+/* === Cart inline editor (tidy styles) === */
+.cart-edit{
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+}
+.cart-edit label{
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* ==== Prose ==== */
+.prose{
+  color: var(--text);
+  max-width: 75ch;
+  line-height: 1.7;
+  letter-spacing: .2px;
+  margin-bottom: 14px;
+}
+.prose h1, .prose h2, .prose h3{ line-height: 1.2; margin: 0.7em 0 0.4em; }
+.prose h1{ font-size: clamp(26px, 2.4vw, 34px); }
+.prose h2{ font-size: clamp(20px, 2vw, 26px); }
+.prose h3{ font-size: clamp(18px, 1.6vw, 22px); }
+.prose p{ margin: 0.6em 0; }
+.prose a{ color: var(--brand); text-decoration: none; }
+.prose a:hover{ color: var(--brand-2); text-decoration: underline; }
+.prose ul, .prose ol{ margin: .6em 0 .8em 1.2em; }
+.prose li{ margin: .25em 0; }
+.prose strong{ font-weight: 700; }
+.prose em{ font-style: italic; }
+
+/* ==== Lightbox ==== */
+.lightbox{
+  position: fixed; inset: 0; background: rgba(0,0,0,.8);
+  display: grid; place-items: center; padding: 24px; z-index: 100;
+}
+.lightbox[aria-hidden="true"]{ display: none; }
+.lightbox img{
+  max-width: 95vw; max-height: 85vh;
+  width: auto; height: auto;
+  object-fit: contain; object-position: center;
+  transition: transform .12s ease;
+  border-radius: 0;
+  border: 1px solid var(--border);
+  background: transparent;
+}
+.lightbox-close{
+  position: absolute; top: 18px; right: 18px;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: rgb(255, 255, 255);
+  font-size: 28px; line-height: 42px; text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.lightbox-zoom{
+  position: absolute; bottom: 18px; display: flex; gap: 10px; align-items: center;
+}
+#zoom-in, #zoom-out{
+  background: rgba(0, 0, 0, 0.6);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 38px; height: 38px; border-radius: 10px;
+}
+#zoom-level{ color: rgb(255, 255, 255); font-weight: 600; min-width: 54px; text-align: center; }
+
+/* PayPal container spacing */
+#paypal-button-container{ margin-top: 16px; }
+
+/* Skeleton */
+@keyframes sk-shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+.sk-card{
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 0;
+  overflow: hidden; box-shadow: var(--shadow);
+}
+.sk-img{
+  height: 300px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.08) 37%, rgba(255, 255, 255, 0.04) 63%);
+  background-size: 400% 100%;
+  animation: sk-shimmer 1.2s linear infinite;
+}
+.sk-meta{ padding: 10px 12px; }
+.sk-line{
+  height: 14px; margin: 8px 0; border-radius: 8px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.08) 37%, rgba(255, 255, 255, 0.04) 63%);
+  background-size: 400% 100%;
+  animation: sk-shimmer 1.2s linear infinite;
+}
+
+/* Small screens */
+@media (max-width: 640px){
+  .card img{ height: 240px; }
+  .ctx-grid img.ctx{ height: 240px; }
+  .buy-row{ flex-direction: column; align-items: stretch; }
+}
+
+/* === Purchase side panel — single, clean definition (scoped, deduped) === */
+
+/* Backdrop intentionally hidden to avoid darkening the page */
+#purchase-backdrop{ display: none !important; }
+
+/* Floating panel container (position & dimensions) */
+#purchase-panel{
+  position: fixed;
+  top: 511px;                 /* distance from top */
+  right: 40px;                /* distance from right edge */
+  left: auto;
+  bottom: auto;
+
+  /* slide-in from the right */
+  transform: translateX(calc(100% + 40px));
+  transition: transform .28s ease;
+
+  width: min(300px, 92vw);    /* panel width */
+  height: auto;
+  max-height: min(82vh, 720px);
+
+  background: var(--panel);
+  border: 1px solid var(--line-bright);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 120;
+}
+
+/* Open state */
+#purchase-panel.open{ transform: translateX(0); }
+
+/* Header (title + close) */
+#purchase-panel .purchase-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+/* Title styling */
+#purchase-panel .purchase-title{
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(253, 182, 5);
+  letter-spacing: 0.9px;
+}
+
+/* Close button */
+#purchase-panel .purchase-close{
+  background: none;
+  border: 0;
+  color: rgb(248, 50, 80);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Body wrapper */
+#purchase-panel .purchase-body{
+  padding: 12px 14px;
+  display: grid;
+  gap: 20px;            /* vertical rhythm between rows */
+  align-content: start;
+
+  flex: 1 1 auto;       /* allow panel body to grow/shrink */
+  min-height: 0;        /* lets flexbox shrink without overflow */
+  overflow-y: auto;     /* scroll if content exceeds panel height */
+}
+
+/* Fields wrapper */
+#purchase-panel .purchase-fields{
+  display: grid;
+  row-gap: 10px;        /* gap between field blocks */
+}
+
+/* Single field block */
+#purchase-panel .purchase-field{
+  display: grid;
+  row-gap: 1px;         /* label → field gap */
+}
+
+/* Field label */
+#purchase-panel .purchase-field label{
+  font-size: 0.9rem;
+  color: rgb(248, 202, 80);
+  letter-spacing: 1.0px;
+}
+
+/* Inputs (select / number) */
+#purchase-panel .purchase-field select,
+#purchase-panel .purchase-field input[type="number"]{
+  width: 100%;
+  padding: 8px 6px;
+  border-radius: 8px;
+  border: 1px solid var(--line-bright);
+  background: var(--panel-2);
+  outline: none;
+
+  /* hide native dropdown arrows for consistency */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none;
+    font-size: 1.1rem;     /* adjust size */
+  font-weight: 300;       /* adjust boldness */
+  font-family: inherit;   /* or specify a font */
+  letter-spacing: 0.8px;  /* spacing between letters */
+  color: rgb(200,200,200); /* option text color */
+}
+
+/* Focus */
+#purchase-panel .purchase-field select:focus,
+#purchase-panel .purchase-field input[type="number"]{
+  text-align: center;  /* keep number neat */
+  -moz-appearance: textfield;
+}
+#purchase-panel .purchase-field input[type="number"]:focus{
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+#purchase-panel input[type="number"]::-webkit-outer-spin-button,
+#purchase-panel input[type="number"]::-webkit-inner-spin-button{
+  -webkit-appearance: none; margin: 0;
+}
+
+/* Price row text */
+#purchase-panel .purchase-price{
+  color: var(--muted);
+  letter-spacing: 0.2px;
+}
+
+/* Actions row + primary button */
+#purchase-panel .purchase-actions{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+#purchase-panel .btn-primary{
+  background: rgb(255, 196, 57);
+  color: rgb(17, 19, 24);
+  border: 1px solid rgb(215, 165, 0);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(215, 165, 0, 0.28);
+}
+#purchase-panel .btn-primary:disabled{ opacity: .6; cursor: not-allowed; }
+#purchase-panel .btn-primary:hover:enabled{ background: rgb(255, 205, 75); }
+
+/* Prevent page scroll while open (optional) */
+body.purchase-open{ overflow: hidden; }
+
+/* ——— Product Options: decouple gaps ——— */
+#purchase-panel .purchase-fields{
+  /* Gap BETWEEN field blocks (Size ↔ Material ↔ Kind) */
+  row-gap: 16px !important;
+}
+#purchase-panel .purchase-field{
+  /* Gap INSIDE each block (label ↔ input) */
+  row-gap: 0 !important;
+}
+#purchase-panel .purchase-field label{
+  /* Explicit label → field spacing (and optional left indent) */
+  margin-bottom: 1px !important;
+  margin-left: 6px !important;
+}
+
+/* FIX: apply the two-column grid to the real wrapper */
+#purchase-panel .purchase-body > div{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 12px;
+  grid-auto-flow: row dense;
+}
+/* (Removed previous .purchase-body > div grid rule per instructions) */
+
+/* 2) Make Size / Material / Kind full width */
+#purchase-panel label[for="opt-size"],     #purchase-panel #opt-size,
+#purchase-panel label[for="opt-material"], #purchase-panel #opt-material,
+#purchase-panel label[for="opt-kind"],     #purchase-panel #opt-kind{
+  grid-column: 1 / -1;
+}
+
+#purchase-panel #qty{
+  grid-column: 1;
+  display: block;
+}
+
+/* 4) Price on same row, right side, right-aligned */
+/* Combined + positionable price row */
+#purchase-panel #price-row{
+  /* grid placement */
+  grid-column: 2;
+  justify-self: end;      /* right side within column */
+  align-self: start;      /* try: start | center | end for vertical placement */
+
+  /* visual styling */
+  color: rgb(200,200,200);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-align: right;
+
+  /* fine-tune position (add units) */
+  margin-top: 20px;       /* + pushes DOWN, negative pulls UP */
+  margin-left: 0px;       /* + nudges RIGHT, negative LEFT */
+}
+
+/* Existing quantity & price styling kept */
+#purchase-panel label[for="qty"]{
+grid-column: 1;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgb(250,200,90);
+  letter-spacing: 0.9px;
+}
+
+/* Qty label: position & gap — works even if the label lacks for="qty" */
+#purchase-panel .purchase-field:has(#qty) > label{
+  margin-left: 27px !important;  /* horizontal nudge */
+  margin-bottom: 2px !important; /* gap to the qty field */
+}
+
+#purchase-panel #qty{
+  max-width: 60px;  /* or whatever value you want */
+width: 100%;       /* keeps it fluid up to the max-width */
+  padding: 4px 12px;
+  background: rgb(21,25,35);
+  color: rgb(233,236,241);
+  border: 1px solid rgb(120,120,120);
+  border-radius: 8px;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  text-align: left;
+  outline: none;
+}
+
+#purchase-panel #price-value{
+  font-weight: 300;
+  color: rgb(233,236,241);
+  letter-spacing: 0.5px;
+}
+/* vertical nudge controls retained */
+#purchase-panel #price-row { margin-top: 26px; }
+#purchase-panel #price-row #price-value { display: inline-block; margin-top: 0; }
+#purchase-panel .purchase-inline { align-items: start; }
+#purchase-panel #price-row { align-self: start; }
+
+/* === Fix: scope the 2-column grid ONLY to the qty+price container === */
+#purchase-panel .purchase-body > div:has(#qty):has(#price-row){
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 12px;
+  grid-auto-flow: row dense;
+}
+
+/* Keep option fields (Size/Material/Kind) full width within that scoped grid */
+#purchase-panel .purchase-body > div:has(#qty):has(#price-row) .purchase-field{
+  grid-column: 1 / -1;
+}
+
+/* Quantity: stack label above field, left-aligned (in column 1) */
+#purchase-panel .purchase-body > div:has(#qty):has(#price-row) label[for="qty"]{
+  grid-column: 1;
+  display: block;
+  margin: 0 0 5px 0;
+}
+#purchase-panel .purchase-body > div:has(#qty):has(#price-row) #qty{
+  grid-column: 1;
+  justify-self: start;
+}
+
+/* Price: same row as qty field, right side */
+#purchase-panel .purchase-body > div:has(#qty):has(#price-row) #price-row{
+  grid-column: 2;
+  justify-self: end;
+  text-align: right;
+}
+
+/* Ensure the actions row spans full width and sits below */
+#purchase-panel .purchase-body > div:has(#qty):has(#price-row) .purchase-actions{
+  grid-column: 1 / -1;
+}
+
+/* Qty label — horizontal offset + title→field gap (high specificity) */
+#purchase-panel #purchase-body label[for="qty"]{
+  display: block !important;
+  margin-left: 7px !important;  /* ← move label horizontally */
+  margin-bottom: 1px !important; /* ← gap between label and field */
+}
+
+/* Qty field — ensure it sits under the label and lets you tweak the gap too */
+#purchase-panel #purchase-body #qty{
+  grid-column: 1 !important;
+  justify-self: start !important;
+  margin-top: 2px !important;    /* ← additional gap control (optional) */
+}
+
+/* Safety: if the label doesn’t use for="qty", keep the block tidy */
+#purchase-panel #purchase-body .purchase-field:has(#qty){
+  row-gap: 0 !important;         /* don’t let container add extra gap */
+}
+
+/* Quantity control container */
+#purchase-panel .qty-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;                  /* spacing between buttons and field */
+  justify-content: flex-start;
+}
+
+/* The +/- buttons */
+/* Quantity +/- buttons — force visible and center the glyph */
+
+/* Qty control layout + buttons */
+#purchase-panel .qty-control{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#purchase-panel .qtybtn:hover{ filter: brightness(1.1); }
+
+/* Stop the qty label from pushing the field right */
+#purchase-panel .purchase-field:has(#qty) > label{
+  margin-left: 0 !important;
+}
+/* Qty + Price row side by side */
+#purchase-panel .qty-price-row{
+  display: grid;
+  grid-template-columns: 1fr auto; /* qty left, price right */
+  align-items: start;
+  column-gap: 16px;
+}
+
+/* Stack qty label above the +/- field */
+#purchase-panel .qty-block{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+/* Qty buttons + field inline */
+#purchase-panel .qty-control{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Price column right aligned */
+#purchase-panel .purchase-price-row{
+  text-align: right;
+}
+/* Force quantity +/- buttons to be visible and sized */
+
+#purchase-panel .qty-control .qtybtn::before,
+#purchase-panel .qty-control .qtybtn::after{
+  content: none !important;
+}
+
+/* === Quantity control stacked buttons === */
+#purchase-panel .qty-control {
+  display: flex;
+  align-items: center;   /* input and buttons side by side */
+  gap: 6px;
+}
+
+#purchase-panel .qty-buttons {
+  display: flex;
+  flex-direction: column;   /* stack + on top of − */
+  gap: 4px;                 /* space between + and − */
+}
+
+#purchase-panel .qty-buttons .qtybtn {
+  width: 28px;              /* adjust width */
+  height: 20px;             /* adjust height (shorter buttons) */
+  border-radius: 4px;
+  border: 1px solid rgb(120,120,120);
+  background: rgb(30, 34, 44);
+  color: rgb(233,236,241);
+  font-size: 14px;          /* control size of +/− text */
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 1;
+  text-align: center;
+  padding: 0;
+}
+
+/* Hover effect */
+#purchase-panel .qty-buttons .qtybtn:hover {
+  filter: brightness(1.2);
+}
+
+/* Purchase panel — quantity control: vertical buttons only */
+#purchase-panel .qty-control{
+  position: relative;
+  display: inline-block;             /* keeps it from pushing the price */
+  min-width: 110px;                  /* adjust if needed */
+}
+
+#purchase-panel .purchase-qty::-webkit-outer-spin-button,
+#purchase-panel .purchase-qty::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;                         /* hides native spinners (Chrome/Edge) */
+}
+
+/* Vertical +/− buttons */
+#purchase-panel .qty-buttons{
+  position: absolute;
+  top: 0px;                          /* tweak vertical position */
+  right: 24px;                        /* tweak horizontal position */
+  display: flex;
+  flex-direction: column;            /* stack vertically */
+  gap: 0px;
+}
+#purchase-panel .qty-buttons .qtybtn{
+  width: 24px;                       /* button width */
+  height: 18px;                      /* button height (narrower) */
+  line-height: 16px;                 /* centers the symbol */
+  font-size: 20px;                   /* symbol size */
+  font-weight: 300;         /* ← change this for boldness */
+  border: 0px solid var(--line-bright);
+  background: var(--panel-2);
+  color: rgb(200,200,200);
+  border-radius: 4px;
+  cursor: pointer;
+}
+#purchase-panel .qty-buttons .qtybtn:hover{ filter: brightness(1.1); }
+
+/* ==== Consolidated: quantity input (single source of truth) ==== */
+#purchase-panel .purchase-qty{
+  /* width controls */
+  max-width: 80px;         /* ← adjust this to change field width */
+  width: 100%;
+
+  /* typography */
+  font-size: 1rem;         /* ← adjust size */
+  font-weight: 400;        /* ← adjust weight */
+  letter-spacing: 0.2px;
+  font-family: inherit;
+  color: rgb(233,236,241);
+
+  /* box + layout */
+  padding: 6px 10px;
+  padding-right: 34px;     /* space for the vertical +/− buttons; reduce if needed */
+  text-align: left;        /* set to center if you prefer */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+  /* visuals */
+  background: var(--panel-2);
+  border: 1px solid var(--line-bright);
+  border-radius: 8px;
+  outline: none;
+
+  /* remove native spinners */
+  -moz-appearance: textfield;
+}
+#purchase-panel .purchase-qty::-webkit-outer-spin-button,
+#purchase-panel .purchase-qty::-webkit-inner-spin-button{
+  -webkit-appearance: none; 
+  margin: 0;
+}
+
+/* If you removed block (1), keep this for selects' margins */
+#purchase-panel .purchase-select{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ——— Media bar override (append at end) ——— */
+.media-bar{
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  justify-content: flex-start !important;  /* keep content together */
+  min-width: 0;                             /* avoid overflow surprises */
+}
+
+.media-bar .thumb-strip{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;       /* center the thumbnails */
+  gap: 8px !important;
+  flex: 1 1 auto !important;                /* take the available space */
+  margin: 0 !important;
+}
+
+.media-bar .btn-purchase{
+  margin-left: auto !important;             /* push button to far right */
+}
+
+/* ——— Force thumbnail strip centered to page ——— */
+.media-bar {
+  position: relative !important;   /* allow absolute positioning inside */
+  justify-content: flex-end !important; /* keep button aligned right */
+}
+
+.media-bar .thumb-strip {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;  /* true page center */
+  display: flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+.media-bar .btn-purchase {
+  position: relative !important;  /* keep button in normal flow, right side */
+  margin-left: auto !important;
+  z-index: 2;                     /* make sure button stays clickable */
+}
+
+.cart-edit .cart-opt{
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 8px;
+  min-width: 120px;
+  outline: none;
+}
+
+/* Price cells */
+.cart td.num.unit{ color: var(--muted); font-weight: 500; }
+.cart td.num.line{ font-weight: 700; }
+
+/* Small screens: make the editor breathe */
+@media (max-width: 640px){
+  .cart-edit{ gap: 6px 8px; }
+  .cart-edit .cart-opt{ min-width: 100px; }
+}
+
+/* Cart row: thumbnail sizing to prevent overflow */
+.cart td:first-child{
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cart-thumb{
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+}
+
+.cart-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+.cart-meta{ min-width: 0; }
+
+
+
+/* ========= CART HEADERS (ABSOLUTE) ========= */
+/* Reserve space and align headers with row columns */
+.cart-headers{
+  position: relative;
+  height: 30px;          /* header bar height */
+  margin-bottom: 4px;    /* space before first row */
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-headers > div{
+  position: absolute;
+  top: 10px;
+  height: 12px;
+  line-height: 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(245,230,30);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Header positions + widths (MUST mirror .cart-row .col-*) */
+.cart-headers .h-item     { left:  52px; width: 360px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
+.cart-headers .h-size     { left: 384px; width: 120px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
+.cart-headers .h-material { left: 474px; width: 140px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
+.cart-headers .h-extras   { left: 774px; width: 140px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
+.cart-headers .h-unit     { left:  1074px; width: 100px; text-align: right; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
+.cart-headers .h-qty      { left:  1148px; width: 120px; text-align: right; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
+.cart-headers .h-total    { left: 1270px; width: 120px; text-align: right; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
+.cart-headers .h-remove   { left: 1420px; width:  80px; text-align: center; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
+
+/* ==== Layout controls for row fields ==== */
+.cart-rows{ display: block; }            /* freeform, no table */
+.cart-row{
+  position: relative;                    /* anchor for absolute children */
+  height: 40px;                          /* GLOBAL row height */
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-row .col-item {
+  position: absolute;
+  left: 10px;
+  top: 1px;
+  width: 360px;
+
+  background: var(--panel-2);
+  border: 1px solid rgb(60, 60, 60);   /* border colour only */
+  border-radius: 8px;
+
+  padding: 3px;                     /* spacing inside the box */
+  text-align: left;
+  letter-spacing: 0.8px;
+  color: rgb(200, 200, 200);            /* text colour inside */
+  
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 35px;
+}
+.cart-row .col-size{
+  position: absolute; left: 380px; top: 1px; width: 80px;
+  background: var(--panel-2); border: 1px solid var(--line-bright);
+  border-radius: 8px; padding: 6px; 
+  text-align: center; color: var(--text);  
+  font-size: 16px;
+  fill: none;
+  
+}
+.cart-row .col-material{
+  position: absolute; left: 470px; top: 1px; width: 290px;
+  background: var(--panel-2); border: 1px solid var(--line-bright);
+  border-radius: 8px; padding: 6px; text-align: center; color: var(--text);
+}
+.cart-row .col-extras{
+  position: absolute; left: 770px; top: 1px; width: 300px;
+  background: var(--panel-2); border: 1px solid var(--line-bright);
+  border-radius: 8px; padding: 6px; text-align: center; color: var(--text);
+}
+.cart-row .col-unit{
+  position: absolute; left:  1080px; top: 1px; width: 100px;
+  background: var(--panel-2); border: 1px solid var(--line-bright);
+  border-radius: 8px; padding: 6px; text-align: right; color: var(--text);
+}
+.cart-row .col-qty{
+  position: absolute; left:  1190px; top: 1px; width: 100px;
+  background: var(--panel-2); border: 1px solid var(--line-bright);
+  border-radius: 8px; padding: 6px; text-align: center; color: var(--text);
+}
+.cart-row .col-total{
+  position: absolute; left: 1300px; top: 1px; width: 100px;
+  background: var(--panel-2); border: 1px solid var(--line-bright);
+  border-radius: 8px; padding: 6px; text-align: right; color: var(--text);
+}
+.cart-row .col-remove{
+  position: absolute; left: 1420px; top: 4px; width: 80px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Thumbnail and title inside .col-item (kept from your styles) */
+.cart-thumb{ flex: 0 0 25px; width: 25px; height: 25px; }
+.cart-thumb img{ width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block; }
+.cart-title{ font-size: 1rem; font-weight: 600; color: rgb(200,220,255); margin-top: 2px; }
+.qtycell{ display: flex; align-items: center; gap: 6px; justify-content: center; }
+.qtybtn{ width: 28px; height: 25px; border-radius: 2px; border: 1px solid var(--border); background: var(--panel-2); }
+.qtyinput{ width: 56px; text-align: center; }
+
+/* === Horizontal scroll safeguards for wide layouts === */
+.cartwrap{
+  overflow-x: auto;     /* allow side-scroll if columns overflow */
+}
+.cart-headers,
+.cart-rows{
+  min-width: 1360px;    /* last column (1280) + width (80) */
+}
+
+
+
+/* Cart row title */
+.cart-title {
+  font-size: 1rem;        /* adjust size */
+  font-weight: 400;       /* adjust thickness */
+    letter-spacing: 1px;
+  color: rgb(200, 200, 200); /* adjust color */
+  margin-top: 2px;        /* vertical nudge */
+  margin-left: 4px;       /* horizontal nudge */
+  display: inline-block;  /* makes the nudges work reliably */
+}
+
+/* Remove white fill from dropdowns and qty inputs in cart rows */
+.cart-rows .cart-row select.cart-opt,
+.cart-rows .cart-row input.qtyinput{
+  background: transparent;   /* no white background */
+  color: var(--text);        /* use your site text colour */
+  border: none;              /* parent box already has border */
+  width: 100%;
+  padding: 0;                /* let parent box padding control spacing */
+  font: inherit;             /* inherit font family/size from parent */
+  appearance: none;          /* strip native styling (optional) */
+}
+
+
+
+/* Remove button in cart rows */
+.cart-rows .cart-row .col-remove .danger{
+  background: transparent;         /* remove default fill */
+  color: #ff5555;                  /* text colour */
+  border: 1px solid #ff5555;       /* border colour */
+  border-radius: 6px;              /* rounded corners */
+  padding: 4px 10px;               /* size: adjust as needed */
+  font-size: 0.85rem;              /* text size */
+  font-weight: 500;                /* font thickness */
+  font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  cursor: pointer;                 /* hand cursor */
+  transition: all 0.15s ease;      /* smooth hover */
+}
+
+/* Hover / focus effect */
+.cart-rows .cart-row .col-remove .danger:hover,
+.cart-rows .cart-row .col-remove .danger:focus{
+  background: #ff5555;
+  color: #fff;
+}
+
+/* Cart field containers: Size, Material, Extras, Unit, Qty, Total */
+.cart-row .col-size,
+.cart-row .col-material,
+.cart-row .col-extras,
+.cart-row .col-unit,
+.cart-row .col-qty,
+.cart-row .col-total {
+  border-color: rgb(50, 50, 50);   /* change border colour */
+  border-width: 2px;       /* thicker/thinner borders */
+  border-style: solid;     /* solid, dashed, dotted, etc. */
+  border-radius: 6px;      /* more/less rounded corners */
+  padding: 4px;            /* tighter or looser interior space */
+  height: 35px;            /* explicit container height if needed */
+}
+
+
+
+/* Control typography inside row field containers */
+.cart-row .col-size,
+.cart-row .col-material,
+.cart-row .col-extras,
+.cart-row .col-unit,
+.cart-row .col-qty,
+.cart-row .col-total {
+  font-size: 1rem;        /* adjust size */
+  font-weight: 400;         /* adjust weight */
+  color: rgb(200,200,
+  
+  
+  );  /* adjust text color */
+  letter-spacing: 1px;      /* 👈 spacing control */
+  text-transform: none;     /* optional: uppercase/lowercase */
+}
+
+
+
+
+/* === CART HEADER STRIP — compact + aligned with current .col-* === */
+.cart-headers{
+  position: relative;
+  height: 28px;          /* was 30px */
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+}
+
+.cart-headers > div{
+  position: absolute;
+  top: 4px;              /* was 10px */
+  height: 20px;
+  line-height: 1.2;      /* tighter */
+  font-size: 0.95rem;    /* slightly smaller for depth */
+  font-weight: 600;
+  color: rgb(200,200,200);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Horizontal scroll: reflect the real layout width (1420 + 80 = 1500) */
+.cart-headers,
+.cart-rows{
+  min-width: 1500px;   /* was 1360px */
+}
+
+/* Optional: make the remove column sit at the same vertical offset as others */
+.cart-row .col-remove { top: 1px; }  /* was 4px */
+
+
+
+/* ——— Subtotal: pixel-by-pixel lateral control, stays in normal flow ——— */
+:root{
+  /* tweak this to move Subtotal horizontally */
+  --cartsum-left: 1106px;        /* increase => move right; decrease => left */
+  --paypal-width: 240px;      /* typical PayPal button width (200–320px works well) */
+}
+
+.cartsum{
+  position: static !important;     /* ensure not absolute */
+  width: max-content;              /* shrink to text width */
+  margin: 8px 0 10px 0;            /* top/right/bottom/left */
+  margin-left: var(--cartsum-left);
+  text-align: right;
+
+  /* fonts */
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .3px;
+  color: rgb(225,230,240);
+}
+
+.cartsum strong{
+  font-weight: 700;
+  color: rgb(255,210,90);
+}
+
+.cartsum .sub{
+  color: var(--muted);
+  font-size: .9rem;
+  letter-spacing: .2px;
+}
+
+/* ——— PayPal: right-justified underneath Subtotal, controllable width ——— */
+#paypal-button-container{
+  display: block;
+  width: var(--paypal-width);  /* control button width */
+  margin: 10px 0 0 auto;       /* push to the right, add gap above */
+}
+
+#paypal-fallback{
+  margin: 8px 0 0 auto;
+  text-align: right;
+  width: max-content;
+}
+
+
+
+
+:root{
+  /* tweak this: negative = nudge left, positive = nudge right */
+  --paypal-nudge-x: -104px;
+  /* optional width control for the button container */
+  --paypal-width: 320px;
+}
+
+/* Right-justify, then nudge visually with transform */
+#paypal-button-container{
+  display: block;
+  width: var(--paypal-width);
+  margin: 10px 0 0 auto;                 /* stick to the right edge */
+  transform: translateX(var(--paypal-nudge-x));  /* pixel-by-pixel nudge */
+}
+
+/* Ensure the inner PayPal wrapper obeys our width */
+#paypal-button-container > div{
+  width: 100% !important;
+}
+
+
+
+
+/* Cart page main heading */
+.section > h1{
+  /* these override the global h1 styles */
+  font-size: 24px;          /* size */
+  font-weight: 400;         /* weight (300–900) */
+  color: rgb(255,210,90);   /* color in RGB */
+  letter-spacing: 1px;      /* spacing between letters */
+  text-align: left;         /* or center/right */
+  margin: 10px 0 20px 40px; /* top, right, bottom, left offsets */
+}
+
+
+
+/* === Row fields typography — one source of truth === */
+:root{
+  --cart-field-size: 1rem;
+  --cart-field-weight: 400;
+  --cart-field-spacing: 0.9px;     /* 👈 letter-spacing knob */
+  --cart-field-color: rgb(220, 220, 220);
+}
+
+/* Apply to all data columns (not the item/title box) */
+.cart-rows .cart-row .col-size,
+.cart-rows .cart-row .col-material,
+.cart-rows .cart-row .col-extras,
+.cart-rows .cart-row .col-unit,
+.cart-rows .cart-row .col-qty,
+.cart-rows .cart-row .col-total{
+  font-size: var(--cart-field-size);
+  font-weight: var(--cart-field-weight);
+  letter-spacing: var(--cart-field-spacing);
+  color: var(--cart-field-color);
+}
+
+/* Make the actual controls inherit those values */
+.cart-rows .cart-row select.cart-opt,
+.cart-rows .cart-row input.qtyinput{
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+  color: inherit !important;
+
+  /* keep your existing visual tweaks */
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding: 0;
+  appearance: none;
+}
+
+
+
+
+/* ▼ Chevron indicator for dropdown fields (Size / Material / Extras) */
+.cart-row .col-size::after,
+.cart-row .col-material::after,
+.cart-row .col-extras::after{
+  content: "▼";                 /* classic triangle */
+  position: absolute;
+  right: 8px;                   /* nudge as you like */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;              /* chevron size */
+  line-height: 1;
+  color: rgba(220,220,220,.65);  /* default chevron colour */
+  pointer-events: none;         /* never blocks clicks */
+}
+
+/* Give text room so it doesn't sit under the chevron */
+.cart-rows .cart-row .col-size select.cart-opt,
+.cart-rows .cart-row .col-material select.cart-opt,
+.cart-rows .cart-row .col-extras select.cart-opt{
+  padding-right: 18px;          /* match the ::after right + a little gap */
+  cursor: pointer;              /* clickable affordance */
+}
+
+/* Hover/focus feedback on the whole box */
+.cart-row .col-size:hover,
+.cart-row .col-material:hover,
+.cart-row .col-extras:hover,
+.cart-row .col-size:focus-within,
+.cart-row .col-material:focus-within,
+.cart-row .col-extras:focus-within{
+  border-color: var(--brand);
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+/* Brighten the chevron on hover/focus */
+.cart-row .col-size:hover::after,
+.cart-row .col-material:hover::after,
+.cart-row .col-extras:hover::after,
+.cart-row .col-size:focus-within::after,
+.cart-row .col-material:focus-within::after,
+.cart-row .col-extras:focus-within::after{
+  color: var(--text);
+}
+
+
+/* Same hover/focus affordance as Size/Material/Extras */
+.cart-row .col-qty:hover,
+.cart-row .col-qty:focus-within{
+  border-color: var(--brand);
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+/* Remove native number spinners so only your ± buttons remain */
+.cart-rows .cart-row input.qtyinput{
+  -moz-appearance: textfield;     /* Firefox */
+}
+.cart-rows .cart-row input.qtyinput::-webkit-outer-spin-button,
+.cart-rows .cart-row input.qtyinput::-webkit-inner-spin-button{
+  -webkit-appearance: none;       /* Chrome/Edge/Safari */
+  margin: 0;
+}
+
+
+
+
+
+/* Keep the custom ± buttons visible and neatly spaced */
+.cart-rows .cart-row .qtycell{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.cart-rows .cart-row .qtybtn{
+  width: 28px;
+  height: 25px;
+  border-radius: 4px;
+  border: 1px solid var(--line-bright);
+  background: var(--panel-2);
+  color: var(--text);
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Prevent the input text from sitting under the buttons on some UAs */
+.cart-rows .cart-row input.qtyinput{
+  padding-right: 6px;   /* small buffer on the right */
+  text-align: center;
+}
+
+
+
