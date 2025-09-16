@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <meta http-equiv="refresh" content="0; url=./index.html">
+  <meta name="robots" content="noindex" />
+  <script>
+    (function () {
+      // Compute repo base automatically: /<user-or-org>/<repo>/
+      var pathParts = location.pathname.split('/').filter(Boolean);
+      var repo = pathParts.length ? pathParts[0] : '';
+      var base = repo ? ('/' + repo + '/') : '/';
+
+      // Anything after the repo path becomes the "intended" route
+      var afterRepo = location.pathname.replace(base, '');
+
+      // If your app uses hash routes already, keep any existing hash
+      // Otherwise, convert the path into a hash route so the SPA can handle it
+      var hash = location.hash || (afterRepo ? ('#/' + afterRepo) : '#/gallery');
+
+      var target = base + 'index.html' + hash + (location.search || '');
+      location.replace(target);
+    })();
+  </script>
+</head>
+<body>
+  Redirecting…
+</body>
+</html>

@@ -146,15 +146,32 @@ function renderContact(){
   app.innerHTML = '<section class="section"><h1>Contact</h1><p>Email: <a href="mailto:you@example.com">you@example.com</a></p></section>';
 }
 
+
+
 // ======== API helpers ========
 function fetchJSON(url){
   return fetch(url, { cache:'no-store' }).then(function(res){
-    if (!res.ok) throw new Error('Failed: '+url);
+    if (!res.ok) throw new Error('Failed: ' + url);
     return res.json();
   });
 }
-function fetchArtworks(){ return fetchJSON('/api/artworks'); }
-function fetchArtworkDetail(id){ return fetchJSON('/api/artwork/'+encodeURIComponent(id)); }
+
+// Always load from the local artworks.json file at project root
+function fetchArtworks(){ 
+  return fetch('./artworks.json', { cache: 'no-store' })
+    .then(function(res){
+      if (!res.ok) throw new Error('Failed to load artworks.json');
+      return res.json();
+    });
+}
+
+function fetchArtworkDetail(id){ 
+  return fetchArtworks().then(function(list){
+    return list.find(function(a){ return a.id === id; }) || null;
+  });
+}
+
+
 
 // ======== FILTERS (tags) ========
 var ALL_ARTWORKS = [];
@@ -349,7 +366,7 @@ function renderItem(id){
     'context6:', !!data.context6, '| context_6:', !!data.context_6, '||',
     'src:', !!data.src, 'video:', !!data.video
   );
-} catch (e) {}
+	} catch (e) {}
     detailData = data; // <- critical so Purchase has the item
 
     function showImage(src, alt){
@@ -369,10 +386,14 @@ function renderItem(id){
       hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text)+'</div>';
     }
     
+	// --- Preload helper (for smoother swaps) ---
+	function preloadImage(src){
+	  if (!src) return;
+	  var img = new Image();
+	  img.src = src;
+	}
     
-    
-    
-    
+
     // ---- Discover up to 6 images by probing sibling files next to src/context ----
 function loadable(url){
   return new Promise(function(resolve){
@@ -542,11 +563,14 @@ function extname(u){
     btn.setAttribute('aria-label', it.title);
 
     if (it.type === 'img'){
-      btn.innerHTML = '<img src="'+it.src+'" alt="">';
+	btn.innerHTML = '<img src="'+it.src+'" alt="" loading="lazy">';
       btn.addEventListener('click', function(){
         $all('.thumb', strip).forEach(function(t){ t.classList.remove('active'); });
         btn.classList.add('active');
         showImage(it.src, it.title);
+        if (items[idx+1] && items[idx+1].type === 'img') {
+		  preloadImage(items[idx+1].src);
+		}
       });
     } else if (it.type === 'vid'){
       btn.innerHTML = '<span class="thumb-icon thumb-icon-video">▶︎</span>';
@@ -571,6 +595,16 @@ function extname(u){
       else if (it.type === 'vid') showVideo(it.src);
       else showDesc(it.text || '');
     }
+    
+    
+    
+	// Preload the next image (look ahead by 1)
+	if (it.type === 'img' && items[idx+1] && items[idx+1].type === 'img'){
+	  preloadImage(items[idx+1].src);
+	}
+
+
+
   });
 
   try { console.log('[media] chosen:', images); } catch(_){}
