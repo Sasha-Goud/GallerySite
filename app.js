@@ -393,11 +393,7 @@ function renderItem(id){
 	  img.src = src;
 	}
     
-    // Preload the next image (look ahead by 1)
-	if (it.type === 'img' && items[idx+1] && items[idx+1].type === 'img'){
-	  preloadImage(items[idx+1].src);
-	}
-	
+
     // ---- Discover up to 6 images by probing sibling files next to src/context ----
 function loadable(url){
   return new Promise(function(resolve){
