@@ -111,7 +111,7 @@
   {
     "id": "image_5",
     "title": "All the Pictures that you can possibly imagine",
-    "src": "images/image_5.PNG",
+    "src": "images/image_5.png",
     "thumb": "thumbs/image_5.PNG",
     "tags": [],
     "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
@@ -119,5 +119,13 @@
     "context1": "assets/image_5/context1.PNG",
     "context2": "assets/image_5/context2.PNG",
     "context3": "assets/image_5/context3.PNG"
+  },
+  {
+    "id": "image_6",
+    "title": "Untitled (image_6)",
+    "src": "images/image_6.PNG",
+    "thumb": "images/image_6.PNG",
+    "tags": [],
+    "description": ""
   }
 ]
