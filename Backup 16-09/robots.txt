@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sasha-goud.github.io/GallerySite/sitemap.xml

@@ -1,0 +1,135 @@
+[
+  {
+    "id": "juggler",
+    "title": "This Picture",
+    "src": "assets/juggler/juggler.png",
+    "thumb": "thumbs/juggler.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "video": "assets/juggler/paper-demo.M4V",
+    "context1": "assets/juggler/context1.png",
+    "context2": "assets/juggler/context2.png",
+    "context3": "assets/juggler/context3.png",
+    "context4": "assets/juggler/context4.png",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "lisa",
+    "title": "That Picture",
+    "src": "assets/lisa/lisa.png",
+    "thumb": "thumbs/lisa.png",
+    "tags": [
+      "Blue",
+      "Dog",
+      "Real"
+    ],
+    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
+    "video": "assets/lisa/paper-demo.M4V",
+    "context1": "assets/lisa/context1.png",
+    "context2": "assets/lisa/context2.png"
+  },
+  {
+    "id": "motionagraphy",
+    "title": "Another Picture",
+    "src": "assets/motionagraphy/motionagraphy.png",
+    "thumb": "thumbs/motionagraphy.png",
+    "tags": [],
+    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
+    "video": "assets/motionagraphy/paper-demo.M4V",
+    "context1": "assets/motionagraphy/context1.png",
+    "context2": "assets/motionagraphy/context2.png",
+    "context3": "assets/motionagraphy/context3.png"
+  },
+  {
+    "id": "porto_venere",
+    "title": "Other Picture",
+    "src": "assets/porto_venere/porto_venere.png",
+    "thumb": "thumbs/porto_venere.png",
+    "tags": [
+      "Green",
+      "Cat",
+      "Sureal"
+    ],
+    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
+    "video": "assets/porto_venere/paper-demo.M4V",
+    "context1": "assets/porto_venere/context1.png",
+    "context2": "assets/porto_venere/context2.png",
+    "context3": "assets/porto_venere/context3.png",
+    "context4": "assets/porto_venere/context4.png"
+  },
+  {
+    "id": "positano3",
+    "title": "All the Pictures that you can possibly imagine",
+    "src": "assets/positano3/positano3.png",
+    "thumb": "thumbs/positano3.png",
+    "tags": [],
+    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
+    "video": "assets/positano3/paper-demo.M4V",
+    "context1": "assets/positano3/context1.png",
+    "context2": "assets/positano3/context2.png",
+    "context3": "assets/positano3/context3.png"
+  },
+  {
+    "id": "sib",
+    "title": "All the Pictures that you can possibly imagine",
+    "src": "assets/sib/sib.png",
+    "thumb": "thumbs/sib.png",
+    "tags": [],
+    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
+    "video": "assets/sib/paper-demo.M4V",
+    "context1": "assets/sib/context1.png",
+    "context2": "assets/sib/context2.png",
+    "context3": "assets/sib/context3.png"
+  }
+]

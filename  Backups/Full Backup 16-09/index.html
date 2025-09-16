@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  
+    <!-- SEO / Social meta (inserted) -->
+  <meta name="description" content="A minimalist, modern gallery of display art spanning five decades. Explore and purchase prints.">
+  <meta property="og:title" content="Gallery">
+  <meta property="og:description" content="A minimalist, modern gallery of display art spanning five decades.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sasha-goud.github.io/GallerySite/">
+  <meta property="og:image" content="https://sasha-goud.github.io/GallerySite/assets/logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  
+  <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖼️</text></svg>">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JKJK5FMWSN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JKJK5FMWSN');
+</script>
+
+
+
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo (click = Gallery home) -->
+      <a href="#/gallery" class="brand" aria-label="Logo">
+        <img src="assets/logo.svg" alt="Gallery" />
+        <span class="brand-fallback">Gallery</span>
+      </a>
+
+      <!-- Primary nav -->
+      <nav class="nav" aria-label="Primary">
+        <a href="#/gallery" class="nav-link" data-route="gallery">Gallery</a>
+        <a href="#/about" class="nav-link" data-route="about">About</a>
+        <a href="#/contact" class="nav-link" data-route="contact">Contact</a>
+      </nav>
+
+      <!-- Basket pinned right — inline SVG + badge -->
+      <a href="#/cart" class="nav-link cart-link" data-route="cart" aria-label="Basket">
+        <svg class="cart-svg" viewBox="0 0 52 37" aria-hidden="true" focusable="false">
+          <!-- Wheels -->
+          <ellipse cx="17.669" cy="30.680" rx="2.509" ry="2.461" class="cart-wheel" />
+          <ellipse cx="33.111" cy="30.609" rx="2.509" ry="2.461" class="cart-wheel" />
+          <!-- Basket + handle -->
+          <path
+            d="m 4.5496566,2.8049683 4.87233,4.5240826 4.7803974,19.2042691 h 22.4311 l 1.562823,-2.400535 -22.247238,0.09233 -1.930546,-7.016944 H 41.321951 L 45.642697,7.4213766 H 11.720255 L 13.6508,15.546261"
+            class="cart-stroke" />
+          <!-- Badge (hidden when qty=0) -->
+          <circle id="cart-badge" class="cart-badge hidden" cx="28" cy="12" r="9.3"></circle>
+          <text id="cart-count" x="28" y="12" dy=".35em" text-anchor="middle"
+                class="cart-badge-text hidden">0</text>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main app mount -->
+  <main id="app" role="main"></main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img id="lightbox-img" alt="">
+    <div class="lightbox-zoom">
+      <button id="zoom-out" aria-label="Zoom out">−</button>
+      <span id="zoom-level">100%</span>
+      <button id="zoom-in" aria-label="Zoom in">+</button>
+    </div>
+  </div>
+
+  <!-- App -->
+<script src="app.js?v=2025-09-16-2"></script>
+
+  <!-- PayPal (Sandbox) -->
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=GBP"></script>
+</body>
+</html>
