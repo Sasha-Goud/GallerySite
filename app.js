@@ -1,6 +1,7 @@
 // ======== Tiny DOM helpers ========
 function $(sel, root){ return (root||document).querySelector(sel); }
 function $all(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
+function bust(u){ return u ? u + (u.indexOf('?')>=0 ? '&' : '?') + 'v=' + (window.APP_VERSION || Date.now()) : u; }
 
 // ======== Router ========
 var app = $('#app');
@@ -210,12 +211,15 @@ function renderGridInto(gridEl){
     return;
   }
   gridEl.innerHTML = list.map(function(a){
-    var thumb = a.thumb || a.src;
-    var srcset = a.thumb ? (thumb + ' 480w, ' + a.src + ' 1200w') : (a.src + ' 1200w');
+   var thumb = bust(a.thumb || a.src);
+var thumb  = a.thumb || a.src;
+var small  = bust(thumb);
+var big    = bust(a.src);
+var srcset = a.thumb ? (small + ' 480w, ' + big + ' 1200w') : (big + ' 1200w');
     return [
       '<article class="card" data-id="',a.id,'">',
         '<img ',
-          'src="',thumb,'" ',
+          'src="',small,'" ',
           'srcset="',srcset,'" ',
           'sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw" ',
           'alt="',escapeHtml(a.title),'" ',
@@ -370,7 +374,7 @@ function renderItem(id){
     detailData = data; // <- critical so Purchase has the item
 
     function showImage(src, alt){
-      hero.innerHTML = '<img src="'+src+'" alt="'+escapeHtml(data.title)+'" loading="eager" decoding="async">';
+   hero.innerHTML = '<img src="'+bust(src)+'" alt="'+escapeHtml(data.title)+'" loading="eager" decoding="async">';
       var img = $('img', hero);
       if (img){
         img.addEventListener('click', function(){ openLightbox(src, alt || data.title || ''); });
@@ -530,8 +534,8 @@ strip.innerHTML = '';
     btn.setAttribute('aria-label', it.title);
 
     if (it.type === 'img'){
-      btn.innerHTML = '<img src="'+it.src+'" alt="" loading="lazy">';
-      btn.addEventListener('click', function(){
+  btn.innerHTML = '<img src="'+bust(it.src)+'" alt="" loading="lazy">';
+  btn.addEventListener('click', function(){
         $all('.thumb', strip).forEach(function(t){ t.classList.remove('active'); });
         btn.classList.add('active');
         showImage(it.src, it.title);
@@ -1024,6 +1028,11 @@ lightbox.addEventListener('wheel', function(e){
 }, { passive:false });
 
 // ======== Helpers ========
+function bust(u){
+  if (!u) return u;
+  var sep = u.indexOf('?') === -1 ? '?' : '&';
+  return u + sep + 'v=' + (window.__VER__ || Date.now());
+}
 function escapeHtml(s){
   return String(s)
     .replace(/&/g,'&amp;')
