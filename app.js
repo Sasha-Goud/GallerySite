@@ -486,76 +486,44 @@ async function collectImagesSmart(d){
 
 
 
-/* ========= MEDIA STRIP (smart sibling probe) ========= */
+/* ========= MEDIA STRIP (use JSON fields only) ========= */
 strip.innerHTML = '';
 
-function loadable(url){
-  return new Promise(function(resolve){
-    if (!url) return resolve(false);
-    var img = new Image();
-    img.onload = function(){ resolve(url); };
-    img.onerror = function(){ resolve(false); };
-    img.decoding = "async";
-    img.loading = "eager";
-    img.src = url;
-  });
-}
-function dirname(u){
-  var i = u.lastIndexOf('/');
-  return i >= 0 ? u.slice(0, i+1) : '';
-}
-function extname(u){
-  var q = u.indexOf('?');
-  if (q >= 0) u = u.slice(0,q);
-  var i = u.lastIndexOf('.');
-  return i >= 0 ? u.slice(i) : '';
-}
-
-(async function(){
+(function(){
+  // Collect media strictly from JSON keys (no filename probing)
   var images = [];
-
-  // 1) Prefer explicit keys if present (context*, src)
-  var explicit = [];
-  ['context1','context_1','context2','context_2','context3','context_3',
-   'context4','context_4','context5','context_5','context6','context_6',
-   'src'
-  ].forEach(function(k){ if (data[k]) explicit.push(data[k]); });
-
-  var seen = new Set();
-  for (var i=0; i<explicit.length && images.length<6; i++){
-    var ok = await loadable(explicit[i]);
-    if (ok && !seen.has(ok)){ images.push(ok); seen.add(ok); }
+  for (var i = 1; i <= 6; i++) {
+    var key = 'context' + i;
+    if (data[key]) images.push(String(data[key]));
   }
+  // Fallback to main src if no contexts present
+  if (!images.length && data.src) images.push(String(data.src));
 
-  // 2) If we only have src (or nothing), probe siblings: context_1..6 and context1..6
-  var base = explicit.find(function(u){ return /context/i.test(u); }) || explicit[0] || '';
-  if (images.length < 6 && base){
-    var dir = dirname(base);
-    var ext = extname(base) || '.jpg';
-    var tryExts = ext ? [ext] : ['.jpg','.jpeg','.png','.webp'];
-    var names = [];
-    for (var n=1; n<=6; n++){ names.push('context_'+n); names.push('context'+n); }
-
-    for (var k=0; k<names.length && images.length<6; k++){
-      for (var e=0; e<tryExts.length && images.length<6; e++){
-        var cand = dir + names[k] + tryExts[e];
-        if (seen.has(cand)) continue;
-        var ok2 = await loadable(cand);
-        if (ok2 && !seen.has(ok2)){ images.push(ok2); seen.add(ok2); }
-      }
-    }
-  }
-
-  if (!images.length && data.src) images = [data.src];
-
-  // Build items: images → optional video → description
+  // Build the items list: images → optional video → description
   var items = images.map(function(src, i){
     return { type:'img', src: src, title:'Image '+(i+1), active: i===0 };
   });
-  if (data.video) items.push({ type:'vid', src: data.video, title:'Video' });
+  if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
   items.push({ type:'desc', text:(data.description||''), title:'Description' });
 
-  // Render thumbnails + initial hero
+  function showImage(src, alt){
+    hero.innerHTML = '<img src="'+src+'" alt="'+escapeHtml(data.title||alt||"")+'" loading="eager" decoding="async">';
+    var img = $('img', hero);
+    if (img){
+      img.addEventListener('click', function(){ openLightbox(src, alt || data.title || ''); });
+      img.addEventListener('error', function(){ img.src = 'https://picsum.photos/seed/placeholder/1200/900'; });
+    }
+  }
+  function showVideo(src){
+    hero.innerHTML = '<video src="'+src+'" class="paper-video" controls playsinline preload="metadata"></video>';
+    var v = $('video', hero);
+    if (v){ try { v.play().catch(function(){}); } catch(e){} }
+  }
+  function showDesc(text){
+    hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text||'')+'</div>';
+  }
+
+  // Render thumbs + initial hero
   items.forEach(function(it, idx){
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -563,14 +531,11 @@ function extname(u){
     btn.setAttribute('aria-label', it.title);
 
     if (it.type === 'img'){
-	btn.innerHTML = '<img src="'+it.src+'" alt="" loading="lazy">';
+      btn.innerHTML = '<img src="'+it.src+'" alt="" loading="lazy">';
       btn.addEventListener('click', function(){
         $all('.thumb', strip).forEach(function(t){ t.classList.remove('active'); });
         btn.classList.add('active');
         showImage(it.src, it.title);
-        if (items[idx+1] && items[idx+1].type === 'img') {
-		  preloadImage(items[idx+1].src);
-		}
       });
     } else if (it.type === 'vid'){
       btn.innerHTML = '<span class="thumb-icon thumb-icon-video">▶︎</span>';
@@ -584,30 +549,21 @@ function extname(u){
       btn.addEventListener('click', function(){
         $all('.thumb', strip).forEach(function(t){ t.classList.remove('active'); });
         btn.classList.add('active');
-        showDesc(it.text || '');
+        showDesc(it.text||'');
       });
     }
 
     strip.appendChild(btn);
 
+    // initial hero
     if (idx === 0){
       if (it.type === 'img') showImage(it.src, it.title);
       else if (it.type === 'vid') showVideo(it.src);
-      else showDesc(it.text || '');
+      else showDesc(it.text||'');
     }
-    
-    
-    
-	// Preload the next image (look ahead by 1)
-	if (it.type === 'img' && items[idx+1] && items[idx+1].type === 'img'){
-	  preloadImage(items[idx+1].src);
-	}
-
-
-
   });
 
-  try { console.log('[media] chosen:', images); } catch(_){}
+  try { console.log('[media] using JSON fields only'); } catch(_){}
 })();
 /* ========= /MEDIA STRIP ========= */
 
