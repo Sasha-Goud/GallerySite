@@ -2,8 +2,8 @@
   {
     "id": "Juggler-Lo",
     "title": "This Picture",
-    "src": "assets/Juggler-Lo/Juggler-Lo.PNG",
-    "thumb": "thumbs/Juggler-Lo.PNG",
+    "src": "assets/Juggler-Lo/Juggler-Lo.png",
+    "thumb": "thumbs/Juggler-Lo.png",
     "tags": [
       "Red",
       "Human",
@@ -13,8 +13,8 @@
   {
     "id": "Lisa Stripes full shaded fin-Lo",
     "title": "That Picture",
-    "src": "assets/Lisa Stripes full shaded fin-Lo/Lisa Stripes full shaded fin-Lo.PNG",
-    "thumb": "thumbs/Lisa Stripes full shaded fin-Lo.PNG",
+    "src": "assets/Lisa Stripes full shaded fin-Lo/Lisa Stripes full shaded fin-Lo.png",
+    "thumb": "thumbs/Lisa Stripes full shaded fin-Lo.png",
     "tags": [
       "Blue",
       "Dog",
@@ -24,15 +24,15 @@
   {
     "id": "Motionagraphy-Lo",
     "title": "Another Picture",
-    "src": "assets/Motionagraphy-Lo/Motionagraphy-Lo.PNG",
-    "thumb": "thumbs/Motionagraphy-Lo.PNG",
+    "src": "assets/Motionagraphy-Lo/Motionagraphy-Lo.png",
+    "thumb": "thumbs/Motionagraphy-Lo.png",
     "tags": []
   },
   {
     "id": "Porto Venere- Lo",
     "title": "Other Picture",
-    "src": "assets/Porto Venere- Lo/Porto Venere- Lo.PNG",
-    "thumb": "thumbs/Porto Venere- Lo.PNG",
+    "src": "assets/Porto Venere- Lo/Porto Venere- Lo.png",
+    "thumb": "thumbs/Porto Venere- Lo.png",
     "tags": [
       "Green",
       "Cat",
@@ -42,15 +42,15 @@
   {
     "id": "Positano3-Lo",
     "title": "All the Pictures that you can possibly imagine",
-    "src": "assets/Positano3-Lo/Positano3-Lo.PNG",
-    "thumb": "thumbs/Positano3-Lo.PNG",
+    "src": "assets/Positano3-Lo/Positano3-Lo.png",
+    "thumb": "thumbs/Positano3-Lo.png",
     "tags": []
   },
   {
     "id": "Sib-Lo",
     "title": "All the Pictures that you can possibly imagine",
-    "src": "assets/Sib-Lo/Sib-Lo.PNG",
-    "thumb": "thumbs/Sib-Lo.PNG",
+    "src": "assets/Sib-Lo/Sib-Lo.png",
+    "thumb": "thumbs/Sib-Lo.png",
     "tags": []
   }
 ]
