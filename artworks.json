@@ -1,7 +1,7 @@
 [
   {
     "id": "juggler",
-    "title": "This Picture",
+    "title": "The Juggler",
     "src": "assets/juggler/juggler.png",
     "thumb": "thumbs/juggler.png",
     "tags": [
@@ -12,7 +12,6 @@
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "video": "assets/juggler/paper-demo.m4v",
     "context1": "assets/juggler/context1.png",
-    "context2": "assets/juggler/context2.png",
     "options": {
       "basePrices": {
         "A4": 20,
@@ -88,7 +87,7 @@
   },
   {
     "id": "porto_venere",
-    "title": "Other Picture",
+    "title": "Porto Venere",
     "src": "assets/porto_venere/porto_venere.png",
     "thumb": "thumbs/porto_venere.png",
     "tags": [
