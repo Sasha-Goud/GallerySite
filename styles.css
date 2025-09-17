@@ -268,17 +268,23 @@ code{
   background: transparent;
   border-top: none;
   margin-top: 6px;
+    text-align: center;
   transform: none; opacity: 1;
 }
-.card .title{
+
+
+.card .title {
   font-weight: 300;
   margin: 0;
   line-height: 1.2;
-  letter-spacing: 0.2px;
+  letter-spac
+	 text-align: center;   /* NEW */
+ing: 0.2px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .card .sub{ display: none; }
 
 /* ==== Item (Detail) — HERO + media bar ==== */
@@ -1567,5 +1573,5 @@ width: 100%;       /* keeps it fluid up to the max-width */
   text-align: center;
 }
 
-
-
+/* Force center captions in gallery cards */
+.gallery .card .meta, .gallery .card .title { text-align: center !important; }
