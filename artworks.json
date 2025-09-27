@@ -1,17 +1,15 @@
 [
   {
-    "id": "juggler",
+    "id": "001-amalfi-1",
     "title": "The Juggler",
-    "src": "assets/juggler/juggler.png",
-    "thumb": "thumbs/juggler.png",
+    "src": "assets/001-amalfi-1/001-amalfi-1.png",
+    "thumb": "thumbs/001-amalfi-1.png",
     "tags": [
       "Red",
       "Human",
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "video": "assets/juggler/paper-demo.m4v",
-    "context1": "assets/juggler/context1.png",
     "options": {
       "basePrices": {
         "A4": 20,
@@ -62,64 +60,2823 @@
     }
   },
   {
-    "id": "lisa",
-    "title": "That Picture",
-    "src": "assets/lisa/lisa.png",
-    "thumb": "thumbs/lisa.png",
+    "id": "002-archigraph-2",
+    "title": "The Juggler",
+    "src": "assets/002-archigraph-2/002-archigraph-2.png",
+    "thumb": "thumbs/002-archigraph-2.png",
     "tags": [
-      "Blue",
-      "Dog",
-      "Real"
+      "Red",
+      "Human",
+      "Abstract"
     ],
-    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/lisa/paper-demo.m4v",
-    "context1": "assets/lisa/context1.png"
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
   },
   {
-    "id": "motionagraphy",
-    "title": "Another Picture",
-    "src": "assets/motionagraphy/motionagraphy.png",
-    "thumb": "thumbs/motionagraphy.png",
-    "tags": [],
-    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/motionagraphy/paper-demo.m4v",
-    "context1": "assets/motionagraphy/context1.png"
-  },
-  {
-    "id": "porto_venere",
-    "title": "Porto Venere",
-    "src": "assets/porto_venere/porto_venere.png",
-    "thumb": "thumbs/porto_venere.png",
+    "id": "003-porto-venere",
+    "title": "The Juggler",
+    "src": "assets/003-porto-venere/003-porto-venere.png",
+    "thumb": "thumbs/003-porto-venere.png",
     "tags": [
-      "Green",
-      "Cat",
-      "Sureal"
+      "Red",
+      "Human",
+      "Abstract"
     ],
-    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/porto_venere/paper-demo.m4v",
-    "context1": "assets/porto_venere/context1.png",
-    "context2": "assets/porto_venere/context2.png"
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
   },
   {
-    "id": "positano3",
-    "title": "All the Pictures that you can possibly imagine",
-    "src": "assets/positano3/positano3.png",
-    "thumb": "thumbs/positano3.png",
-    "tags": [],
-    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/positano3/paper-demo.m4v",
-    "context1": "assets/positano3/context1.png",
-    "context2": "assets/positano3/context2.png"
+    "id": "004-cascadia-2",
+    "title": "The Juggler",
+    "src": "assets/004-cascadia-2/004-cascadia-2.png",
+    "thumb": "thumbs/004-cascadia-2.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
   },
   {
-    "id": "sib",
-    "title": "All the Pictures that you can possibly imagine",
-    "src": "assets/sib/sib.png",
-    "thumb": "thumbs/sib.png",
-    "tags": [],
-    "description": "desc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txtdesc.txt\ndesc.txtdesc.txtdesc.txt\ndesc.txt\ndesc.txt\ndesc.txt",
-    "video": "assets/sib/paper-demo.m4v",
-    "context1": "assets/sib/context1.png",
-    "context2": "assets/sib/context2.png"
+    "id": "008-archegrafix-7",
+    "title": "The Juggler",
+    "src": "assets/008-archegrafix-7/008-archegrafix-7.png",
+    "thumb": "thumbs/008-archegrafix-7.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "011-rouin",
+    "title": "The Juggler",
+    "src": "assets/011-rouin/011-rouin.png",
+    "thumb": "thumbs/011-rouin.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "012-vasarelisa-3",
+    "title": "The Juggler",
+    "src": "assets/012-vasarelisa-3/012-vasarelisa-3.jpg",
+    "thumb": "thumbs/012-vasarelisa-3.jpg",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "013-340-windows",
+    "title": "The Juggler",
+    "src": "assets/013-340-windows/013-340-windows.png",
+    "thumb": "thumbs/013-340-windows.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "014-archegrafix-1",
+    "title": "The Juggler",
+    "src": "assets/014-archegrafix-1/014-archegrafix-1.png",
+    "thumb": "thumbs/014-archegrafix-1.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "015-archegrafix-2",
+    "title": "The Juggler",
+    "src": "assets/015-archegrafix-2/015-archegrafix-2.png",
+    "thumb": "thumbs/015-archegrafix-2.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "015-topsyturvy3",
+    "title": "The Juggler",
+    "src": "assets/015-topsyturvy3/015-topsyturvy3.png",
+    "thumb": "thumbs/015-topsyturvy3.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "016-archegrafix-3",
+    "title": "The Juggler",
+    "src": "assets/016-archegrafix-3/016-archegrafix-3.png",
+    "thumb": "thumbs/016-archegrafix-3.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "017-leeds-1977",
+    "title": "The Juggler",
+    "src": "assets/017-leeds-1977/017-leeds-1977.png",
+    "thumb": "thumbs/017-leeds-1977.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "018-luminocity-1977",
+    "title": "The Juggler",
+    "src": "assets/018-luminocity-1977/018-luminocity-1977.png",
+    "thumb": "thumbs/018-luminocity-1977.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "018-motionagraphy2",
+    "title": "The Juggler",
+    "src": "assets/018-motionagraphy2/018-motionagraphy2.png",
+    "thumb": "thumbs/018-motionagraphy2.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "018-neon",
+    "title": "The Juggler",
+    "src": "assets/018-neon/018-neon.png",
+    "thumb": "thumbs/018-neon.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "019-florentin-window",
+    "title": "The Juggler",
+    "src": "assets/019-florentin-window/019-florentin-window.png",
+    "thumb": "thumbs/019-florentin-window.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "019-monmart-1",
+    "title": "The Juggler",
+    "src": "assets/019-monmart-1/019-monmart-1.png",
+    "thumb": "thumbs/019-monmart-1.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "019-monmart-2",
+    "title": "The Juggler",
+    "src": "assets/019-monmart-2/019-monmart-2.png",
+    "thumb": "thumbs/019-monmart-2.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "025-waverush",
+    "title": "The Juggler",
+    "src": "assets/025-waverush/025-waverush.png",
+    "thumb": "thumbs/025-waverush.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "028-cascadia",
+    "title": "The Juggler",
+    "src": "assets/028-cascadia/028-cascadia.png",
+    "thumb": "thumbs/028-cascadia.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "029-positano",
+    "title": "The Juggler",
+    "src": "assets/029-positano/029-positano.png",
+    "thumb": "thumbs/029-positano.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "030-lillies",
+    "title": "The Juggler",
+    "src": "assets/030-lillies/030-lillies.png",
+    "thumb": "thumbs/030-lillies.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "100-bodygrafix",
+    "title": "The Juggler",
+    "src": "assets/100-bodygrafix/100-bodygrafix.png",
+    "thumb": "thumbs/100-bodygrafix.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "102-daisiesi",
+    "title": "The Juggler",
+    "src": "assets/102-daisiesi/102-daisiesi.png",
+    "thumb": "thumbs/102-daisiesi.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "103-dancemotion",
+    "title": "The Juggler",
+    "src": "assets/103-dancemotion/103-dancemotion.png",
+    "thumb": "thumbs/103-dancemotion.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "104-despair",
+    "title": "The Juggler",
+    "src": "assets/104-despair/104-despair.png",
+    "thumb": "thumbs/104-despair.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "105-diamonds-lisa-1",
+    "title": "The Juggler",
+    "src": "assets/105-diamonds-lisa-1/105-diamonds-lisa-1.png",
+    "thumb": "thumbs/105-diamonds-lisa-1.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "106-grafiti-berlin",
+    "title": "The Juggler",
+    "src": "assets/106-grafiti-berlin/106-grafiti-berlin.png",
+    "thumb": "thumbs/106-grafiti-berlin.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "106-sunset-on-lisa",
+    "title": "The Juggler",
+    "src": "assets/106-sunset-on-lisa/106-sunset-on-lisa.png",
+    "thumb": "thumbs/106-sunset-on-lisa.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "107-solorosso",
+    "title": "The Juggler",
+    "src": "assets/107-solorosso/107-solorosso.png",
+    "thumb": "thumbs/107-solorosso.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "107-superfree",
+    "title": "The Juggler",
+    "src": "assets/107-superfree/107-superfree.png",
+    "thumb": "thumbs/107-superfree.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "109-yin-yang",
+    "title": "The Juggler",
+    "src": "assets/109-yin-yang/109-yin-yang.png",
+    "thumb": "thumbs/109-yin-yang.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "111-venus",
+    "title": "The Juggler",
+    "src": "assets/111-venus/111-venus.png",
+    "thumb": "thumbs/111-venus.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "200-bicycledelic",
+    "title": "The Juggler",
+    "src": "assets/200-bicycledelic/200-bicycledelic.png",
+    "thumb": "thumbs/200-bicycledelic.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "201-grafiti-london",
+    "title": "The Juggler",
+    "src": "assets/201-grafiti-london/201-grafiti-london.png",
+    "thumb": "thumbs/201-grafiti-london.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "203-grafiti-london2",
+    "title": "The Juggler",
+    "src": "assets/203-grafiti-london2/203-grafiti-london2.png",
+    "thumb": "thumbs/203-grafiti-london2.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "204-grafiti-london3",
+    "title": "The Juggler",
+    "src": "assets/204-grafiti-london3/204-grafiti-london3.png",
+    "thumb": "thumbs/204-grafiti-london3.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "204-leeds-1977-2",
+    "title": "The Juggler",
+    "src": "assets/204-leeds-1977-2/204-leeds-1977-2.png",
+    "thumb": "thumbs/204-leeds-1977-2.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "205-paris79",
+    "title": "The Juggler",
+    "src": "assets/205-paris79/205-paris79.png",
+    "thumb": "thumbs/205-paris79.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "206-southbank",
+    "title": "The Juggler",
+    "src": "assets/206-southbank/206-southbank.png",
+    "thumb": "thumbs/206-southbank.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "208-boys-from-sicily",
+    "title": "The Juggler",
+    "src": "assets/208-boys-from-sicily/208-boys-from-sicily.png",
+    "thumb": "thumbs/208-boys-from-sicily.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "209-caspian-rice-farmers",
+    "title": "The Juggler",
+    "src": "assets/209-caspian-rice-farmers/209-caspian-rice-farmers.png",
+    "thumb": "thumbs/209-caspian-rice-farmers.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "210-cycledelic2",
+    "title": "The Juggler",
+    "src": "assets/210-cycledelic2/210-cycledelic2.png",
+    "thumb": "thumbs/210-cycledelic2.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "212-scargorough",
+    "title": "The Juggler",
+    "src": "assets/212-scargorough/212-scargorough.png",
+    "thumb": "thumbs/212-scargorough.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "213-the-bill",
+    "title": "The Juggler",
+    "src": "assets/213-the-bill/213-the-bill.png",
+    "thumb": "thumbs/213-the-bill.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "300-archigraph-1",
+    "title": "The Juggler",
+    "src": "assets/300-archigraph-1/300-archigraph-1.png",
+    "thumb": "thumbs/300-archigraph-1.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "301-bwbody",
+    "title": "The Juggler",
+    "src": "assets/301-bwbody/301-bwbody.png",
+    "thumb": "thumbs/301-bwbody.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
   }
 ]
