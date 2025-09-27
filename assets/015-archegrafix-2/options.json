@@ -1,0 +1,14 @@
+{
+  "basePrices": { "A4": 20, "A3": 30, "A2": 45 },
+  "adjustments": {
+    "material": { "Matte": 0.10, "Glossy": 0.15, "Canvas": 0.20, "Velvet": 0.25 },
+    "frame":    { "None": 0.00, "Type A": 0.20, "Type B": 0.25 },
+    "kind":     { "Print": 0.00, "Framed": 0.15, "Canvas": 0.10 }
+  },
+  "allowed": {
+    "size":     ["A4", "A3", "A2"],
+    "material": ["Matte", "Glossy", "Canvas", "Velvet"],
+    "frame":    ["None", "Type A", "Type B"],
+    "kind":     ["Print", "Framed", "Canvas"]
+  }
+}
