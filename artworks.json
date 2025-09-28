@@ -541,7 +541,7 @@
   },
   {
     "id": "015-topsyturvy3",
-    "title": "The Juggler",
+    "title": "Topsy-Turvey",
     "src": "assets/015-topsyturvy3/015-topsyturvy3.png",
     "thumb": "thumbs/015-topsyturvy3.png",
     "tags": [
@@ -904,126 +904,6 @@
     "title": "Finestra Fiorentina",
     "src": "assets/019-florentin-window/019-florentin-window.png",
     "thumb": "thumbs/019-florentin-window.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
-    "id": "019-monmart-1",
-    "title": "The Juggler",
-    "src": "assets/019-monmart-1/019-monmart-1.png",
-    "thumb": "thumbs/019-monmart-1.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
-    "id": "019-monmart-2",
-    "title": "The Juggler",
-    "src": "assets/019-monmart-2/019-monmart-2.png",
-    "thumb": "thumbs/019-monmart-2.png",
     "tags": [
       "Red",
       "Human",
@@ -1504,66 +1384,6 @@
     "title": "Thoughts",
     "src": "assets/104-despair/104-despair.png",
     "thumb": "thumbs/104-despair.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
-    "id": "105-diamonds-lisa-1",
-    "title": "Diamonds on Lisa",
-    "src": "assets/105-diamonds-lisa-1/105-diamonds-lisa-1.png",
-    "thumb": "thumbs/105-diamonds-lisa-1.png",
     "tags": [
       "Red",
       "Human",
