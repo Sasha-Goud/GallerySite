@@ -1,7 +1,7 @@
 [
   {
     "id": "001-amalfi-1",
-    "title": "The Juggler",
+    "title": "Amalfiction",
     "src": "assets/001-amalfi-1/001-amalfi-1.png",
     "thumb": "thumbs/001-amalfi-1.png",
     "tags": [
@@ -121,7 +121,7 @@
   },
   {
     "id": "003-porto-venere",
-    "title": "The Juggler",
+    "title": "Porto Venere",
     "src": "assets/003-porto-venere/003-porto-venere.png",
     "thumb": "thumbs/003-porto-venere.png",
     "tags": [
@@ -241,7 +241,7 @@
   },
   {
     "id": "008-archegrafix-7",
-    "title": "The Juggler",
+    "title": "Grafica di Firenze",
     "src": "assets/008-archegrafix-7/008-archegrafix-7.png",
     "thumb": "thumbs/008-archegrafix-7.png",
     "tags": [
@@ -301,7 +301,7 @@
   },
   {
     "id": "011-rouin",
-    "title": "The Juggler",
+    "title": "Rouen 73",
     "src": "assets/011-rouin/011-rouin.png",
     "thumb": "thumbs/011-rouin.png",
     "tags": [
@@ -361,7 +361,7 @@
   },
   {
     "id": "012-vasarelisa-3",
-    "title": "The Juggler",
+    "title": "Eschered",
     "src": "assets/012-vasarelisa-3/012-vasarelisa-3.jpg",
     "thumb": "thumbs/012-vasarelisa-3.jpg",
     "tags": [
@@ -481,69 +481,9 @@
   },
   {
     "id": "014-archegrafix-1",
-    "title": "The Juggler",
+    "title": "Unexpected",
     "src": "assets/014-archegrafix-1/014-archegrafix-1.png",
     "thumb": "thumbs/014-archegrafix-1.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
-    "id": "015-archegrafix-2",
-    "title": "The Juggler",
-    "src": "assets/015-archegrafix-2/015-archegrafix-2.png",
-    "thumb": "thumbs/015-archegrafix-2.png",
     "tags": [
       "Red",
       "Human",
@@ -721,7 +661,7 @@
   },
   {
     "id": "017-leeds-1977",
-    "title": "The Juggler",
+    "title": "Publicity 79",
     "src": "assets/017-leeds-1977/017-leeds-1977.png",
     "thumb": "thumbs/017-leeds-1977.png",
     "tags": [
@@ -781,7 +721,7 @@
   },
   {
     "id": "018-luminocity-1977",
-    "title": "The Juggler",
+    "title": "Luminosity",
     "src": "assets/018-luminocity-1977/018-luminocity-1977.png",
     "thumb": "thumbs/018-luminocity-1977.png",
     "tags": [
@@ -841,7 +781,7 @@
   },
   {
     "id": "018-motionagraphy2",
-    "title": "The Juggler",
+    "title": "Motion 22",
     "src": "assets/018-motionagraphy2/018-motionagraphy2.png",
     "thumb": "thumbs/018-motionagraphy2.png",
     "tags": [
@@ -961,7 +901,7 @@
   },
   {
     "id": "019-florentin-window",
-    "title": "The Juggler",
+    "title": "Finestra Fiorentina",
     "src": "assets/019-florentin-window/019-florentin-window.png",
     "thumb": "thumbs/019-florentin-window.png",
     "tags": [
@@ -1141,7 +1081,7 @@
   },
   {
     "id": "025-waverush",
-    "title": "The Juggler",
+    "title": "Rush",
     "src": "assets/025-waverush/025-waverush.png",
     "thumb": "thumbs/025-waverush.png",
     "tags": [
@@ -1261,7 +1201,7 @@
   },
   {
     "id": "029-positano",
-    "title": "The Juggler",
+    "title": "Positano",
     "src": "assets/029-positano/029-positano.png",
     "thumb": "thumbs/029-positano.png",
     "tags": [
@@ -1321,7 +1261,7 @@
   },
   {
     "id": "030-lillies",
-    "title": "The Juggler",
+    "title": "Water Lilies",
     "src": "assets/030-lillies/030-lillies.png",
     "thumb": "thumbs/030-lillies.png",
     "tags": [
@@ -1381,7 +1321,7 @@
   },
   {
     "id": "100-bodygrafix",
-    "title": "The Juggler",
+    "title": "Minus Zero",
     "src": "assets/100-bodygrafix/100-bodygrafix.png",
     "thumb": "thumbs/100-bodygrafix.png",
     "tags": [
@@ -1501,7 +1441,7 @@
   },
   {
     "id": "103-dancemotion",
-    "title": "The Juggler",
+    "title": "LCDT 79",
     "src": "assets/103-dancemotion/103-dancemotion.png",
     "thumb": "thumbs/103-dancemotion.png",
     "tags": [
@@ -1561,7 +1501,7 @@
   },
   {
     "id": "104-despair",
-    "title": "The Juggler",
+    "title": "Thoughts",
     "src": "assets/104-despair/104-despair.png",
     "thumb": "thumbs/104-despair.png",
     "tags": [
@@ -1621,7 +1561,7 @@
   },
   {
     "id": "105-diamonds-lisa-1",
-    "title": "The Juggler",
+    "title": "Diamonds on Lisa",
     "src": "assets/105-diamonds-lisa-1/105-diamonds-lisa-1.png",
     "thumb": "thumbs/105-diamonds-lisa-1.png",
     "tags": [
@@ -1681,7 +1621,7 @@
   },
   {
     "id": "106-grafiti-berlin",
-    "title": "The Juggler",
+    "title": "Farben Berlins",
     "src": "assets/106-grafiti-berlin/106-grafiti-berlin.png",
     "thumb": "thumbs/106-grafiti-berlin.png",
     "tags": [
@@ -1741,7 +1681,7 @@
   },
   {
     "id": "106-sunset-on-lisa",
-    "title": "The Juggler",
+    "title": "Mimic",
     "src": "assets/106-sunset-on-lisa/106-sunset-on-lisa.png",
     "thumb": "thumbs/106-sunset-on-lisa.png",
     "tags": [
@@ -1801,7 +1741,7 @@
   },
   {
     "id": "107-solorosso",
-    "title": "The Juggler",
+    "title": "Rose",
     "src": "assets/107-solorosso/107-solorosso.png",
     "thumb": "thumbs/107-solorosso.png",
     "tags": [
@@ -1861,7 +1801,7 @@
   },
   {
     "id": "107-superfree",
-    "title": "The Juggler",
+    "title": "Super Free",
     "src": "assets/107-superfree/107-superfree.png",
     "thumb": "thumbs/107-superfree.png",
     "tags": [
@@ -1921,7 +1861,7 @@
   },
   {
     "id": "109-yin-yang",
-    "title": "The Juggler",
+    "title": "Unique Moments",
     "src": "assets/109-yin-yang/109-yin-yang.png",
     "thumb": "thumbs/109-yin-yang.png",
     "tags": [
@@ -1981,7 +1921,7 @@
   },
   {
     "id": "111-venus",
-    "title": "The Juggler",
+    "title": "Venus",
     "src": "assets/111-venus/111-venus.png",
     "thumb": "thumbs/111-venus.png",
     "tags": [
@@ -2041,7 +1981,7 @@
   },
   {
     "id": "200-bicycledelic",
-    "title": "The Juggler",
+    "title": "Cycledelic",
     "src": "assets/200-bicycledelic/200-bicycledelic.png",
     "thumb": "thumbs/200-bicycledelic.png",
     "tags": [
@@ -2101,7 +2041,7 @@
   },
   {
     "id": "201-grafiti-london",
-    "title": "The Juggler",
+    "title": "Echoes of London One",
     "src": "assets/201-grafiti-london/201-grafiti-london.png",
     "thumb": "thumbs/201-grafiti-london.png",
     "tags": [
@@ -2161,7 +2101,7 @@
   },
   {
     "id": "203-grafiti-london2",
-    "title": "The Juggler",
+    "title": "Echoes of London Two",
     "src": "assets/203-grafiti-london2/203-grafiti-london2.png",
     "thumb": "thumbs/203-grafiti-london2.png",
     "tags": [
@@ -2221,7 +2161,7 @@
   },
   {
     "id": "204-grafiti-london3",
-    "title": "The Juggler",
+    "title": "Echoes of London Three",
     "src": "assets/204-grafiti-london3/204-grafiti-london3.png",
     "thumb": "thumbs/204-grafiti-london3.png",
     "tags": [
@@ -2281,7 +2221,7 @@
   },
   {
     "id": "204-leeds-1977-2",
-    "title": "The Juggler",
+    "title": "History on Walls 1979",
     "src": "assets/204-leeds-1977-2/204-leeds-1977-2.png",
     "thumb": "thumbs/204-leeds-1977-2.png",
     "tags": [
@@ -2340,68 +2280,8 @@
     }
   },
   {
-    "id": "205-paris79",
-    "title": "The Juggler",
-    "src": "assets/205-paris79/205-paris79.png",
-    "thumb": "thumbs/205-paris79.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
     "id": "206-southbank",
-    "title": "The Juggler",
+    "title": "South Bank",
     "src": "assets/206-southbank/206-southbank.png",
     "thumb": "thumbs/206-southbank.png",
     "tags": [
@@ -2461,7 +2341,7 @@
   },
   {
     "id": "208-boys-from-sicily",
-    "title": "The Juggler",
+    "title": "Siciliani",
     "src": "assets/208-boys-from-sicily/208-boys-from-sicily.png",
     "thumb": "thumbs/208-boys-from-sicily.png",
     "tags": [
@@ -2521,7 +2401,7 @@
   },
   {
     "id": "209-caspian-rice-farmers",
-    "title": "The Juggler",
+    "title": "Caspian Rice Paddy",
     "src": "assets/209-caspian-rice-farmers/209-caspian-rice-farmers.png",
     "thumb": "thumbs/209-caspian-rice-farmers.png",
     "tags": [
@@ -2641,7 +2521,7 @@
   },
   {
     "id": "212-scargorough",
-    "title": "The Juggler",
+    "title": "Scarborough",
     "src": "assets/212-scargorough/212-scargorough.png",
     "thumb": "thumbs/212-scargorough.png",
     "tags": [
@@ -2701,7 +2581,7 @@
   },
   {
     "id": "213-the-bill",
-    "title": "The Juggler",
+    "title": "The Bill",
     "src": "assets/213-the-bill/213-the-bill.png",
     "thumb": "thumbs/213-the-bill.png",
     "tags": [
@@ -2761,7 +2641,7 @@
   },
   {
     "id": "300-archigraph-1",
-    "title": "The Juggler",
+    "title": "SE1",
     "src": "assets/300-archigraph-1/300-archigraph-1.png",
     "thumb": "thumbs/300-archigraph-1.png",
     "tags": [
@@ -2821,7 +2701,7 @@
   },
   {
     "id": "301-bwbody",
-    "title": "The Juggler",
+    "title": "Contour 76",
     "src": "assets/301-bwbody/301-bwbody.png",
     "thumb": "thumbs/301-bwbody.png",
     "tags": [
