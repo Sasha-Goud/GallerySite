@@ -480,66 +480,6 @@
     }
   },
   {
-    "id": "014-archegrafix-1",
-    "title": "Unexpected",
-    "src": "assets/014-archegrafix-1/014-archegrafix-1.png",
-    "thumb": "thumbs/014-archegrafix-1.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
     "id": "015-topsyturvy3",
     "title": "Topsy-Turvey",
     "src": "assets/015-topsyturvy3/015-topsyturvy3.png",
@@ -1141,7 +1081,7 @@
   },
   {
     "id": "031-Covid",
-    "title": "Covid19",
+    "title": "Covid 19",
     "src": "assets/031-Covid/031-Covid.png",
     "thumb": "thumbs/031-Covid.png",
     "tags": [
@@ -2220,66 +2160,6 @@
     }
   },
   {
-    "id": "204-them",
-    "title": "Them",
-    "src": "assets/204-them/204-them.png",
-    "thumb": "thumbs/204-them.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
     "id": "205-Persepolis",
     "title": "Persepolis",
     "src": "assets/205-Persepolis/205-Persepolis.png",
@@ -2825,7 +2705,7 @@
   },
   {
     "id": "218-sib",
-    "title": "I",
+    "title": "Harpist",
     "src": "assets/218-sib/218-sib.png",
     "thumb": "thumbs/218-sib.png",
     "tags": [
