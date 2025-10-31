@@ -2460,6 +2460,246 @@
     }
   },
   {
+    "id": "214-Split",
+    "title": "Split 21st",
+    "src": "assets/214-Split/214-Split.png",
+    "thumb": "thumbs/214-Split.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "215-Dali",
+    "title": "Dali",
+    "src": "assets/215-Dali/215-Dali.png",
+    "thumb": "thumbs/215-Dali.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "216-Picasso",
+    "title": "Picasso",
+    "src": "assets/216-Picasso/216-Picasso.png",
+    "thumb": "thumbs/216-Picasso.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
+    "id": "217-I",
+    "title": "217 I",
+    "src": "assets/217-I/217-I.png",
+    "thumb": "thumbs/217-I.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "options": {
+      "basePrices": {
+        "A4": 20,
+        "A3": 30,
+        "A2": 45
+      },
+      "adjustments": {
+        "material": {
+          "Matte": 0.1,
+          "Glossy": 0.15,
+          "Canvas": 0.2,
+          "Velvet": 0.25
+        },
+        "frame": {
+          "None": 0.0,
+          "Type A": 0.2,
+          "Type B": 0.25
+        },
+        "kind": {
+          "Print": 0.0,
+          "Framed": 0.15,
+          "Canvas": 0.1
+        }
+      },
+      "allowed": {
+        "size": [
+          "A4",
+          "A3",
+          "A2"
+        ],
+        "material": [
+          "Matte",
+          "Glossy",
+          "Canvas",
+          "Velvet"
+        ],
+        "frame": [
+          "None",
+          "Type A",
+          "Type B"
+        ],
+        "kind": [
+          "Print",
+          "Framed",
+          "Canvas"
+        ]
+      }
+    }
+  },
+  {
     "id": "300-archigraph-1",
     "title": "SE1",
     "src": "assets/300-archigraph-1/300-archigraph-1.png",
