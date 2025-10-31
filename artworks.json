@@ -1080,16 +1080,17 @@
     }
   },
   {
-    "id": "031-Covid",
+    "id": "032-covid",
     "title": "Covid 19",
-    "src": "assets/031-Covid/031-Covid.png",
-    "thumb": "thumbs/031-Covid.png",
+    "src": "assets/032-covid/032-Covid.png",
+    "thumb": "thumbs/032-Covid.png",
     "tags": [
       "Red",
       "Human",
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/032-covid/context1.png",
     "options": {
       "basePrices": {
         "A4": 20,
