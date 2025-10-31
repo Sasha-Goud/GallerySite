@@ -2715,9 +2715,7 @@
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "context1": "assets/218-sib/context1.png",
-    "context2": "assets/218-sib/context2.png",
-    "context3": "assets/218-sib/context3.png",
-    "context4": "assets/218-sib/context4.jpg",
+    "context2": "assets/218-sib/context4.jpg",
     "options": {
       "basePrices": {
         "A4": 20,
