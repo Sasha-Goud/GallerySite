@@ -309,12 +309,11 @@ code{
   font-weight: 300;
   margin: 0;
   line-height: 1.2;
-  letter-spac
-	 text-align: center;   /* NEW */
-ing: 0.2px;
+  letter-spacing: 0.2px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: center; /* keep centered */
 }
 
 .card .sub{ display: none; }
@@ -1345,10 +1344,8 @@ width: 100%;       /* keeps it fluid up to the max-width */
 .cart-row .col-total {
   font-size: 1rem;        /* adjust size */
   font-weight: 400;         /* adjust weight */
-  color: rgb(200,200,
-  
-  
-  );  /* adjust text color */
+  color: rgb(200,200,200);
+ 
   letter-spacing: 1px;      /* 👈 spacing control */
   text-transform: none;     /* optional: uppercase/lowercase */
 }
