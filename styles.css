@@ -1605,3 +1605,6 @@ width: 100%;       /* keeps it fluid up to the max-width */
 
 /* Force center captions in gallery cards */
 .gallery .card .meta, .gallery .card .title { text-align: center !important; }
+
+/* Logo size override */
+.site-header .brand img { height: 60px !important; width: auto; }
