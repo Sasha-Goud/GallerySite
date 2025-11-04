@@ -1607,4 +1607,4 @@ width: 100%;       /* keeps it fluid up to the max-width */
 .gallery .card .meta, .gallery .card .title { text-align: center !important; }
 
 /* Logo size override */
-.site-header .brand img { height: 60px !important; width: auto; }
+.site-header .brand img { height: 80px !important; width: auto; }
