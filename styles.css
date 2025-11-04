@@ -60,7 +60,7 @@ body{
   color: inherit;
 }
 @media (max-width: 600px) {
-  .brand img { height: 22px; }
+  .brand img { height: 60px; }
   .brand-text { display: none; } /* optional: hide text on small screens */
 }
 
