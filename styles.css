@@ -37,6 +37,38 @@ body{
   line-height: 1.55;
 }
 
+
+
+
+
+
+/* ==== Brand logo block ==== */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.brand img {
+  height: 28px;           /* adjust as needed */
+  width: auto;
+  display: block;
+}
+.brand-text {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: inherit;
+}
+@media (max-width: 600px) {
+  .brand img { height: 22px; }
+  .brand-text { display: none; } /* optional: hide text on small screens */
+}
+
+
+
+
+
+
 /* ==== Header / Nav ==== */
 .site-header{
   position: sticky; top: 0; z-index: 50;
