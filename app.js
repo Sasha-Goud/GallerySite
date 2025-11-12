@@ -363,23 +363,7 @@ app.innerHTML =
   '</section>';
 
 
-/* Prev/Next controls for hero */
-.hero-wrap{ position: relative; }
-.hero-nav{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  width: 44px; height: 44px;
-  display: grid; place-items: center;
-  font-size: 26px; line-height: 1;
-  color: rgba(255,255,255,.9);
-  background: rgba(0,0,0,.45);
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 50%;
-  cursor: pointer;
-  user-select: none;
-}
+
 .hero-nav:hover{ background: rgba(0,0,0,.6); }
 .hero-prev{ left: 12px; }
 .hero-next{ right: 12px; }
