@@ -342,17 +342,6 @@ code{
   background: transparent;
 }
 
-
-/* Disable copying/dragging of hero images */
-.hero-media img,
-#lightbox-img {
-  -webkit-user-drag: none;
-  user-select: none;
-  pointer-events: none;
-}
-
-
-
 /* Controls for description styling */
 :root{
   --desc-ink: rgba(255, 255, 255, 0.7); /* = ~70–80% white */
