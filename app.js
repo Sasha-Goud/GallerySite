@@ -348,8 +348,8 @@ function renderGallery(){
 // ======== Item detail (hero + media bar + purchase panel) ========
 
 function renderItem(id){
-  app.innerHTML = '<section class="section"><div class="hero-wrap"><div id="hero" class="hero-media"></div><div class="media-bar"><div class="thumb-strip" id="thumb-strip"></div><button id="purchase-btn" class="btn-purchase" type="button">Purchase</button></div></div></section>';
 
+app.innerHTML = '<section class="section"><div class="hero-wrap"><button class="hero-nav prev" id="hero-prev" aria-label="Previous">‹</button><div id="hero" class="hero-media"></div><button class="hero-nav next" id="hero-next" aria-label="Next">›</button><div class="media-bar"><div class="thumb-strip" id="thumb-strip"></div><button id="purchase-btn" class="btn-purchase" type="button">Purchase</button></div></div></section>';
   var hero = $('#hero');
   var strip = $('#thumb-strip');
   var purchaseBtn = $('#purchase-btn');
@@ -373,6 +373,34 @@ function renderItem(id){
 	} catch (e) {}
     detailData = data; // <- critical so Purchase has the item
 
+
+  // --- Prev/Next navigation (uses artworks.json order) ---
+  function getIndex(list, theId){
+    var i = list.findIndex(function(a){ return a.id === theId; });
+    return i < 0 ? 0 : i;
+  }
+  function goTo(delta){
+    // Load (or reuse) the list so order matches the gallery
+    fetchArtworks().then(function(list){
+      if (!Array.isArray(list) || !list.length) return;
+      var idx = getIndex(list, id);
+      var next = (idx + delta + list.length) % list.length;
+      var nextId = list[next].id;
+
+      // Navigate + re-render item; purchase button will bind to the new item
+      setActive('item');
+      renderItem(nextId);
+      history.pushState({ route:'item', id: nextId }, '', '#/item/'+nextId);
+    });
+  }
+
+  var prevBtn = document.getElementById('hero-prev');
+  var nextBtn = document.getElementById('hero-next');
+  if (prevBtn) prevBtn.addEventListener('click', function(){ goTo(-1); });
+  if (nextBtn) nextBtn.addEventListener('click', function(){ goTo(1); });
+  
+  
+  
     function showImage(src, alt){
    hero.innerHTML = '<img src="'+bust(src)+'" alt="'+escapeHtml(data.title)+'" loading="eager" decoding="async">';
       var img = $('img', hero);
