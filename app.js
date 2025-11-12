@@ -364,15 +364,6 @@ app.innerHTML =
 
 
 
-.hero-nav:hover{ background: rgba(0,0,0,.6); }
-.hero-prev{ left: 12px; }
-.hero-next{ right: 12px; }
-
-/* keep arrows clickable above the image */
-.hero-media{ position: relative; z-index: 1; }
-
-
-
   var hero = $('#hero');
   var strip = $('#thumb-strip');
   var purchaseBtn = $('#purchase-btn');
