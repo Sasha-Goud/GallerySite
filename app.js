@@ -349,7 +349,46 @@ function renderGallery(){
 
 function renderItem(id){
 
-app.innerHTML = '<section class="section"><div class="hero-wrap"><button class="hero-nav prev" id="hero-prev" aria-label="Previous">‹</button><div id="hero" class="hero-media"></div><button class="hero-nav next" id="hero-next" aria-label="Next">›</button><div class="media-bar"><div class="thumb-strip" id="thumb-strip"></div><button id="purchase-btn" class="btn-purchase" type="button">Purchase</button></div></div></section>';
+app.innerHTML =
+  '<section class="section">' +
+    '<div class="hero-wrap">' +
+      '<button id="hero-prev" class="hero-nav hero-prev" aria-label="Previous">‹</button>' +
+      '<div id="hero" class="hero-media"></div>' +
+      '<button id="hero-next" class="hero-nav hero-next" aria-label="Next">›</button>' +
+      '<div class="media-bar">' +
+        '<div class="thumb-strip" id="thumb-strip"></div>' +
+        '<button id="purchase-btn" class="btn-purchase" type="button">Purchase</button>' +
+      '</div>' +
+    '</div>' +
+  '</section>';
+
+
+/* Prev/Next controls for hero */
+.hero-wrap{ position: relative; }
+.hero-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  font-size: 26px; line-height: 1;
+  color: rgba(255,255,255,.9);
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+.hero-nav:hover{ background: rgba(0,0,0,.6); }
+.hero-prev{ left: 12px; }
+.hero-next{ right: 12px; }
+
+/* keep arrows clickable above the image */
+.hero-media{ position: relative; z-index: 1; }
+
+
+
   var hero = $('#hero');
   var strip = $('#thumb-strip');
   var purchaseBtn = $('#purchase-btn');
