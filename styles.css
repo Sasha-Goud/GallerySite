@@ -1621,3 +1621,41 @@ width: 100%;       /* keeps it fluid up to the max-width */
 .site-header .brand img { height: 80px !important; width: auto; }
 
 
+/* === Hero navigation arrows === */
+.hero-wrap { position: relative; }               /* anchor for absolute arrows */
+
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(255,255,255,0.9);
+
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.hero-nav:hover{
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Match your HTML classes */
+.hero-nav.prev { left: 24px; }
+.hero-nav.next { right: 24px; }
+
+/* Keep the hero media behind arrows */
+.hero-media { position: relative; z-index: 1; }
