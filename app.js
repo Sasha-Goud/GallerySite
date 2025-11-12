@@ -349,24 +349,39 @@ function renderGallery(){
 
 function renderItem(id){
 
-app.innerHTML =
-  '<section class="section">' +
-    '<div class="hero-wrap">' +
-      '<button id="hero-prev" class="hero-nav hero-prev" aria-label="Previous">‹</button>' +
-      '<div id="hero" class="hero-media"></div>' +
-      '<button id="hero-next" class="hero-nav hero-next" aria-label="Next">›</button>' +
-      '<div class="media-bar">' +
-        '<div class="thumb-strip" id="thumb-strip"></div>' +
-        '<button id="purchase-btn" class="btn-purchase" type="button">Purchase</button>' +
-      '</div>' +
-    '</div>' +
-  '</section>';
+app.innerHTML = '<section class="section"><div class="hero-wrap"><button class="hero-nav prev" id="hero-prev" aria-label="Previous">‹</button><div id="hero" class="hero-media"></div><button class="hero-nav next" id="hero-next" aria-label="Next">›</button><div class="media-bar"><div class="thumb-strip" id="thumb-strip"></div><button id="purchase-btn" class="btn-purchase" type="button">Purchase</button></div></div></section>';
 
 
 
   var hero = $('#hero');
   var strip = $('#thumb-strip');
   var purchaseBtn = $('#purchase-btn');
+
+
+// Prev/Next buttons
+var prevBtn = $('#hero-prev');
+var nextBtn = $('#hero-next');
+
+function nav(delta){
+  var listPromise = (typeof ALL_ARTWORKS !== 'undefined' && ALL_ARTWORKS.length)
+    ? Promise.resolve(ALL_ARTWORKS)
+    : fetchArtworks().then(function(l){ ALL_ARTWORKS = l || []; return ALL_ARTWORKS; });
+
+  listPromise.then(function(list){
+    var i = list.findIndex(function(a){ return a.id === id; });
+    if (i === -1 || !list.length) return;
+    var j = (i + delta + list.length) % list.length;
+    var nextId = list[j].id;
+
+    setActive('item');
+    renderItem(nextId);
+    history.pushState({ route:'item', id: nextId }, '', '#/item/'+nextId);
+  });
+}
+
+if (prevBtn) prevBtn.addEventListener('click', function(){ nav(-1); });
+if (nextBtn) nextBtn.addEventListener('click', function(){ nav(1); });
+
 
   // Keep reference so Purchase works even if user clicks fast
   var detailData = null;

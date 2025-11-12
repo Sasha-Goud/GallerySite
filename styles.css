@@ -1677,3 +1677,56 @@ width: 100%;       /* keeps it fluid up to the max-width */
   cursor: pointer;
   user-select: none;
 }
+
+/* ==== Hero navigation buttons (match HTML: .hero-nav prev/next) ==== */
+.hero-wrap { position: relative; }
+
+.hero-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+
+  font-size: 26px;
+  line-height: 1;
+  color: rgba(255,255,255,.9);
+
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.hero-nav:hover{
+  background: rgba(255,255,255,.18);
+  transform: translateY(-50%) scale(1.06);
+}
+
+/* Use the classes actually in your HTML: .prev / .next */
+.hero-nav.prev { left: 16px; }
+.hero-nav.next { right: 16px; left: auto; }
+
+/* Ensure arrows sit above the hero media */
+.hero-media { position: relative; z-index: 1; }
+
+/* Optional: slightly larger on big screens */
+@media (min-width: 1024px){
+  .hero-nav{ width: 52px; height: 52px; font-size: 30px; }
+}
+
+
+/* Hard override: place hero arrows left/right */
+#hero-prev { left: 16px !important; right: auto !important; }
+#hero-next { right: 16px !important; left: auto !important; }
+
+
+#hero-prev { left: 16px !important; right: auto !important; }
+#hero-next { right: 16px !important; left: auto !important; }
+
