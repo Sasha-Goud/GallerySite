@@ -120,66 +120,6 @@
     }
   },
   {
-    "id": "008-archegrafix-7",
-    "title": "Ponte Vecchio 2005",
-    "src": "assets/008-archegrafix-7/008-archegrafix-7.png",
-    "thumb": "thumbs/008-archegrafix-7.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "Ponte Vecchio, Florence - Harmony in randomness.\n\nMedia:\n\u2022 Type: Archival pigment print\n\u2022 Paper: Hahnem\u00fchle Photo Rag 308 gsm\n\u2022 Finish: Matte with fine texture\n\nEdition: Limited Edition of 25\nSigned: Yes\nSize: [Add dimensions]",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
     "id": "011-rouin",
     "title": "Rouen 73",
     "src": "assets/011-rouin/011-rouin.png",
@@ -480,66 +420,6 @@
     }
   },
   {
-    "id": "017-leeds-1977",
-    "title": "Publicity 79",
-    "src": "assets/017-leeds-1977/017-leeds-1977.png",
-    "thumb": "thumbs/017-leeds-1977.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
     "id": "018-motionagraphy2",
     "title": "Motion 1978",
     "src": "assets/018-motionagraphy2/018-motionagraphy2.png",
@@ -610,66 +490,6 @@
       "Abstract"
     ],
     "description": "CONTOUR (1978)\n\nPhotographic print from original analog experiment shot on 35 mm film.\n\nCreated in 1978 as part of a series of light experiments using a projector and two torches, sculpting the edge of the body with minimal illumination. In the image, emptiness shapes what is seen: a tension between light and void.\n\nMEDIA:\n- Type: C-Type Fuji Flex (Super Gloss)\n- Weight: 255 GSM\n- Tone: Warm White\n- Finish: Ultra-high gloss with deep blacks and rich contrast\n\nFuji Flex lends the image a vivid, cinematic quality, with intense highlights, deep blacks and a reflective surface that accentuates every curve of light.\n\nDISPLAY TIP:\nFor best results, display on evenly lit walls and avoid direct spotlights to minimise glare.",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
-    "id": "019-florentin-window",
-    "title": "Fiorentina",
-    "src": "assets/019-florentin-window/019-florentin-window.png",
-    "thumb": "thumbs/019-florentin-window.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "options": {
       "basePrices": {
         "A4": 20,
