@@ -12,21 +12,18 @@
     "description": "# test",
     "options": {
       "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
+        "A4": 100.0,
+        "A3": 200.0
       },
       "adjustments": {
         "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
+          "Matte": 3.0,
+          "Glossy": 0.15
         },
         "frame": {
           "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
+          "Black": 0.2,
+          "Whitw": 0.25
         },
         "kind": {
           "Print": 0.0,
