@@ -1,5 +1,5 @@
 {
-  "basePrices": { "A4": 100.00, "A3": 200.00, "A2": 300.00 },
+  "basePrices": { "A4": 100.00, "A3": 200.00 },
   "adjustments": {
     "material": { "Matte": 3.00, "Glossy": 0.15 },
     "frame":    { "None": 0.00, "Black": 0.20, "Whitw": 0.25 },
