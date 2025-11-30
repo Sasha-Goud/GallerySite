@@ -1,0 +1,7 @@
+{
+  "basePrices": { "50 cm X 50 cm": 20, "A3": 30, "A2": 45 },
+  "adjustments": {
+    "material": { "Canvas": 60.00},
+    "frame":    { "None": 0.00, "Black": 60.00, "White": 60.00, "Oak": 60.00 }
+  }
+}
