@@ -10,50 +10,24 @@
       "Abstract"
     ],
     "description": "# test",
+    "context1": "assets/001-lillies/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 100.0,
-        "A3": 200.0
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 3.0,
-          "Glossy": 0.15
-        },
-        "frame": {
-          "None": 0.0,
-          "Black": 0.2,
-          "Whitw": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -68,52 +42,22 @@
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -128,52 +72,22 @@
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -187,113 +101,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/012-vasarelisa-3/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
-    "id": "013-340-windows",
-    "title": "340 Windows 2002",
-    "src": "assets/013-340-windows/013-340-windows.png",
-    "thumb": "thumbs/013-340-windows.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -307,53 +132,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/013-archigraph-2/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -368,52 +164,22 @@
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -427,53 +193,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/018-motionagraphy2/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -488,52 +225,22 @@
     ],
     "description": "CONTOUR (1978)\n\nPhotographic print from original analog experiment shot on 35 mm film.\n\nCreated in 1978 as part of a series of light experiments using a projector and two torches, sculpting the edge of the body with minimal illumination. In the image, emptiness shapes what is seen: a tension between light and void.\n\nMEDIA:\n- Type: C-Type Fuji Flex (Super Gloss)\n- Weight: 255 GSM\n- Tone: Warm White\n- Finish: Ultra-high gloss with deep blacks and rich contrast\n\nFuji Flex lends the image a vivid, cinematic quality, with intense highlights, deep blacks and a reflective surface that accentuates every curve of light.\n\nDISPLAY TIP:\nFor best results, display on evenly lit walls and avoid direct spotlights to minimise glare.",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -547,53 +254,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/020-cascadia-2/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -607,53 +285,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/025-waverush/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -667,53 +316,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/029-flow98/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -727,53 +347,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/029-flow99/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -787,53 +378,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/029-positano/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -848,52 +410,22 @@
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -912,53 +444,24 @@
     "context3": "assets/032-covid/context3.png",
     "context4": "assets/032-covid/context4.png",
     "context5": "assets/032-covid/context5.png",
+    "context6": "assets/032-covid/context6.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -972,143 +475,24 @@
       "Painting"
     ],
     "description": "# Minus Zero\nArchival print on canvas.\n\nOriginal art created in 1979",
+    "context1": "assets/100-bodygrafix/context1.png",
     "options": {
-      "basePrices": {
-        "50 cm X 50 cm": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Canvas": 60.0
-        },
-        "frame": {
-          "None": 0.0,
-          "Black": 60.0,
-          "White": 60.0,
-          "Oak": 60.0
-        }
-      }
-    }
-  },
-  {
-    "id": "102-daisiesi",
-    "title": "Daisies",
-    "src": "assets/102-daisiesi/102-daisiesi.png",
-    "thumb": "thumbs/102-daisiesi.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
-    "id": "103-dancemotion",
-    "title": "LCDT 79",
-    "src": "assets/103-dancemotion/103-dancemotion.png",
-    "thumb": "thumbs/103-dancemotion.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1122,53 +506,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/104-despair/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1182,53 +537,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/106-grafiti-berlin/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1243,52 +569,22 @@
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1303,112 +599,22 @@
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
-    "id": "107-superfree",
-    "title": "Super Free 75",
-    "src": "assets/107-superfree/107-superfree.png",
-    "thumb": "thumbs/107-superfree.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1422,53 +628,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/109-yin-yang/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1483,52 +660,22 @@
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1543,112 +690,22 @@
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
-    "id": "112-What",
-    "title": "What?! 2012",
-    "src": "assets/112-What/112-What.png",
-    "thumb": "thumbs/112-What.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1662,53 +719,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/200-bicycledelic/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1722,113 +750,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/205-Persepolis/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
-    "id": "206-southbank",
-    "title": "South Bank",
-    "src": "assets/206-southbank/206-southbank.png",
-    "thumb": "thumbs/206-southbank.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1844,52 +783,53 @@
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "context1": "assets/207-awakening/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
+    }
+  },
+  {
+    "id": "208-men",
+    "title": "Awakening",
+    "src": "assets/208-men/208-men.png",
+    "thumb": "thumbs/208-men.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/208-men/context1.png",
+    "options": {
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1903,53 +843,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/209-caspian-rice-farmers/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -1963,53 +874,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/212-scargorough/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -2023,53 +905,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/213-the-bill/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -2083,53 +936,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/214-Split/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -2145,52 +969,22 @@
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
     "context1": "assets/215-Dali/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -2204,53 +998,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/216-Picasso/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -2269,53 +1034,24 @@
     "context3": "assets/217-I/context3.png",
     "context4": "assets/217-I/context4.png",
     "context5": "assets/217-I/context5.png",
+    "context6": "assets/217-I/context6.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -2332,52 +1068,22 @@
     "context1": "assets/218-sib/context1.png",
     "context2": "assets/218-sib/context4.jpg",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   },
   {
@@ -2391,113 +1097,24 @@
       "Abstract"
     ],
     "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
+    "context1": "assets/300-archigraph-1/context1.png",
     "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
-    }
-  },
-  {
-    "id": "301-bwbody",
-    "title": "Contour 76",
-    "src": "assets/301-bwbody/301-bwbody.png",
-    "thumb": "thumbs/301-bwbody.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "basePrices": {
-        "A4": 20,
-        "A3": 30,
-        "A2": 45
-      },
-      "adjustments": {
-        "material": {
-          "Matte": 0.1,
-          "Glossy": 0.15,
-          "Canvas": 0.2,
-          "Velvet": 0.25
-        },
-        "frame": {
-          "None": 0.0,
-          "Type A": 0.2,
-          "Type B": 0.25
-        },
-        "kind": {
-          "Print": 0.0,
-          "Framed": 0.15,
-          "Canvas": 0.1
-        }
-      },
-      "allowed": {
-        "size": [
-          "A4",
-          "A3",
-          "A2"
-        ],
-        "material": [
-          "Matte",
-          "Glossy",
-          "Canvas",
-          "Velvet"
-        ],
-        "frame": [
-          "None",
-          "Type A",
-          "Type B"
-        ],
-        "kind": [
-          "Print",
-          "Framed",
-          "Canvas"
-        ]
-      }
+      "sizes": [
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "materials": [
+        "Matte",
+        "Glossy",
+        "Canvas",
+        "Velvet"
+      ],
+      "kinds": [
+        "Print",
+        "Framed",
+        "Canvas"
+      ]
     }
   }
 ]
