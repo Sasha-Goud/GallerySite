@@ -1,7 +1,7 @@
 [
   {
     "id": "001-lillies",
-    "title": "Lilies 85",
+    "title": "Lilies",
     "src": "assets/001-lillies/001-lillies.png",
     "thumb": "thumbs/001-lillies.png",
     "tags": [
@@ -31,99 +31,8 @@
     }
   },
   {
-    "id": "003-porto-venere",
-    "title": "Porto Venere 99",
-    "src": "assets/003-porto-venere/003-porto-venere.png",
-    "thumb": "thumbs/003-porto-venere.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
-      ]
-    }
-  },
-  {
-    "id": "011-rouin",
-    "title": "Rouen 73",
-    "src": "assets/011-rouin/011-rouin.png",
-    "thumb": "thumbs/011-rouin.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
-      ]
-    }
-  },
-  {
-    "id": "012-vasarelisa-3",
-    "title": "Eschered 87",
-    "src": "assets/012-vasarelisa-3/012-vasarelisa-3.jpg",
-    "thumb": "thumbs/012-vasarelisa-3.jpg",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "45 x 30 cm\n\u00a316.96\n60 x 40 cm\n\u00a323.00\n75 x 50 cm\n\u00a332.49",
-    "context1": "assets/012-vasarelisa-3/context1.png",
-    "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
-      ]
-    }
-  },
-  {
     "id": "013-archigraph-2",
-    "title": "Le Marais 1976",
+    "title": "Le Marais",
     "src": "assets/013-archigraph-2/013-archigraph-2.png",
     "thumb": "thumbs/013-archigraph-2.png",
     "tags": [
@@ -153,38 +62,8 @@
     }
   },
   {
-    "id": "015-topsyturvy3",
-    "title": "Topsy-Turvey",
-    "src": "assets/015-topsyturvy3/015-topsyturvy3.png",
-    "thumb": "thumbs/015-topsyturvy3.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
-      ]
-    }
-  },
-  {
     "id": "018-motionagraphy2",
-    "title": "Motion 1978",
+    "title": "Resonance",
     "src": "assets/018-motionagraphy2/018-motionagraphy2.png",
     "thumb": "thumbs/018-motionagraphy2.png",
     "tags": [
@@ -215,7 +94,7 @@
   },
   {
     "id": "018-neon",
-    "title": "Contour 85",
+    "title": "Void",
     "src": "assets/018-neon/018-neon.png",
     "thumb": "thumbs/018-neon.png",
     "tags": [
@@ -224,6 +103,7 @@
       "Abstract"
     ],
     "description": "CONTOUR (1978)\n\nPhotographic print from original analog experiment shot on 35 mm film.\n\nCreated in 1978 as part of a series of light experiments using a projector and two torches, sculpting the edge of the body with minimal illumination. In the image, emptiness shapes what is seen: a tension between light and void.\n\nMEDIA:\n- Type: C-Type Fuji Flex (Super Gloss)\n- Weight: 255 GSM\n- Tone: Warm White\n- Finish: Ultra-high gloss with deep blacks and rich contrast\n\nFuji Flex lends the image a vivid, cinematic quality, with intense highlights, deep blacks and a reflective surface that accentuates every curve of light.\n\nDISPLAY TIP:\nFor best results, display on evenly lit walls and avoid direct spotlights to minimise glare.",
+    "context1": "assets/018-neon/context1.png",
     "options": {
       "sizes": [
         "A4",
@@ -378,37 +258,7 @@
       "Abstract"
     ],
     "description": "Original: Sold\nPrinted on canvas\n75 x 50 cm\n\u00a332.49\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61",
-    "context1": "assets/029-positano/context1.png",
-    "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
-      ]
-    }
-  },
-  {
-    "id": "030-amalfi-1",
-    "title": "Amalfiction",
-    "src": "assets/030-amalfi-1/030-amalfi-1.png",
-    "thumb": "thumbs/030-amalfi-1.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "Original: Sold\nPrinted on canvas\n75 x 50 cm\n\u00a332.49\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61",
+    "context1": "assets/029-positano/context2.png",
     "options": {
       "sizes": [
         "A4",
@@ -466,7 +316,7 @@
   },
   {
     "id": "100-bodygrafix",
-    "title": "Minus Zero",
+    "title": "One",
     "src": "assets/100-bodygrafix/100-bodygrafix.png",
     "thumb": "thumbs/100-bodygrafix.png",
     "tags": [
@@ -497,7 +347,7 @@
   },
   {
     "id": "104-despair",
-    "title": "Thoughts 95",
+    "title": "Tempest",
     "src": "assets/104-despair/104-despair.png",
     "thumb": "thumbs/104-despair.png",
     "tags": [
@@ -528,7 +378,7 @@
   },
   {
     "id": "106-grafiti-berlin",
-    "title": "Farben Berlins",
+    "title": "Berlin Wall",
     "src": "assets/106-grafiti-berlin/106-grafiti-berlin.png",
     "thumb": "thumbs/106-grafiti-berlin.png",
     "tags": [
@@ -559,7 +409,7 @@
   },
   {
     "id": "106-sunset-on-lisa",
-    "title": "Mimic 87",
+    "title": "Mimic",
     "src": "assets/106-sunset-on-lisa/106-sunset-on-lisa.png",
     "thumb": "thumbs/106-sunset-on-lisa.png",
     "tags": [
@@ -590,7 +440,7 @@
   },
   {
     "id": "107-solorosso",
-    "title": "Rose 2012",
+    "title": "Sole",
     "src": "assets/107-solorosso/107-solorosso.png",
     "thumb": "thumbs/107-solorosso.png",
     "tags": [
@@ -621,7 +471,7 @@
   },
   {
     "id": "109-yin-yang",
-    "title": "Unique Moments 2005",
+    "title": "Moment",
     "src": "assets/109-yin-yang/109-yin-yang.png",
     "thumb": "thumbs/109-yin-yang.png",
     "tags": [
@@ -652,7 +502,7 @@
   },
   {
     "id": "110-vasarelisa-2",
-    "title": "Contour 85",
+    "title": "Binomial",
     "src": "assets/110-vasarelisa-2/110-vasarelisa-2.png",
     "thumb": "thumbs/110-vasarelisa-2.png",
     "tags": [
@@ -683,7 +533,7 @@
   },
   {
     "id": "111-venus",
-    "title": "Venus 2001",
+    "title": "Venus",
     "src": "assets/111-venus/111-venus.png",
     "thumb": "thumbs/111-venus.png",
     "tags": [
@@ -693,6 +543,7 @@
     ],
     "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n\u00a323.72\n70 x 70 cm\n\u00a382.09\n80 x 80 cm\n\u00a383.41\n100 x 100 cm\n\u00a384.98",
     "context1": "assets/111-venus/context1.png",
+    "context2": "assets/111-venus/context2.png",
     "options": {
       "sizes": [
         "A4",
@@ -714,7 +565,7 @@
   },
   {
     "id": "200-bicycledelic",
-    "title": "The Bicycle 2001",
+    "title": "South Bank",
     "src": "assets/200-bicycledelic/200-bicycledelic.png",
     "thumb": "thumbs/200-bicycledelic.png",
     "tags": [
@@ -745,7 +596,7 @@
   },
   {
     "id": "205-Persepolis",
-    "title": "Persepolis 2003",
+    "title": "Persepolis",
     "src": "assets/205-Persepolis/205-Persepolis.png",
     "thumb": "thumbs/205-Persepolis.png",
     "tags": [
@@ -776,7 +627,7 @@
   },
   {
     "id": "207-awakening",
-    "title": "Awakening",
+    "title": "\u2640\ufe0e",
     "src": "assets/207-awakening/207-awakening.png",
     "thumb": "thumbs/207-awakening.png",
     "tags": [
@@ -838,7 +689,7 @@
   },
   {
     "id": "209-caspian-rice-farmers",
-    "title": "Caspian Rice Paddy",
+    "title": "Rice",
     "src": "assets/209-caspian-rice-farmers/209-caspian-rice-farmers.png",
     "thumb": "thumbs/209-caspian-rice-farmers.png",
     "tags": [
@@ -869,7 +720,7 @@
   },
   {
     "id": "212-scargorough",
-    "title": "Scarborough 1980",
+    "title": "Scarborough",
     "src": "assets/212-scargorough/212-scargorough.png",
     "thumb": "thumbs/212-scargorough.png",
     "tags": [
@@ -900,7 +751,7 @@
   },
   {
     "id": "213-the-bill",
-    "title": "The Bill",
+    "title": "Dutch",
     "src": "assets/213-the-bill/213-the-bill.png",
     "thumb": "thumbs/213-the-bill.png",
     "tags": [
@@ -931,7 +782,7 @@
   },
   {
     "id": "214-Split",
-    "title": "Split 2001",
+    "title": "Bipolarity",
     "src": "assets/214-Split/214-Split.png",
     "thumb": "thumbs/214-Split.png",
     "tags": [
@@ -962,7 +813,7 @@
   },
   {
     "id": "215-Dali",
-    "title": "Dali 2006",
+    "title": "Salvador",
     "src": "assets/215-Dali/215-Dali.png",
     "thumb": "thumbs/215-Dali.png",
     "tags": [
@@ -993,7 +844,7 @@
   },
   {
     "id": "216-Picasso",
-    "title": "Picasso 2006",
+    "title": "Pablo",
     "src": "assets/216-Picasso/216-Picasso.png",
     "thumb": "thumbs/216-Picasso.png",
     "tags": [
@@ -1024,7 +875,7 @@
   },
   {
     "id": "217-I",
-    "title": "I 2003",
+    "title": "You",
     "src": "assets/217-I/217-I.png",
     "thumb": "thumbs/217-I.png",
     "tags": [
@@ -1059,38 +910,6 @@
     }
   },
   {
-    "id": "218-sib",
-    "title": "Harpist",
-    "src": "assets/218-sib/218-sib.png",
-    "thumb": "thumbs/218-sib.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "# Red Roofs at Dusk\nA **limited edition** archival print on *Matte* or *Glossy* paper.\n\n- Shot on 35mm film in 1982\n- Printed with pigment inks\n- Signed & numbered\n\n[Read more about the process](https://example.com)",
-    "context1": "assets/218-sib/context1.png",
-    "context2": "assets/218-sib/context4.jpg",
-    "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
-      ]
-    }
-  },
-  {
     "id": "300-archigraph-1",
     "title": "SE1",
     "src": "assets/300-archigraph-1/300-archigraph-1.png",
@@ -1102,6 +921,7 @@
     ],
     "description": "Printed on canvas and framed\n\n80 x 45 cm : \u20ac43.10\n120 x 70 cm : \u20ac89.39\n165 x 90 cm : \u20ac106.60\n\n80 x 45 cm\n\u00a337.72\n120 x 70 cm\n\u00a378.23\n165 x 90 cm\n\u00a393.29",
     "context1": "assets/300-archigraph-1/context1.png",
+    "context2": "assets/300-archigraph-1/context2.png",
     "options": {
       "sizes": [
         "A4",
