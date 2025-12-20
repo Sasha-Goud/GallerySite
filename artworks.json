@@ -803,20 +803,19 @@
     "context1": "assets/215-Dali/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "142 X 112 cm",
+        "70 x 55 cm",
+        "80 x 60 cm",
+        "90 x 70 cm",
+        "100 x 75 cm",
+        "140 X 105 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Original",
+        "Replica"
       ]
     }
   },
@@ -834,20 +833,19 @@
     "context1": "assets/216-Picasso/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "142 X 112 cm",
+        "70 x 55 cm",
+        "80 x 60 cm",
+        "90 x 70 cm",
+        "100 x 75 cm",
+        "140 X 105 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Original",
+        "Replica"
       ]
     }
   },
