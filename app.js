@@ -130,7 +130,14 @@ var PRICING = {
   "92 X 62 cm": { Canvas: { Original: 180.00 } },
   "75 X 50 cm": { Canvas: { Replica: 75.00 } },
   "85 X 55 cm": { Canvas: { Replica: 85.00 } },
-  "90 X 60 cm": { Canvas: { Replica: 99.00 } }
+  "90 X 60 cm": { Canvas: { Replica: 99.00 } },
+  
+  "122 X 144 cm": { Canvas: { Original: 850.00 } },
+  "70 x 90 cm": { Canvas: { Replica: 130.00 } },
+  "80 x 100 cm": { Canvas: { Replica: 85.00 } },
+  "100 x 125 cm": { Canvas: { Replica: 99.00 } },
+  "120 x 150 cm": { Canvas: { Replica: 110.00 } },
+  "30.5 X 61 cm": { Canvas: { Original: £150.00 } }
 };
 
 // --- Normalise size keys so "x", "X", and "×" all match ---
