@@ -123,10 +123,6 @@ function round2(n){ return Math.round((Number(n)+Number.EPSILON)*100)/100; }
 
 // ======== Pricing ========
 var PRICING = {
-  92 X 62 cm:  { Original:{Canvas:180.00}},
-  75 X 50 cm:  { Replica:{Canvas:75.00}},
-  78 X 55 cm:  { Replica:{Canvas:85.00}},
-  90 X 60 cm:  { Replica:{Canvas:99.00}},
   A4:  { Matte:{Print:45,Framed:95,Canvas:110}, Glossy:{Print:49,Framed:99,Canvas:115}, Archival:{Print:59,Framed:115,Canvas:135} },
   A3:  { Matte:{Print:65,Framed:135,Canvas:155}, Glossy:{Print:69,Framed:139,Canvas:165}, Archival:{Print:79,Framed:155,Canvas:185} },
   A2:  { Matte:{Print:95,Framed:185,Canvas:215}, Glossy:{Print:99,Framed:189,Canvas:225}, Archival:{Print:115,Framed:215,Canvas:255} }
