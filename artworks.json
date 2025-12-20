@@ -195,7 +195,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original: Size: 305 mm X 610 mm\n\nPrint on canvas 50 limited edition \n50 x 25 cm\n\u00a318.25",
+    "description": "Original: Pallet knife application of Acrylic on Canvas\n\nSize: \n00.00 X 00.00 CM (00.00 X 00.00 Inches)\n\nPrice: \u00a300.00\n\nLimited edition replicas on Framed canvas",
     "context1": "assets/029-flow98/context1.png",
     "options": {
       "sizes": [
@@ -670,20 +670,17 @@
     "context1": "assets/208-men/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "92 X 62 cm",
+        "75 x 50 cm",
+        "85 x 55 cm",
+        "90 x 60 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Original",
+        "Replica"
       ]
     }
   },
