@@ -199,20 +199,13 @@
     "context1": "assets/029-flow98/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "30.5 X 61 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Original"
       ]
     }
   },
@@ -230,20 +223,13 @@
     "context1": "assets/029-flow99/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "30.5 X 61 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Original"
       ]
     }
   },
@@ -297,20 +283,18 @@
     "context6": "assets/032-covid/context6.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "122 X 144 cm",
+        "70 x 90 cm",
+        "80 x 100 cm",
+        "100 x 125 cm",
+        "120 x 150 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Original",
+        "Replica"
       ]
     }
   },
@@ -639,20 +623,17 @@
     "context1": "assets/207-awakening/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "92 X 62 cm",
+        "75 x 50 cm",
+        "85 x 55 cm",
+        "90 x 60 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Original",
+        "Replica"
       ]
     }
   },
