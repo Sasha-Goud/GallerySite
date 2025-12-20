@@ -1073,16 +1073,20 @@ function applyZoom(){
   if (zoomLevelEl) zoomLevelEl.textContent = Math.round(zoom*100)+'%';
 }
 
-$('.lightbox-close').addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeLightbox(); });
-if (zoomInBtn) zoomInBtn.addEventListener('click', function(){ zoom = Math.min(zoom+0.25,5); applyZoom(); });
-if (zoomOutBtn) zoomOutBtn.addEventListener('click', function(){ zoom = Math.max(0.25, zoom-0.25); applyZoom(); });
-lightbox.addEventListener('wheel', function(e){
-  e.preventDefault();
-  var delta = Math.sign(e.deltaY);
-  zoom = delta>0 ? Math.max(0.5, zoom-0.1) : Math.min(5, zoom+0.1);
-  applyZoom();
-}, { passive:false });
+var lbClose = $('.lightbox-close');
+if (lbClose) lbClose.addEventListener('click', closeLightbox);
+if (lightbox) {
+  lightbox.addEventListener('click', function(e){
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  lightbox.addEventListener('wheel', function(e){
+    e.preventDefault();
+    var delta = Math.sign(e.deltaY);
+    zoom = delta>0 ? Math.max(0.5, zoom-0.1) : Math.min(5, zoom+0.1);
+    applyZoom();
+  }, { passive:false });
+}
 
 // ======== Helpers ========
 function bust(u){
