@@ -127,9 +127,9 @@ var PRICING = {
   A3:  { Matte:{Print:65,Framed:135,Canvas:155}, Glossy:{Print:69,Framed:139,Canvas:165}, Archival:{Print:79,Framed:155,Canvas:185} },
   A2:  { Matte:{Print:95,Framed:185,Canvas:215}, Glossy:{Print:99,Framed:189,Canvas:225}, Archival:{Print:115,Framed:215,Canvas:255} }
 };
-var sizes     = opts.sizes     || [];
-var materials = opts.materials || [];
-var kinds     = opts.kinds     || [];
+var SIZES = Object.keys(PRICING);
+var MATERIALS = ['Matte','Glossy','Archival'];
+var KINDS = ['Print','Framed','Canvas'];
 
 function priceFor(size, material, kind){
   if (!size || !material || !kind) return null;
