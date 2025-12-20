@@ -1,5 +1,5 @@
 {
-  "sizes": ["A4", "A3", "A2"],
-  "materials": ["Matte", "Glossy", "Canvas", "Velvet"],
-  "kinds": ["Print", "Framed", "Canvas"]
+  "sizes": ["142 X 112 cm", "70 x 55 cm", "80 x 60 cm", "90 x 70 cm", "100 x 75 cm", "140 X 105 cm"],
+  "materials": ["Canvas"],
+  "kinds": ["Original", "Replica"]
 }
