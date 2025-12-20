@@ -870,20 +870,13 @@
     "context6": "assets/217-I/context6.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "152 X 102 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Original"
       ]
     }
   },
