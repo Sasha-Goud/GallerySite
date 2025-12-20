@@ -1,6 +1,3 @@
-// BUILD_TAG: 2025-12-20-01
-// ROLLBACK: revert to previous app.js you pasted (console showed app.js?v=2025-11-12-01)
-
 // ======== Tiny DOM helpers ========
 function $(sel, root){ return (root||document).querySelector(sel); }
 function $all(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
@@ -125,18 +122,15 @@ function money(n){ return '£'+Number(n).toFixed(2); }
 function round2(n){ return Math.round((Number(n)+Number.EPSILON)*100)/100; }
 
 // ======== Pricing ========
-// IMPORTANT: Structure is: SIZE -> MATERIAL -> KIND -> PRICE
 var PRICING = {
-  "92 X 62 cm": { Canvas: { Original: 180.00 } },
-  "75 X 50 cm": { Canvas: { Replica: 75.00 } },
-  "85 X 55 cm": { Canvas: { Replica: 85.00 } },
-  "90 X 60 cm": { Canvas: { Replica: 99.00 } }
+  "92 X 62 cm": {Canvas: {Original: 180.00}},
+  "75 X 50 cm": {Canvas: {Replica: 75.00}},
+  "85 X 55 cm": {Canvas: {Replica: 85.00}},
+  "90 X 60 cm": {Canvas: {Replica: 99.00}}
 };
-
-// Defaults (only used if an artwork has no options block; still safe because priceFor() returns null if not found)
 var SIZES = Object.keys(PRICING);
-var MATERIALS = ['Canvas'];
-var KINDS = ['Original','Replica'];
+var MATERIALS = ['Matte','Glossy','Archival'];
+var KINDS = ['Print','Framed','Canvas'];
 
 function priceFor(size, material, kind){
   if (!size || !material || !kind) return null;
@@ -154,6 +148,8 @@ function renderContact(){
   app.innerHTML = '<section class="section"><h1>Contact</h1><p>Email: <a href="mailto:you@example.com">you@example.com</a></p></section>';
 }
 
+
+
 // ======== API helpers ========
 function fetchJSON(url){
   return fetch(url, { cache:'no-store' }).then(function(res){
@@ -163,7 +159,7 @@ function fetchJSON(url){
 }
 
 // Always load from the local artworks.json file at project root
-function fetchArtworks(){
+function fetchArtworks(){ 
   return fetch('./artworks.json', { cache: 'no-store' })
     .then(function(res){
       if (!res.ok) throw new Error('Failed to load artworks.json');
@@ -171,11 +167,13 @@ function fetchArtworks(){
     });
 }
 
-function fetchArtworkDetail(id){
+function fetchArtworkDetail(id){ 
   return fetchArtworks().then(function(list){
     return list.find(function(a){ return a.id === id; }) || null;
   });
 }
+
+
 
 // ======== FILTERS (tags) ========
 var ALL_ARTWORKS = [];
@@ -214,10 +212,11 @@ function renderGridInto(gridEl){
     return;
   }
   gridEl.innerHTML = list.map(function(a){
-    var thumb = a.thumb || a.src;
-    var small  = bust(thumb);
-    var big    = bust(a.src);
-    var srcset = a.thumb ? (small + ' 480w, ' + big + ' 1200w') : (big + ' 1200w');
+   var thumb = bust(a.thumb || a.src);
+var thumb  = a.thumb || a.src;
+var small  = bust(thumb);
+var big    = bust(a.src);
+var srcset = a.thumb ? (small + ' 480w, ' + big + ' 1200w') : (big + ' 1200w');
     return [
       '<article class="card" data-id="',a.id,'">',
         '<img ',
@@ -348,123 +347,291 @@ function renderGallery(){
 }
 
 // ======== Item detail (hero + media bar + purchase panel) ========
+
 function renderItem(id){
 
-  app.innerHTML = '<section class="section"><div class="hero-wrap"><button class="hero-nav prev" id="hero-prev" aria-label="Previous">‹</button><div id="hero" class="hero-media"></div><button class="hero-nav next" id="hero-next" aria-label="Next">›</button><div class="media-bar"><div class="thumb-strip" id="thumb-strip"></div><button id="purchase-btn" class="btn-purchase" type="button">Purchase</button></div></div></section>';
+app.innerHTML = '<section class="section"><div class="hero-wrap"><button class="hero-nav prev" id="hero-prev" aria-label="Previous">‹</button><div id="hero" class="hero-media"></div><button class="hero-nav next" id="hero-next" aria-label="Next">›</button><div class="media-bar"><div class="thumb-strip" id="thumb-strip"></div><button id="purchase-btn" class="btn-purchase" type="button">Purchase</button></div></div></section>';
+
+
 
   var hero = $('#hero');
   var strip = $('#thumb-strip');
   var purchaseBtn = $('#purchase-btn');
 
-  // Prev/Next buttons
-  var prevBtn = $('#hero-prev');
-  var nextBtn = $('#hero-next');
 
-  function nav(delta){
-    var listPromise = (typeof ALL_ARTWORKS !== 'undefined' && ALL_ARTWORKS.length)
-      ? Promise.resolve(ALL_ARTWORKS)
-      : fetchArtworks().then(function(l){ ALL_ARTWORKS = l || []; return ALL_ARTWORKS; });
+// Prev/Next buttons
+var prevBtn = $('#hero-prev');
+var nextBtn = $('#hero-next');
 
-    listPromise.then(function(list){
-      var i = list.findIndex(function(a){ return a.id === id; });
-      if (i === -1 || !list.length) return;
-      var j = (i + delta + list.length) % list.length;
-      var nextId = list[j].id;
+function nav(delta){
+  var listPromise = (typeof ALL_ARTWORKS !== 'undefined' && ALL_ARTWORKS.length)
+    ? Promise.resolve(ALL_ARTWORKS)
+    : fetchArtworks().then(function(l){ ALL_ARTWORKS = l || []; return ALL_ARTWORKS; });
 
+  listPromise.then(function(list){
+    var i = list.findIndex(function(a){ return a.id === id; });
+    if (i === -1 || !list.length) return;
+    var j = (i + delta + list.length) % list.length;
+    var nextId = list[j].id;
+
+    setActive('item');
+    renderItem(nextId);
+    history.pushState({ route:'item', id: nextId }, '', '#/item/'+nextId);
+  });
+}
+
+if (prevBtn) prevBtn.addEventListener('click', function(){ nav(-1); });
+if (nextBtn) nextBtn.addEventListener('click', function(){ nav(1); });
+
+
+  // Keep reference so Purchase works even if user clicks fast
+  var detailData = null;
+
+  fetchArtworkDetail(id).then(function(data){
+  
+  try {
+  console.log(
+    '[media keys] ',
+    'context1:', !!data.context1, '| context_1:', !!data.context_1, '||',
+    'context2:', !!data.context2, '| context_2:', !!data.context_2, '||',
+    'context3:', !!data.context3, '| context_3:', !!data.context_3, '||',
+    'context4:', !!data.context4, '| context_4:', !!data.context_4, '||',
+    'context5:', !!data.context5, '| context_5:', !!data.context_5, '||',
+    'context6:', !!data.context6, '| context_6:', !!data.context_6, '||',
+    'src:', !!data.src, 'video:', !!data.video
+  );
+	} catch (e) {}
+    detailData = data; // <- critical so Purchase has the item
+
+
+  // --- Prev/Next navigation (uses artworks.json order) ---
+  function getIndex(list, theId){
+    var i = list.findIndex(function(a){ return a.id === theId; });
+    return i < 0 ? 0 : i;
+  }
+  function goTo(delta){
+    // Load (or reuse) the list so order matches the gallery
+    fetchArtworks().then(function(list){
+      if (!Array.isArray(list) || !list.length) return;
+      var idx = getIndex(list, id);
+      var next = (idx + delta + list.length) % list.length;
+      var nextId = list[next].id;
+
+      // Navigate + re-render item; purchase button will bind to the new item
       setActive('item');
       renderItem(nextId);
       history.pushState({ route:'item', id: nextId }, '', '#/item/'+nextId);
     });
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', function(){ nav(-1); });
-  if (nextBtn) nextBtn.addEventListener('click', function(){ nav(1); });
-
-  // Keep reference so Purchase works even if user clicks fast
-  var detailData = null;
-
-  fetchArtworkDetail(id).then(function(data){
-
-    detailData = data; // <- critical so Purchase has the item
-
-    /* ========= MEDIA STRIP (use JSON fields only) ========= */
-    strip.innerHTML = '';
-
-    (function(){
-      // Collect media strictly from JSON keys (no filename probing)
-      var images = [];
-      if (data.src) images.push(String(data.src));          // ← always lead with the hero
-      for (var i = 1; i <= 6; i++) {
-        var key = 'context' + i;
-        if (data[key]) images.push(String(data[key]));
+  var prevBtn = document.getElementById('hero-prev');
+  var nextBtn = document.getElementById('hero-next');
+  if (prevBtn) prevBtn.addEventListener('click', function(){ goTo(-1); });
+  if (nextBtn) nextBtn.addEventListener('click', function(){ goTo(1); });
+  
+  
+  
+    function showImage(src, alt){
+   hero.innerHTML = '<img src="'+bust(src)+'" alt="'+escapeHtml(data.title)+'" loading="eager" decoding="async">';
+      var img = $('img', hero);
+      if (img){
+        img.addEventListener('click', function(){ openLightbox(src, alt || data.title || ''); });
+        img.addEventListener('error', function(){ img.src = 'https://picsum.photos/seed/placeholder/1200/900'; });
       }
+    }
+    function showVideo(src){
+      hero.innerHTML = '<video src="'+src+'" class="paper-video" controls playsinline preload="metadata"></video>';
+      var v = $('video', hero);
+      if (v){ try { v.play().catch(function(){}); } catch(e){} }
+    }
+    function showDesc(text){
+      hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text)+'</div>';
+    }
+    
+	// --- Preload helper (for smoother swaps) ---
+	function preloadImage(src){
+	  if (!src) return;
+	  var img = new Image();
+	  img.src = src;
+	}
+    
 
-      // Build the items list: images → optional video → description
-      var items = images.map(function(src, i){
-        return { type:'img', src: src, title:'Image '+(i+1), active: i===0 };
+    // ---- Discover up to 6 images by probing sibling files next to src/context ----
+function loadable(url){
+  return new Promise(function(resolve){
+    if (!url) return resolve(false);
+    var img = new Image();
+    img.onload = function(){ resolve(url); };
+    img.onerror = function(){ resolve(false); };
+    img.decoding = "async";
+    img.loading  = "eager";
+    img.src = url;
+  });
+}
+function dirname(u){
+  var i = u.lastIndexOf('/');
+  return i >= 0 ? u.slice(0, i+1) : '';
+}
+function extname(u){
+  var q = u.indexOf('?'); if (q >= 0) u = u.slice(0,q);
+  var i = u.lastIndexOf('.'); return i >= 0 ? u.slice(i).toLowerCase() : '.jpg';
+}
+async function collectImagesSmart(d){
+  // seeds we’ll try first (if present)
+  var seeds = [];
+  ['context1','context_1','context2','context_2','src'].forEach(function(k){
+    if (d[k]) seeds.push(d[k]);
+  });
+  var base = seeds[0] || d.src || '';
+  var out = [], seen = new Set();
+
+  // include any seed URLs that actually load
+  for (var s of seeds){
+    var ok = await loadable(s);
+    if (ok && !seen.has(ok)){ out.push(ok); seen.add(ok); if (out.length >= 6) return out; }
+  }
+  if (!base) return out;
+
+  var dir = dirname(base);
+  var ext = extname(base);
+  var tryExts = [ext, '.jpg', '.jpeg', '.png', '.webp'].filter(function(v, i, a){ return a.indexOf(v) === i; });
+
+  // probe both patterns: context_1…6 and context1…6
+  var names = [];
+  for (var n=1; n<=6; n++){ names.push('context_' + n, 'context' + n); }
+
+  for (var name of names){
+    for (var e of tryExts){
+      var candidate = dir + name + e;
+      if (seen.has(candidate)) continue;
+      var ok = await loadable(candidate);
+      if (ok && !seen.has(ok)){ out.push(ok); seen.add(ok); if (out.length >= 6) return out; }
+    }
+  }
+  return out;
+}
+
+
+
+
+	 // ---- Collect up to 6 images from context1..6 and context_1..6, then fallback to src ----
+	function collectImages(d){
+	  var out = [];
+	  var seen = new Set();
+
+	  // Consider both naming styles for 1..6
+	  var keys = [];
+	  for (var i = 1; i <= 6; i++){
+		keys.push('context' + i);
+		keys.push('context_' + i);
+	  }
+
+	  // Gather any present values in order
+	  keys.forEach(function(k){
+		var v = d && d[k];
+		if (v && !seen.has(v)){
+		  out.push(v);
+		  seen.add(v);
+		}
+	  });
+
+	  // Fallback to main src if we still have nothing
+	  if (!out.length && d && d.src && !seen.has(d.src)){
+		out.push(d.src);
+		seen.add(d.src);
+	  }
+
+	  // Return at most 6
+	  return out.slice(0, 6);
+	}
+
+
+
+
+/* ========= MEDIA STRIP (use JSON fields only) ========= */
+strip.innerHTML = '';
+
+(function(){
+  // Collect media strictly from JSON keys (no filename probing)
+   var images = [];
+  if (data.src) images.push(String(data.src));          // ← always lead with the hero
+  for (var i = 1; i <= 6; i++) {
+    var key = 'context' + i;
+    if (data[key]) images.push(String(data[key]));
+  }
+
+  // Build the items list: images → optional video → description
+  var items = images.map(function(src, i){
+    return { type:'img', src: src, title:'Image '+(i+1), active: i===0 };
+  });
+  if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
+  items.push({ type:'desc', text:(data.description||''), title:'Description' });
+
+  function showImage(src, alt){
+    hero.innerHTML = '<img src="'+src+'" alt="'+escapeHtml(data.title||alt||"")+'" loading="eager" decoding="async">';
+    var img = $('img', hero);
+    if (img){
+      img.addEventListener('click', function(){ openLightbox(src, alt || data.title || ''); });
+      img.addEventListener('error', function(){ img.src = 'https://picsum.photos/seed/placeholder/1200/900'; });
+    }
+  }
+  function showVideo(src){
+    hero.innerHTML = '<video src="'+src+'" class="paper-video" controls playsinline preload="metadata"></video>';
+    var v = $('video', hero);
+    if (v){ try { v.play().catch(function(){}); } catch(e){} }
+  }
+  function showDesc(text){
+    hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text||'')+'</div>';
+  }
+
+  // Render thumbs + initial hero
+  items.forEach(function(it, idx){
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'thumb' + (it.active ? ' active' : '');
+    btn.setAttribute('aria-label', it.title);
+
+    if (it.type === 'img'){
+  btn.innerHTML = '<img src="'+bust(it.src)+'" alt="" loading="lazy">';
+  btn.addEventListener('click', function(){
+        $all('.thumb', strip).forEach(function(t){ t.classList.remove('active'); });
+        btn.classList.add('active');
+        showImage(it.src, it.title);
       });
-      if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
-      items.push({ type:'desc', text:(data.description||''), title:'Description' });
-
-      function showImage(src, alt){
-        hero.innerHTML = '<img src="'+bust(src)+'" alt="'+escapeHtml(data.title||alt||"")+'" loading="eager" decoding="async">';
-        var img = $('img', hero);
-        if (img){
-          img.addEventListener('click', function(){ openLightbox(src, alt || data.title || ''); });
-          img.addEventListener('error', function(){ img.src = 'https://picsum.photos/seed/placeholder/1200/900'; });
-        }
-      }
-      function showVideo(src){
-        hero.innerHTML = '<video src="'+src+'" class="paper-video" controls playsinline preload="metadata"></video>';
-        var v = $('video', hero);
-        if (v){ try { v.play().catch(function(){}); } catch(e){} }
-      }
-      function showDesc(text){
-        hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text||'')+'</div>';
-      }
-
-      // Render thumbs + initial hero
-      items.forEach(function(it, idx){
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'thumb' + (it.active ? ' active' : '');
-        btn.setAttribute('aria-label', it.title);
-
-        if (it.type === 'img'){
-          btn.innerHTML = '<img src="'+bust(it.src)+'" alt="" loading="lazy">';
-          btn.addEventListener('click', function(){
-            $all('.thumb', strip).forEach(function(t){ t.classList.remove('active'); });
-            btn.classList.add('active');
-            showImage(it.src, it.title);
-          });
-        } else if (it.type === 'vid'){
-          btn.innerHTML = '<span class="thumb-icon thumb-icon-video">▶︎</span>';
-          btn.addEventListener('click', function(){
-            $all('.thumb', strip).forEach(function(t){ t.classList.remove('active'); });
-            btn.classList.add('active');
-            showVideo(it.src);
-          });
-        } else {
-          btn.innerHTML = '<span class="thumb-icon thumb-icon-desc">i</span>';
-          btn.addEventListener('click', function(){
-            $all('.thumb', strip).forEach(function(t){ t.classList.remove('active'); });
-            btn.classList.add('active');
-            showDesc(it.text||'');
-          });
-        }
-
-        strip.appendChild(btn);
-
-        // initial hero
-        if (idx === 0){
-          if (it.type === 'img') showImage(it.src, it.title);
-          else if (it.type === 'vid') showVideo(it.src);
-          else showDesc(it.text||'');
-        }
+    } else if (it.type === 'vid'){
+      btn.innerHTML = '<span class="thumb-icon thumb-icon-video">▶︎</span>';
+      btn.addEventListener('click', function(){
+        $all('.thumb', strip).forEach(function(t){ t.classList.remove('active'); });
+        btn.classList.add('active');
+        showVideo(it.src);
       });
+    } else {
+      btn.innerHTML = '<span class="thumb-icon thumb-icon-desc">i</span>';
+      btn.addEventListener('click', function(){
+        $all('.thumb', strip).forEach(function(t){ t.classList.remove('active'); });
+        btn.classList.add('active');
+        showDesc(it.text||'');
+      });
+    }
 
-    })();
-    /* ========= /MEDIA STRIP ========= */
+    strip.appendChild(btn);
+
+    // initial hero
+    if (idx === 0){
+      if (it.type === 'img') showImage(it.src, it.title);
+      else if (it.type === 'vid') showVideo(it.src);
+      else showDesc(it.text||'');
+    }
+  });
+
+  try { console.log('[media] using JSON fields only'); } catch(_){}
+})();
+/* ========= /MEDIA STRIP ========= */
+
+
+
+
+
 
     // --- Purchase panel (DOM; styles via CSS) ---
     function ensurePurchaseUI(){
@@ -483,7 +650,6 @@ function renderItem(id){
       }
       return panel;
     }
-
     function selectHtml(label, id, options){
       var html = [
         '<div class="purchase-field">',
@@ -498,7 +664,6 @@ function renderItem(id){
       html.push('</select>','</div>');
       return html.join('');
     }
-
     function renderOptions(panel, sizes, materials, kinds){
       var body = panel.querySelector('#purchase-body');
       if (!body) return;
@@ -506,7 +671,7 @@ function renderItem(id){
         '<div class="purchase-stack">' +
           selectHtml('Size', 'opt-size', sizes) +
           selectHtml('Material', 'opt-material', materials) +
-          selectHtml('Kind', 'opt-kind', kinds) +
+          selectHtml('Extras', 'opt-kind', kinds) +
           '<div class="purchase-row qty-row">' +
             '<label class="purchase-label" for="qty">Qty</label>' +
             '<div class="qty-control">' +
@@ -523,7 +688,6 @@ function renderItem(id){
           '</div>' +
         '</div>';
     }
-
     function getSelection(){
       var size = ($('#opt-size')||{}).value || '';
       var material = ($('#opt-material')||{}).value || '';
@@ -531,48 +695,6 @@ function renderItem(id){
       var qty = Math.max(1, Number($('#qty') ? $('#qty').value : 1) || 1);
       return { size:size, material:material, kind:kind, qty:qty };
     }
-
-    // NEW: constrain "Kind" choices to what is actually priced for the selected Size+Material
-    function availableKindsFor(size, material, allowedKinds){
-      if (!size || !material) return (allowedKinds || []).slice();
-      var priced = (PRICING[size] && PRICING[size][material]) ? Object.keys(PRICING[size][material]) : [];
-      if (!Array.isArray(allowedKinds) || !allowedKinds.length) return priced;
-      return allowedKinds.filter(function(k){ return priced.indexOf(k) >= 0; });
-    }
-
-    function rebuildKindSelect(kinds){
-      var sel = $('#opt-kind');
-      if (!sel) return;
-      var current = sel.value || '';
-      sel.innerHTML = '<option value="">Select…</option>' + (kinds || []).map(function(k){
-        var v = String(k);
-        return '<option value="'+escapeHtml(v)+'">'+escapeHtml(v)+'</option>';
-      }).join('');
-      // keep if still valid
-      if (current && kinds.indexOf(current) >= 0) sel.value = current;
-      else sel.value = '';
-    }
-
-    function maybeAutoSelectIfSingle(selectEl, list){
-      if (!selectEl) return;
-      if (Array.isArray(list) && list.length === 1){
-        selectEl.value = String(list[0]);
-      }
-    }
-
-    function updateKindConstraints(allowedKinds){
-      var s = $('#opt-size');
-      var m = $('#opt-material');
-      if (!s || !m) return;
-      var size = s.value || '';
-      var material = m.value || '';
-      var constrained = availableKindsFor(size, material, allowedKinds);
-      rebuildKindSelect(constrained);
-      // helpful: if only one valid kind for this size/material, select it automatically
-      var kSel = $('#opt-kind');
-      maybeAutoSelectIfSingle(kSel, constrained);
-    }
-
     function updatePriceAndButton(){
       var sel = getSelection();
       var priceEl = $('#price-value');
@@ -588,27 +710,15 @@ function renderItem(id){
         btn.disabled = true;
       }
     }
-
-    function wireOptionEvents(allowedKinds){
+    function wireOptionEvents(){
       var s1 = $('#opt-size'), s2 = $('#opt-material'), s3 = $('#opt-kind'), qty = $('#qty');
-
-      if (s1) s1.addEventListener('change', function(){
-        updateKindConstraints(allowedKinds);
-        updatePriceAndButton();
-      });
-
-      if (s2) s2.addEventListener('change', function(){
-        updateKindConstraints(allowedKinds);
-        updatePriceAndButton();
-      });
-
+      if (s1) s1.addEventListener('change', updatePriceAndButton);
+      if (s2) s2.addEventListener('change', updatePriceAndButton);
       if (s3) s3.addEventListener('change', updatePriceAndButton);
-
       if (qty) qty.addEventListener('input', function(){
         if (Number(qty.value) < 1) qty.value = 1;
         updatePriceAndButton();
       });
-
       var panel = document.getElementById('purchase-panel');
       if (panel){
         panel.addEventListener('click', function(e){
@@ -624,7 +734,6 @@ function renderItem(id){
         });
       }
     }
-
     function wireAddToCart(dataRef, sizes, materials, kinds){
       var btn = $('#add-to-cart');
       if (!btn) return;
@@ -649,47 +758,36 @@ function renderItem(id){
         try { btn.textContent = 'Added!'; setTimeout(function(){ btn.textContent = 'Add to basket'; }, 900); } catch(_){}
       });
     }
-
     function openPurchasePanelUsing(dataRef){
       if (!dataRef) return;
-
       var opts = dataRef.options || {};
-
-      // Use per-artwork option lists if provided, else defaults
       var sizes     = Array.isArray(opts.sizes)     && opts.sizes.length     ? opts.sizes     : SIZES.slice();
       var materials = Array.isArray(opts.materials) && opts.materials.length ? opts.materials : MATERIALS.slice();
       var kinds     = Array.isArray(opts.kinds)     && opts.kinds.length     ? opts.kinds     : KINDS.slice();
-
+      if (opts.allowNone === true){
+        if (!sizes.includes('None')) sizes = ['None'].concat(sizes);
+        if (!materials.includes('None')) materials = ['None'].concat(materials);
+        if (!kinds.includes('None')) kinds = ['None'].concat(kinds);
+      }
       var panel = ensurePurchaseUI();
       renderOptions(panel, sizes, materials, kinds);
-
-      // Helpful: if only one material, auto-select it so user doesn't get “no price” confusion
-      maybeAutoSelectIfSingle($('#opt-material'), materials);
-
-      // Constrain kinds immediately (so if size already selected later, it will update)
-      updateKindConstraints(kinds);
-
-      wireOptionEvents(kinds);
+      wireOptionEvents();
       wireAddToCart(dataRef, sizes, materials, kinds);
-
       document.body.classList.add('purchase-open');
       panel.classList.add('open');
-
       var closeBtn = panel.querySelector('#purchase-close');
       function close(){
         panel.classList.remove('open');
         document.body.classList.remove('purchase-open');
       }
       if (closeBtn) closeBtn.onclick = close;
-
       document.addEventListener('keydown', function esc(e){
         if (e.key === 'Escape'){ close(); document.removeEventListener('keydown', esc); }
       });
-
       updatePriceAndButton();
     }
 
-    // Wire button immediately
+    // Wire button immediately (works even before data arrives thanks to detailData)
     purchaseBtn.addEventListener('click', function(){
       openPurchasePanelUsing(detailData);
     });
@@ -700,6 +798,8 @@ function renderItem(id){
     try { console.error('renderItem error:', err); } catch(_){}
   });
 }
+
+
 
 function renderCart(){
   var items = loadBasket();
@@ -757,7 +857,7 @@ function renderCart(){
           '<select class="cart-opt cart-material">', opts(materials, it.paper), '</select>',
         '</div>',
 
-        // KIND
+        // EXTRAS
         '<div class="col-extras">',
           '<select class="cart-opt cart-kind">', opts(kinds, it.kind), '</select>',
         '</div>',
@@ -801,7 +901,7 @@ function renderCart(){
             '<div class="h-item">Item</div>',
             '<div class="h-size">Size</div>',
             '<div class="h-material">Material</div>',
-            '<div class="h-extras">Kind</div>',
+            '<div class="h-extras">Extras</div>',
             '<div class="h-unit">Price</div>',
             '<div class="h-qty">Quantity</div>',
             '<div class="h-total">Total</div>',
@@ -963,18 +1063,12 @@ var zoomOutBtn = $('#zoom-out');
 var zoom = 1;
 
 function openLightbox(src, alt){
-  if (!lightbox || !lightboxImg) return;
   lightboxImg.src = src; lightboxImg.alt = alt || '';
   zoom = 1; applyZoom();
   lightbox.setAttribute('aria-hidden','false');
 }
-function closeLightbox(){
-  if (!lightbox || !lightboxImg) return;
-  lightbox.setAttribute('aria-hidden','true');
-  lightboxImg.src='';
-}
+function closeLightbox(){ lightbox.setAttribute('aria-hidden','true'); lightboxImg.src=''; }
 function applyZoom(){
-  if (!lightboxImg) return;
   var zoomLevelEl = $('#zoom-level');
   lightboxImg.style.transform = 'scale('+zoom+')';
   if (zoomLevelEl) zoomLevelEl.textContent = Math.round(zoom*100)+'%';
@@ -982,15 +1076,18 @@ function applyZoom(){
 
 var lbClose = $('.lightbox-close');
 if (lbClose) lbClose.addEventListener('click', closeLightbox);
-if (lightbox) lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeLightbox(); });
-if (zoomInBtn) zoomInBtn.addEventListener('click', function(){ zoom = Math.min(zoom+0.25,5); applyZoom(); });
-if (zoomOutBtn) zoomOutBtn.addEventListener('click', function(){ zoom = Math.max(0.25, zoom-0.25); applyZoom(); });
-if (lightbox) lightbox.addEventListener('wheel', function(e){
-  e.preventDefault();
-  var delta = Math.sign(e.deltaY);
-  zoom = delta>0 ? Math.max(0.5, zoom-0.1) : Math.min(5, zoom+0.1);
-  applyZoom();
-}, { passive:false });
+if (lightbox) {
+  lightbox.addEventListener('click', function(e){
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  lightbox.addEventListener('wheel', function(e){
+    e.preventDefault();
+    var delta = Math.sign(e.deltaY);
+    zoom = delta>0 ? Math.max(0.5, zoom-0.1) : Math.min(5, zoom+0.1);
+    applyZoom();
+  }, { passive:false });
+}
 
 // ======== Helpers ========
 function bust(u){
