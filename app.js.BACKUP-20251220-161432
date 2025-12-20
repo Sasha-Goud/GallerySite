@@ -1,5 +1,5 @@
-// BUILD_TAG: 2025-12-20-02
-// ROLLBACK: revert to BUILD_TAG: 2025-12-20-01 (your current file before this change)
+// BUILD_TAG: 2025-12-20-01
+// ROLLBACK: revert to previous app.js you pasted (console showed app.js?v=2025-11-12-01)
 
 // ======== Tiny DOM helpers ========
 function $(sel, root){ return (root||document).querySelector(sel); }
@@ -133,35 +133,14 @@ var PRICING = {
   "90 X 60 cm": { Canvas: { Replica: 99.00 } }
 };
 
-// --- Normalise size keys so "x", "X", and "×" all match ---
-function normSizeKey(s){
-  return String(s || '')
-    .trim()
-    .replace(/\s+/g, ' ')
-    .replace(/×/g, 'X')
-    .replace(/x/ig, 'X');
-}
-var SIZE_KEYMAP = {};
-Object.keys(PRICING).forEach(function(k){
-  SIZE_KEYMAP[normSizeKey(k)] = k;
-});
-function resolveSizeKey(size){
-  var nk = normSizeKey(size);
-  return SIZE_KEYMAP[nk] || String(size || '').trim();
-}
-
-// Defaults used only for populating select lists when an artwork has an options block.
-// (We still always compute price via PRICING; if not found, priceFor returns null.)
+// Defaults (only used if an artwork has no options block; still safe because priceFor() returns null if not found)
 var SIZES = Object.keys(PRICING);
 var MATERIALS = ['Canvas'];
 var KINDS = ['Original','Replica'];
 
 function priceFor(size, material, kind){
   if (!size || !material || !kind) return null;
-  var sk = resolveSizeKey(size);
-  var m  = String(material).trim();
-  var k  = String(kind).trim();
-  return (PRICING[sk] && PRICING[sk][m]) ? PRICING[sk][m][k] : null;
+  return PRICING[size] && PRICING[size][material] ? PRICING[size][material][kind] : null;
 }
 
 // ======== Static pages ========
@@ -175,8 +154,6 @@ function renderContact(){
   app.innerHTML = '<section class="section"><h1>Contact</h1><p>Email: <a href="mailto:you@example.com">you@example.com</a></p></section>';
 }
 
-
-
 // ======== API helpers ========
 function fetchJSON(url){
   return fetch(url, { cache:'no-store' }).then(function(res){
@@ -186,7 +163,7 @@ function fetchJSON(url){
 }
 
 // Always load from the local artworks.json file at project root
-function fetchArtworks(){ 
+function fetchArtworks(){
   return fetch('./artworks.json', { cache: 'no-store' })
     .then(function(res){
       if (!res.ok) throw new Error('Failed to load artworks.json');
@@ -194,13 +171,11 @@ function fetchArtworks(){
     });
 }
 
-function fetchArtworkDetail(id){ 
+function fetchArtworkDetail(id){
   return fetchArtworks().then(function(list){
     return list.find(function(a){ return a.id === id; }) || null;
   });
 }
-
-
 
 // ======== FILTERS (tags) ========
 var ALL_ARTWORKS = [];
@@ -239,7 +214,7 @@ function renderGridInto(gridEl){
     return;
   }
   gridEl.innerHTML = list.map(function(a){
-    var thumb  = a.thumb || a.src;
+    var thumb = a.thumb || a.src;
     var small  = bust(thumb);
     var big    = bust(a.src);
     var srcset = a.thumb ? (small + ' 480w, ' + big + ' 1200w') : (big + ' 1200w');
@@ -373,7 +348,6 @@ function renderGallery(){
 }
 
 // ======== Item detail (hero + media bar + purchase panel) ========
-
 function renderItem(id){
 
   app.innerHTML = '<section class="section"><div class="hero-wrap"><button class="hero-nav prev" id="hero-prev" aria-label="Previous">‹</button><div id="hero" class="hero-media"></div><button class="hero-nav next" id="hero-next" aria-label="Next">›</button><div class="media-bar"><div class="thumb-strip" id="thumb-strip"></div><button id="purchase-btn" class="btn-purchase" type="button">Purchase</button></div></div></section>';
@@ -411,20 +385,7 @@ function renderItem(id){
 
   fetchArtworkDetail(id).then(function(data){
 
-    try {
-      console.log(
-        '[media keys] ',
-        'context1:', !!data.context1, '| context_1:', !!data.context_1, '||',
-        'context2:', !!data.context2, '| context_2:', !!data.context_2, '||',
-        'context3:', !!data.context3, '| context_3:', !!data.context_3, '||',
-        'context4:', !!data.context4, '| context_4:', !!data.context_4, '||',
-        'context5:', !!data.context5, '| context_5:', !!data.context_5, '||',
-        'context6:', !!data.context6, '| context_6:', !!data.context_6, '||',
-        'src:', !!data.src, 'video:', !!data.video
-      );
-    } catch (e) {}
-
-    detailData = data;
+    detailData = data; // <- critical so Purchase has the item
 
     /* ========= MEDIA STRIP (use JSON fields only) ========= */
     strip.innerHTML = '';
@@ -432,7 +393,7 @@ function renderItem(id){
     (function(){
       // Collect media strictly from JSON keys (no filename probing)
       var images = [];
-      if (data.src) images.push(String(data.src));          // lead with the hero
+      if (data.src) images.push(String(data.src));          // ← always lead with the hero
       for (var i = 1; i <= 6; i++) {
         var key = 'context' + i;
         if (data[key]) images.push(String(data[key]));
@@ -502,7 +463,6 @@ function renderItem(id){
         }
       });
 
-      try { console.log('[media] using JSON fields only'); } catch(_){}
     })();
     /* ========= /MEDIA STRIP ========= */
 
@@ -546,7 +506,7 @@ function renderItem(id){
         '<div class="purchase-stack">' +
           selectHtml('Size', 'opt-size', sizes) +
           selectHtml('Material', 'opt-material', materials) +
-          selectHtml('Extras', 'opt-kind', kinds) +
+          selectHtml('Kind', 'opt-kind', kinds) +
           '<div class="purchase-row qty-row">' +
             '<label class="purchase-label" for="qty">Qty</label>' +
             '<div class="qty-control">' +
@@ -572,6 +532,47 @@ function renderItem(id){
       return { size:size, material:material, kind:kind, qty:qty };
     }
 
+    // NEW: constrain "Kind" choices to what is actually priced for the selected Size+Material
+    function availableKindsFor(size, material, allowedKinds){
+      if (!size || !material) return (allowedKinds || []).slice();
+      var priced = (PRICING[size] && PRICING[size][material]) ? Object.keys(PRICING[size][material]) : [];
+      if (!Array.isArray(allowedKinds) || !allowedKinds.length) return priced;
+      return allowedKinds.filter(function(k){ return priced.indexOf(k) >= 0; });
+    }
+
+    function rebuildKindSelect(kinds){
+      var sel = $('#opt-kind');
+      if (!sel) return;
+      var current = sel.value || '';
+      sel.innerHTML = '<option value="">Select…</option>' + (kinds || []).map(function(k){
+        var v = String(k);
+        return '<option value="'+escapeHtml(v)+'">'+escapeHtml(v)+'</option>';
+      }).join('');
+      // keep if still valid
+      if (current && kinds.indexOf(current) >= 0) sel.value = current;
+      else sel.value = '';
+    }
+
+    function maybeAutoSelectIfSingle(selectEl, list){
+      if (!selectEl) return;
+      if (Array.isArray(list) && list.length === 1){
+        selectEl.value = String(list[0]);
+      }
+    }
+
+    function updateKindConstraints(allowedKinds){
+      var s = $('#opt-size');
+      var m = $('#opt-material');
+      if (!s || !m) return;
+      var size = s.value || '';
+      var material = m.value || '';
+      var constrained = availableKindsFor(size, material, allowedKinds);
+      rebuildKindSelect(constrained);
+      // helpful: if only one valid kind for this size/material, select it automatically
+      var kSel = $('#opt-kind');
+      maybeAutoSelectIfSingle(kSel, constrained);
+    }
+
     function updatePriceAndButton(){
       var sel = getSelection();
       var priceEl = $('#price-value');
@@ -588,133 +589,88 @@ function renderItem(id){
       }
     }
 
+    function wireOptionEvents(allowedKinds){
+      var s1 = $('#opt-size'), s2 = $('#opt-material'), s3 = $('#opt-kind'), qty = $('#qty');
+
+      if (s1) s1.addEventListener('change', function(){
+        updateKindConstraints(allowedKinds);
+        updatePriceAndButton();
+      });
+
+      if (s2) s2.addEventListener('change', function(){
+        updateKindConstraints(allowedKinds);
+        updatePriceAndButton();
+      });
+
+      if (s3) s3.addEventListener('change', updatePriceAndButton);
+
+      if (qty) qty.addEventListener('input', function(){
+        if (Number(qty.value) < 1) qty.value = 1;
+        updatePriceAndButton();
+      });
+
+      var panel = document.getElementById('purchase-panel');
+      if (panel){
+        panel.addEventListener('click', function(e){
+          var btn = e.target && e.target.closest && e.target.closest('.qtybtn');
+          if (!btn) return;
+          var input = document.getElementById('qty');
+          if (!input) return;
+          var val = Math.max(1, Number(input.value) || 1);
+          if (btn.getAttribute('data-act') === 'inc') val++;
+          if (btn.getAttribute('data-act') === 'dec') val = Math.max(1, val - 1);
+          input.value = val;
+          updatePriceAndButton();
+        });
+      }
+    }
+
+    function wireAddToCart(dataRef, sizes, materials, kinds){
+      var btn = $('#add-to-cart');
+      if (!btn) return;
+      btn.addEventListener('click', function(){
+        var sel = getSelection();
+        var unit = priceFor(sel.size, sel.material, sel.kind);
+        if (typeof unit !== 'number') return;
+        addToBasket({
+          id: dataRef.id,
+          title: dataRef.title,
+          thumb: dataRef.context1 || dataRef.src || '',
+          src: dataRef.src || '',
+          size: sel.size,
+          paper: sel.material,
+          kind: sel.kind,
+          qty: sel.qty,
+          options: { sizes: sizes.slice(), materials: materials.slice(), kinds: kinds.slice() },
+          pricing: (dataRef.pricing || PRICING),
+          unitPrice: round2(unit)
+        });
+        updateCartCount();
+        try { btn.textContent = 'Added!'; setTimeout(function(){ btn.textContent = 'Add to basket'; }, 900); } catch(_){}
+      });
+    }
+
     function openPurchasePanelUsing(dataRef){
       if (!dataRef) return;
 
       var opts = dataRef.options || {};
 
-      // Use the item’s allowed lists, but we will FILTER the "kinds" list dynamically
-      var sizes     = Array.isArray(opts.sizes)     && opts.sizes.length     ? opts.sizes.slice()     : SIZES.slice();
-      var materials = Array.isArray(opts.materials) && opts.materials.length ? opts.materials.slice() : MATERIALS.slice();
-      var kindsAll  = Array.isArray(opts.kinds)     && opts.kinds.length     ? opts.kinds.slice()     : KINDS.slice();
+      // Use per-artwork option lists if provided, else defaults
+      var sizes     = Array.isArray(opts.sizes)     && opts.sizes.length     ? opts.sizes     : SIZES.slice();
+      var materials = Array.isArray(opts.materials) && opts.materials.length ? opts.materials : MATERIALS.slice();
+      var kinds     = Array.isArray(opts.kinds)     && opts.kinds.length     ? opts.kinds     : KINDS.slice();
 
       var panel = ensurePurchaseUI();
-      renderOptions(panel, sizes, materials, kindsAll);
+      renderOptions(panel, sizes, materials, kinds);
 
-      // --- NEW: filter kinds based on selected size+material and PRICING ---
-      function setSelectOptions(selectEl, values){
-        if (!selectEl) return;
-        var current = selectEl.value;
-        var html = '<option value="">Select…</option>';
-        values.forEach(function(v){
-          var s = String(v);
-          html += '<option value="'+escapeHtml(s)+'">'+escapeHtml(s)+'</option>';
-        });
-        selectEl.innerHTML = html;
+      // Helpful: if only one material, auto-select it so user doesn't get “no price” confusion
+      maybeAutoSelectIfSingle($('#opt-material'), materials);
 
-        // Keep previous selection only if it still exists
-        if (values.indexOf(current) >= 0){
-          selectEl.value = current;
-        } else {
-          selectEl.value = '';
-        }
-      }
+      // Constrain kinds immediately (so if size already selected later, it will update)
+      updateKindConstraints(kinds);
 
-      function pricedKindsFor(size, material){
-        if (!size || !material) return [];
-        var sk = resolveSizeKey(size);
-        var m = String(material).trim();
-        var bucket = (PRICING[sk] && PRICING[sk][m]) ? PRICING[sk][m] : null;
-        if (!bucket) return [];
-        return Object.keys(bucket);
-      }
-
-      function refreshKindDropdown(){
-        var sizeSel = $('#opt-size');
-        var matSel  = $('#opt-material');
-        var kindSel = $('#opt-kind');
-        if (!kindSel) return;
-
-        var chosenSize = sizeSel ? sizeSel.value : '';
-        var chosenMat  = matSel ? matSel.value : '';
-
-        // Intersection: (item's allowed kinds) ∩ (priced kinds for chosen size+material)
-        var priced = pricedKindsFor(chosenSize, chosenMat);
-        var nextKinds = kindsAll.filter(function(k){ return priced.indexOf(String(k)) >= 0; });
-
-        // If size/material not chosen yet, show all allowed kinds (so the UI doesn't look empty)
-        if (!chosenSize || !chosenMat) nextKinds = kindsAll.slice();
-
-        setSelectOptions(kindSel, nextKinds);
-      }
-
-      function wireOptionEvents(){
-        var s1 = $('#opt-size'), s2 = $('#opt-material'), s3 = $('#opt-kind'), qty = $('#qty');
-
-        if (s1) s1.addEventListener('change', function(){
-          refreshKindDropdown();
-          updatePriceAndButton();
-        });
-        if (s2) s2.addEventListener('change', function(){
-          refreshKindDropdown();
-          updatePriceAndButton();
-        });
-        if (s3) s3.addEventListener('change', updatePriceAndButton);
-
-        if (qty) qty.addEventListener('input', function(){
-          if (Number(qty.value) < 1) qty.value = 1;
-          updatePriceAndButton();
-        });
-
-        var panel = document.getElementById('purchase-panel');
-        if (panel){
-          panel.addEventListener('click', function(e){
-            var btn = e.target && e.target.closest && e.target.closest('.qtybtn');
-            if (!btn) return;
-            var input = document.getElementById('qty');
-            if (!input) return;
-            var val = Math.max(1, Number(input.value) || 1);
-            if (btn.getAttribute('data-act') === 'inc') val++;
-            if (btn.getAttribute('data-act') === 'dec') val = Math.max(1, val - 1);
-            input.value = val;
-            updatePriceAndButton();
-          });
-        }
-      }
-
-      function wireAddToCart(dataRef, sizes, materials, kinds){
-        var btn = $('#add-to-cart');
-        if (!btn) return;
-        btn.addEventListener('click', function(){
-          var sel = getSelection();
-          var unit = priceFor(sel.size, sel.material, sel.kind);
-          if (typeof unit !== 'number') return;
-
-          addToBasket({
-            id: dataRef.id,
-            title: dataRef.title,
-            thumb: dataRef.context1 || dataRef.src || '',
-            src: dataRef.src || '',
-            size: sel.size,
-            paper: sel.material,
-            kind: sel.kind,
-            qty: sel.qty,
-            options: { sizes: sizes.slice(), materials: materials.slice(), kinds: kinds.slice() },
-            pricing: (dataRef.pricing || PRICING),
-            unitPrice: round2(unit)
-          });
-
-          updateCartCount();
-          try { btn.textContent = 'Added!'; setTimeout(function(){ btn.textContent = 'Add to basket'; }, 900); } catch(_){}
-        });
-      }
-
-      wireOptionEvents();
-      wireAddToCart(dataRef, sizes, materials, kindsAll);
-
-      // Apply initial filtering once panel opens
-      refreshKindDropdown();
-      updatePriceAndButton();
+      wireOptionEvents(kinds);
+      wireAddToCart(dataRef, sizes, materials, kinds);
 
       document.body.classList.add('purchase-open');
       panel.classList.add('open');
@@ -725,12 +681,15 @@ function renderItem(id){
         document.body.classList.remove('purchase-open');
       }
       if (closeBtn) closeBtn.onclick = close;
+
       document.addEventListener('keydown', function esc(e){
         if (e.key === 'Escape'){ close(); document.removeEventListener('keydown', esc); }
       });
+
+      updatePriceAndButton();
     }
 
-    // Wire button immediately (works even before data arrives thanks to detailData)
+    // Wire button immediately
     purchaseBtn.addEventListener('click', function(){
       openPurchasePanelUsing(detailData);
     });
@@ -742,9 +701,6 @@ function renderItem(id){
   });
 }
 
-
-
-// ======== Cart ========
 function renderCart(){
   var items = loadBasket();
 
@@ -801,7 +757,7 @@ function renderCart(){
           '<select class="cart-opt cart-material">', opts(materials, it.paper), '</select>',
         '</div>',
 
-        // EXTRAS
+        // KIND
         '<div class="col-extras">',
           '<select class="cart-opt cart-kind">', opts(kinds, it.kind), '</select>',
         '</div>',
@@ -845,7 +801,7 @@ function renderCart(){
             '<div class="h-item">Item</div>',
             '<div class="h-size">Size</div>',
             '<div class="h-material">Material</div>',
-            '<div class="h-extras">Extras</div>',
+            '<div class="h-extras">Kind</div>',
             '<div class="h-unit">Price</div>',
             '<div class="h-qty">Quantity</div>',
             '<div class="h-total">Total</div>',
@@ -1007,18 +963,20 @@ var zoomOutBtn = $('#zoom-out');
 var zoom = 1;
 
 function openLightbox(src, alt){
+  if (!lightbox || !lightboxImg) return;
   lightboxImg.src = src; lightboxImg.alt = alt || '';
   zoom = 1; applyZoom();
-  if (lightbox) lightbox.setAttribute('aria-hidden','false');
+  lightbox.setAttribute('aria-hidden','false');
 }
 function closeLightbox(){
-  if (!lightbox) return;
+  if (!lightbox || !lightboxImg) return;
   lightbox.setAttribute('aria-hidden','true');
-  if (lightboxImg) lightboxImg.src='';
+  lightboxImg.src='';
 }
 function applyZoom(){
+  if (!lightboxImg) return;
   var zoomLevelEl = $('#zoom-level');
-  if (lightboxImg) lightboxImg.style.transform = 'scale('+zoom+')';
+  lightboxImg.style.transform = 'scale('+zoom+')';
   if (zoomLevelEl) zoomLevelEl.textContent = Math.round(zoom*100)+'%';
 }
 
