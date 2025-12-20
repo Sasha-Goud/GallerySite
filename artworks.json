@@ -312,20 +312,16 @@
     "context1": "assets/100-bodygrafix/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "100 X 100 cm",
+        "80 x 80 cm",
+        "70 x 70 cm",
+        "50 x 50 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Replica"
       ]
     }
   },
@@ -343,20 +339,16 @@
     "context1": "assets/104-despair/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "100 X 100 cm",
+        "80 x 80 cm",
+        "70 x 70 cm",
+        "50 x 50 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Replica"
       ]
     }
   },
@@ -374,20 +366,16 @@
     "context1": "assets/106-grafiti-berlin/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "100 X 100 cm",
+        "80 x 80 cm",
+        "70 x 70 cm",
+        "50 x 50 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Replica"
       ]
     }
   },
@@ -405,20 +393,16 @@
     "context1": "assets/106-sunset-on-lisa/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "100 X 100 cm",
+        "80 x 80 cm",
+        "70 x 70 cm",
+        "50 x 50 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Archival B&W Print"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Replica"
       ]
     }
   },
@@ -436,20 +420,16 @@
     "context1": "assets/107-solorosso/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "100 X 100 cm",
+        "80 x 80 cm",
+        "70 x 70 cm",
+        "50 x 50 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Archival Print"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Replica"
       ]
     }
   },
@@ -467,20 +447,16 @@
     "context1": "assets/109-yin-yang/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "100 X 100 cm",
+        "80 x 80 cm",
+        "70 x 70 cm",
+        "50 x 50 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Replica"
       ]
     }
   },
@@ -498,20 +474,16 @@
     "context1": "assets/110-vasarelisa-2/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "100 X 100 cm",
+        "80 x 80 cm",
+        "70 x 70 cm",
+        "50 x 50 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Archival B&W Print"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Replica"
       ]
     }
   },
@@ -530,20 +502,16 @@
     "context2": "assets/111-venus/context2.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "100 X 100 cm",
+        "80 x 80 cm",
+        "70 x 70 cm",
+        "50 x 50 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Replica"
       ]
     }
   },
@@ -772,20 +740,14 @@
     "context1": "assets/214-Split/context1.png",
     "options": {
       "sizes": [
-        "A4",
-        "A3",
-        "A2"
+        "100 X 80 cm"
       ],
       "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
+        "Canvas"
       ],
       "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+        "Original",
+        "Replica"
       ]
     }
   },
