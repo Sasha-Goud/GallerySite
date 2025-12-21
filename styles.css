@@ -1928,6 +1928,16 @@ width: 100%;       /* keeps it fluid up to the max-width */
   }
 }
 
+
+
+
+
+
+
+
+
+
+
 /* === Mobile cart polish: inline labels for each field (mobile-only) === */
 @media (max-width: 560px){
 
@@ -1967,4 +1977,64 @@ width: 100%;       /* keeps it fluid up to the max-width */
   .cart-row .col-unit::before     { content: "Price"; }
   .cart-row .col-qty::before      { content: "Qty"; }
   .cart-row .col-total::before    { content: "Total"; }
+}
+
+
+
+/* === BUILD_TAG: 2025-12-21-01 === */
+/* === ROLLBACK: delete this whole @media block to revert === */
+
+@media (max-width: 560px){
+
+  /* 1) Remove the desktop chevrons on mobile (they clash with labels) */
+  .cart-row .col-size::after,
+  .cart-row .col-material::after,
+  .cart-row .col-extras::after{
+    content: none !important;
+  }
+
+  /* 2) Give the fields enough height for a label + control */
+  .cart-row .col-size,
+  .cart-row .col-material,
+  .cart-row .col-extras,
+  .cart-row .col-unit,
+  .cart-row .col-qty,
+  .cart-row .col-total{
+    height: 54px !important;       /* was 35px */
+    padding-top: 18px !important;  /* room for label */
+    position: relative !important;
+  }
+
+  /* 3) Labels (visible, above the control) */
+  .cart-row .col-size::before,
+  .cart-row .col-material::before,
+  .cart-row .col-extras::before,
+  .cart-row .col-unit::before,
+  .cart-row .col-qty::before,
+  .cart-row .col-total::before{
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    z-index: 2;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    color: rgba(200,200,200,0.75);
+    font-weight: 300;
+    content: "";
+    pointer-events: none;
+  }
+
+  .cart-row .col-size::before     { content: "Size"; }
+  .cart-row .col-material::before { content: "Material"; }
+  .cart-row .col-extras::before   { content: "Edition"; }
+  .cart-row .col-unit::before     { content: "Price"; }
+  .cart-row .col-qty::before      { content: "Qty"; }
+  .cart-row .col-total::before    { content: "Total"; }
+
+  /* 4) Ensure the selects/inputs render “under” the label cleanly */
+  .cart-rows .cart-row select.cart-opt,
+  .cart-rows .cart-row input.qtyinput{
+    position: relative;
+    z-index: 1;
+  }
 }
