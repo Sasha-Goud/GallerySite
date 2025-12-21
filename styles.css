@@ -1873,15 +1873,20 @@ width: 100%;       /* keeps it fluid up to the max-width */
     margin: 0 !important;
   }
 
-  /* ==== Inline labels (Size/Material/Edition/Qty/Total) ==== */
-  .cart-row .col-size,
-  .cart-row .col-material,
-  .cart-row .col-extras,
-  .cart-row .col-qty,
-  .cart-row .col-total{
-    position: relative !important;
-    padding-top: 18px !important;   /* label clearance (adjust later) */
-  }
+ /* ==== Inline labels (Size / Material / Edition / Qty / Total) ==== */
+.cart-row .col-size,
+.cart-row .col-material,
+.cart-row .col-extras,
+.cart-row .col-qty,
+.cart-row .col-total{
+  position: relative !important;
+  padding-top: 18px !important;   /* label clearance */
+}
+
+/* Qty label alignment tweak */
+.cart-row .col-qty::before{
+  left: 22px;   /* nudge right to align over qty field */
+}
 
   .cart-row .col-size::before,
   .cart-row .col-material::before,
