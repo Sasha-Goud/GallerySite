@@ -1730,28 +1730,3 @@ width: 100%;       /* keeps it fluid up to the max-width */
 #hero-prev { left: 16px !important; right: auto !important; }
 #hero-next { right: 16px !important; left: auto !important; }
 
-/* =========================
-   Mobile fix: Purchase panel
-   ========================= */
-@media (max-width: 768px){
-
-  #purchase-panel{
-    top: auto;                 /* cancel desktop positioning */
-    right: 0;
-    left: 0;
-    bottom: 0;
-
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    max-height: 85vh;
-
-    border-radius: 16px 16px 0 0;   /* bottom-sheet look */
-    transform: translateY(100%);    /* slide up from bottom */
-  }
-
-  #purchase-panel.open{
-    transform: translateY(0);
-  }
-
-}
