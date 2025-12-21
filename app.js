@@ -825,7 +825,7 @@ function renderCart(){
           '<select class="cart-opt cart-material">', opts(materials, it.paper), '</select>',
         '</div>',
 
-        // EXTRAS
+        // EDITION
         '<div class="col-extras">',
           '<select class="cart-opt cart-kind">', opts(kinds, it.kind), '</select>',
         '</div>',
