@@ -1888,7 +1888,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 .cart-row .col-qty::before,
 .cart-row .col-total::before{
   position: absolute;
-  top: 10px;                       /* label vertical position */
+  top: 3px;                       /* label vertical position */
   left: 10px;                     /* default label left position */
   font-size: 12px;
   letter-spacing: 0.8px;
@@ -1896,6 +1896,10 @@ width: 100%;       /* keeps it fluid up to the max-width */
   font-weight: 300;
   pointer-events: none;
   content: "";
+}
+/* Total label vertical tweak only */
+.cart-row .col-total::before{
+  top: 10px;   /* adjust until aligned */
 }
 
 /* Qty label alignment tweak */
