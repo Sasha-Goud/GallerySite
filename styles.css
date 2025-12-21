@@ -1755,3 +1755,23 @@ width: 100%;       /* keeps it fluid up to the max-width */
   }
 
 }
+
+/* === Mobile: always-visible cart icon === */
+@media (max-width: 640px){
+  .cart-link{
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 200;
+
+    background: rgba(11,12,14,0.9);
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    padding: 6px;
+  }
+
+  /* Prevent header layout from reserving space for it */
+  .site-header .cart-link{
+    justify-self: unset;
+  }
+}
