@@ -570,7 +570,7 @@ function renderItem(id){
         '<div class="purchase-stack">' +
           selectHtml('Size', 'opt-size', sizes) +
           selectHtml('Material', 'opt-material', materials) +
-          selectHtml('Edition', 'opt-kind', kinds) +
+          selectHtml('Extras', 'opt-kind', kinds) +
           '<div class="purchase-row qty-row">' +
             '<label class="purchase-label" for="qty">Qty</label>' +
             '<div class="qty-control">' +
@@ -869,7 +869,7 @@ function renderCart(){
             '<div class="h-item">Item</div>',
             '<div class="h-size">Size</div>',
             '<div class="h-material">Material</div>',
-            '<div class="h-extras">Edition</div>',
+            '<div class="h-extras">Extras</div>',
             '<div class="h-unit">Price</div>',
             '<div class="h-qty">Quantity</div>',
             '<div class="h-total">Total</div>',
