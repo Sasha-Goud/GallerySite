@@ -148,16 +148,10 @@ var PRICING = {
    "100 X 80 cm": { Canvas: { Original: 750.00 } },
   "100 x 80 cm": { Canvas: { Replica: 180.00 } },
   
-  "100 x 100 cm": { Archival Print: { Replica: 130.00 } },
-  "80 x 80 cm": { Archival Print: { Replica: 100.00 } },
-  "70 x 70 cm": { Archival Print: { Replica: 90.00 } },
-  "50 x 50 cm": { Archival Print: { Replica: 60.00 } },
-  
-  
-   "100 x 100 cm": { Canvas: { Replica: 160.00 } },
-  "80 x 80 cm": { Canvas: { Replica: 135.00 } },
-  "70 x 70 cm": { Canvas: { Replica: 110.00 } },
-  "50 x 50 cm": { Canvas: { Replica: 80.00 } },
+  "100 x 100 cm": { "Archival Print": { Replica: 130.00 }, Canvas: { Replica: 160.00 }  },
+  "80 x 80 cm": { "Archival Print": { Replica: 100.00 }, Canvas: { Replica: 130.00 } },
+  "70 x 70 cm": { "Archival Print": { Replica: 90.00 }, Canvas: { Replica: 110.00 } },
+  "50 x 50 cm": { "Archival Print": { Replica: 60.00 }, Canvas: { Replica: 800.00 } },
   
   "30.5 X 61 cm": { Canvas: { Original: 150.00 } },
   "152 X 102 cm": { Canvas: { Original: 1200.00 } }
