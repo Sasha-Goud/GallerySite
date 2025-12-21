@@ -1880,7 +1880,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 .cart-row .col-qty,
 .cart-row .col-total{
   position: relative !important;
-  padding-top: 18px !important;   /* label clearance */
+  padding-top: 22px !important;   /* label clearance */
 }
 
 
