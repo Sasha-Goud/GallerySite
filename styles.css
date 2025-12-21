@@ -1801,9 +1801,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 
 
 
-
-
-/* === MOBILE CART (A: receipt style) — max 560px only === */
+/* === MOBILE CART (A: receipt style + inline labels) — max 560px only === */
 @media (max-width: 560px){
 
   /* No horizontal scrolling on mobile cart */
@@ -1813,6 +1811,13 @@ width: 100%;       /* keeps it fluid up to the max-width */
   /* Let rows be fluid width */
   .cart-rows,
   .cart-headers{ min-width: 0 !important; }
+
+  /* Remove the desktop chevrons on mobile (they clash with labels) */
+  .cart-row .col-size::after,
+  .cart-row .col-material::after,
+  .cart-row .col-extras::after{
+    content: none !important;
+  }
 
   /* Turn each row into a “card” */
   .cart-row{
@@ -1865,12 +1870,46 @@ width: 100%;       /* keeps it fluid up to the max-width */
     margin: 0 !important;
   }
 
+  /* ==== Inline labels (Size/Material/Edition/Qty/Total) ==== */
+  .cart-row .col-size,
+  .cart-row .col-material,
+  .cart-row .col-extras,
+  .cart-row .col-qty,
+  .cart-row .col-total{
+    position: relative !important;
+    padding-top: 16px !important;   /* label clearance (adjust later) */
+  }
+
+  .cart-row .col-size::before,
+  .cart-row .col-material::before,
+  .cart-row .col-extras::before,
+  .cart-row .col-qty::before,
+  .cart-row .col-total::before{
+    position: absolute;
+    top: 2px;                       /* label vertical position */
+    left: 10px;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    color: rgba(200,200,200,0.75);
+    font-weight: 300;
+    pointer-events: none;
+    content: "";
+  }
+
+  .cart-row .col-size::before     { content: "Size"; }
+  .cart-row .col-material::before { content: "Material"; }
+  .cart-row .col-extras::before   { content: "Edition"; }
+  .cart-row .col-qty::before      { content: "Qty"; }
+  .cart-row .col-total::before    { content: "Total"; }
+
   /* Options stack */
   .cart-row .col-size,
   .cart-row .col-material,
   .cart-row .col-extras{
     margin-top: 8px !important;
   }
+
+  /* Dropdown field styling (this is the main “height” driver) */
   .cart-row select.cart-opt{
     width: 100% !important;
     padding: 10px 12px !important;
@@ -1891,6 +1930,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
     margin-top: 10px !important;
   }
   .cart-row .col-qty{ margin-right: 10px !important; }
+
   .cart-row .qtycell{
     justify-content: flex-start !important;
     gap: 8px !important;
@@ -1925,116 +1965,5 @@ width: 100%;       /* keeps it fluid up to the max-width */
   #paypal-button-container{
     width: 100% !important;
     transform: none !important;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-/* === Mobile cart polish: inline labels for each field (mobile-only) === */
-@media (max-width: 560px){
-
-  /* Make each field able to host a little label above it */
-  .cart-row .col-size,
-  .cart-row .col-material,
-  .cart-row .col-extras,
-  .cart-row .col-unit,
-  .cart-row .col-qty,
-  .cart-row .col-total{
-    position: relative;
-    padding-top: 18px;   /* space for the label */
-  }
-
-  /* Common label style */
-  .cart-row .col-size::before,
-  .cart-row .col-material::before,
-  .cart-row .col-extras::before,
-  .cart-row .col-unit::before,
-  .cart-row .col-qty::before,
-  .cart-row .col-total::before{
-    position: absolute;
-    top: 4px;
-    left: 10px;
-    font-size: 12px;
-    letter-spacing: 0.8px;
-    color: rgba(200,200,200,0.75);
-    font-weight: 300;
-    content: "";
-    pointer-events: none;
-  }
-
-  /* Field-specific label text */
-  .cart-row .col-size::before     { content: "Size"; }
-  .cart-row .col-material::before { content: "Material"; }
-  .cart-row .col-extras::before   { content: "Edition"; }
-  .cart-row .col-unit::before     { content: "Price"; }
-  .cart-row .col-qty::before      { content: "Qty"; }
-  .cart-row .col-total::before    { content: "Total"; }
-}
-
-
-
-/* === BUILD_TAG: 2025-12-21-01 === */
-/* === ROLLBACK: delete this whole @media block to revert === */
-
-@media (max-width: 560px){
-
-  /* 1) Remove the desktop chevrons on mobile (they clash with labels) */
-  .cart-row .col-size::after,
-  .cart-row .col-material::after,
-  .cart-row .col-extras::after{
-    content: none !important;
-  }
-
-  /* 2) Give the fields enough height for a label + control */
-  .cart-row .col-size,
-  .cart-row .col-material,
-  .cart-row .col-extras,
-  .cart-row .col-unit,
-  .cart-row .col-qty,
-  .cart-row .col-total{
-    height: 54px !important;       /* was 35px */
-    padding-top: 18px !important;  /* room for label */
-    position: relative !important;
-  }
-
-  /* 3) Labels (visible, above the control) */
-  .cart-row .col-size::before,
-  .cart-row .col-material::before,
-  .cart-row .col-extras::before,
-  .cart-row .col-unit::before,
-  .cart-row .col-qty::before,
-  .cart-row .col-total::before{
-    position: absolute;
-    top: 4px;
-    left: 10px;
-    z-index: 2;
-    font-size: 12px;
-    letter-spacing: 0.8px;
-    color: rgba(200,200,200,0.75);
-    font-weight: 300;
-    content: "";
-    pointer-events: none;
-  }
-
-  .cart-row .col-size::before     { content: "Size"; }
-  .cart-row .col-material::before { content: "Material"; }
-  .cart-row .col-extras::before   { content: "Edition"; }
-  .cart-row .col-unit::before     { content: "Price"; }
-  .cart-row .col-qty::before      { content: "Qty"; }
-  .cart-row .col-total::before    { content: "Total"; }
-
-  /* 4) Ensure the selects/inputs render “under” the label cleanly */
-  .cart-rows .cart-row select.cart-opt,
-  .cart-rows .cart-row input.qtyinput{
-    position: relative;
-    z-index: 1;
   }
 }
