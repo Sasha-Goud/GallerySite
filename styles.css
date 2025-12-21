@@ -1193,7 +1193,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 .cart-headers .h-material { left: 505px; width: 100px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
 .cart-headers .h-extras   { left: 774px; width: 140px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
 .cart-headers .h-unit     { left: 1074px; width: 100px; text-align: right; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
-.cart-headers .h-qty      { left: 1151px; width: 120px; text-align: right; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
+.cart-headers .h-qty      { left: 1153px; width: 120px; text-align: right; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
 .cart-headers .h-total    { left: 1270px; width: 120px; text-align: right; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
 .cart-headers .h-remove   { left: 1420px; width:  80px; text-align: center; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
 
