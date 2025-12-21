@@ -1226,7 +1226,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
   height: 35px;
 }
 .cart-row .col-size{
-  position: absolute; left: 305px; top: 1px; width: 180px;
+  position: absolute; left: 290px; top: 1px; width: 180px;
   background: var(--panel-2); border: 1px solid var(--line-bright);
   border-radius: 8px; padding: 6px; 
   text-align: center; color: var(--text);  
