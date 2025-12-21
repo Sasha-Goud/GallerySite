@@ -1883,10 +1883,6 @@ width: 100%;       /* keeps it fluid up to the max-width */
   padding-top: 18px !important;   /* label clearance */
 }
 
-/* Qty label alignment tweak */
-.cart-row .col-qty::before{
-  left: 55px;   /* nudge right to align over qty field */
-}
 
 .cart-row .col-size::before,
 .cart-row .col-material::before,
@@ -1901,6 +1897,10 @@ width: 100%;       /* keeps it fluid up to the max-width */
   font-weight: 300;
   pointer-events: none;
   content: "";
+}
+/* Qty label alignment tweak */
+.cart-row .col-qty::before{
+  left: 55px;   /* nudge right to align over qty field */
 }
 
   .cart-row .col-size::before     { content: "Size"; }
