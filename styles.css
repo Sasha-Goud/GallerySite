@@ -1209,7 +1209,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
   position: absolute;
   left: 10px;
   top: 1px;
-  width: 300px;
+  width: 280px;
 
   background: var(--panel-2);
   border: 1px solid rgb(60, 60, 60);   /* border colour only */
