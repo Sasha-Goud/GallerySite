@@ -1448,7 +1448,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 
 :root{
   /* tweak this: negative = nudge left, positive = nudge right */
-  --paypal-nudge-x: -10px;
+  --paypal-nudge-x: -1px;
   /* optional width control for the button container */
   --paypal-width: 320px;
 }
@@ -1899,7 +1899,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 }
 /* === Total label independent controls === */
 .cart-row .col-total::before{
-  top: 12px;        /* vertical position (down = bigger number) */
+  top: 11px;        /* vertical position (down = bigger number) */
   left: 120px;       /* lateral position (right = bigger number) */
   font-size: 16px;  /* label font size (independent) */
   font-weight: 500;
