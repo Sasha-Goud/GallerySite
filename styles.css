@@ -1188,8 +1188,8 @@ width: 100%;       /* keeps it fluid up to the max-width */
 }
 
 /* Header positions + widths (MUST mirror .cart-row .col-*) */
-.cart-headers .h-item     { left:  52px; width: 3400px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
-.cart-headers .h-size     { left: 384px; width: 180px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
+.cart-headers .h-item     { left:  52px; width: 340px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
+.cart-headers .h-size     { left: 364px; width: 180px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
 .cart-headers .h-material { left: 474px; width: 100px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
 .cart-headers .h-extras   { left: 774px; width: 140px; text-align: left; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
 .cart-headers .h-unit     { left:  1074px; width: 100px; text-align: right; color: rgb(200, 200, 200); font-weight: 300; letter-spacing: 0.8px; }
@@ -1209,7 +1209,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
   position: absolute;
   left: 10px;
   top: 1px;
-  width: 360px;
+  width: 340px;
 
   background: var(--panel-2);
   border: 1px solid rgb(60, 60, 60);   /* border colour only */
