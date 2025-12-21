@@ -2001,7 +2001,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
   .cart-row .col-qty,
   .cart-row .col-total{
     height: 48px !important;       /* was 35px */
-    padding-top: 18px !important;  /* room for label */
+    padding-top: 14px !important;  /* room for label */
     position: relative !important;
   }
 
