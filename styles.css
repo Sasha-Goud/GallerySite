@@ -1885,7 +1885,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 
 /* Qty label alignment tweak */
 .cart-row .col-qty::before{
-  left: 50px;   /* nudge right to align over qty field */
+  left: 55px;   /* nudge right to align over qty field */
 }
 
 .cart-row .col-size::before,
