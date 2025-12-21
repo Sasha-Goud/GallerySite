@@ -1757,7 +1757,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 }
 
 /* === Mobile: always-visible cart icon === */
-@media (max-width: 640px){
+@media (max-width: 560px){
   .cart-link{
     position: fixed;
     top: 14px;
@@ -1777,18 +1777,24 @@ width: 100%;       /* keeps it fluid up to the max-width */
 }
 
 /* === Mobile: shrink logo to prevent header overflow === */
-@media (max-width: 640px){
+@media (max-width: 560px){
   .site-header .brand img{
     height: 36px !important;   /* try 32–40px if you want */
   }
 }
 
 /* === Mobile: cart icon as pure icon (no button box) === */
-@media (max-width: 640px){
+@media (max-width: 560px){
   .cart-link{
     padding: 0;
     background: none !important;
     border: none !important;
     box-shadow: none !important;
+  }
+}
+
+@media (max-width: 560px){
+  .cart-link{
+    margin-left: 10px;
   }
 }
