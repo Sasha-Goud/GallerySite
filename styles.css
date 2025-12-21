@@ -1401,7 +1401,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 /* ——— Subtotal: pixel-by-pixel lateral control, stays in normal flow ——— */
 :root{
   /* tweak this to move Subtotal horizontally */
-  --cartsum-left: 1106px;        /* increase => move right; decrease => left */
+  --cartsum-left: 1090px;        /* increase => move right; decrease => left */
   --paypal-width: 240px;      /* typical PayPal button width (200–320px works well) */
 }
 
@@ -1448,7 +1448,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 
 :root{
   /* tweak this: negative = nudge left, positive = nudge right */
-  --paypal-nudge-x: -104px;
+  --paypal-nudge-x: -88px;
   /* optional width control for the button container */
   --paypal-width: 320px;
 }
