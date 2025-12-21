@@ -1872,8 +1872,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
     line-height: 1.2 !important;
     margin: 0 !important;
   }
-
- /* ==== Inline labels (Size / Material / Edition / Qty / Total) ==== */
+/* ==== Inline labels (Size / Material / Edition / Qty / Total) ==== */
 .cart-row .col-size,
 .cart-row .col-material,
 .cart-row .col-extras,
@@ -1883,7 +1882,6 @@ width: 100%;       /* keeps it fluid up to the max-width */
   padding-top: 22px !important;   /* label clearance */
 }
 
-
 .cart-row .col-size::before,
 .cart-row .col-material::before,
 .cart-row .col-extras::before,
@@ -1891,6 +1889,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 .cart-row .col-total::before{
   position: absolute;
   top: 2px;                       /* label vertical position */
+  left: 10px;                     /* default label left position */
   font-size: 12px;
   letter-spacing: 0.8px;
   color: rgba(200,200,200,0.75);
@@ -1898,23 +1897,29 @@ width: 100%;       /* keeps it fluid up to the max-width */
   pointer-events: none;
   content: "";
 }
+
 /* Qty label alignment tweak */
 .cart-row .col-qty::before{
   left: 55px;   /* nudge right to align over qty field */
 }
 
-  .cart-row .col-size::before     { content: "Size"; }
-  .cart-row .col-material::before { content: "Material"; }
-  .cart-row .col-extras::before   { content: "Edition"; }
-  .cart-row .col-qty::before      { content: "Qty"; }
-  .cart-row .col-total::before    { content: "Total"; }
+/* Total label/field spacing tweak (MORE GAP ABOVE THE FIELD) */
+.cart-row .col-total{
+  padding-top: 30px !important;   /* was 22px */
+}
 
-  /* Options stack */
-  .cart-row .col-size,
-  .cart-row .col-material,
-  .cart-row .col-extras{
-    margin-top: 8px !important;
-  }
+.cart-row .col-size::before     { content: "Size"; }
+.cart-row .col-material::before { content: "Material"; }
+.cart-row .col-extras::before   { content: "Edition"; }
+.cart-row .col-qty::before      { content: "Qty"; }
+.cart-row .col-total::before    { content: "Total"; }
+
+/* Options stack */
+.cart-row .col-size,
+.cart-row .col-material,
+.cart-row .col-extras{
+  margin-top: 8px !important;
+}
 
   /* Dropdown field styling (this is the main “height” driver) */
   .cart-row select.cart-opt{
