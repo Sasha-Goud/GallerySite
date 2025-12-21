@@ -2000,8 +2000,8 @@ width: 100%;       /* keeps it fluid up to the max-width */
   .cart-row .col-unit,
   .cart-row .col-qty,
   .cart-row .col-total{
-    height: 48px !important;       /* was 35px */
-    padding-top: 18px !important;  /* room for label */
+    height: 40px !important;       /* was 35px */
+    padding-top: 14px !important;  /* room for label */
     position: relative !important;
   }
 
@@ -2036,31 +2036,5 @@ width: 100%;       /* keeps it fluid up to the max-width */
   .cart-rows .cart-row input.qtyinput{
     position: relative;
     z-index: 1;
-  }
-}
-
-
-@media (max-width: 560px){
-
-  /* Tighten mobile cart fields */
-  .cart-row .col-size,
-  .cart-row .col-material,
-  .cart-row .col-extras,
-  .cart-row .col-unit,
-  .cart-row .col-qty,
-  .cart-row .col-total{
-    height: 48px !important;      /* ↓ from 54px */
-    padding-top: 14px !important; /* ↓ from 18px */
-  }
-
-  /* Slightly nudge labels upward */
-  .cart-row .col-size::before,
-  .cart-row .col-material::before,
-  .cart-row .col-extras::before,
-  .cart-row .col-unit::before,
-  .cart-row .col-qty::before,
-  .cart-row .col-total::before{
-    top: 3px;                     /* ↓ from 4px */
-    font-size: 11.5px;            /* optional: subtle refinement */
   }
 }
