@@ -1782,3 +1782,13 @@ width: 100%;       /* keeps it fluid up to the max-width */
     height: 36px !important;   /* try 32–40px if you want */
   }
 }
+
+/* === Mobile: cart icon as pure icon (no button box) === */
+@media (max-width: 640px){
+  .cart-link{
+    padding: 0;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
