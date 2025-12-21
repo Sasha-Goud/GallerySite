@@ -2000,8 +2000,8 @@ width: 100%;       /* keeps it fluid up to the max-width */
   .cart-row .col-unit,
   .cart-row .col-qty,
   .cart-row .col-total{
-    height: 30px !important;       /* was 35px */
-    padding-top: 10px !important;  /* room for label */
+    height: 54px !important;       /* was 35px */
+    padding-top: 18px !important;  /* room for label */
     position: relative !important;
   }
 
@@ -2013,7 +2013,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
   .cart-row .col-qty::before,
   .cart-row .col-total::before{
     position: absolute;
-    top: 2px;
+    top: 4px;
     left: 10px;
     z-index: 2;
     font-size: 12px;
