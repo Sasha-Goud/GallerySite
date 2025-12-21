@@ -1897,9 +1897,13 @@ width: 100%;       /* keeps it fluid up to the max-width */
   pointer-events: none;
   content: "";
 }
-/* Total label vertical tweak only */
+/* === Total label independent controls === */
 .cart-row .col-total::before{
-  top: 10px;   /* adjust until aligned */
+  top: 10px;        /* vertical position (down = bigger number) */
+  left: 80px;       /* lateral position (right = bigger number) */
+  font-size: 14px;  /* label font size (independent) */
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 /* Qty label alignment tweak */
@@ -1916,7 +1920,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 .cart-row .col-material::before { content: "Material"; }
 .cart-row .col-extras::before   { content: "Edition"; }
 .cart-row .col-qty::before      { content: "Qty"; }
-.cart-row .col-total::before    { content: "Total"; }
+.cart-row .col-total::before    { content: "Subtotal"; }
 
 /* Options stack */
 .cart-row .col-size,

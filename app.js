@@ -879,9 +879,8 @@ function renderCart(){
           // Rows container (free layout)
           '<div class="cart-rows">', rows, '</div>',
 
-          '<div class="cartsum"><div>Subtotal: <strong>', money(subtotal), '</strong></div>',
-          '<div class="sub">Taxes &amp; shipping calculated at checkout.</div></div>',
-
+          '<div class="cartsum"><div>Total: <strong>', money(subtotal), '</strong></div>',
+         
           '<div id="paypal-button-container"></div>',
           '<div id="paypal-fallback" class="sub" style="display:none">PayPal button unavailable. Check your Client ID in <code>index.html</code>.</div>',
         '</div>'
