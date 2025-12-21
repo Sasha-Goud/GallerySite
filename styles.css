@@ -1801,6 +1801,9 @@ width: 100%;       /* keeps it fluid up to the max-width */
 
 
 
+
+
+
 /* === MOBILE CART (A: receipt style + inline labels) — max 560px only === */
 @media (max-width: 560px){
 
@@ -1877,7 +1880,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
   .cart-row .col-qty,
   .cart-row .col-total{
     position: relative !important;
-    padding-top: 16px !important;   /* label clearance (adjust later) */
+    padding-top: 18px !important;   /* label clearance (adjust later) */
   }
 
   .cart-row .col-size::before,
@@ -1912,7 +1915,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
   /* Dropdown field styling (this is the main “height” driver) */
   .cart-row select.cart-opt{
     width: 100% !important;
-    padding: 10px 12px !important;
+    padding: 7px 10px !important;
     border-radius: 10px !important;
     border: 1px solid var(--line-bright) !important;
     background: var(--panel-2) !important;
