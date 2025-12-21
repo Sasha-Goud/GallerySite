@@ -1775,3 +1775,10 @@ width: 100%;       /* keeps it fluid up to the max-width */
     justify-self: unset;
   }
 }
+
+/* === Mobile: shrink logo to prevent header overflow === */
+@media (max-width: 640px){
+  .site-header .brand img{
+    height: 36px !important;   /* try 32–40px if you want */
+  }
+}
