@@ -1250,7 +1250,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
   border-radius: 8px; padding: 6px; text-align: right; color: var(--text);
 }
 .cart-row .col-qty{
-  position: absolute; left:  1190px; top: 1px; width: 100px;
+  position: absolute; left:  1193px; top: 1px; width: 100px;
   background: var(--panel-2); border: 1px solid var(--line-bright);
   border-radius: 8px; padding: 6px; text-align: center; color: var(--text);
 }
