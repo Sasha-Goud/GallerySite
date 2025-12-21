@@ -1899,9 +1899,9 @@ width: 100%;       /* keeps it fluid up to the max-width */
 }
 /* === Total label independent controls === */
 .cart-row .col-total::before{
-  top: 10px;        /* vertical position (down = bigger number) */
+  top: 12px;        /* vertical position (down = bigger number) */
   left: 80px;       /* lateral position (right = bigger number) */
-  font-size: 14px;  /* label font size (independent) */
+  font-size: 16px;  /* label font size (independent) */
   font-weight: 500;
   letter-spacing: 1px;
 }
