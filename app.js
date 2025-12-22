@@ -717,7 +717,7 @@ function renderItem(id){
           addToBasket({
             id: dataRef.id,
             title: dataRef.title,
-            thumb: dataRef.context1 || dataRef.src || '',
+           thumb: dataRef.src || dataRef.context1 || '',
             src: dataRef.src || '',
             size: sel.size,
             paper: sel.material,
