@@ -263,10 +263,9 @@ function renderGridInto(gridEl){
     return;
   }
   gridEl.innerHTML = list.map(function(a){
-    var thumb  = a.thumb || a.src;
-    var small  = bust(thumb);
-    var big    = bust(a.src);
-    var srcset = a.thumb ? (small + ' 480w, ' + big + ' 1200w') : (big + ' 1200w');
+   var thumb  = a.thumb || a.src;
+var small  = bust(thumb);
+var srcset = small + ' 480w';
     return [
       '<article class="card" data-id="',a.id,'">',
         '<img ',
