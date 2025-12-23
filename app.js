@@ -436,17 +436,15 @@ function renderItem(id){
   fetchArtworkDetail(id).then(function(data){
 
     try {
-      console.log(
-        '[media keys] ',
-        'context1:', !!data.context1, '| context_1:', !!data.context_1, '||',
-        'context2:', !!data.context2, '| context_2:', !!data.context_2, '||',
-        'context3:', !!data.context3, '| context_3:', !!data.context_3, '||',
-        'context4:', !!data.context4, '| context_4:', !!data.context_4, '||',
-        'context5:', !!data.context5, '| context_5:', !!data.context_5, '||',
-        'context6:', !!data.context6, '| context_6:', !!data.context_6, '||',
-        'src:', !!data.src, 'video:', !!data.video
-      );
-    } catch (e) {}
+  var parts = [];
+  for (var i = 1; i <= 12; i++){
+    var k1 = 'context' + i;
+    var k2 = 'context_' + i;
+    parts.push(k1 + ':', !!data[k1], '| ' + k2 + ':', !!data[k2], '||');
+  }
+  parts.push('src:', !!data.src, 'video:', !!data.video);
+  console.log('[media keys]', ...parts);
+} catch (e) {}
 
     detailData = data;
 
@@ -457,7 +455,7 @@ function renderItem(id){
       // Collect media strictly from JSON keys (no filename probing)
       var images = [];
       if (data.src) images.push(String(data.src));          // lead with the hero
-      for (var i = 1; i <= 6; i++) {
+      for (var i = 1; i <= 12; i++) {
         var key = 'context' + i;
         if (data[key]) images.push(String(data[key]));
       }
