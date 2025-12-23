@@ -265,41 +265,6 @@
     }
   },
   {
-    "id": "032-covid",
-    "title": "Covid 19",
-    "src": "assets/032-covid/032-covid.png",
-    "thumb": "thumbs/032-Covid.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "122 X 144 CM Acrylic on Canvas\n\n\nReplica print on canvas\n\n90 x 70 cm\n£71.18\n100 x 80 cm\n£75.02\n125 x 100 cm\n£81.89\n150 x 120 cm\n£94.06",
-    "context1": "assets/032-covid/context1.png",
-    "context2": "assets/032-covid/context2.png",
-    "context3": "assets/032-covid/context3.png",
-    "context4": "assets/032-covid/context4.png",
-    "context5": "assets/032-covid/context5.png",
-    "context6": "assets/032-covid/context6.png",
-    "context7": "assets/032-covid/context7.png",
-    "options": {
-      "sizes": [
-        "122 X 144 cm",
-        "70 x 90 cm",
-        "80 x 100 cm",
-        "100 x 125 cm",
-        "120 x 150 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Original",
-        "Replica"
-      ]
-    }
-  },
-  {
     "id": "100-bodygrafix",
     "title": "One",
     "src": "assets/100-bodygrafix/100-bodygrafix.png",
@@ -548,17 +513,17 @@
     }
   },
   {
-    "id": "205-persepolis",
+    "id": "205-Persepolis",
     "title": "Persepolis",
-    "src": "assets/205-persepolis/205-persepolis.png",
-    "thumb": "thumbs/205-persepolis.png",
+    "src": "assets/205-Persepolis/205-Persepolis.png",
+    "thumb": "thumbs/205-Persepolis.png",
     "tags": [
       "Red",
       "Human",
       "Abstract"
     ],
     "description": "Original 35 mm transparency\n\nPrint on Gicle paper\n\n\nPrint on Canvas\n\n75 x 50 cm\n£32.49\n85 x 55 cm\n£65.03\n90 x 60 cm\n£69.61",
-    "context1": "assets/205-persepolis/context1.png",
+    "context1": "assets/205-Persepolis/context1.png",
     "options": {
       "sizes": [
         "A4",
@@ -728,17 +693,17 @@
     }
   },
   {
-    "id": "214-split",
+    "id": "214-Split",
     "title": "Bipolarity",
-    "src": "assets/214-split/214-split.png",
-    "thumb": "thumbs/214-split.png",
+    "src": "assets/214-Split/214-Split.png",
+    "thumb": "thumbs/214-Split.png",
     "tags": [
       "Red",
       "Human",
       "Abstract"
     ],
     "description": "Acrylic on Canvas\n\n100 X 80 CM\n\nReplica on Canvas\n\n100 x 80 cm\n£75.02",
-    "context1": "assets/214-split/context1.png",
+    "context1": "assets/214-Split/context1.png",
     "options": {
       "sizes": [
         "100 X 80 cm"
@@ -753,17 +718,17 @@
     }
   },
   {
-    "id": "215-dali",
+    "id": "215-Dali",
     "title": "Salvador",
-    "src": "assets/215-dali/215-dali.png",
-    "thumb": "thumbs/215-dali.png",
+    "src": "assets/215-Dali/215-Dali.png",
+    "thumb": "thumbs/215-Dali.png",
     "tags": [
       "Red",
       "Human",
       "Abstract"
     ],
     "description": "Acrylic on Canvas\n\n112 X 142 CM\n\nReplica on Canvas\n\n70 x 55 cm\n£32.72\n80 x 60 cm\n£74.03\n90 x 70 cm\n£77.10\n100 x 75 cm\n£78.61\n140 x 105 cm\n£89.54",
-    "context1": "assets/215-dali/context1.png",
+    "context1": "assets/215-Dali/context1.png",
     "options": {
       "sizes": [
         "142 X 112 cm",
@@ -783,17 +748,17 @@
     }
   },
   {
-    "id": "216-picasso",
+    "id": "216-Picasso",
     "title": "Pablo",
-    "src": "assets/216-picasso/216-picasso.png",
-    "thumb": "thumbs/216-picasso.png",
+    "src": "assets/216-Picasso/216-Picasso.png",
+    "thumb": "thumbs/216-Picasso.png",
     "tags": [
       "Red",
       "Human",
       "Abstract"
     ],
     "description": "Acrylic on Canvas\n\n112 X 142 CM\n\nReplica on Canvas\n\n70 x 55 cm\n£32.72\n80 x 60 cm\n£74.03\n90 x 70 cm\n£77.10\n100 x 75 cm\n£78.61\n140 x 105 cm\n£89.54",
-    "context1": "assets/216-picasso/context1.png",
+    "context1": "assets/216-Picasso/context1.png",
     "options": {
       "sizes": [
         "142 X 112 cm",
@@ -813,22 +778,22 @@
     }
   },
   {
-    "id": "217-i",
+    "id": "217-I",
     "title": "You",
-    "src": "assets/217-i/217-i.png",
-    "thumb": "thumbs/217-i.png",
+    "src": "assets/217-I/217-I.png",
+    "thumb": "thumbs/217-I.png",
     "tags": [
       "Red",
       "Human",
       "Abstract"
     ],
     "description": "Original Acrylic on Canvas\n\n152 X 102 cm",
-    "context1": "assets/217-i/context1.png",
-    "context2": "assets/217-i/context2.png",
-    "context3": "assets/217-i/context3.png",
-    "context4": "assets/217-i/context4.png",
-    "context5": "assets/217-i/context6.png",
-    "context6": "assets/217-i/context7.png",
+    "context1": "assets/217-I/context1.png",
+    "context2": "assets/217-I/context2.png",
+    "context3": "assets/217-I/context3.png",
+    "context4": "assets/217-I/context4.png",
+    "context5": "assets/217-I/context6.png",
+    "context6": "assets/217-I/context7.png",
     "options": {
       "sizes": [
         "152 X 102 cm"
