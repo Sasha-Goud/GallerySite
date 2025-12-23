@@ -20,6 +20,7 @@ def read_tags(p: Path):
     return [t for t in parts if t]
 
 def find_case_insensitive(directory: Path, base_stem: str):
+    """Return first file in directory whose stem matches base_stem (case-insensitive)."""
     base = base_stem.lower()
     for p in sorted(directory.glob("*")):
         if p.is_file() and p.stem.lower() == base:
@@ -27,6 +28,7 @@ def find_case_insensitive(directory: Path, base_stem: str):
     return None
 
 def pick_by_stem(directory: Path, stem: str):
+    """Return a file in directory named stem with any common image/video extension."""
     if not directory.exists():
         return None
     stem_l = stem.lower()
@@ -54,6 +56,7 @@ def context_candidates(dirpath: Path, max_ctx: int = 12):
             if p:
                 candidates.append(p)
 
+    # keep order, unique, at most max_ctx
     seen = set()
     out = []
     for p in candidates:
@@ -80,15 +83,10 @@ def build():
 
         id_ = assets_dir.name
 
-        # hero image is assets/<id>/<id>.(png/jpg/webp)
-        hero = None
-        for ext in (".png", ".jpg", ".jpeg", ".webp"):
-            p = assets_dir / f"{id_}{ext}"
-            if p.exists():
-                hero = p
-                break
-        if not hero:
-            continue
+        # hero image is assets/<id>/<id>.(png/jpg/webp) but may have different casing
+        hero = find_case_insensitive(assets_dir, id_)
+        if not hero or hero.suffix.lower() not in (".png", ".jpg", ".jpeg", ".webp"):
+            continue  # skip folders without a hero image named like the folder
 
         thumb = find_case_insensitive(THUMBS, id_)
 
