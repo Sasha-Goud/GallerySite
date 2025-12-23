@@ -9,7 +9,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original: Sold\nPrinted on canvas\n75 x 50 cm\n£32.49\n85 x 55 cm\n£65.03\n90 x 60 cm\n£69.61",
+    "description": "Original: Sold\nPrinted on canvas\n75 x 50 cm\n\u00a332.49\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61",
     "context1": "assets/001-lillies/context1.png",
     "options": {
       "sizes": [
@@ -71,7 +71,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original 35 mm transparency\n\nPrinted on Canvas:\n\n85 x 55 cm\n£65.03\n90 x 60 cm\n£69.61",
+    "description": "Original 35 mm transparency\n\nPrinted on Canvas:\n\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61",
     "context1": "assets/018-motionagraphy2/context1.png",
     "options": {
       "sizes": [
@@ -195,7 +195,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original: Pallet knife application of Acrylic on Canvas\n\nSize: \n00.00 X 00.00 CM (00.00 X 00.00 Inches)\n\nPrice: £00.00\n\nLimited edition replicas on Framed canvas",
+    "description": "Original: Pallet knife application of Acrylic on Canvas\n\nSize: \n00.00 X 00.00 CM (00.00 X 00.00 Inches)\n\nPrice: \u00a300.00\n\nLimited edition replicas on Framed canvas",
     "context1": "assets/029-flow98/context1.png",
     "options": {
       "sizes": [
@@ -219,7 +219,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original: Size: 305 mm X 610 mm\n\nPrint on canvas 50 limited edition \n50 x 25 cm\n£18.25",
+    "description": "Original: Size: 305 mm X 610 mm\n\nPrint on canvas 50 limited edition \n50 x 25 cm\n\u00a318.25",
     "context1": "assets/029-flow99/context1.png",
     "options": {
       "sizes": [
@@ -243,7 +243,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original: Sold\nPrinted on canvas\n75 x 50 cm\n£32.49\n85 x 55 cm\n£65.03\n90 x 60 cm\n£69.61",
+    "description": "Original: Sold\nPrinted on canvas\n75 x 50 cm\n\u00a332.49\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61",
     "context1": "assets/029-positano/context2.png",
     "options": {
       "sizes": [
@@ -265,6 +265,40 @@
     }
   },
   {
+    "id": "032-covid",
+    "title": "Covid 19",
+    "src": "assets/032-covid/032-Covid.png",
+    "thumb": "thumbs/032-Covid.png",
+    "tags": [
+      "Red",
+      "Human",
+      "Abstract"
+    ],
+    "description": "122 X 144 CM Acrylic on Canvas\n\n\nReplica print on canvas\n\n90 x 70 cm\n\u00a371.18\n100 x 80 cm\n\u00a375.02\n125 x 100 cm\n\u00a381.89\n150 x 120 cm\n\u00a394.06",
+    "context1": "assets/032-covid/context1.png",
+    "context2": "assets/032-covid/context2.png",
+    "context3": "assets/032-covid/context3.png",
+    "context4": "assets/032-covid/context4.png",
+    "context5": "assets/032-covid/context5.png",
+    "context6": "assets/032-covid/context6.png",
+    "options": {
+      "sizes": [
+        "122 X 144 cm",
+        "70 x 90 cm",
+        "80 x 100 cm",
+        "100 x 125 cm",
+        "120 x 150 cm"
+      ],
+      "materials": [
+        "Canvas"
+      ],
+      "kinds": [
+        "Original",
+        "Replica"
+      ]
+    }
+  },
+  {
     "id": "100-bodygrafix",
     "title": "One",
     "src": "assets/100-bodygrafix/100-bodygrafix.png",
@@ -274,7 +308,7 @@
       "Body art",
       "Painting"
     ],
-    "description": "Minus Zero\nArchival print on canvas.\n\nOriginal art created in 1979\nArchival print on canvas.\n50 x 50 cm\n£23.72\n70 x 70 cm\n£82.09\n80 x 80 cm\n£83.41\n100 x 100 cm\n£84.98",
+    "description": "Minus Zero\nArchival print on canvas.\n\nOriginal art created in 1979\nArchival print on canvas.\n50 x 50 cm\n\u00a323.72\n70 x 70 cm\n\u00a382.09\n80 x 80 cm\n\u00a383.41\n100 x 100 cm\n\u00a384.98",
     "context1": "assets/100-bodygrafix/context1.png",
     "options": {
       "sizes": [
@@ -301,7 +335,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n£23.72\n70 x 70 cm\n£82.09\n80 x 80 cm\n£83.41\n100 x 100 cm\n£84.98",
+    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n\u00a323.72\n70 x 70 cm\n\u00a382.09\n80 x 80 cm\n\u00a383.41\n100 x 100 cm\n\u00a384.98",
     "context1": "assets/104-despair/context1.png",
     "options": {
       "sizes": [
@@ -328,7 +362,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n£23.72\n70 x 70 cm\n£82.09\n80 x 80 cm\n£83.41\n100 x 100 cm\n£84.98",
+    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n\u00a323.72\n70 x 70 cm\n\u00a382.09\n80 x 80 cm\n\u00a383.41\n100 x 100 cm\n\u00a384.98",
     "context1": "assets/106-grafiti-berlin/context1.png",
     "options": {
       "sizes": [
@@ -355,7 +389,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n£23.72\n70 x 70 cm\n£82.09\n80 x 80 cm\n£83.41\n100 x 100 cm\n£84.98",
+    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n\u00a323.72\n70 x 70 cm\n\u00a382.09\n80 x 80 cm\n\u00a383.41\n100 x 100 cm\n\u00a384.98",
     "context1": "assets/106-sunset-on-lisa/context1.png",
     "options": {
       "sizes": [
@@ -382,7 +416,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n£23.72\n70 x 70 cm\n£82.09\n80 x 80 cm\n£83.41\n100 x 100 cm\n£84.98",
+    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n\u00a323.72\n70 x 70 cm\n\u00a382.09\n80 x 80 cm\n\u00a383.41\n100 x 100 cm\n\u00a384.98",
     "context1": "assets/107-solorosso/context1.png",
     "options": {
       "sizes": [
@@ -409,7 +443,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n£23.72\n70 x 70 cm\n£82.09\n80 x 80 cm\n£83.41\n100 x 100 cm\n£84.98",
+    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n\u00a323.72\n70 x 70 cm\n\u00a382.09\n80 x 80 cm\n\u00a383.41\n100 x 100 cm\n\u00a384.98",
     "context1": "assets/109-yin-yang/context1.png",
     "options": {
       "sizes": [
@@ -436,7 +470,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n£23.72\n70 x 70 cm\n£82.09\n80 x 80 cm\n£83.41\n100 x 100 cm\n£84.98",
+    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n\u00a323.72\n70 x 70 cm\n\u00a382.09\n80 x 80 cm\n\u00a383.41\n100 x 100 cm\n\u00a384.98",
     "context1": "assets/110-vasarelisa-2/context1.png",
     "options": {
       "sizes": [
@@ -463,7 +497,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n£23.72\n70 x 70 cm\n£82.09\n80 x 80 cm\n£83.41\n100 x 100 cm\n£84.98",
+    "description": "Original Photography\n\n\nArchival print on canvas.\n50 x 50 cm\n\u00a323.72\n70 x 70 cm\n\u00a382.09\n80 x 80 cm\n\u00a383.41\n100 x 100 cm\n\u00a384.98",
     "context1": "assets/111-venus/context1.png",
     "context2": "assets/111-venus/context2.png",
     "options": {
@@ -491,7 +525,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "35 MM Transparency Digitaliy remastered\n\nPrint on Canvas\n\n75 x 50 cm\n£32.49\n85 x 55 cm\n£65.03\n90 x 60 cm\n£69.61\n\nPrinted on Cycle",
+    "description": "35 MM Transparency Digitaliy remastered\n\nPrint on Canvas\n\n75 x 50 cm\n\u00a332.49\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61\n\nPrinted on Cycle",
     "context1": "assets/200-bicycledelic/context1.png",
     "options": {
       "sizes": [
@@ -522,7 +556,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original 35 mm transparency\n\nPrint on Gicle paper\n\n\nPrint on Canvas\n\n75 x 50 cm\n£32.49\n85 x 55 cm\n£65.03\n90 x 60 cm\n£69.61",
+    "description": "Original 35 mm transparency\n\nPrint on Gicle paper\n\n\nPrint on Canvas\n\n75 x 50 cm\n\u00a332.49\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61",
     "context1": "assets/205-Persepolis/context1.png",
     "options": {
       "sizes": [
@@ -545,7 +579,7 @@
   },
   {
     "id": "207-awakening",
-    "title": "♀︎",
+    "title": "\u2640\ufe0e",
     "src": "assets/207-awakening/207-awakening.png",
     "thumb": "thumbs/207-awakening.png",
     "tags": [
@@ -553,7 +587,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original Acrylic on Canvas 92 X 62 CM\n\nReplicas:\n75 x 50 cm\n£32.49\n85 x 55 cm\n£65.03\n90 x 60 cm\n£69.61",
+    "description": "Original Acrylic on Canvas 92 X 62 CM\n\nReplicas:\n75 x 50 cm\n\u00a332.49\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61",
     "context1": "assets/207-awakening/context1.png",
     "options": {
       "sizes": [
@@ -573,7 +607,7 @@
   },
   {
     "id": "208-men",
-    "title": "♂︎",
+    "title": "\u2642\ufe0e",
     "src": "assets/208-men/208-men.png",
     "thumb": "thumbs/208-men.png",
     "tags": [
@@ -581,7 +615,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original Acrylic on Canvas 92 X 62 CM\n\nReplicas:\n75 x 50 cm\n£32.49\n85 x 55 cm\n£65.03\n90 x 60 cm\n£69.61",
+    "description": "Original Acrylic on Canvas 92 X 62 CM\n\nReplicas:\n75 x 50 cm\n\u00a332.49\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61",
     "context1": "assets/208-men/context1.png",
     "options": {
       "sizes": [
@@ -609,7 +643,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original: SOLD\n\nReplicas:\nPrint or Canvas\n75 x 50 cm\n£32.49\n85 x 55 cm\n£65.03\n90 x 60 cm\n£69.61",
+    "description": "Original: SOLD\n\nReplicas:\nPrint or Canvas\n75 x 50 cm\n\u00a332.49\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61",
     "context1": "assets/209-caspian-rice-farmers/context1.png",
     "options": {
       "sizes": [
@@ -640,7 +674,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Original 35 mm transparency - Digitally transformed \nPrint on canvas\n\n60 x 40 cm\n£23.00\n75 x 50 cm\n£32.49\n85 x 55 cm\n£65.03\n90 x 60 cm\n£69.61",
+    "description": "Original 35 mm transparency - Digitally transformed \nPrint on canvas\n\n60 x 40 cm\n\u00a323.00\n75 x 50 cm\n\u00a332.49\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61",
     "context1": "assets/212-scargorough/context1.png",
     "options": {
       "sizes": [
@@ -671,7 +705,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Acrylic on Card 90 X 60 - Sold: \n\nReplica on Canvas\n\n75 x 50 cm\n£32.49\n85 x 55 cm\n£65.03\n90 x 60 cm\n£69.61",
+    "description": "Acrylic on Card 90 X 60 - Sold: \n\nReplica on Canvas\n\n75 x 50 cm\n\u00a332.49\n85 x 55 cm\n\u00a365.03\n90 x 60 cm\n\u00a369.61",
     "context1": "assets/213-the-bill/context1.png",
     "options": {
       "sizes": [
@@ -702,7 +736,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Acrylic on Canvas\n\n100 X 80 CM\n\nReplica on Canvas\n\n100 x 80 cm\n£75.02",
+    "description": "Acrylic on Canvas\n\n100 X 80 CM\n\nReplica on Canvas\n\n100 x 80 cm\n\u00a375.02",
     "context1": "assets/214-Split/context1.png",
     "options": {
       "sizes": [
@@ -727,7 +761,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Acrylic on Canvas\n\n112 X 142 CM\n\nReplica on Canvas\n\n70 x 55 cm\n£32.72\n80 x 60 cm\n£74.03\n90 x 70 cm\n£77.10\n100 x 75 cm\n£78.61\n140 x 105 cm\n£89.54",
+    "description": "Acrylic on Canvas\n\n112 X 142 CM\n\nReplica on Canvas\n\n70 x 55 cm\n\u00a332.72\n80 x 60 cm\n\u00a374.03\n90 x 70 cm\n\u00a377.10\n100 x 75 cm\n\u00a378.61\n140 x 105 cm\n\u00a389.54",
     "context1": "assets/215-Dali/context1.png",
     "options": {
       "sizes": [
@@ -757,7 +791,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Acrylic on Canvas\n\n112 X 142 CM\n\nReplica on Canvas\n\n70 x 55 cm\n£32.72\n80 x 60 cm\n£74.03\n90 x 70 cm\n£77.10\n100 x 75 cm\n£78.61\n140 x 105 cm\n£89.54",
+    "description": "Acrylic on Canvas\n\n112 X 142 CM\n\nReplica on Canvas\n\n70 x 55 cm\n\u00a332.72\n80 x 60 cm\n\u00a374.03\n90 x 70 cm\n\u00a377.10\n100 x 75 cm\n\u00a378.61\n140 x 105 cm\n\u00a389.54",
     "context1": "assets/216-Picasso/context1.png",
     "options": {
       "sizes": [
@@ -793,7 +827,6 @@
     "context3": "assets/217-I/context3.png",
     "context4": "assets/217-I/context4.png",
     "context5": "assets/217-I/context6.png",
-    "context6": "assets/217-I/context7.png",
     "options": {
       "sizes": [
         "152 X 102 cm"
@@ -816,7 +849,7 @@
       "Human",
       "Abstract"
     ],
-    "description": "Printed on canvas and framed\n\n80 x 45 cm : €43.10\n120 x 70 cm : €89.39\n165 x 90 cm : €106.60\n\n80 x 45 cm\n£37.72\n120 x 70 cm\n£78.23\n165 x 90 cm\n£93.29",
+    "description": "Printed on canvas and framed\n\n80 x 45 cm : \u20ac43.10\n120 x 70 cm : \u20ac89.39\n165 x 90 cm : \u20ac106.60\n\n80 x 45 cm\n\u00a337.72\n120 x 70 cm\n\u00a378.23\n165 x 90 cm\n\u00a393.29",
     "context1": "assets/300-archigraph-1/context1.png",
     "context2": "assets/300-archigraph-1/context2.png",
     "options": {
