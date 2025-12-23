@@ -51,15 +51,16 @@ def detect_video(dirpath: Path):
             return p
     return None
 
-def context_candidates(dirpath: Path):
+def context_candidates(dirpath: Path, max_ctx: int = 12):
     if not dirpath.exists(): return []
     candidates = []
-    # accept context1..6 and context_1..6
-    for n in range(1,7):
+    # accept context1..max_ctx and context_1..max_ctx
+    for n in range(1, max_ctx + 1):
         for name in (f"context{n}", f"context_{n}"):
             p = pick_by_stem(dirpath, name)
             if p: candidates.append(p)
-    # keep order, unique, at most 6
+
+    # keep order, unique, at most max_ctx
     seen = set()
     out = []
     for p in candidates:
@@ -67,9 +68,9 @@ def context_candidates(dirpath: Path):
             key = p.resolve()
             if key not in seen:
                 out.append(p); seen.add(key)
-        if len(out) >= 6: break
+        if len(out) >= max_ctx: break
     return out
-
+    
 def build():
     if not IMAGES.exists() or not THUMBS.exists():
         print("ERROR: expected images/ and thumbs/ at repo root.", file=sys.stderr)
