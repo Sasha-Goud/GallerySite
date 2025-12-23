@@ -4,7 +4,14 @@
 // ======== Tiny DOM helpers ========
 function $(sel, root){ return (root||document).querySelector(sel); }
 function $all(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
-function bust(u){ return u ? u + (u.indexOf('?')>=0 ? '&' : '?') + 'v=' + (window.APP_VERSION || Date.now()) : u; }
+// One stable cache-bust token per page load (prevents 429 rate-limit storms)
+var __BUST_TOKEN__ = (window.APP_VERSION || window.__APP_BUST__ || (window.__APP_BUST__ = Date.now()));
+
+function bust(u){
+  return u
+    ? u + (u.indexOf('?') >= 0 ? '&' : '?') + 'v=' + __BUST_TOKEN__
+    : u;
+}
 
 // ======== Router ========
 var app = $('#app');
