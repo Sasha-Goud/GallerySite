@@ -1033,9 +1033,7 @@ function renderCart(){
           '<div class="cart-rows">', rows, '</div>',
 
 '<div class="cartsum">',
-
   '<div>Total: <strong>', money(subtotal), '</strong></div>',
-
   '<div class="addr-row" style="display:flex;align-items:center;gap:12px;margin-top:10px;">',
     '<button id="set-address" type="button" ' +
       'style="position:relative;' +
@@ -1053,16 +1051,6 @@ function renderCart(){
 
 '</div>',
 
-  // Show this when country is blank (we’ll toggle it in the next step)
-  '<div id="paypal-disabled-msg" class="sub" style="display:none">Set the address (country) to enable PayPal.</div>',
-
-  // --- PayPal (unchanged) ---
-  '<div id="paypal-button-container"></div>',
-  '<div id="paypal-fallback" class="sub" style="display:none">PayPal button unavailable. Check your Client ID in <code>index.html</code>.</div>',
-
-'</div>',
- 
- '</div>'
       ].join('') : '<p class="sub">Your basket is empty.</p>',
     '</section>'
 
@@ -1146,11 +1134,37 @@ updateDeliveryCountryUI();
     renderCart();
   });
 
-  // PayPal (unchanged)
+   // PayPal (unchanged)
+  // === Gate PayPal by delivery country ===
+  var addr = (typeof loadAddress === 'function') ? loadAddress() : null;
+  var country = '';
+  if (addr) {
+    country = String(addr.country || addr.Country || '').trim();
+  }
+
+  // Update the on-page country display
+  var countryStrong = document.querySelector('#ship-country strong');
+  if (countryStrong) countryStrong.textContent = country || '—';
+
+  // Toggle message + PayPal visibility
+  var disabledMsgEl = document.getElementById('paypal-disabled-msg');
+  var paypalEl = document.getElementById('paypal-button-container');
+
+  if (!country) {
+    if (disabledMsgEl) disabledMsgEl.style.display = 'block';
+    if (paypalEl) paypalEl.style.display = 'none';
+    window.__SHIP_COUNTRY__ = '';
+    return; // do NOT render PayPal buttons until a country is set
+  } else {
+    if (disabledMsgEl) disabledMsgEl.style.display = 'none';
+    if (paypalEl) paypalEl.style.display = 'block';
+    window.__SHIP_COUNTRY__ = country;
+  }
+
   var buttonContainer = $('#paypal-button-container');
   var fallback = $('#paypal-fallback');
   if (typeof window.paypal === 'undefined'){ fallback.style.display='block'; return; }
-
+  
   var fresh = loadBasket();
   var itemsForPayPal = fresh.map(function(it){
     var unit = priceFor(it.size, it.paper, it.kind);
