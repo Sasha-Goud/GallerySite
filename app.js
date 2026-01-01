@@ -1065,9 +1065,9 @@ function renderCart(){
  '</div>'
       ].join('') : '<p class="sub">Your basket is empty.</p>',
     '</section>'
-      wireAddressButtonInCart();
-  ].join('');
 
+  ].join('');
+      wireAddressButtonInCart();
   if (!items.length) { updateCartCount(); return; }
 
 // Wire Address button
