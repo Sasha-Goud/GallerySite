@@ -904,11 +904,6 @@ function renderCart(){
 
 '</div>',
 
-  '<div id="ship-controls" class="ship-controls">',
-    '<button id="set-address" class="btn-secondary" type="button" style="position:relative;">Set the Address</button>',
-    '<div class="ship-country">Delivery Country: <strong id="ship-country">—</strong></div>',
-  '</div>',
-
   // Show this when country is blank (we’ll toggle it in the next step)
   '<div id="paypal-disabled-msg" class="sub" style="display:none">Set the address (country) to enable PayPal.</div>',
 
