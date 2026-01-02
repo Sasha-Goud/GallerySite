@@ -62,6 +62,15 @@
     "country": "UK",
     "cost": 7.00
   },
+  
+  {
+    "size": "100 X 100 cm",
+    "material": "Canvas",
+    "edition": "Replica",
+    "country": "UK",
+    "cost": 7.00
+  },
+  
   {
     "size": "50 X 50 cm",
     "material": "Archival Print",
