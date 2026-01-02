@@ -225,6 +225,23 @@ function fetchArtworks(){
     });
 }
 
+// Always load from the local shipping.json file at project root
+var _shippingCache = null;
+
+function fetchShippingRates(){
+  if (_shippingCache) return Promise.resolve(_shippingCache);
+
+  return fetch('./shipping.json', { cache: 'no-store' })
+    .then(function(res){
+      if (!res.ok) throw new Error('Failed to load shipping.json');
+      return res.json();
+    })
+    .then(function(data){
+      _shippingCache = data || [];
+      return _shippingCache;
+    });
+}
+
 function fetchArtworkDetail(id){ 
   return fetchArtworks().then(function(list){
     return list.find(function(a){ return a.id === id; }) || null;
