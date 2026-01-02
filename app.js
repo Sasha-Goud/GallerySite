@@ -888,21 +888,24 @@ function renderCart(){
 
 '<div class="cartsum">',
   '<div>Total: <strong>', money(subtotal), '</strong></div>',
+
   '<div class="addr-row" style="display:flex;align-items:center;gap:12px;margin-top:10px;">',
     '<button id="set-address" type="button" ' +
       'style="position:relative;' +
              'left:var(--addr-btn-x,0px);top:var(--addr-btn-y,0px);' +
              'background:var(--addr-btn-bg,#444);color:var(--addr-btn-fg,#fff);' +
              'border:0;padding:10px 14px;border-radius:10px;cursor:pointer;">' +
-  'Delivery Address</button>',
+      'Delivery Address</button>',
     '<div id="ship-country" class="sub">Country: <strong>—</strong></div>',
   '</div>',
+
+  '<div class="sub" style="position:relative;margin-top:10px;left:var(--ship-row-x,0px);top:var(--ship-row-y,0px);">Shipping: <strong id="ship-value">—</strong></div>',
+  '<div class="sub" style="position:relative;margin-top:6px;left:var(--grand-row-x,0px);top:var(--grand-row-y,0px);">Grand Total: <strong id="grand-total">—</strong></div>',
 
   '<div id="paypal-disabled-msg" class="sub" style="display:none">Set the address (country) to enable PayPal.</div>',
 
   '<div id="paypal-button-container"></div>',
   '<div id="paypal-fallback" class="sub" style="display:none">PayPal button unavailable. Check your Client ID in <code>index.html</code>.</div>',
-
 '</div>',
 
       ].join('') : '<p class="sub">Your basket is empty.</p>',
