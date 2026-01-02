@@ -912,13 +912,7 @@ function renderCart(){
       wireAddressButtonInCart();
   if (!items.length) { updateCartCount(); return; }
 
-// Wire Address button
-var addrBtn = document.getElementById('set-address');
-if (addrBtn) addrBtn.onclick = openAddressPanel;
 
-// Keep country display in sync
-window.__UPDATE_DELIVERY_COUNTRY__ = updateDeliveryCountryUI;
-updateDeliveryCountryUI();
 
 
   // Events on .cart-rows
