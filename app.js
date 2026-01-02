@@ -774,153 +774,7 @@ function renderItem(id){
 
 // ======== Cart ========
 
-// ===================== Address Panel (Cart) =====================
-var ADDRESS_KEY = 'gallery_ship_address_v1';
 
-// Edit these dropdown values whenever you want
-var ADDRESS_COUNTRIES = ['UK','France','USA','Canada'];
-
-function loadAddress(){
-  try { return JSON.parse(localStorage.getItem(ADDRESS_KEY)) || null; }
-  catch(e){ return null; }
-}
-function saveAddress(addr){
-  localStorage.setItem(ADDRESS_KEY, JSON.stringify(addr || null));
-}
-
-function ensureAddressPanel(){
-  var panel = document.getElementById('address-panel');
-  if (panel) return panel;
-
-  panel = document.createElement('aside');
-  panel.id = 'address-panel';
-  panel.style.cssText =
-    'position:fixed;right:18px;top:90px;z-index:9999;max-width:420px;width:calc(100% - 36px);' +
-    'background:#111;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px;' +
-    'box-shadow:0 20px 60px rgba(0,0,0,.55);display:none;';
-
-  var countryOptions = ['<option value="">Select…</option>']
-    .concat(ADDRESS_COUNTRIES.map(function(c){
-      return '<option value="'+escapeHtml(c)+'">'+escapeHtml(c)+'</option>';
-    })).join('');
-
-  panel.innerHTML =
-    '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;">' +
-      '<strong style="color:#fff;">Address</strong>' +
-      '<button id="address-close" type="button" style="background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer;">×</button>' +
-    '</div>' +
-
-    '<form id="address-form">' +
-
-      '<div style="display:grid;gap:10px;">' +
-
-        '<label style="display:grid;gap:6px;color:#ddd;">Full name' +
-          '<input id="addr-name" type="text" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0b0b0b;color:#fff;">' +
-        '</label>' +
-
-        '<label style="display:grid;gap:6px;color:#ddd;">Email' +
-          '<input id="addr-email" type="email" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0b0b0b;color:#fff;">' +
-        '</label>' +
-
-        '<label style="display:grid;gap:6px;color:#ddd;">Address line 1' +
-          '<input id="addr-line1" type="text" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0b0b0b;color:#fff;">' +
-        '</label>' +
-
-        '<label style="display:grid;gap:6px;color:#ddd;">Address line 2 (optional)' +
-          '<input id="addr-line2" type="text" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0b0b0b;color:#fff;">' +
-        '</label>' +
-
-        '<label style="display:grid;gap:6px;color:#ddd;">City / Town' +
-          '<input id="addr-city" type="text" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0b0b0b;color:#fff;">' +
-        '</label>' +
-
-        '<label style="display:grid;gap:6px;color:#ddd;">County / State (optional)' +
-          '<input id="addr-county" type="text" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0b0b0b;color:#fff;">' +
-        '</label>' +
-
-        '<label style="display:grid;gap:6px;color:#ddd;">Postcode / ZIP' +
-          '<input id="addr-postcode" type="text" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0b0b0b;color:#fff;">' +
-        '</label>' +
-
-        '<label style="display:grid;gap:6px;color:#ddd;">Country' +
-          '<select id="addr-country" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0b0b0b;color:#fff;">' +
-            countryOptions +
-          '</select>' +
-        '</label>' +
-
-      '</div>' +
-
-      '<div style="display:flex;gap:10px;justify-content:flex-end;margin-top:12px;">' +
-        '<button id="address-save" type="submit" style="background:#2b7cff;color:#fff;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;">Save</button>' +
-      '</div>' +
-
-    '</form>';
-
-  document.body.appendChild(panel);
-
-  // close
-  $('#address-close', panel).addEventListener('click', function(){
-    panel.style.display = 'none';
-  });
-
-  // save
-  $('#address-form', panel).addEventListener('submit', function(e){
-    e.preventDefault();
-
-    var addr = {
-      name: ($('#addr-name')||{}).value ? String($('#addr-name').value).trim() : '',
-      email: ($('#addr-email')||{}).value ? String($('#addr-email').value).trim() : '',
-      line1: ($('#addr-line1')||{}).value ? String($('#addr-line1').value).trim() : '',
-      line2: ($('#addr-line2')||{}).value ? String($('#addr-line2').value).trim() : '',
-      city: ($('#addr-city')||{}).value ? String($('#addr-city').value).trim() : '',
-      county: ($('#addr-county')||{}).value ? String($('#addr-county').value).trim() : '',
-      postcode: ($('#addr-postcode')||{}).value ? String($('#addr-postcode').value).trim() : '',
-      country: ($('#addr-country')||{}).value ? String($('#addr-country').value).trim() : ''
-    };
-
-    if (!addr.name || !addr.email || !addr.line1 || !addr.city || !addr.postcode || !addr.country){
-      alert('Please complete all required fields.');
-      return;
-    }
-
-    saveAddress(addr);
-    panel.style.display = 'none';
-
-    // update the country display in cart immediately
-    if (typeof window.__UPDATE_DELIVERY_COUNTRY__ === 'function') {
-      window.__UPDATE_DELIVERY_COUNTRY__();
-    }
-  });
-
-  return panel;
-}
-
-function openAddressPanel(){
-  var panel = ensureAddressPanel();
-  var addr = loadAddress() || {};
-
-  if ($('#addr-name')) $('#addr-name').value = addr.name || '';
-  if ($('#addr-email')) $('#addr-email').value = addr.email || '';
-  if ($('#addr-line1')) $('#addr-line1').value = addr.line1 || '';
-  if ($('#addr-line2')) $('#addr-line2').value = addr.line2 || '';
-  if ($('#addr-city')) $('#addr-city').value = addr.city || '';
-  if ($('#addr-county')) $('#addr-county').value = addr.county || '';
-  if ($('#addr-postcode')) $('#addr-postcode').value = addr.postcode || '';
-  if ($('#addr-country')) $('#addr-country').value = addr.country || '';
-
-  panel.style.display = 'block';
-}
-
-function updateDeliveryCountryUI(){
-  var addr = loadAddress();
-  var country = (addr && addr.country) ? String(addr.country).trim() : '';
-
-  var box = document.getElementById('ship-country');
-  if (box){
-    var strong = box.querySelector('strong');
-    if (strong) strong.textContent = country || '—';
-  }
-}
 
 function renderCart(){
   var items = loadBasket();
@@ -1193,16 +1047,21 @@ updateDeliveryCountryUI();
         application_context: { brand_name:'Gallery Shop', user_action:'PAY_NOW', shipping_preference:'GET_FROM_FILE' },
         purchase_units: [{
           description: 'Art prints and products',
-          amount: {
-            currency_code:'GBP',
-            value: itemsTotal.toFixed(2),
-            breakdown: {
-              item_total: { currency_code:'GBP', value: itemsTotal.toFixed(2) },
-              shipping:   { currency_code:'GBP', value: '0.00' },
-              tax_total:  { currency_code:'GBP', value: '0.00' },
-              discount:   { currency_code:'GBP', value: '0.00' }
-            }
-          },
+          amount: (function () {
+  var shippingTotal = round2(Number(window.__SHIP_TOTAL__ || 0));
+  var orderTotal = round2(itemsTotal + shippingTotal);
+
+  return {
+    currency_code: 'GBP',
+    value: orderTotal.toFixed(2),
+    breakdown: {
+      item_total: { currency_code: 'GBP', value: itemsTotal.toFixed(2) },
+      shipping:   { currency_code: 'GBP', value: shippingTotal.toFixed(2) },
+      tax_total:  { currency_code: 'GBP', value: '0.00' },
+      discount:   { currency_code: 'GBP', value: '0.00' }
+    }
+  };
+})(),
           items: itemsForPayPal
         }]
       });
