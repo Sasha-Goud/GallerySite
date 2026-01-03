@@ -1371,16 +1371,51 @@ function openAddressPanel(){
 
     document.body.appendChild(overlay);
 
-    // Populate country dropdown
-    var sel = document.getElementById('addr-country');
-    if (sel){
-      ADDRESS_COUNTRIES.forEach(function(c){
-        var o = document.createElement('option');
-        o.value = c;
-        o.textContent = c;
-        sel.appendChild(o);
+   // Populate country dropdown (from shipping.json)
+var sel = document.getElementById('addr-country');
+if (sel){
+
+  // Keep the first "Select…" option, remove anything else (prevents duplicates)
+  while (sel.options.length > 1) sel.remove(1);
+
+  function fillCountriesFromRows(rows){
+    var map = Object.create(null); // lower -> display name
+    (rows || []).forEach(function(r){
+      var name = '';
+      if (r && typeof r === 'object') name = String(r.country || '').trim();
+      if (!name) return;
+      var key = name.toLowerCase();
+      if (!map[key]) map[key] = name;
+    });
+
+    var list = Object.keys(map).map(function(k){ return map[k]; });
+    list.sort(function(a,b){ return a.localeCompare(b); });
+
+    list.forEach(function(name){
+      var o = document.createElement('option');
+      o.value = name;        // keep storing the country name (matches your current saveAddress schema)
+      o.textContent = name;
+      sel.appendChild(o);
+    });
+  }
+
+  // Prefer shipping.json as the source of truth
+  if (typeof fetchShippingRates === 'function'){
+    fetchShippingRates()
+      .then(fillCountriesFromRows)
+      .catch(function(){
+        // Fallback if shipping.json can’t be read for any reason
+        if (typeof ADDRESS_COUNTRIES !== 'undefined') fillCountriesFromRows(
+          (ADDRESS_COUNTRIES || []).map(function(c){ return { country: c }; })
+        );
       });
-    }
+  } else {
+    // Last-resort fallback
+    if (typeof ADDRESS_COUNTRIES !== 'undefined') fillCountriesFromRows(
+      (ADDRESS_COUNTRIES || []).map(function(c){ return { country: c }; })
+    );
+  }
+}
 
     function close(){
       overlay.style.display = 'none';
