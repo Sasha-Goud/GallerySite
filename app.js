@@ -1160,32 +1160,78 @@ function renderCart(){
   window.paypal.Buttons({
     fundingSource: paypal.FUNDING.PAYPAL,
     style: { layout:'vertical', color:'gold', shape:'rect', label:'paypal' },
-    createOrder: function(data, actions){
-      if (!itemsForPayPal.length || itemsTotal <= 0){ alert('Your basket is empty.'); return; }
-      return actions.order.create({
-        intent: 'CAPTURE',
-        application_context: { brand_name:'Gallery Shop', user_action:'PAY_NOW', shipping_preference:'GET_FROM_FILE' },
-        purchase_units: [{
-          description: 'Art prints and products',
-          amount: (function () {
-  var shippingTotal = round2(Number(window.__SHIP_TOTAL__ || 0));
-  var orderTotal = round2(itemsTotal + shippingTotal);
+   createOrder: function(data, actions){
+  if (!itemsForPayPal.length || itemsTotal <= 0){
+    alert('Your basket is empty.');
+    return;
+  }
 
-  return {
-    currency_code: 'GBP',
-    value: orderTotal.toFixed(2),
-    breakdown: {
-      item_total: { currency_code: 'GBP', value: itemsTotal.toFixed(2) },
-      shipping:   { currency_code: 'GBP', value: shippingTotal.toFixed(2) },
-      tax_total:  { currency_code: 'GBP', value: '0.00' },
-      discount:   { currency_code: 'GBP', value: '0.00' }
+  // Use the address saved by your Address panel
+  var addr = (typeof loadAddress === 'function') ? loadAddress() : null;
+  if (!addr){
+    alert('Please enter a delivery address first.');
+    return;
+  }
+
+  // Try to get country code without hard-coding
+  var countryCode = String(addr.country_code || '').trim().toUpperCase();
+
+  // Fallback: derive from shipping.json cache if country_code wasn't saved
+  if (!countryCode && typeof _shippingCache !== 'undefined' && Array.isArray(_shippingCache)){
+    var want = String(addr.country || '').trim().toLowerCase();
+    for (var i = 0; i < _shippingCache.length; i++){
+      var row = _shippingCache[i] || {};
+      if (String(row.country || '').trim().toLowerCase() === want && row.country_code){
+        countryCode = String(row.country_code).trim().toUpperCase();
+        break;
+      }
     }
-  };
-})(),
-          items: itemsForPayPal
-        }]
-      });
+  }
+
+  if (!countryCode){
+    alert('Country code is missing. Please open Delivery Address and re-save the country.');
+    return;
+  }
+
+  return actions.order.create({
+    intent: 'CAPTURE',
+    application_context: {
+      brand_name: 'Gallery Shop',
+      user_action: 'PAY_NOW',
+      shipping_preference: 'SET_PROVIDED_ADDRESS'
     },
+    purchase_units: [{
+      description: 'Art prints and products',
+      amount: (function () {
+        var shippingTotal = round2(Number(window.__SHIP_TOTAL__ || 0));
+        var orderTotal = round2(itemsTotal + shippingTotal);
+
+        return {
+          currency_code: 'GBP',
+          value: orderTotal.toFixed(2),
+          breakdown: {
+            item_total: { currency_code: 'GBP', value: itemsTotal.toFixed(2) },
+            shipping:   { currency_code: 'GBP', value: shippingTotal.toFixed(2) },
+            tax_total:  { currency_code: 'GBP', value: '0.00' },
+            discount:   { currency_code: 'GBP', value: '0.00' }
+          }
+        };
+      })(),
+      shipping: {
+        name: { full_name: String(addr.name || '').trim() },
+        address: {
+          address_line_1: String(addr.line1 || '').trim(),
+          address_line_2: String(addr.line2 || '').trim(),
+          admin_area_2:   String(addr.city || '').trim(),
+          admin_area_1:   String(addr.state || addr.county || '').trim(),
+          postal_code:    String(addr.postcode || '').trim(),
+          country_code:   countryCode
+        }
+      },
+      items: itemsForPayPal
+    }]
+  });
+},
     onApprove: function(data, actions){
       return actions.order.capture().then(function(details){
         saveBasket([]); updateCartCount();

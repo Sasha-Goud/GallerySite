@@ -1,16 +1,19 @@
 [
-  {
-    "size": "100 X 100 cm",
-    "material": "Framed Archival Print",
-    "edition": "Replica",
-    "country": "UK",
-    "cost": 27.00
-  },
+
+  { "size":"100 X 100 cm",
+    "material":"Framed Archival Print",
+    "edition":"Replica",
+    "country":"UK",
+    "country_code":"GB",
+    "cost":27 },
+  
+  
   {
     "size": "50 X 50 cm",
     "material": "Framed Archival Print",
     "edition": "Replica",
     "country": "UK",
+    "country_code":"GB",
     "cost": 7.80
   },
   {
@@ -18,6 +21,7 @@
     "material": "Framed Archival Print",
     "edition": "Replica",
     "country": "France",
+    "country_code":"FR",
     "cost": 27.00
   },
   {
@@ -25,6 +29,7 @@
     "material": "Framed Archival Print",
     "edition": "Replica",
     "country": "France",
+    "country_code":"FR",
     "cost": 7.80
   },
   {
@@ -32,6 +37,7 @@
     "material": "Framed Archival Print",
     "edition": "Replica",
     "country": "USA",
+    "country_code":"US",
     "cost": 25.00
   },
   {
@@ -39,6 +45,7 @@
     "material": "Framed Archival Print",
     "edition": "Replica",
     "country": "USA",
+    "country_code":"US",
     "cost": 10.50
   },
   {
@@ -46,6 +53,7 @@
     "material": "Framed Archival Print",
     "edition": "Replica",
     "country": "Canada",
+    "country_code":"CA",
     "cost": 35.00
   },
   {
@@ -53,6 +61,7 @@
     "material": "Framed Archival Print",
     "edition": "Replica",
     "country": "Canada",
+    "country_code":"CA",
     "cost": 13.00
   },
   {
@@ -60,6 +69,7 @@
     "material": "Archival Print",
     "edition": "Replica",
     "country": "UK",
+    "country_code":"GB",
     "cost": 7.00
   },
   
@@ -68,6 +78,7 @@
     "material": "Canvas",
     "edition": "Replica",
     "country": "UK",
+    "country_code":"GB",
     "cost": 7.00
   },
   
@@ -76,6 +87,7 @@
     "material": "Archival Print",
     "edition": "Replica",
     "country": "UK",
+    "country_code":"GB",
     "cost": 7.00
   }
 ]
