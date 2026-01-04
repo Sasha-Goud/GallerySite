@@ -1,10 +1,17 @@
-// BUILD_TAG: 2025-12-20-01
-// ROLLBACK: revert to previous app.js you pasted (console showed app.js?v=2025-11-12-01)
+// BUILD_TAG: 2025-12-20-02
+// ROLLBACK: revert to BUILD_TAG: 2025-12-20-01 (your current file before this change)
 
 // ======== Tiny DOM helpers ========
 function $(sel, root){ return (root||document).querySelector(sel); }
 function $all(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
-function bust(u){ return u ? u + (u.indexOf('?')>=0 ? '&' : '?') + 'v=' + (window.APP_VERSION || Date.now()) : u; }
+// One stable cache-bust token per page load (prevents 429 rate-limit storms)
+var __BUST_TOKEN__ = (window.APP_VERSION || window.__APP_BUST__ || (window.__APP_BUST__ = Date.now()));
+
+function bust(u){
+  return u
+    ? u + (u.indexOf('?') >= 0 ? '&' : '?') + 'v=' + __BUST_TOKEN__
+    : u;
+}
 
 // ======== Router ========
 var app = $('#app');
@@ -130,17 +137,62 @@ var PRICING = {
   "92 X 62 cm": { Canvas: { Original: 180.00 } },
   "75 X 50 cm": { Canvas: { Replica: 75.00 } },
   "85 X 55 cm": { Canvas: { Replica: 85.00 } },
-  "90 X 60 cm": { Canvas: { Replica: 99.00 } }
+  "90 X 60 cm": { Canvas: { Replica: 99.00 } },
+  
+  "122 X 144 cm": { Canvas: { Original: 850.00 } },
+  "70 x 90 cm": { Canvas: { Replica: 130.00 } },
+  "80 x 100 cm": { Canvas: { Replica: 85.00 } },
+  "100 x 125 cm": { Canvas: { Replica: 99.00 } },
+  "120 x 150 cm": { Canvas: { Replica: 110.00 } },
+  
+  "142 X 112 cm": { Canvas: { Original: 1200.00 } },
+  "70 x 55 cm": { Canvas: { Replica: 130.00 } },
+  "80 x 60 cm": { Canvas: { Replica: 85.00 } },
+  "90 x 70 cm": { Canvas: { Replica: 99.00 } },
+  "100 x 75 cm": { Canvas: { Replica: 110.00 } },
+  "140 x 105 cm": { Canvas: { Replica: 110.00 } },
+  
+   "100 X 80 cm": { Canvas: { Original: 750.00 } },
+  "100 x 80 cm": { Canvas: { Replica: 180.00 } },
+  
+  "100 x 100 cm": { "Archival Print": { Replica: 130.00 }, Canvas: { Replica: 160.00 }  },
+  "80 x 80 cm": { "Archival Print": { Replica: 100.00 }, Canvas: { Replica: 130.00 } },
+  "70 x 70 cm": { "Archival Print": { Replica: 90.00 }, Canvas: { Replica: 110.00 } },
+  "50 x 50 cm": { "Archival Print": { Replica: 60.00 }, Canvas: { Replica: 800.00 } },
+  
+  "30.5 X 61 cm": { Canvas: { Original: 150.00 } },
+  "152 X 102 cm": { Canvas: { Original: 1200.00 } }
 };
 
-// Defaults (only used if an artwork has no options block; still safe because priceFor() returns null if not found)
+// --- Normalise size keys so "x", "X", and "×" all match ---
+function normSizeKey(s){
+  return String(s || '')
+    .trim()
+    .replace(/\s+/g, ' ')
+    .replace(/×/g, 'X')
+    .replace(/x/ig, 'X');
+}
+var SIZE_KEYMAP = {};
+Object.keys(PRICING).forEach(function(k){
+  SIZE_KEYMAP[normSizeKey(k)] = k;
+});
+function resolveSizeKey(size){
+  var nk = normSizeKey(size);
+  return SIZE_KEYMAP[nk] || String(size || '').trim();
+}
+
+// Defaults used only for populating select lists when an artwork has an options block.
+// (We still always compute price via PRICING; if not found, priceFor returns null.)
 var SIZES = Object.keys(PRICING);
 var MATERIALS = ['Canvas'];
 var KINDS = ['Original','Replica'];
 
 function priceFor(size, material, kind){
   if (!size || !material || !kind) return null;
-  return PRICING[size] && PRICING[size][material] ? PRICING[size][material][kind] : null;
+  var sk = resolveSizeKey(size);
+  var m  = String(material).trim();
+  var k  = String(kind).trim();
+  return (PRICING[sk] && PRICING[sk][m]) ? PRICING[sk][m][k] : null;
 }
 
 // ======== Static pages ========
@@ -154,6 +206,8 @@ function renderContact(){
   app.innerHTML = '<section class="section"><h1>Contact</h1><p>Email: <a href="mailto:you@example.com">you@example.com</a></p></section>';
 }
 
+
+
 // ======== API helpers ========
 function fetchJSON(url){
   return fetch(url, { cache:'no-store' }).then(function(res){
@@ -163,7 +217,7 @@ function fetchJSON(url){
 }
 
 // Always load from the local artworks.json file at project root
-function fetchArtworks(){
+function fetchArtworks(){ 
   return fetch('./artworks.json', { cache: 'no-store' })
     .then(function(res){
       if (!res.ok) throw new Error('Failed to load artworks.json');
@@ -171,11 +225,30 @@ function fetchArtworks(){
     });
 }
 
-function fetchArtworkDetail(id){
+// Always load from the local shipping.json file at project root
+var _shippingCache = null;
+
+function fetchShippingRates(){
+  if (_shippingCache) return Promise.resolve(_shippingCache);
+
+  return fetch('./shipping.json', { cache: 'no-store' })
+    .then(function(res){
+      if (!res.ok) throw new Error('Failed to load shipping.json');
+      return res.json();
+    })
+    .then(function(data){
+      _shippingCache = data || [];
+      return _shippingCache;
+    });
+}
+
+function fetchArtworkDetail(id){ 
   return fetchArtworks().then(function(list){
     return list.find(function(a){ return a.id === id; }) || null;
   });
 }
+
+
 
 // ======== FILTERS (tags) ========
 var ALL_ARTWORKS = [];
@@ -214,10 +287,9 @@ function renderGridInto(gridEl){
     return;
   }
   gridEl.innerHTML = list.map(function(a){
-    var thumb = a.thumb || a.src;
-    var small  = bust(thumb);
-    var big    = bust(a.src);
-    var srcset = a.thumb ? (small + ' 480w, ' + big + ' 1200w') : (big + ' 1200w');
+   var thumb  = a.thumb || a.src;
+var small  = bust(thumb);
+var srcset = small + ' 480w';
     return [
       '<article class="card" data-id="',a.id,'">',
         '<img ',
@@ -348,6 +420,7 @@ function renderGallery(){
 }
 
 // ======== Item detail (hero + media bar + purchase panel) ========
+
 function renderItem(id){
 
   app.innerHTML = '<section class="section"><div class="hero-wrap"><button class="hero-nav prev" id="hero-prev" aria-label="Previous">‹</button><div id="hero" class="hero-media"></div><button class="hero-nav next" id="hero-next" aria-label="Next">›</button><div class="media-bar"><div class="thumb-strip" id="thumb-strip"></div><button id="purchase-btn" class="btn-purchase" type="button">Purchase</button></div></div></section>';
@@ -385,7 +458,18 @@ function renderItem(id){
 
   fetchArtworkDetail(id).then(function(data){
 
-    detailData = data; // <- critical so Purchase has the item
+    try {
+  var parts = [];
+  for (var i = 1; i <= 12; i++){
+    var k1 = 'context' + i;
+    var k2 = 'context_' + i;
+    parts.push(k1 + ':', !!data[k1], '| ' + k2 + ':', !!data[k2], '||');
+  }
+  parts.push('src:', !!data.src, 'video:', !!data.video);
+  console.log('[media keys]', ...parts);
+} catch (e) {}
+
+    detailData = data;
 
     /* ========= MEDIA STRIP (use JSON fields only) ========= */
     strip.innerHTML = '';
@@ -393,8 +477,8 @@ function renderItem(id){
     (function(){
       // Collect media strictly from JSON keys (no filename probing)
       var images = [];
-      if (data.src) images.push(String(data.src));          // ← always lead with the hero
-      for (var i = 1; i <= 6; i++) {
+      if (data.src) images.push(String(data.src));          // lead with the hero
+      for (var i = 1; i <= 12; i++) {
         var key = 'context' + i;
         if (data[key]) images.push(String(data[key]));
       }
@@ -463,6 +547,7 @@ function renderItem(id){
         }
       });
 
+      try { console.log('[media] using JSON fields only'); } catch(_){}
     })();
     /* ========= /MEDIA STRIP ========= */
 
@@ -506,7 +591,7 @@ function renderItem(id){
         '<div class="purchase-stack">' +
           selectHtml('Size', 'opt-size', sizes) +
           selectHtml('Material', 'opt-material', materials) +
-          selectHtml('Kind', 'opt-kind', kinds) +
+          selectHtml('Edition', 'opt-kind', kinds) +
           '<div class="purchase-row qty-row">' +
             '<label class="purchase-label" for="qty">Qty</label>' +
             '<div class="qty-control">' +
@@ -532,47 +617,6 @@ function renderItem(id){
       return { size:size, material:material, kind:kind, qty:qty };
     }
 
-    // NEW: constrain "Kind" choices to what is actually priced for the selected Size+Material
-    function availableKindsFor(size, material, allowedKinds){
-      if (!size || !material) return (allowedKinds || []).slice();
-      var priced = (PRICING[size] && PRICING[size][material]) ? Object.keys(PRICING[size][material]) : [];
-      if (!Array.isArray(allowedKinds) || !allowedKinds.length) return priced;
-      return allowedKinds.filter(function(k){ return priced.indexOf(k) >= 0; });
-    }
-
-    function rebuildKindSelect(kinds){
-      var sel = $('#opt-kind');
-      if (!sel) return;
-      var current = sel.value || '';
-      sel.innerHTML = '<option value="">Select…</option>' + (kinds || []).map(function(k){
-        var v = String(k);
-        return '<option value="'+escapeHtml(v)+'">'+escapeHtml(v)+'</option>';
-      }).join('');
-      // keep if still valid
-      if (current && kinds.indexOf(current) >= 0) sel.value = current;
-      else sel.value = '';
-    }
-
-    function maybeAutoSelectIfSingle(selectEl, list){
-      if (!selectEl) return;
-      if (Array.isArray(list) && list.length === 1){
-        selectEl.value = String(list[0]);
-      }
-    }
-
-    function updateKindConstraints(allowedKinds){
-      var s = $('#opt-size');
-      var m = $('#opt-material');
-      if (!s || !m) return;
-      var size = s.value || '';
-      var material = m.value || '';
-      var constrained = availableKindsFor(size, material, allowedKinds);
-      rebuildKindSelect(constrained);
-      // helpful: if only one valid kind for this size/material, select it automatically
-      var kSel = $('#opt-kind');
-      maybeAutoSelectIfSingle(kSel, constrained);
-    }
-
     function updatePriceAndButton(){
       var sel = getSelection();
       var priceEl = $('#price-value');
@@ -589,88 +633,133 @@ function renderItem(id){
       }
     }
 
-    function wireOptionEvents(allowedKinds){
-      var s1 = $('#opt-size'), s2 = $('#opt-material'), s3 = $('#opt-kind'), qty = $('#qty');
-
-      if (s1) s1.addEventListener('change', function(){
-        updateKindConstraints(allowedKinds);
-        updatePriceAndButton();
-      });
-
-      if (s2) s2.addEventListener('change', function(){
-        updateKindConstraints(allowedKinds);
-        updatePriceAndButton();
-      });
-
-      if (s3) s3.addEventListener('change', updatePriceAndButton);
-
-      if (qty) qty.addEventListener('input', function(){
-        if (Number(qty.value) < 1) qty.value = 1;
-        updatePriceAndButton();
-      });
-
-      var panel = document.getElementById('purchase-panel');
-      if (panel){
-        panel.addEventListener('click', function(e){
-          var btn = e.target && e.target.closest && e.target.closest('.qtybtn');
-          if (!btn) return;
-          var input = document.getElementById('qty');
-          if (!input) return;
-          var val = Math.max(1, Number(input.value) || 1);
-          if (btn.getAttribute('data-act') === 'inc') val++;
-          if (btn.getAttribute('data-act') === 'dec') val = Math.max(1, val - 1);
-          input.value = val;
-          updatePriceAndButton();
-        });
-      }
-    }
-
-    function wireAddToCart(dataRef, sizes, materials, kinds){
-      var btn = $('#add-to-cart');
-      if (!btn) return;
-      btn.addEventListener('click', function(){
-        var sel = getSelection();
-        var unit = priceFor(sel.size, sel.material, sel.kind);
-        if (typeof unit !== 'number') return;
-        addToBasket({
-          id: dataRef.id,
-          title: dataRef.title,
-          thumb: dataRef.context1 || dataRef.src || '',
-          src: dataRef.src || '',
-          size: sel.size,
-          paper: sel.material,
-          kind: sel.kind,
-          qty: sel.qty,
-          options: { sizes: sizes.slice(), materials: materials.slice(), kinds: kinds.slice() },
-          pricing: (dataRef.pricing || PRICING),
-          unitPrice: round2(unit)
-        });
-        updateCartCount();
-        try { btn.textContent = 'Added!'; setTimeout(function(){ btn.textContent = 'Add to basket'; }, 900); } catch(_){}
-      });
-    }
-
     function openPurchasePanelUsing(dataRef){
       if (!dataRef) return;
 
       var opts = dataRef.options || {};
 
-      // Use per-artwork option lists if provided, else defaults
-      var sizes     = Array.isArray(opts.sizes)     && opts.sizes.length     ? opts.sizes     : SIZES.slice();
-      var materials = Array.isArray(opts.materials) && opts.materials.length ? opts.materials : MATERIALS.slice();
-      var kinds     = Array.isArray(opts.kinds)     && opts.kinds.length     ? opts.kinds     : KINDS.slice();
+      // Use the item’s allowed lists, but we will FILTER the "kinds" list dynamically
+      var sizes     = Array.isArray(opts.sizes)     && opts.sizes.length     ? opts.sizes.slice()     : SIZES.slice();
+      var materials = Array.isArray(opts.materials) && opts.materials.length ? opts.materials.slice() : MATERIALS.slice();
+      var kindsAll  = Array.isArray(opts.kinds)     && opts.kinds.length     ? opts.kinds.slice()     : KINDS.slice();
 
       var panel = ensurePurchaseUI();
-      renderOptions(panel, sizes, materials, kinds);
+      renderOptions(panel, sizes, materials, kindsAll);
 
-      // Helpful: if only one material, auto-select it so user doesn't get “no price” confusion
-      maybeAutoSelectIfSingle($('#opt-material'), materials);
+      // --- NEW: filter kinds based on selected size+material and PRICING ---
+      function setSelectOptions(selectEl, values){
+        if (!selectEl) return;
+        var current = selectEl.value;
+        var html = '<option value="">Select…</option>';
+        values.forEach(function(v){
+          var s = String(v);
+          html += '<option value="'+escapeHtml(s)+'">'+escapeHtml(s)+'</option>';
+        });
+        selectEl.innerHTML = html;
 
-      // Constrain kinds immediately (so if size already selected later, it will update)
-      updateKindConstraints(kinds);
+        // Keep previous selection only if it still exists
+        if (values.indexOf(current) >= 0){
+          selectEl.value = current;
+        } else {
+          selectEl.value = '';
+        }
+      }
 
-      wireOptionEvents(kinds);
-      wireAddToCart(dataRef, sizes, materials, kinds);
+      function pricedKindsFor(size, material){
+        if (!size || !material) return [];
+        var sk = resolveSizeKey(size);
+        var m = String(material).trim();
+        var bucket = (PRICING[sk] && PRICING[sk][m]) ? PRICING[sk][m] : null;
+        if (!bucket) return [];
+        return Object.keys(bucket);
+      }
+
+      function refreshKindDropdown(){
+        var sizeSel = $('#opt-size');
+        var matSel  = $('#opt-material');
+        var kindSel = $('#opt-kind');
+        if (!kindSel) return;
+
+        var chosenSize = sizeSel ? sizeSel.value : '';
+        var chosenMat  = matSel ? matSel.value : '';
+
+        // Intersection: (item's allowed kinds) ∩ (priced kinds for chosen size+material)
+        var priced = pricedKindsFor(chosenSize, chosenMat);
+        var nextKinds = kindsAll.filter(function(k){ return priced.indexOf(String(k)) >= 0; });
+
+        // If size/material not chosen yet, show all allowed kinds (so the UI doesn't look empty)
+        if (!chosenSize || !chosenMat) nextKinds = kindsAll.slice();
+
+        setSelectOptions(kindSel, nextKinds);
+      }
+
+      function wireOptionEvents(){
+        var s1 = $('#opt-size'), s2 = $('#opt-material'), s3 = $('#opt-kind'), qty = $('#qty');
+
+        if (s1) s1.addEventListener('change', function(){
+          refreshKindDropdown();
+          updatePriceAndButton();
+        });
+        if (s2) s2.addEventListener('change', function(){
+          refreshKindDropdown();
+          updatePriceAndButton();
+        });
+        if (s3) s3.addEventListener('change', updatePriceAndButton);
+
+        if (qty) qty.addEventListener('input', function(){
+          if (Number(qty.value) < 1) qty.value = 1;
+          updatePriceAndButton();
+        });
+
+        var panel = document.getElementById('purchase-panel');
+        if (panel){
+          panel.addEventListener('click', function(e){
+            var btn = e.target && e.target.closest && e.target.closest('.qtybtn');
+            if (!btn) return;
+            var input = document.getElementById('qty');
+            if (!input) return;
+            var val = Math.max(1, Number(input.value) || 1);
+            if (btn.getAttribute('data-act') === 'inc') val++;
+            if (btn.getAttribute('data-act') === 'dec') val = Math.max(1, val - 1);
+            input.value = val;
+            updatePriceAndButton();
+          });
+        }
+      }
+
+      function wireAddToCart(dataRef, sizes, materials, kinds){
+        var btn = $('#add-to-cart');
+        if (!btn) return;
+        btn.addEventListener('click', function(){
+          var sel = getSelection();
+          var unit = priceFor(sel.size, sel.material, sel.kind);
+          if (typeof unit !== 'number') return;
+
+          addToBasket({
+            id: dataRef.id,
+            title: dataRef.title,
+           thumb: dataRef.src || dataRef.context1 || '',
+            src: dataRef.src || '',
+            size: sel.size,
+            paper: sel.material,
+            kind: sel.kind,
+            qty: sel.qty,
+            options: { sizes: sizes.slice(), materials: materials.slice(), kinds: kinds.slice() },
+            pricing: (dataRef.pricing || PRICING),
+            unitPrice: round2(unit)
+          });
+
+          updateCartCount();
+          try { btn.textContent = 'Added!'; setTimeout(function(){ btn.textContent = 'Add to basket'; }, 900); } catch(_){}
+        });
+      }
+
+      wireOptionEvents();
+      wireAddToCart(dataRef, sizes, materials, kindsAll);
+
+      // Apply initial filtering once panel opens
+      refreshKindDropdown();
+      updatePriceAndButton();
 
       document.body.classList.add('purchase-open');
       panel.classList.add('open');
@@ -681,15 +770,12 @@ function renderItem(id){
         document.body.classList.remove('purchase-open');
       }
       if (closeBtn) closeBtn.onclick = close;
-
       document.addEventListener('keydown', function esc(e){
         if (e.key === 'Escape'){ close(); document.removeEventListener('keydown', esc); }
       });
-
-      updatePriceAndButton();
     }
 
-    // Wire button immediately
+    // Wire button immediately (works even before data arrives thanks to detailData)
     purchaseBtn.addEventListener('click', function(){
       openPurchasePanelUsing(detailData);
     });
@@ -700,6 +786,12 @@ function renderItem(id){
     try { console.error('renderItem error:', err); } catch(_){}
   });
 }
+
+
+
+// ======== Cart ========
+
+
 
 function renderCart(){
   var items = loadBasket();
@@ -757,7 +849,7 @@ function renderCart(){
           '<select class="cart-opt cart-material">', opts(materials, it.paper), '</select>',
         '</div>',
 
-        // KIND
+        // EDITION
         '<div class="col-extras">',
           '<select class="cart-opt cart-kind">', opts(kinds, it.kind), '</select>',
         '</div>',
@@ -801,7 +893,7 @@ function renderCart(){
             '<div class="h-item">Item</div>',
             '<div class="h-size">Size</div>',
             '<div class="h-material">Material</div>',
-            '<div class="h-extras">Kind</div>',
+            '<div class="h-extras">Edition</div>',
             '<div class="h-unit">Price</div>',
             '<div class="h-qty">Quantity</div>',
             '<div class="h-total">Total</div>',
@@ -811,17 +903,37 @@ function renderCart(){
           // Rows container (free layout)
           '<div class="cart-rows">', rows, '</div>',
 
-          '<div class="cartsum"><div>Subtotal: <strong>', money(subtotal), '</strong></div>',
-          '<div class="sub">Taxes &amp; shipping calculated at checkout.</div></div>',
+'<div class="cartsum">',
+  '<div>Total: <strong>', money(subtotal), '</strong></div>',
 
-          '<div id="paypal-button-container"></div>',
-          '<div id="paypal-fallback" class="sub" style="display:none">PayPal button unavailable. Check your Client ID in <code>index.html</code>.</div>',
-        '</div>'
+  '<div class="addr-row" style="display:flex;align-items:center;gap:12px;margin-top:10px;">',
+    '<button id="set-address" type="button" ' +
+      'style="position:relative;' +
+             'left:var(--addr-btn-x,0px);top:var(--addr-btn-y,0px);' +
+             'background:var(--addr-btn-bg,#444);color:var(--addr-btn-fg,#fff);' +
+             'border:0;padding:10px 14px;border-radius:10px;cursor:pointer;">' +
+      'Delivery Address</button>',
+    '<div id="ship-country" class="sub">Country: <strong>—</strong></div>',
+  '</div>',
+
+  '<div class="sub" style="position:relative;margin-top:10px;left:var(--ship-row-x,0px);top:var(--ship-row-y,0px);">Shipping: <strong id="ship-value">—</strong></div>',
+  '<div class="sub" style="position:relative;margin-top:6px;left:var(--grand-row-x,0px);top:var(--grand-row-y,0px);">Grand Total: <strong id="grand-total">—</strong></div>',
+
+  '<div id="paypal-disabled-msg" class="sub" style="display:none">Set the address (country) to enable PayPal.</div>',
+
+  '<div id="paypal-button-container"></div>',
+  '<div id="paypal-fallback" class="sub" style="display:none">PayPal button unavailable. Check your Client ID in <code>index.html</code>.</div>',
+'</div>',
+
       ].join('') : '<p class="sub">Your basket is empty.</p>',
     '</section>'
-  ].join('');
 
+  ].join('');
+      wireAddressButtonInCart();
   if (!items.length) { updateCartCount(); return; }
+
+
+
 
   // Events on .cart-rows
   var rowsEl = $('.cart-rows', app);
@@ -890,11 +1002,37 @@ function renderCart(){
     renderCart();
   });
 
-  // PayPal (unchanged)
+   // PayPal (unchanged)
+  // === Gate PayPal by delivery country ===
+  var addr = (typeof loadAddress === 'function') ? loadAddress() : null;
+  var country = '';
+  if (addr) {
+    country = String(addr.country || addr.Country || '').trim();
+  }
+
+  // Update the on-page country display
+  var countryStrong = document.querySelector('#ship-country strong');
+  if (countryStrong) countryStrong.textContent = country || '—';
+
+  // Toggle message + PayPal visibility
+  var disabledMsgEl = document.getElementById('paypal-disabled-msg');
+  var paypalEl = document.getElementById('paypal-button-container');
+
+  if (!country) {
+    if (disabledMsgEl) disabledMsgEl.style.display = 'block';
+    if (paypalEl) paypalEl.style.display = 'none';
+    window.__SHIP_COUNTRY__ = '';
+    return; // do NOT render PayPal buttons until a country is set
+  } else {
+    if (disabledMsgEl) disabledMsgEl.style.display = 'none';
+    if (paypalEl) paypalEl.style.display = 'block';
+    window.__SHIP_COUNTRY__ = country;
+  }
+
   var buttonContainer = $('#paypal-button-container');
   var fallback = $('#paypal-fallback');
   if (typeof window.paypal === 'undefined'){ fallback.style.display='block'; return; }
-
+  
   var fresh = loadBasket();
   var itemsForPayPal = fresh.map(function(it){
     var unit = priceFor(it.size, it.paper, it.kind);
@@ -912,31 +1050,188 @@ function renderCart(){
   var itemsTotal = round2(itemsForPayPal.reduce(function(s, it){
     return s + Number(it.unit_amount.value) * Number(it.quantity);
   }, 0));
+  
+    // === Shipping + Grand Total (NEW) ===
+  window.__SHIP_TOTAL__ = 0;
+
+  // Update UI helper
+  function setShipUI(ship, grand){
+    var shipEl  = document.getElementById('ship-value');
+    var grandEl = document.getElementById('grand-total');
+    if (shipEl)  shipEl.textContent  = ship;
+    if (grandEl) grandEl.textContent = grand;
+  }
+
+  // Default placeholders
+  setShipUI('—', '—');
+
+  // Make an updater we can also call after saving the address
+  window.__UPDATE_SHIPPING__ = function(){
+    var country = String(window.__SHIP_COUNTRY__ || '').trim();
+    if (!country) {
+      window.__SHIP_TOTAL__ = 0;
+      setShipUI('—', '—');
+      return;
+    }
+
+    // show "working" placeholders
+    setShipUI('…', '…');
+
+    // Get latest basket (so qty / options are current)
+    var list = loadBasket();
+
+    // Safety: if loader missing, do nothing
+    if (typeof fetchShippingRates !== 'function'){
+      window.__SHIP_TOTAL__ = 0;
+      setShipUI('—', '—');
+      return;
+    }
+
+    fetchShippingRates().then(function(rates){
+      rates = rates || [];
+
+      function matchRate(it){
+        var size     = String(it.size || '').trim();
+        var material = String(it.paper || '').trim(); // cart uses "paper" for material
+        var edition  = String(it.kind || '').trim();  // cart uses "kind" for edition
+
+        for (var i = 0; i < rates.length; i++){
+          var r = rates[i];
+          if (String(r.country  || '').trim() === country &&
+              String(r.size     || '').trim() === size &&
+              String(r.material || '').trim() === material &&
+              String(r.edition  || '').trim() === edition){
+            return r;
+          }
+        }
+        return null;
+      }
+
+      var total = 0;
+
+      for (var k = 0; k < list.length; k++){
+        var it  = list[k];
+        var qty = Math.max(1, Number(it.qty) || 1);
+
+        var r = matchRate(it);
+        if (!r || typeof r.cost !== 'number'){
+          window.__SHIP_TOTAL__ = 0;
+
+          // If we can't price shipping, show N/A and hide PayPal
+          setShipUI('N/A', 'N/A');
+
+          var pp  = document.getElementById('paypal-button-container');
+          var msg = document.getElementById('paypal-disabled-msg');
+          if (pp) pp.style.display = 'none';
+          if (msg){
+            msg.style.display = 'block';
+            msg.textContent = 'No shipping rate for the current selection.';
+          }
+          return;
+        }
+
+        total += Number(r.cost) * qty;
+      }
+
+      total = round2(total);
+      window.__SHIP_TOTAL__ = total;
+
+      // Update UI
+      setShipUI(money(total), money(round2(itemsTotal + total)));
+
+      // Re-show PayPal (and restore message)
+      var pp2  = document.getElementById('paypal-button-container');
+      var msg2 = document.getElementById('paypal-disabled-msg');
+      if (pp2) pp2.style.display = 'block';
+      if (msg2){
+        msg2.textContent = 'Set the address (country) to enable PayPal.';
+        msg2.style.display = 'none';
+      }
+    }).catch(function(){
+      window.__SHIP_TOTAL__ = 0;
+      setShipUI('—', '—');
+    });
+  };
+
+  // Run once per render
+  window.__UPDATE_SHIPPING__();
+  // === End Shipping + Grand Total ===
 
   window.paypal.Buttons({
     fundingSource: paypal.FUNDING.PAYPAL,
     style: { layout:'vertical', color:'gold', shape:'rect', label:'paypal' },
-    createOrder: function(data, actions){
-      if (!itemsForPayPal.length || itemsTotal <= 0){ alert('Your basket is empty.'); return; }
-      return actions.order.create({
-        intent: 'CAPTURE',
-        application_context: { brand_name:'Gallery Shop', user_action:'PAY_NOW', shipping_preference:'GET_FROM_FILE' },
-        purchase_units: [{
-          description: 'Art prints and products',
-          amount: {
-            currency_code:'GBP',
-            value: itemsTotal.toFixed(2),
-            breakdown: {
-              item_total: { currency_code:'GBP', value: itemsTotal.toFixed(2) },
-              shipping:   { currency_code:'GBP', value: '0.00' },
-              tax_total:  { currency_code:'GBP', value: '0.00' },
-              discount:   { currency_code:'GBP', value: '0.00' }
-            }
-          },
-          items: itemsForPayPal
-        }]
-      });
+   createOrder: function(data, actions){
+  if (!itemsForPayPal.length || itemsTotal <= 0){
+    alert('Your basket is empty.');
+    return;
+  }
+
+  // Use the address saved by your Address panel
+  var addr = (typeof loadAddress === 'function') ? loadAddress() : null;
+  if (!addr){
+    alert('Please enter a delivery address first.');
+    return;
+  }
+
+  // Try to get country code without hard-coding
+  var countryCode = String(addr.country_code || '').trim().toUpperCase();
+
+  // Fallback: derive from shipping.json cache if country_code wasn't saved
+  if (!countryCode && typeof _shippingCache !== 'undefined' && Array.isArray(_shippingCache)){
+    var want = String(addr.country || '').trim().toLowerCase();
+    for (var i = 0; i < _shippingCache.length; i++){
+      var row = _shippingCache[i] || {};
+      if (String(row.country || '').trim().toLowerCase() === want && row.country_code){
+        countryCode = String(row.country_code).trim().toUpperCase();
+        break;
+      }
+    }
+  }
+
+  if (!countryCode){
+    alert('Country code is missing. Please open Delivery Address and re-save the country.');
+    return;
+  }
+
+  return actions.order.create({
+    intent: 'CAPTURE',
+    application_context: {
+      brand_name: 'Gallery Shop',
+      user_action: 'PAY_NOW',
+      shipping_preference: 'SET_PROVIDED_ADDRESS'
     },
+    purchase_units: [{
+      description: 'Art prints and products',
+      amount: (function () {
+        var shippingTotal = round2(Number(window.__SHIP_TOTAL__ || 0));
+        var orderTotal = round2(itemsTotal + shippingTotal);
+
+        return {
+          currency_code: 'GBP',
+          value: orderTotal.toFixed(2),
+          breakdown: {
+            item_total: { currency_code: 'GBP', value: itemsTotal.toFixed(2) },
+            shipping:   { currency_code: 'GBP', value: shippingTotal.toFixed(2) },
+            tax_total:  { currency_code: 'GBP', value: '0.00' },
+            discount:   { currency_code: 'GBP', value: '0.00' }
+          }
+        };
+      })(),
+      shipping: {
+        name: { full_name: String(addr.name || '').trim() },
+        address: {
+          address_line_1: String(addr.line1 || '').trim(),
+          address_line_2: String(addr.line2 || '').trim(),
+          admin_area_2:   String(addr.city || '').trim(),
+          admin_area_1:   String(addr.state || addr.county || '').trim(),
+          postal_code:    String(addr.postcode || '').trim(),
+          country_code:   countryCode
+        }
+      },
+      items: itemsForPayPal
+    }]
+  });
+},
     onApprove: function(data, actions){
       return actions.order.capture().then(function(details){
         saveBasket([]); updateCartCount();
@@ -955,6 +1250,257 @@ function renderCart(){
   }).render(buttonContainer);
 }
 
+// ===================== Address Panel (Cart) =====================
+
+var ADDRESS_KEY = 'gallery_ship_address_v1';
+
+// Edit this list any time you like (dropdown values only)
+var ADDRESS_COUNTRIES = ['UK', 'France', 'USA', 'Canada'];
+
+function loadAddress(){
+  try { return JSON.parse(localStorage.getItem(ADDRESS_KEY)) || null; }
+  catch(e){ return null; }
+}
+
+function saveAddress(addr){
+  localStorage.setItem(ADDRESS_KEY, JSON.stringify(addr || null));
+}
+
+function updateCartAddressUI(){
+  var addr = loadAddress();
+  var country = (addr && addr.country) ? String(addr.country) : '';
+
+  // Country display
+  var shipCountryEl = document.getElementById('ship-country');
+  if (shipCountryEl){
+    var strong = shipCountryEl.querySelector('strong');
+    if (strong) strong.textContent = country || '—';
+  }
+
+  // Store for later shipping rules
+  window.__SHIP_COUNTRY__ = country;
+
+  // Optional: disable PayPal UI until country is set
+  var msg = document.getElementById('paypal-disabled-msg');
+  var pp  = document.getElementById('paypal-button-container');
+  if (msg) msg.style.display = country ? 'none' : 'block';
+  if (pp){
+    pp.style.opacity = country ? '1' : '0.4';
+    pp.style.pointerEvents = country ? 'auto' : 'none';
+  }
+  
+  if (typeof window.__UPDATE_SHIPPING__ === 'function') window.__UPDATE_SHIPPING__();
+
+}
+function openAddressPanel(){
+  var overlay = document.getElementById('address-overlay');
+
+  if (!overlay){
+    overlay = document.createElement('div');
+    overlay.id = 'address-overlay';
+    overlay.style.cssText =
+      'position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:9999;' +
+      'display:flex;align-items:center;justify-content:center;padding:16px;';
+
+    overlay.innerHTML =
+      '<div id="address-panel" style="width:min(680px,100%);background:#111;border:1px solid rgba(255,255,255,.12);' +
+        'border-radius:14px;padding:16px;box-shadow:0 10px 40px rgba(0,0,0,.5);">' +
+
+        '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;">' +
+          '<strong style="color:#fff;font-size:16px;">Delivery Address</strong>' +
+          '<button id="addr-close" type="button" style="background:transparent;color:#fff;border:0;font-size:22px;cursor:pointer;">×</button>' +
+        '</div>' +
+
+        '<form id="addr-form" autocomplete="on">' +
+
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Full name *</label>' +
+              '<input id="addr-name" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Email *</label>' +
+              '<input id="addr-email" type="email" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div style="grid-column:1 / -1;">' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Address line 1 *</label>' +
+              '<input id="addr-line1" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div style="grid-column:1 / -1;">' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Address line 2 (optional)</label>' +
+              '<input id="addr-line2" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">City / Town *</label>' +
+              '<input id="addr-city" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">County / State (optional)</label>' +
+              '<input id="addr-state" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Postcode / ZIP *</label>' +
+              '<input id="addr-postcode" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Country *</label>' +
+              '<select id="addr-country" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+                '<option value="">Select…</option>' +
+              '</select>' +
+            '</div>' +
+
+          '</div>' +
+
+          '<div id="addr-error" style="color:#ffb4b4;font-size:12px;margin-top:10px;display:none;"></div>' +
+
+          '<div style="display:flex;gap:10px;justify-content:flex-end;margin-top:14px;">' +
+            '<button id="addr-cancel" type="button" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:10px;cursor:pointer;">Cancel</button>' +
+            '<button id="addr-save" type="submit" style="background:#fff;color:#111;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;">Save</button>' +
+          '</div>' +
+
+        '</form>' +
+      '</div>';
+
+    document.body.appendChild(overlay);
+
+   // Populate country dropdown (from shipping.json)
+var sel = document.getElementById('addr-country');
+if (sel){
+
+  // Keep the first "Select…" option, remove anything else (prevents duplicates)
+  while (sel.options.length > 1) sel.remove(1);
+
+  function fillCountriesFromRows(rows){
+    var map = Object.create(null); // lower -> display name
+    (rows || []).forEach(function(r){
+      var name = '';
+      if (r && typeof r === 'object') name = String(r.country || '').trim();
+      if (!name) return;
+      var key = name.toLowerCase();
+      if (!map[key]) map[key] = name;
+    });
+
+    var list = Object.keys(map).map(function(k){ return map[k]; });
+    list.sort(function(a,b){ return a.localeCompare(b); });
+
+    list.forEach(function(name){
+      var o = document.createElement('option');
+      o.value = name;        // keep storing the country name (matches your current saveAddress schema)
+      o.textContent = name;
+      sel.appendChild(o);
+    });
+  }
+
+  // Prefer shipping.json as the source of truth
+  if (typeof fetchShippingRates === 'function'){
+    fetchShippingRates()
+      .then(fillCountriesFromRows)
+      .catch(function(){
+        // Fallback if shipping.json can’t be read for any reason
+        if (typeof ADDRESS_COUNTRIES !== 'undefined') fillCountriesFromRows(
+          (ADDRESS_COUNTRIES || []).map(function(c){ return { country: c }; })
+        );
+      });
+  } else {
+    // Last-resort fallback
+    if (typeof ADDRESS_COUNTRIES !== 'undefined') fillCountriesFromRows(
+      (ADDRESS_COUNTRIES || []).map(function(c){ return { country: c }; })
+    );
+  }
+}
+
+    function close(){
+      overlay.style.display = 'none';
+    }
+
+    overlay.addEventListener('click', function(e){
+      if (e.target === overlay) close();
+    });
+
+    var closeBtn = document.getElementById('addr-close');
+    if (closeBtn) closeBtn.addEventListener('click', close);
+
+    var cancelBtn = document.getElementById('addr-cancel');
+    if (cancelBtn) cancelBtn.addEventListener('click', close);
+
+    var form = document.getElementById('addr-form');
+    if (form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        var errEl = document.getElementById('addr-error');
+        function fail(msg){
+          if (errEl){
+            errEl.textContent = msg;
+            errEl.style.display = 'block';
+          }
+        }
+        if (errEl) errEl.style.display = 'none';
+
+        var name     = (document.getElementById('addr-name')||{}).value || '';
+        var email    = (document.getElementById('addr-email')||{}).value || '';
+        var line1    = (document.getElementById('addr-line1')||{}).value || '';
+        var line2    = (document.getElementById('addr-line2')||{}).value || '';
+        var city     = (document.getElementById('addr-city')||{}).value || '';
+        var state    = (document.getElementById('addr-state')||{}).value || '';
+        var postcode = (document.getElementById('addr-postcode')||{}).value || '';
+        var country  = (document.getElementById('addr-country')||{}).value || '';
+
+        if (!name.trim()) return fail('Full name is required.');
+        if (!email.trim()) return fail('Email is required.');
+        if (!line1.trim()) return fail('Address line 1 is required.');
+        if (!city.trim()) return fail('City / Town is required.');
+        if (!postcode.trim()) return fail('Postcode / ZIP is required.');
+        if (!country.trim()) return fail('Country is required.');
+
+        saveAddress({
+          name: name.trim(),
+          email: email.trim(),
+          line1: line1.trim(),
+          line2: line2.trim(),
+          city: city.trim(),
+          state: state.trim(),
+          postcode: postcode.trim(),
+          country: country.trim()
+        });
+
+        close();
+        updateCartAddressUI();
+      });
+    }
+  }
+
+  // Show + preload
+  overlay.style.display = 'flex';
+
+  var addr = loadAddress() || {};
+  if (document.getElementById('addr-name'))     document.getElementById('addr-name').value = addr.name || '';
+  if (document.getElementById('addr-email'))    document.getElementById('addr-email').value = addr.email || '';
+  if (document.getElementById('addr-line1'))    document.getElementById('addr-line1').value = addr.line1 || '';
+  if (document.getElementById('addr-line2'))    document.getElementById('addr-line2').value = addr.line2 || '';
+  if (document.getElementById('addr-city'))     document.getElementById('addr-city').value = addr.city || '';
+  if (document.getElementById('addr-state'))    document.getElementById('addr-state').value = addr.state || '';
+  if (document.getElementById('addr-postcode')) document.getElementById('addr-postcode').value = addr.postcode || '';
+  if (document.getElementById('addr-country'))  document.getElementById('addr-country').value = addr.country || '';
+}
+
+function wireAddressButtonInCart(){
+  var btn = document.getElementById('set-address');
+  if (btn && !btn.__addrWired){
+    btn.__addrWired = true;
+    btn.addEventListener('click', openAddressPanel);
+  }
+  updateCartAddressUI();
+}
+
 // ======== Lightbox ========
 var lightbox = $('#lightbox');
 var lightboxImg = $('#lightbox-img');
@@ -963,20 +1509,18 @@ var zoomOutBtn = $('#zoom-out');
 var zoom = 1;
 
 function openLightbox(src, alt){
-  if (!lightbox || !lightboxImg) return;
   lightboxImg.src = src; lightboxImg.alt = alt || '';
   zoom = 1; applyZoom();
-  lightbox.setAttribute('aria-hidden','false');
+  if (lightbox) lightbox.setAttribute('aria-hidden','false');
 }
 function closeLightbox(){
-  if (!lightbox || !lightboxImg) return;
+  if (!lightbox) return;
   lightbox.setAttribute('aria-hidden','true');
-  lightboxImg.src='';
+  if (lightboxImg) lightboxImg.src='';
 }
 function applyZoom(){
-  if (!lightboxImg) return;
   var zoomLevelEl = $('#zoom-level');
-  lightboxImg.style.transform = 'scale('+zoom+')';
+  if (lightboxImg) lightboxImg.style.transform = 'scale('+zoom+')';
   if (zoomLevelEl) zoomLevelEl.textContent = Math.round(zoom*100)+'%';
 }
 
