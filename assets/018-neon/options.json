@@ -1,5 +1,8 @@
 {
-  "sizes": ["A4", "A3", "A2"],
-  "materials": ["Matte", "Glossy", "Canvas", "Velvet"],
-  "kinds": ["Print", "Framed", "Canvas"]
+  "variants": [
+
+    { "edition": "Print", "material": "Archival Gloss", "size": "42 x 59.4 CM", "price": 80.00 },
+    { "edition": "Print", "material": "Archival Gloss", "size": "29.7 x 42 CM", "price": 65.00 }
+  ]
 }
+

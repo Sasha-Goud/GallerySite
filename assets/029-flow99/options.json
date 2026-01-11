@@ -1,5 +1,5 @@
 {
-  "sizes": ["30.5 X 61 cm"],
-  "materials": ["Canvas"],
-  "kinds": ["Original"]
+  "variants": [
+    { "edition": "Original", "material": "Canvas", "size": "30.5 x 61 cm", "price": 100.00 }
+  ]
 }

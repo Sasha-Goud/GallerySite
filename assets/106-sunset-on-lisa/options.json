@@ -1,5 +1,14 @@
 {
-  "sizes": ["100 X 100 cm", "80 x 80 cm", "70 x 70 cm", "50 x 50 cm"],
-  "materials": ["Archival Print"],
-  "kinds": ["Replica"]
+  "variants": [
+    
+    { "edition": "Print", "material": "Archival", "size": "100 × 100 cm", "price": 120.00 },
+    { "edition": "Print", "material": "Archival", "size": "80 × 80 cm", "price": 50.00 },
+    { "edition": "Print", "material": "Archival", "size": "70 × 70 cm", "price": 120.00 },
+    { "edition": "Print", "material": "Archival", "size": "50 × 50 cm", "price": 50.00 },
+    
+    { "edition": "Print", "material": "Framed Archival", "size": "100 × 100 cm", "price": 150.00 },
+    { "edition": "Print", "material": "Framed Archival", "size": "80 × 80 cm", "price": 80.00 },
+    { "edition": "Print", "material": "Framed Archival", "size": "70 × 70 cm", "price": 150.00 },
+    { "edition": "Print", "material": "Framed Archival", "size": "50 × 50 cm", "price": 80.00 }
+  ]
 }

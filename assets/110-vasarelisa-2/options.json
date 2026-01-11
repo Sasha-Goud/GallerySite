@@ -1,5 +1,12 @@
 {
-  "sizes": ["100 X 100 cm", "80 x 80 cm", "70 x 70 cm", "50 x 50 cm"],
-  "materials": ["Archival Print"],
-  "kinds": ["Replica"]
+  "variants": [
+
+    { "edition": "Print", "material": "Matt Archival", "size": "100 x 100 cm", "price": 75.00 },
+    { "edition": "Print", "material": "Matt Archival", "size": "80 x 80 cm", "price": 55.00 },
+    { "edition": "Print", "material": "Matt Archival", "size": "60 x 60 cm", "price": 45.00 },
+
+    { "edition": "Print", "material": "Framed Matt Archival", "size": "100 x 100 cm", "price": 175.00 },
+    { "edition": "Print", "material": "Framed Matt Archival", "size": "80 x 80 cm", "price": 155.00 },
+    { "edition": "Print", "material": "Framed Matt Archival", "size": "60 x 60 cm", "price": 145.00 }
+  ]
 }

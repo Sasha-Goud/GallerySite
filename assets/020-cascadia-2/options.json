@@ -1,5 +1,7 @@
 {
-  "sizes": ["A4", "A3", "A2"],
-  "materials": ["Matte", "Glossy", "Canvas", "Velvet"],
-  "kinds": ["Print", "Framed", "Canvas"]
+  "variants": [
+    
+    { "edition": "Print", "material": "Hahnemühle Photorag", "size": "50 × 75 cm", "price": 120.00 },
+    { "edition": "Print", "material": "Hahnemühle Photorag", "size": "40 × 60 cm", "price": 50.00 }
+  ]
 }

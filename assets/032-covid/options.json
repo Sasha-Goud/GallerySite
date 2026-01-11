@@ -1,5 +1,16 @@
 {
-  "sizes": ["122 X 144 cm", "70 x 90 cm", "80 x 100 cm", "100 x 125 cm", "120 x 150 cm"],
-  "materials": ["Canvas"],
-  "kinds": ["Original", "Replica"]
+  "variants": [
+    { "edition": "Original", "material": "Canvas", "size": "122 x 144 cm", "price": 1500.00 },
+
+    { "edition": "Print", "material": "Canvas", "size": "120 x 150 cm", "price": 175.00 },
+    { "edition": "Print", "material": "Canvas", "size": "100 x 125 cm", "price": 155.00 },
+    { "edition": "Print", "material": "Canvas", "size": "80 x 100 cm", "price": 125.00 },
+    { "edition": "Print", "material": "Canvas", "size": "70 x 90 cm", "price": 100.00 },
+
+    { "edition": "Print", "material": "Framed Canvas", "size": "120 x 150 cm", "price": 275.00 },
+    { "edition": "Print", "material": "Framed Canvas", "size": "100 x 125 cm", "price": 245.00 },
+    { "edition": "Print", "material": "Framed Canvas", "size": "80 x 100 cm", "price": 215.00 },
+    { "edition": "Print", "material": "Framed Canvas", "size": "70 x 90 cm", "price": 185.00 }
+
+  ]
 }

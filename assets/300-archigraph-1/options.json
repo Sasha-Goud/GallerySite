@@ -1,5 +1,9 @@
 {
-  "sizes": ["A4", "A3", "A2"],
-  "materials": ["Matte", "Glossy", "Canvas", "Velvet"],
-  "kinds": ["Print", "Framed", "Canvas"]
+  "variants": [
+   { "edition": "Print", "material": "Canvas", "size": "90 x 165 cm", "price": 200.00 },
+   { "edition": "Print", "material": "Canvas", "size": "45 x 80 cm", "price": 90.00 },
+   
+   { "edition": "Print", "material": "Framed Canvas", "size": "90 x 165 cm", "price": 275.00 },
+   { "edition": "Print", "material": "Framed Canvas", "size": "45 x 80 cm", "price": 160.00 }
+  ]
 }

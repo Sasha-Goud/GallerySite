@@ -1,5 +1,13 @@
 {
-  "sizes": ["92 X 62 cm", "75 x 50 cm", "85 x 55 cm", "90 x 60 cm"],
-  "materials": ["Canvas"],
-  "kinds": ["Original", "Replica"]
+  "variants": [
+    { "edition": "Original", "material": "Canvas", "size": "92 x 62 cm", "price": 500.00 },
+
+    { "edition": "Print", "material": "Canvas", "size": "75 x 50 cm", "price": 75.00 },
+    { "edition": "Print", "material": "Canvas", "size": "85 x 55 cm", "price": 85.00 },
+    { "edition": "Print", "material": "Canvas", "size": "90 x 60 cm", "price": 99.00 },
+
+    { "edition": "Print", "material": "Framed Canvas", "size": "75 x 50 cm", "price": 175.00 },
+    { "edition": "Print", "material": "Framed Canvas", "size": "85 x 55 cm", "price": 185.00 },
+    { "edition": "Print", "material": "Framed Canvas", "size": "90 x 60 cm", "price": 199.00 }
+  ]
 }

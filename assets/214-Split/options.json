@@ -1,5 +1,6 @@
 {
-  "sizes": ["100 X 80 cm"],
-  "materials": ["Canvas"],
-  "kinds": ["Original", "Replica"]
+  "variants": [
+    { "edition": "Original", "material": "Canvas", "size": "100 x 80 cm", "price": 500.00 },
+    { "edition": "Original", "material": "Framed Canvas", "size": "100 x 80 cm", "price": 120.00 },
+  ]
 }

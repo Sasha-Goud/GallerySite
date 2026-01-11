@@ -1,5 +1,15 @@
 {
-  "sizes": ["100 X 100 cm", "80 x 80 cm", "70 x 70 cm", "50 x 50 cm"],
-  "materials": ["Canvas"],
-  "kinds": ["Replica"]
+  "variants": [
+    
+    { "edition": "Print", "material": "Canvas", "size": "100 × 100 cm", "price": 120.00 },
+    { "edition": "Print", "material": "Canvas", "size": "80 × 80 cm", "price": 50.00 },
+    { "edition": "Print", "material": "Canvas", "size": "70 × 70 cm", "price": 120.00 },
+    { "edition": "Print", "material": "Canvas", "size": "50 × 50 cm", "price": 50.00 },
+    
+    { "edition": "Print", "material": "Framed Canvas", "size": "100 × 100 cm", "price": 150.00 },
+    { "edition": "Print", "material": "Framed Canvas", "size": "80 × 80 cm", "price": 80.00 },
+    { "edition": "Print", "material": "Framed Canvas", "size": "70 × 70 cm", "price": 150.00 },
+    { "edition": "Print", "material": "Framed Canvas", "size": "50 × 50 cm", "price": 80.00 }
+  ]
 }
+
