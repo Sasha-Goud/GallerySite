@@ -12,21 +12,31 @@
     "description": "Title: Lily (1998/2019)\n\nThis artwork began as a photograph taken in 1998 and was digitally transformed into wall art in 2019. It shows a cluster of lily pads floating on still water, with soft shadows and reflections giving a calm, natural feel.\n\nThe piece is printed on canvas and available in three sizes. It can be ordered framed or unframed. Prices include delivery to the UK, Europe, and the United States.\n\nDelivery is available to the following countries: [insert countries here].",
     "context1": "assets/001-lillies/context1.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -40,24 +50,34 @@
       "Human",
       "Abstract"
     ],
-    "description": "Title: Le Marais (1978–2023)\n\nThis artwork is based on a photograph taken in 1978 in Le Marais, a historic district in Paris known for its narrow residential streets and timeless atmosphere. The image was later used as reference for an acrylic painting, completed in 2023.\n\nThe piece captures the quiet character of the area through simplified shapes and bold contrast, showing three figures walking toward the light at the end of a stone passage.\n\nPrinted on canvas and available in three sizes. You can order it framed or unframed. Prices include delivery to the UK, Europe, and the United States.\n\nDelivery is available to the following countries: [insert countries here].",
+    "description": "Title: Le Marais (1978\u20132023)\n\nThis artwork is based on a photograph taken in 1978 in Le Marais, a historic district in Paris known for its narrow residential streets and timeless atmosphere. The image was later used as reference for an acrylic painting, completed in 2023.\n\nThe piece captures the quiet character of the area through simplified shapes and bold contrast, showing three figures walking toward the light at the end of a stone passage.\n\nPrinted on canvas and available in three sizes. You can order it framed or unframed. Prices include delivery to the UK, Europe, and the United States.\n\nDelivery is available to the following countries: [insert countries here].",
     "context1": "assets/013-archigraph-2/context1.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -71,24 +91,34 @@
       "Human",
       "Abstract"
     ],
-    "description": "Resonance\n\nThis image was captured in 1976 as part of a photographic experiment titled Still in Motion. It was created using long exposure and a technique similar to painting with the camera—by moving the camera rather than the subject. No digital editing was used.\n\nResonance is one of two works from the original series featured in this collection, with a third appearing later.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tAvailable framed or unframed\n\n\n⸻\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
+    "description": "Resonance\n\nThis image was captured in 1976 as part of a photographic experiment titled Still in Motion. It was created using long exposure and a technique similar to painting with the camera\u2014by moving the camera rather than the subject. No digital editing was used.\n\nResonance is one of two works from the original series featured in this collection, with a third appearing later.\n\n\u2e3b\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tAvailable framed or unframed\n\n\n\u2e3b\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
     "context1": "assets/018-motionagraphy2/context1.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -105,21 +135,19 @@
     "description": "CONTOUR (1978)\n\nPhotographic print from original analog experiment shot on 35 mm film.\n\nCreated in 1978 as part of a series of light experiments using a projector and two torches, sculpting the edge of the body with minimal illumination. In the image, emptiness shapes what is seen: a tension between light and void.\n\nMEDIA:\n- Type: C-Type Fuji Flex (Super Gloss)\n- Weight: 255 GSM\n- Tone: Warm White\n- Finish: Ultra-high gloss with deep blacks and rich contrast\n\nFuji Flex lends the image a vivid, cinematic quality, with intense highlights, deep blacks and a reflective surface that accentuates every curve of light.\n\nDISPLAY TIP:\nFor best results, display on evenly lit walls and avoid direct spotlights to minimise glare.",
     "context1": "assets/018-neon/context1.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Archival Gloss",
+          "size": "42 x 59.4 CM",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Gloss",
+          "size": "29.7 x 42 CM",
+          "price": 65.0
+        }
       ]
     }
   },
@@ -133,24 +161,22 @@
       "Human",
       "Abstract"
     ],
-    "description": "La Chiesa Madre 1999\n\n\nBased on a photograph I took in Positano in 1999, this piece began with a compositional idea, using a telephoto lens to flatten the perspective, emphasising the cascading geometry typical of the town’s architecture. I painted the image in grayscale acrylic on board to heighten its accented sunset reflections.\n\nThe original has been sold, but replica prints on canvas are available in three sizes, framed or unframed.",
+    "description": "La Chiesa Madre 1999\n\n\nBased on a photograph I took in Positano in 1999, this piece began with a compositional idea, using a telephoto lens to flatten the perspective, emphasising the cascading geometry typical of the town\u2019s architecture. I painted the image in grayscale acrylic on board to heighten its accented sunset reflections.\n\nThis piece works especially well as a Gicl\u00e9e Hahnem\u00fchle Photorag print. It\u2019s a more expensive paper, but worth it \u2014 the image truly comes to life on its surface. The super-matte finish enhances muted blacks, preserves fine detail, and offers even colour reproduction. Its subtle texture and smooth, cotton feel create beautifully soft colour gradients.\n\n\nThe original has been sold, but replica prints on canvas are available in three sizes, framed or unframed.",
     "context1": "assets/020-cascadia-2/context1.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "50 \u00d7 75 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "40 \u00d7 60 cm",
+          "price": 50.0
+        }
       ]
     }
   },
@@ -164,24 +190,46 @@
       "Human",
       "Abstract"
     ],
-    "description": "Rush\n1991 – by [Your Name]\n\nThis photograph was taken in 1991 and captures a close-up view of waves breaking along the shore. The focus is on texture and movement, highlighting the contrast between dark water and bright foam. No digital effects were used beyond standard tonal adjustments for print.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tAvailable framed or unframed\nGiclée print (archival)\tUnframed only – velvety matte finish\n\n\n⸻\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
+    "description": "Rush\n1991 \u2013 by [Your Name]\n\nThis photograph was taken in 1991 and captures a close-up view of waves breaking along the shore. The focus is on texture and movement, highlighting the contrast between dark water and bright foam. No digital effects were used beyond standard tonal adjustments for print.\n\n\u2e3b\n\nThis piece works especially well as a Gicl\u00e9e Hahnem\u00fchle Photo Rag print. It\u2019s a more expensive paper, but worth it \u2014 the image truly comes to life on its surface. The super-matte finish enhances muted blacks, preserves fine detail, and offers even colour reproduction. Its subtle texture and smooth, cotton feel create beautifully soft colour gradients.\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tAvailable framed or unframed\nGicl\u00e9e print (archival)\tUnframed only \u2013 velvety matte finish\n\n\n\u2e3b\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
     "context1": "assets/025-waverush/context1.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "50 \u00d7 75 cm",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "40 \u00d7 60 cm",
+          "price": 65.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -195,17 +243,16 @@
       "Human",
       "Abstract"
     ],
-    "description": "Accidental Aesthetics I\n1991– by [Your Name]\n\nThis work is part of a series of accidental aesthetics, where natural or unexpected patterns serve as the starting point for abstract compositions. In this piece, the textures were inspired by the way cheese expands under foil during cooking. As the foil is peeled away, it reveals intricate surface patterns—formed through heat and pressure—that echo the shapes we see across nature.\n\nThe idea behind the work is simple: physical reactions create forms, and those forms often repeat themselves. Whether it’s melted cheese, the surface of a planet, or the structure of a cell, these visual patterns connect the smallest moments to the largest scales of the universe.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nOriginal acrylic on canvas\tAvailable unframed (mounted only)\n\n\n⸻\n\nDelivery\nFree delivery is available to the UK",
+    "description": "Accidental Aesthetics I\n1991\u2013 by [Your Name]\n\nThis work is part of a series of accidental aesthetics, where natural or unexpected patterns serve as the starting point for abstract compositions. In this piece, the textures were inspired by the way cheese expands under foil during cooking. As the foil is peeled away, it reveals intricate surface patterns\u2014formed through heat and pressure\u2014that echo the shapes we see across nature.\n\nThe idea behind the work is simple: physical reactions create forms, and those forms often repeat themselves. Whether it\u2019s melted cheese, the surface of a planet, or the structure of a cell, these visual patterns connect the smallest moments to the largest scales of the universe.\n\n\u2e3b\n\nMedia\n\nFormat\tFraming Options\nOriginal acrylic on canvas\tAvailable unframed (mounted only)\n\n\n\u2e3b\n\nDelivery\nFree delivery is available to the UK",
     "context1": "assets/029-flow98/context1.png",
     "options": {
-      "sizes": [
-        "30.5 X 61 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Original"
+      "variants": [
+        {
+          "edition": "Original",
+          "material": "Canvas",
+          "size": "30.5 x 61 cm",
+          "price": 100.0
+        }
       ]
     }
   },
@@ -219,17 +266,16 @@
       "Human",
       "Abstract"
     ],
-    "description": "Accidental Aesthetics I\n1991 – by [Your Name]\n\nThis work is part of a series of accidental aesthetics, where natural or unexpected patterns serve as the starting point for abstract compositions. In this piece, the textures were inspired by the way cheese expands under foil during cooking. As the foil is peeled away, it reveals intricate surface patterns—formed through heat and pressure—that echo the shapes we see across nature.\n\nThe idea behind the work is simple: physical reactions create forms, and those forms often repeat themselves. Whether it’s melted cheese, the surface of a planet, or the structure of a cell, these visual patterns connect the smallest moments to the largest scales of the universe.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nOriginal acrylic on canvas\tAvailable unframed (mounted only)\n\n\n⸻\n\nDelivery\nFree delivery is available to the UK",
+    "description": "Accidental Aesthetics I\n1991 \u2013 by [Your Name]\n\nThis work is part of a series of accidental aesthetics, where natural or unexpected patterns serve as the starting point for abstract compositions. In this piece, the textures were inspired by the way cheese expands under foil during cooking. As the foil is peeled away, it reveals intricate surface patterns\u2014formed through heat and pressure\u2014that echo the shapes we see across nature.\n\nThe idea behind the work is simple: physical reactions create forms, and those forms often repeat themselves. Whether it\u2019s melted cheese, the surface of a planet, or the structure of a cell, these visual patterns connect the smallest moments to the largest scales of the universe.\n\n\u2e3b\n\nMedia\n\nFormat\tFraming Options\nOriginal acrylic on canvas\tAvailable unframed (mounted only)\n\n\n\u2e3b\n\nDelivery\nFree delivery is available to the UK",
     "context1": "assets/029-flow99/context1.png",
     "options": {
-      "sizes": [
-        "30.5 X 61 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Original"
+      "variants": [
+        {
+          "edition": "Original",
+          "material": "Canvas",
+          "size": "30.5 x 61 cm",
+          "price": 100.0
+        }
       ]
     }
   },
@@ -243,24 +289,34 @@
       "Human",
       "Abstract"
     ],
-    "description": "Positano\n1999 – 2012\n\nThis piece began as a 35mm digital photograph taken in Positano, Italy, in 1999. The image was later posterised in 2012 to bring out the sharp lines and bold shapes of the sunlit architecture and plant forms. The result is a graphic composition that blends realism with abstraction while keeping the spirit of the original scene.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tFramed / Unframed\nArchival matte print\tFramed / Unframed\n\n\n⸻\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
+    "description": "Positano\n1999 \u2013 2012\n\nThis piece began as a 35mm digital photograph taken in Positano, Italy, in 1999. The image was later posterised in 2012 to bring out the sharp lines and bold shapes of the sunlit architecture and plant forms. The result is a graphic composition that blends realism with abstraction while keeping the spirit of the original scene.\n\n\u2e3b\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tFramed / Unframed\nArchival matte print\tFramed / Unframed\n\n\n\u2e3b\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
     "context1": "assets/029-positano/context2.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -274,28 +330,69 @@
       "Human",
       "Abstract"
     ],
-    "description": "Amsterdam\n2000 / 2020 – by [Your Name]\n\nThis painting is based on a photograph taken in Amsterdam in 2000. Multiple shots were taken to capture people as they appeared in different windows; each figure in the painting represents a separate moment in time. Reflections in the glass, including the artist’s own, add another layer to the work. Inspired by the distinct architecture and the idea of living in small, compartmentalised spaces, the final painting was completed in 2020.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nOriginal acrylic on canvas\tUnframed\nPrint on canvas\tFramed / Unframed",
+    "description": "Amsterdam\n2000 / 2020 \u2013 by [Your Name]\n\nThis painting is based on a photograph taken in Amsterdam in 2000. Multiple shots were taken to capture people as they appeared in different windows; each figure in the painting represents a separate moment in time. Reflections in the glass, including the artist\u2019s own, add another layer to the work. Inspired by the distinct architecture and the idea of living in small, compartmentalised spaces, the final painting was completed in 2020.\n\n\u2e3b\n\nMedia\n\nFormat\tFraming Options\nOriginal acrylic on canvas\tUnframed\nPrint on canvas\tFramed / Unframed",
     "context1": "assets/032-covid/context1.png",
     "context2": "assets/032-covid/context2.png",
     "context3": "assets/032-covid/context3.png",
     "context4": "assets/032-covid/context4.png",
     "context5": "assets/032-covid/context5.png",
     "context6": "assets/032-covid/context6.png",
-    "context7": "assets/032-covid/context7.png",
     "options": {
-      "sizes": [
-        "122 X 144 cm",
-        "70 x 90 cm",
-        "80 x 100 cm",
-        "100 x 125 cm",
-        "120 x 150 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Original",
-        "Replica"
+      "variants": [
+        {
+          "edition": "Original",
+          "material": "Canvas",
+          "size": "122 x 144 cm",
+          "price": 1500.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "120 x 150 cm",
+          "price": 175.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 x 125 cm",
+          "price": 155.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 x 100 cm",
+          "price": 125.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "70 x 90 cm",
+          "price": 100.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "120 x 150 cm",
+          "price": 275.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "100 x 125 cm",
+          "price": 245.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "80 x 100 cm",
+          "price": 215.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "70 x 90 cm",
+          "price": 185.0
+        }
       ]
     }
   },
@@ -309,20 +406,58 @@
       "Body art",
       "Painting"
     ],
-    "description": "Form and Contrast\n1975 / 1998 – by [Your Name]\n\nThis painting is based on a photograph taken in 1975 and completed as a mixed media piece in 1998. It is part of a series that explores the human body through simple, graphic compositions. These works often use just two tones to focus on shape rather than detail. Negative space, empty areas suggesting as much as the visible forms. What’s left out is completed by the viewer, yet still communicates emotion and presence.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nOriginal mixed media on card\tNo longer available\nPrint on canvas\tFramed / Unframed\n\n\n⸻\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
+    "description": "Form and Contrast\n1975 / 1998 \u2013 by [Your Name]\n\nThis painting is based on a photograph taken in 1975 and completed as a mixed media piece in 1998. It is part of a series that explores the human body through simple, graphic compositions. These works often use just two tones to focus on shape rather than detail. Negative space, empty areas suggesting as much as the visible forms. What\u2019s left out is completed by the viewer, yet still communicates emotion and presence.\n\n\u2e3b\n\nMedia\n\nFormat\tFraming Options\nOriginal mixed media on card\tNo longer available\nPrint on canvas\tFramed / Unframed\n\n\n\u2e3b\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
     "context1": "assets/100-bodygrafix/context1.png",
     "options": {
-      "sizes": [
-        "100 X 100 cm",
-        "80 x 80 cm",
-        "70 x 70 cm",
-        "50 x 50 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Replica"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "70 \u00d7 70 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "70 \u00d7 70 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -336,21 +471,58 @@
       "Human",
       "Abstract"
     ],
-    "description": "Despair\n1976 – by [Your Name]\n\nThis photograph was taken in 1976 and is part of two ongoing bodies of work: the Motion series and the Monochromic Body Form series. Though captured in color, the image appears nearly monochrome, with only a faint hint of tint. This effect is a result of long exposure combined with intentional camera movement, creating a blurred gesture that captures emotion through form rather than detail.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tFramed / Unframed\n\n\n⸻\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
+    "description": "Despair\n1976 \u2013 by [Your Name]\n\nThis photograph was taken in 1976 and is part of two ongoing bodies of work: the Motion series and the Monochromic Body Form series. Though captured in color, the image appears nearly monochrome, with only a faint hint of tint. This effect is a result of long exposure combined with intentional camera movement, creating a blurred gesture that captures emotion through form rather than detail.\n\n\u2e3b\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tFramed / Unframed\n\n\n\u2e3b\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
     "context1": "assets/104-despair/context1.png",
     "options": {
-      "sizes": [
-        "100 X 100 cm",
-        "80 x 80 cm",
-        "70 x 70 cm",
-        "50 x 50 cm"
-      ],
-      "materials": [
-        "Canvas",
-        "Framed Archival Print"
-      ],
-      "kinds": [
-        "Replica"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "70 \u00d7 70 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "70 \u00d7 70 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -364,20 +536,58 @@
       "Human",
       "Abstract"
     ],
-    "description": "Berlin Wall\n2007 – by [Your Name]\n\nThis photograph was taken in 2007 in what was once East Berlin. Captured using an early iPhone and lightly enhanced for clarity, the image shows a vivid mix of graffiti, color, and texture on an exterior wall. Its strong visual elements and saturated tones make it an ideal piece to add a bright accent to any space.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nMatte print\tFramed / Unframed\nPrint on canvas\tFramed / Unframed\n\n\n⸻\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
+    "description": "Berlin Wall\n2007 \u2013 by [Your Name]\n\nThis photograph was taken in 2007 in what was once East Berlin. Captured using an early iPhone and lightly enhanced for clarity, the image shows a vivid mix of graffiti, color, and texture on an exterior wall. Its strong visual elements and saturated tones make it an ideal piece to add a bright accent to any space.\n\n\u2e3b\n\nMedia\n\nFormat\tFraming Options\nMatte print\tFramed / Unframed\nPrint on canvas\tFramed / Unframed\n\n\n\u2e3b\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
     "context1": "assets/106-grafiti-berlin/context1.png",
     "options": {
-      "sizes": [
-        "100 X 100 cm",
-        "80 x 80 cm",
-        "70 x 70 cm",
-        "50 x 50 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Replica"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "70 \u00d7 70 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "70 \u00d7 70 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -391,20 +601,58 @@
       "Human",
       "Abstract"
     ],
-    "description": "Mimic\n1985 – by [Your Name]\n\nThis image was created in 1985 as part of a photographic study exploring how the human form can echo the shapes of nature. Here, the curve of a reclining body is set against a stylized landscape, blending figure and environment into a single composition. The scene was entirely constructed in-studio using cut paper, a real person, and studio blinds. The result is a minimal and graphic image that plays with form and perception.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nMatte print\tFramed / Unframed\nPrint on canvas\tFramed / Unframed\n\n\n⸻\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]\n\n⸻\n\nLet me know when you’re ready for the next one.",
+    "description": "Mimic\n1985 \u2013 by [Your Name]\n\nThis image was created in 1985 as part of a photographic study exploring how the human form can echo the shapes of nature. Here, the curve of a reclining body is set against a stylized landscape, blending figure and environment into a single composition. The scene was entirely constructed in-studio using cut paper, a real person, and studio blinds. The result is a minimal and graphic image that plays with form and perception.\n\n\u2e3b\n\nMedia\n\nFormat\tFraming Options\nMatte print\tFramed / Unframed\nPrint on canvas\tFramed / Unframed\n\n\n\u2e3b\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]\n\n\u2e3b\n\nLet me know when you\u2019re ready for the next one.",
     "context1": "assets/106-sunset-on-lisa/context1.png",
     "options": {
-      "sizes": [
-        "100 X 100 cm",
-        "80 x 80 cm",
-        "70 x 70 cm",
-        "50 x 50 cm"
-      ],
-      "materials": [
-        "Archival Print"
-      ],
-      "kinds": [
-        "Replica"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Archival",
+          "size": "100 \u00d7 100 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Archival",
+          "size": "80 \u00d7 80 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Archival",
+          "size": "70 \u00d7 70 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Archival",
+          "size": "50 \u00d7 50 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Archival",
+          "size": "100 \u00d7 100 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Archival",
+          "size": "80 \u00d7 80 cm",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Archival",
+          "size": "70 \u00d7 70 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Archival",
+          "size": "50 \u00d7 50 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -418,21 +666,58 @@
       "Human",
       "Abstract"
     ],
-    "description": "Sole\n2007–2018 – by [Your Name]\n\nPart of the Unique Moments series, this image was taken in a nearly empty restaurant in Paris in 2007, late in the afternoon. The sunlight came in at just the right angle, casting a strong diagonal of light across the scene. One single rose stood in its path, while the others remained in shadow. The neutral colours of the background, the stillness of the space, and the natural composition all came together to create a graphic image that was entirely unplanned. The photograph was posterised in 2018 to highlight these contrasts even further.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tFramed / Unframed\n\n\n⸻\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
+    "description": "Sole\n2007\u20132018 \u2013 by [Your Name]\n\nPart of the Unique Moments series, this image was taken in a nearly empty restaurant in Paris in 2007, late in the afternoon. The sunlight came in at just the right angle, casting a strong diagonal of light across the scene. One single rose stood in its path, while the others remained in shadow. The neutral colours of the background, the stillness of the space, and the natural composition all came together to create a graphic image that was entirely unplanned. The photograph was posterised in 2018 to highlight these contrasts even further.\n\n\u2e3b\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tFramed / Unframed\n\n\n\u2e3b\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
     "context1": "assets/107-solorosso/context1.png",
     "options": {
-      "sizes": [
-        "100 X 100 cm",
-        "80 x 80 cm",
-        "70 x 70 cm",
-        "50 x 50 cm"
-      ],
-      "materials": [
-        "Archival Print",
-        "Framed Archival Print"
-      ],
-      "kinds": [
-        "Replica"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Archival",
+          "size": "100 \u00d7 100 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Archival",
+          "size": "80 \u00d7 80 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Archival",
+          "size": "70 \u00d7 70 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Archival",
+          "size": "50 \u00d7 50 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Archival",
+          "size": "100 \u00d7 100 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Archival",
+          "size": "80 \u00d7 80 cm",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Archival",
+          "size": "70 \u00d7 70 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Archival",
+          "size": "50 \u00d7 50 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -446,20 +731,58 @@
       "Human",
       "Abstract"
     ],
-    "description": "Moment\n1999 – by [Your Name]\n\nThis photograph was taken from a distance using a telephoto lens and is part of the Unique Moments series. It captures two strangers, completely unaware of each other, who have inadvertently become part of the same composition. The result is an unplanned moment of visual balance—an accidental graphic formed by timing, movement, and perspective. The grainy texture and color noise were intentional, created by using the wrong film speed, handheld shooting, and overextended zoom—techniques used here to heighten the raw, observational nature of the piece.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tFramed / Unframed\n\n\n⸻\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
+    "description": "Moment\n1999 \u2013 by [Your Name]\n\nThis photograph was taken from a distance using a telephoto lens and is part of the Unique Moments series. It captures two strangers, completely unaware of each other, who have inadvertently become part of the same composition. The result is an unplanned moment of visual balance\u2014an accidental graphic formed by timing, movement, and perspective. The grainy texture and color noise were intentional, created by using the wrong film speed, handheld shooting, and overextended zoom\u2014techniques used here to heighten the raw, observational nature of the piece.\n\n\u2e3b\n\nMedia\n\nFormat\tFraming Options\nPrint on canvas\tFramed / Unframed\n\n\n\u2e3b\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
     "context1": "assets/109-yin-yang/context1.png",
     "options": {
-      "sizes": [
-        "100 X 100 cm",
-        "80 x 80 cm",
-        "70 x 70 cm",
-        "50 x 50 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Replica"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "70 \u00d7 70 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "70 \u00d7 70 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -473,20 +796,46 @@
       "Human",
       "Abstract"
     ],
-    "description": "Binomial, 1984\n\nAs a teenager in the 1960s, I was fascinated by geometric art and often created my own patterns and structures. When I later discovered the work of Victor Vasarely and M. C. Escher, I realised that everything I was exploring had already been done brilliantly and completely. That realisation stopped me from pursuing it further as a visual art form.\n\nInstead, I began incorporating those ideas into my photography. This image is part of that evolution. It’s a projection of one of Escher’s works onto the human body. The photograph plays with light, void, and form, asking the viewer’s brain to complete what’s left out. After many experiments in the 1970s, I finally captured the image as I imagined it in 1984.\n\n⸻\n\nMedia\n\nFormat\tOptions\nSupermat Print\tAvailable in two sizes\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
+    "description": "Binomial, 1984\n\nAs a teenager in the 1960s, I was fascinated by geometric art and often created my own patterns and structures. When I later discovered the work of Victor Vasarely and M. C. Escher, I realised that everything I was exploring had already been done brilliantly and completely. That realisation stopped me from pursuing it further as a visual art form.\n\nInstead, I began incorporating those ideas into my photography. This image is part of that evolution. It\u2019s a projection of one of Escher\u2019s works onto the human body. The photograph plays with light, void, and form, asking the viewer\u2019s brain to complete what\u2019s left out. After many experiments in the 1970s, I finally captured the image as I imagined it in 1984.\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nSupermat Print\tAvailable in two sizes\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
     "context1": "assets/110-vasarelisa-2/context1.png",
     "options": {
-      "sizes": [
-        "100 X 100 cm",
-        "80 x 80 cm",
-        "70 x 70 cm",
-        "50 x 50 cm"
-      ],
-      "materials": [
-        "Archival Print"
-      ],
-      "kinds": [
-        "Replica"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Matt Archival",
+          "size": "100 x 100 cm",
+          "price": 75.0
+        },
+        {
+          "edition": "Print",
+          "material": "Matt Archival",
+          "size": "80 x 80 cm",
+          "price": 55.0
+        },
+        {
+          "edition": "Print",
+          "material": "Matt Archival",
+          "size": "60 x 60 cm",
+          "price": 45.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Matt Archival",
+          "size": "100 x 100 cm",
+          "price": 175.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Matt Archival",
+          "size": "80 x 80 cm",
+          "price": 155.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Matt Archival",
+          "size": "60 x 60 cm",
+          "price": 145.0
+        }
       ]
     }
   },
@@ -500,21 +849,59 @@
       "Human",
       "Abstract"
     ],
-    "description": "Venus, 1978\n\nThis piece is part of my 'Still in Motion' photography series, where I combined long exposure with deliberate camera movement—what I often think of as “painting with the camera.” The original photograph was taken in 1978 as part of an exploration into motion and body form through analog means.\n\nYears later, with the introduction of digital editing, I returned to the image, not to enhance it, but to reduce it. I stripped away much of the colour and detail, minimising the image to just what was needed for recognition. What remains is a light, nearly abstract impression that still conveys movement and presence, while allowing the viewer’s imagination to fill in the rest.\n\n⸻\n\nMedia\n\nFormat\tOptions\nPrint on Canvas\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
+    "description": "Venus, 1978\n\nThis piece is part of my 'Still in Motion' photography series, where I combined long exposure with deliberate camera movement\u2014what I often think of as \u201cpainting with the camera.\u201d The original photograph was taken in 1978 as part of an exploration into motion and body form through analog means.\n\nYears later, with the introduction of digital editing, I returned to the image, not to enhance it, but to reduce it. I stripped away much of the colour and detail, minimising the image to just what was needed for recognition. What remains is a light, nearly abstract impression that still conveys movement and presence, while allowing the viewer\u2019s imagination to fill in the rest.\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nPrint on Canvas\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
     "context1": "assets/111-venus/context1.png",
     "context2": "assets/111-venus/context2.png",
     "options": {
-      "sizes": [
-        "100 X 100 cm",
-        "80 x 80 cm",
-        "70 x 70 cm",
-        "50 x 50 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Replica"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "70 \u00d7 70 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "70 \u00d7 70 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -528,24 +915,46 @@
       "Human",
       "Abstract"
     ],
-    "description": "South Bank 1998–2012\n\nI’ve always been fascinated by bicycles. My Bicycles series explores this theme. I find them graphically appealing even more than cars, and their exposed structure shows a kind of engineering elegance that’s both functional and beautiful.\n\nThis image was originally photographed in 1998 on the South Bank of the River Thames, looking across to the city lights. In 2012, I revisited the image and completed it through digital manipulation, transforming it into the stylised piece seen here.\n\n⸻\n\nMedia\n\nFormat\tOptions\nPrint on Canvas\tAvailable framed or unframed\nGiclée Print (GDP)\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
+    "description": "South Bank 1998\u20132012\n\nI\u2019ve always been fascinated by bicycles. My Bicycles series explores this theme. I find them graphically appealing even more than cars, and their exposed structure shows a kind of engineering elegance that\u2019s both functional and beautiful.\n\nThis image was originally photographed in 1998 on the South Bank of the River Thames, looking across to the city lights. In 2012, I revisited the image and completed it through digital manipulation, transforming it into the stylised piece seen here.\n\nThis piece works especially well as a Gicl\u00e9e Hahnem\u00fchle Photo Rag print. It\u2019s a more expensive paper, but worth it \u2014 the image truly comes to life on its surface. The super-matte finish enhances muted blacks, preserves fine detail, and offers even colour reproduction. Its subtle texture and smooth, cotton feel create beautifully soft colour gradients.\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nPrint on Canvas\tAvailable framed or unframed\nGicl\u00e9e Print (GDP)\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
     "context1": "assets/200-bicycledelic/context1.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "80 \u00d7 60 cm",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "60 \u00d7 40 cm",
+          "price": 65.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 60 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "60 \u00d7 40 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "80 \u00d7 60 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "60 \u00d7 40 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -559,30 +968,52 @@
       "Human",
       "Abstract"
     ],
-    "description": "Persepolis 2005\n\n\nThis photograph was taken just outside the ruins of Persepolis in southern Iran. Behind me stood two-and-a-half-thousand years of history, and in front of me—a newly built car park with young trees. While everyone else pointed their cameras toward the ruins, I looked slightly ridiculous pointing mine the other way. After all, the ruins have been photographed millions of times, but I think this picture is unique.\n\nShot on film, this is a fully analog image with no digital manipulation. Everything you see was created in-camera through exposure, depth of field, and film speed.\n\nThis piece works especially well as a giclée velvet print. It’s a more expensive paper, but worth it—the image really comes to life on that surface.\n\n⸻\n\nMedia\n\nFormat\tOptions\nPrint on Canvas\tAvailable framed or unframed\nGiclée Velvet Print\tAvailable framed or unframed\nSizes\tThree sizes available",
+    "description": "Persepolis 2005\n\n\nThis photograph was taken just outside the ruins of Persepolis in southern Iran. Behind me stood two-and-a-half-thousand years of history, and in front of me\u2014a newly built car park with young trees. While everyone else pointed their cameras toward the ruins, I looked slightly ridiculous pointing mine the other way. After all, the ruins have been photographed millions of times, but I think this picture is unique.\n\nShot on film, this is a fully analog image with no digital manipulation. Everything you see was created in-camera through exposure, depth of field, and film speed.\n\nThis piece works especially well as a Gicl\u00e9e Hahnem\u00fchle Photo Rag print. It\u2019s a more expensive paper, but worth it \u2014 the image truly comes to life on its surface. The super-matte finish enhances muted blacks, preserves fine detail, and offers even colour reproduction. Its subtle texture and smooth, cotton feel create beautifully soft colour gradients.\n\u2e3b\n\nMedia\n\nFormat\tOptions\nPrint on Canvas\tAvailable framed or unframed\nGicl\u00e9e Velvet Print\tAvailable framed or unframed\nSizes\tThree sizes available",
     "context1": "assets/205-Persepolis/context1.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "80 \u00d7 60 cm",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "60 \u00d7 40 cm",
+          "price": 65.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 60 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "60 \u00d7 40 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "80 \u00d7 60 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "60 \u00d7 40 cm",
+          "price": 80.0
+        }
       ]
     }
   },
   {
     "id": "207-awakening",
-    "title": "♀︎",
+    "title": "\u2640\ufe0e",
     "src": "assets/207-awakening/207-awakening.png",
     "thumb": "thumbs/207-awakening.png",
     "tags": [
@@ -590,27 +1021,58 @@
       "Human",
       "Abstract"
     ],
-    "description": "♂, 2025\n\n\nThis is one of two paintings, this version represents female, and the other, male. The pair takes a tongue-in-cheek look at behaviours associated with gender, but the real aim here is colour, rhythm, and movement.\n\nUnlike much of my work, which evolves slowly over time, these were both conceived and completed within a week—uncharacteristic for me, but refreshing in its spontaneity.\n\nThough they were designed as a pair, each painting also works entirely on its own.\n\n⸻\n\nMedia\n\nFormat\tOptions\nOriginal Painting\tAcrylic on canvas (unframed)\nPrint on Canvas\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
+    "description": "\u2642, 2025\n\n\nThis is one of two paintings, this version represents female, and the other, male. The pair takes a tongue-in-cheek look at behaviours associated with gender, but the real aim here is colour, rhythm, and movement.\n\nUnlike much of my work, which evolves slowly over time, these were both conceived and completed within a week\u2014uncharacteristic for me, but refreshing in its spontaneity.\n\nThough they were designed as a pair, each painting also works entirely on its own.\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nOriginal Painting\tAcrylic on canvas (unframed)\nPrint on Canvas\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
     "context1": "assets/207-awakening/context1.png",
     "options": {
-      "sizes": [
-        "92 X 62 cm",
-        "75 x 50 cm",
-        "85 x 55 cm",
-        "90 x 60 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Original",
-        "Replica"
+      "variants": [
+        {
+          "edition": "Original",
+          "material": "Canvas",
+          "size": "92 x 62 cm",
+          "price": 500.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "75 x 50 cm",
+          "price": 75.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "85 x 55 cm",
+          "price": 85.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "90 x 60 cm",
+          "price": 99.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "75 x 50 cm",
+          "price": 175.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "85 x 55 cm",
+          "price": 185.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "90 x 60 cm",
+          "price": 199.0
+        }
       ]
     }
   },
   {
     "id": "208-men",
-    "title": "♂︎",
+    "title": "\u2642\ufe0e",
     "src": "assets/208-men/208-men.png",
     "thumb": "thumbs/208-men.png",
     "tags": [
@@ -618,21 +1080,52 @@
       "Human",
       "Abstract"
     ],
-    "description": "♀, 2025\n\n\nThis is one of two paintings, this version represents male, and the other, female. The pair takes a tongue-in-cheek look at behaviours associated with gender, but the real aim here is colour, rhythm, and movement.\n\nUnlike much of my work, which evolves slowly over time, these were both conceived and completed within a week—uncharacteristic for me, but refreshing in its spontaneity.\n\nThough they were designed as a pair, each painting also works entirely on its own.\n\n⸻\n\nMedia\n\nFormat\tOptions\nOriginal Painting\tAcrylic on canvas (unframed)\nPrint on Canvas\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
+    "description": "\u2640, 2025\n\n\nThis is one of two paintings, this version represents male, and the other, female. The pair takes a tongue-in-cheek look at behaviours associated with gender, but the real aim here is colour, rhythm, and movement.\n\nUnlike much of my work, which evolves slowly over time, these were both conceived and completed within a week\u2014uncharacteristic for me, but refreshing in its spontaneity.\n\nThough they were designed as a pair, each painting also works entirely on its own.\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nOriginal Painting\tAcrylic on canvas (unframed)\nPrint on Canvas\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
     "context1": "assets/208-men/context1.png",
     "options": {
-      "sizes": [
-        "92 X 62 cm",
-        "75 x 50 cm",
-        "85 x 55 cm",
-        "90 x 60 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Original",
-        "Replica"
+      "variants": [
+        {
+          "edition": "Original",
+          "material": "Canvas",
+          "size": "92 x 62 cm",
+          "price": 500.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "75 x 50 cm",
+          "price": 75.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "85 x 55 cm",
+          "price": 85.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "90 x 60 cm",
+          "price": 99.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "75 x 50 cm",
+          "price": 175.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "85 x 55 cm",
+          "price": 185.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "90 x 60 cm",
+          "price": 199.0
+        }
       ]
     }
   },
@@ -646,26 +1139,8 @@
       "Human",
       "Abstract"
     ],
-    "description": "Rice, 2001–2014\n\nBased on an original photograph taken on the shores of the Caspian Sea, this image depicts local women working on a rice farm. The composition remains faithful to the original moment, but while the photograph might be seen as interesting or documentary, this version transforms it into a bold, decorative graphic with strong visual impact.\n\nAvailable as a print on canvas in three sizes.",
-    "context1": "assets/209-caspian-rice-farmers/context1.png",
-    "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
-      ]
-    }
+    "description": "Rice, 2001\u20132014\n\nBased on an original photograph taken on the shores of the Caspian Sea, this image depicts local women working on a rice farm. The composition remains faithful to the original moment, but while the photograph might be seen as interesting or documentary, this version transforms it into a bold, decorative graphic with strong visual impact.\n\nAvailable as a print on canvas in three sizes.",
+    "context1": "assets/209-caspian-rice-farmers/context1.png"
   },
   {
     "id": "212-scargorough",
@@ -677,24 +1152,46 @@
       "Human",
       "Abstract"
     ],
-    "description": "Scarborough, 1981\nby mehdad.g\n\nBased on a 500mm telephoto photograph of the Scarborough hillsides, taken in 1981. The image was posterised in 2008 to enhance its graphic quality, flattening depth while bringing out the playful variety of forms and colours in the rooftops and façades.\n\nAvailable as a print on canvas in three sizes, framed or unframed.",
+    "description": "Scarborough, 1981\nby mehdad.g\n\nBased on a 500mm telephoto photograph of the Scarborough hillsides, taken in 1981. The image was posterised in 2008 to enhance its graphic quality, flattening depth while bringing out the playful variety of forms and colours in the rooftops and fa\u00e7ades.\n\nThis piece works especially well as a Gicl\u00e9e Hahnem\u00fchle Photo Rag print. It\u2019s a more expensive paper, but worth it \u2014 the image truly comes to life on its surface. The super-matte finish enhances muted blacks, preserves fine detail, and offers even colour reproduction. Its subtle texture and smooth, cotton feel create beautifully soft colour gradients.\n\nAvailable as a print on canvas in three sizes, framed or unframed.",
     "context1": "assets/212-scargorough/context1.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "80 \u00d7 60 cm",
+          "price": 80.0
+        },
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "60 \u00d7 40 cm",
+          "price": 65.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 60 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "60 \u00d7 40 cm",
+          "price": 50.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "80 \u00d7 60 cm",
+          "price": 150.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "60 \u00d7 40 cm",
+          "price": 80.0
+        }
       ]
     }
   },
@@ -708,24 +1205,46 @@
       "Human",
       "Abstract"
     ],
-    "description": "Here’s a clean, gallery-style version of your description, with your tone and intent preserved:\n\n⸻\n\nDuch, 1997\n\nBased on a photograph I took in Covent Garden in 1997, this image captures a group of people at the moment they’re Splitting the bill\n after a meal. None of them knew they were forming such a striking composition, one I found immediately graphic yet full of life.\n\nIt’s one of those candid moments where real life arranges itself into art without trying.\n\n⸻\n\nMedia\n\nFormat\tOptions\nPrint on Canvas\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(Insert list of countries)",
+    "description": "Here\u2019s a clean, gallery-style version of your description, with your tone and intent preserved:\n\n\u2e3b\n\nDuch, 1997\n\nBased on a photograph I took in Covent Garden in 1997, this image captures a group of people at the moment they\u2019re Splitting the bill\n after a meal. None of them knew they were forming such a striking composition, one I found immediately graphic yet full of life.\n\nIt\u2019s one of those candid moments where real life arranges itself into art without trying.\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nPrint on Canvas\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(Insert list of countries)",
     "context1": "assets/213-the-bill/context1.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "90 x 60 cm",
+          "price": 120.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "75 x 50 cm",
+          "price": 90.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "60 x 40 cm",
+          "price": 60.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "90 x 60 cm",
+          "price": 160.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "75 x 50 cm",
+          "price": 130.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "60 x 40 cm",
+          "price": 90.0
+        }
       ]
     }
   },
@@ -739,20 +1258,8 @@
       "Human",
       "Abstract"
     ],
-    "description": "Bipolarity, 2000\n\nThis piece began in early 2000 and was completed later that same year—intentionally finished within the calendar year to mark the new millennium. It was worked on in short, scattered sessions over about ten months, fitting into the natural interruptions of everyday life.\n\nThe painting reflects the bipolar nature of the world around us: north-south, east-west, rich-poor, black-white, have-have-not. For me, both sides are equally valuable, different but balanced. There’s no hierarchy. At its heart, though, the aim was simple: to create bold, colourful graphics that bring life to a wall.\n\n⸻\n\nMedia\n\nFormat\tOptions\nOriginal\tAcrylic on canvas (unframed)\nReplica Prints\tCanvas, framed or unframed\n\nDelivery\nFree shipping available to the following countries:\n(Insert list here)",
-    "context1": "assets/214-Split/context1.png",
-    "options": {
-      "sizes": [
-        "100 X 80 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Original",
-        "Replica"
-      ]
-    }
+    "description": "Bipolarity, 2000\n\nThis piece began in early 2000 and was completed later that same year\u2014intentionally finished within the calendar year to mark the new millennium. It was worked on in short, scattered sessions over about ten months, fitting into the natural interruptions of everyday life.\n\nThe painting reflects the bipolar nature of the world around us: north-south, east-west, rich-poor, black-white, have-have-not. For me, both sides are equally valuable, different but balanced. There\u2019s no hierarchy. At its heart, though, the aim was simple: to create bold, colourful graphics that bring life to a wall.\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nOriginal\tAcrylic on canvas (unframed)\nReplica Prints\tCanvas, framed or unframed\n\nDelivery\nFree shipping available to the following countries:\n(Insert list here)",
+    "context1": "assets/214-Split/context1.png"
   },
   {
     "id": "215-Dali",
@@ -764,23 +1271,52 @@
       "Human",
       "Abstract"
     ],
-    "description": "Dalí, 2002\n\nIf I had to name the artists who most impressed me as a young boy, three come to mind; Dalí and Picasso as painters, and Gaudí as an architect. This is the Dalí portrait. There’s also a matching one of Picasso.\n\nIt took me years to figure out how to pay tribute to them visually. I didn’t want to simply paint a portrait, I was waiting for the right idea. This concept finally came together in 2002. As for Gaudí, I still haven’t found the right approach, and I’m not sure if I ever will.\n\nThese are large acrylic paintings on canvas and are available as originals, as well as replica prints on canvas (framed or unframed).\n\n⸻\n\nMedia\n\nFormat\tOptions\nOriginal\tAcrylic on canvas (unframed)\nReplica Prints\tCanvas, framed or unframed\n\nDelivery\nFree shipping available to the following countries:\n(Insert list here)",
+    "description": "Dal\u00ed, 2002\n\nIf I had to name the artists who most impressed me as a young boy, three come to mind; Dal\u00ed and Picasso as painters, and Gaud\u00ed as an architect. This is the Dal\u00ed portrait. There\u2019s also a matching one of Picasso.\n\nIt took me years to figure out how to pay tribute to them visually. I didn\u2019t want to simply paint a portrait, I was waiting for the right idea. This concept finally came together in 2002. As for Gaud\u00ed, I still haven\u2019t found the right approach, and I\u2019m not sure if I ever will.\n\nThese are large acrylic paintings on canvas and are available as originals, as well as replica prints on canvas (framed or unframed).\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nOriginal\tAcrylic on canvas (unframed)\nReplica Prints\tCanvas, framed or unframed\n\nDelivery\nFree shipping available to the following countries:\n(Insert list here)",
     "context1": "assets/215-Dali/context1.png",
     "options": {
-      "sizes": [
-        "142 X 112 cm",
-        "70 x 55 cm",
-        "80 x 60 cm",
-        "90 x 70 cm",
-        "100 x 75 cm",
-        "140 X 105 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Original",
-        "Replica"
+      "variants": [
+        {
+          "edition": "Original",
+          "material": "Canvas",
+          "size": "142 x 112 cm",
+          "price": 1500.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "140 x 105 cm",
+          "price": 175.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 x 75 cm",
+          "price": 155.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 x 60 cm",
+          "price": 125.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "140 x 105 cm",
+          "price": 275.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "100 x 75 cm",
+          "price": 255.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "80 x 60 cm",
+          "price": 225.0
+        }
       ]
     }
   },
@@ -794,23 +1330,52 @@
       "Human",
       "Abstract"
     ],
-    "description": "Picasso, 2002\n\nIf I had to name the artists who most impressed me as a young boy, three come to mind; Dalí and Picasso as painters, and Gaudí as an architect. This is the Picasso portrait. There’s also a matching one of Dali.\n\nIt took me years to figure out how to pay tribute to them visually. I didn’t want to simply paint a portrait, I was waiting for the right idea. This concept finally came together in 2002. As for Gaudí, I still haven’t found the right approach, and I’m not sure if I ever will.\n\nThese are large acrylic paintings on canvas and are available as originals, as well as replica prints on canvas (framed or unframed).\n\n⸻\n\nMedia\n\nFormat\tOptions\nOriginal\tAcrylic on canvas (unframed)\nReplica Prints\tCanvas, framed or unframed\n\nDelivery\nFree shipping available to the following countries:\n(Insert list here)",
+    "description": "Picasso, 2002\n\nIf I had to name the artists who most impressed me as a young boy, three come to mind; Dal\u00ed and Picasso as painters, and Gaud\u00ed as an architect. This is the Picasso portrait. There\u2019s also a matching one of Dali.\n\nIt took me years to figure out how to pay tribute to them visually. I didn\u2019t want to simply paint a portrait, I was waiting for the right idea. This concept finally came together in 2002. As for Gaud\u00ed, I still haven\u2019t found the right approach, and I\u2019m not sure if I ever will.\n\nThese are large acrylic paintings on canvas and are available as originals, as well as replica prints on canvas (framed or unframed).\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nOriginal\tAcrylic on canvas (unframed)\nReplica Prints\tCanvas, framed or unframed\n\nDelivery\nFree shipping available to the following countries:\n(Insert list here)",
     "context1": "assets/216-Picasso/context1.png",
     "options": {
-      "sizes": [
-        "142 X 112 cm",
-        "70 x 55 cm",
-        "80 x 60 cm",
-        "90 x 70 cm",
-        "100 x 75 cm",
-        "140 X 105 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Original",
-        "Replica"
+      "variants": [
+        {
+          "edition": "Original",
+          "material": "Canvas",
+          "size": "142 x 112 cm",
+          "price": 1500.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "140 x 105 cm",
+          "price": 175.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 x 75 cm",
+          "price": 155.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 x 60 cm",
+          "price": 125.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "140 x 105 cm",
+          "price": 275.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "100 x 75 cm",
+          "price": 255.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "80 x 60 cm",
+          "price": 225.0
+        }
       ]
     }
   },
@@ -831,14 +1396,13 @@
     "context4": "assets/217-I/context4.png",
     "context5": "assets/217-I/context6.png",
     "options": {
-      "sizes": [
-        "152 X 102 cm"
-      ],
-      "materials": [
-        "Canvas"
-      ],
-      "kinds": [
-        "Original"
+      "variants": [
+        {
+          "edition": "Original",
+          "material": "Canvas",
+          "size": "152 x 102 cm",
+          "price": 1500.0
+        }
       ]
     }
   },
@@ -852,25 +1416,35 @@
       "Human",
       "Abstract"
     ],
-    "description": "SE1\n\nBased on a photograph I took in 2004, this piece was completed as a posterised image in 2023. The original scene, shot along London’s South Bank, already had a striking composition of lines, reflections, and colour blocks. Posterising it enhanced the graphic quality I saw in the moment.\n\nAvailable as a print on canvas in three sizes, framed or unframed.",
+    "description": "SE1\n\nBased on a photograph I took in 2004, this piece was completed as a posterised image in 2023. The original scene, shot along London\u2019s South Bank, already had a striking composition of lines, reflections, and colour blocks. Posterising it enhanced the graphic quality I saw in the moment.\n\nThis piece works especially well as a Gicl\u00e9e Hahnem\u00fchle Photo Rag print. It\u2019s a more expensive paper, but worth it \u2014 the image truly comes to life on its surface. The super-matte finish enhances muted blacks, preserves fine detail, and offers even colour reproduction. Its subtle texture and smooth, cotton feel create beautifully soft colour gradients.\n\nAvailable as a print on canvas in three sizes, framed or unframed.",
     "context1": "assets/300-archigraph-1/context1.png",
     "context2": "assets/300-archigraph-1/context2.png",
     "options": {
-      "sizes": [
-        "A4",
-        "A3",
-        "A2"
-      ],
-      "materials": [
-        "Matte",
-        "Glossy",
-        "Canvas",
-        "Velvet"
-      ],
-      "kinds": [
-        "Print",
-        "Framed",
-        "Canvas"
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "90 x 165 cm",
+          "price": 200.0
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "45 x 80 cm",
+          "price": 90.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "90 x 165 cm",
+          "price": 275.0
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "45 x 80 cm",
+          "price": 160.0
+        }
       ]
     }
   }
