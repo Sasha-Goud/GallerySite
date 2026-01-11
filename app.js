@@ -627,14 +627,16 @@ function openPurchasePanelUsing(dataRef){
   // Start with a minimal shell (edition list filled after we load variants)
   renderOptions(panel, [], [], []);
 
-  var priceEl = $('#price-value');
-  var btnAdd  = $('#add-to-cart');
+  function getPriceEl(){ return document.getElementById('price-value'); }
+  function getAddBtn(){ return document.getElementById('add-to-cart'); }
 
   function setPriceDisplay(text){
-    if (priceEl) priceEl.textContent = text;
+    var el = getPriceEl();
+    if (el) el.textContent = text;
   }
   function setAddEnabled(on){
-    if (btnAdd) btnAdd.disabled = !on;
+    var b = getAddBtn();
+    if (b) b.disabled = !on;
   }
 
   function setSelectOptions(selectEl, values, keepValue){
@@ -828,6 +830,7 @@ function openPurchasePanelUsing(dataRef){
 
     // Add to basket uses the NEW selection keys, but stores in existing basket schema:
     // size -> size, paper -> material, kind -> edition
+        var btnAdd = document.getElementById('add-to-cart');
     if (btnAdd){
       btnAdd.addEventListener('click', function(){
         var sel = getSelection();
