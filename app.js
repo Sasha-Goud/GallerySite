@@ -551,7 +551,234 @@ function renderItem(id){
     })();
     /* ========= /MEDIA STRIP ========= */
 
-  
+    // --- Purchase panel (DOM; styles via CSS) ---
+    function ensurePurchaseUI(){
+      var panel = document.getElementById('purchase-panel');
+      if (!panel){
+        panel = document.createElement('aside');
+        panel.id = 'purchase-panel';
+        panel.className = 'purchase-panel';
+        panel.innerHTML =
+          '<header class="purchase-head">' +
+            '<strong class="purchase-title">Purchase Options</strong>' +
+            '<button id="purchase-close" class="purchase-close" type="button" aria-label="Close">×</button>' +
+          '</header>' +
+          '<div id="purchase-body" class="purchase-body"></div>';
+        document.body.appendChild(panel);
+      }
+      return panel;
+    }
+
+    function selectHtml(label, id, options){
+      var html = [
+        '<div class="purchase-field">',
+          '<label class="purchase-label" for="'+id+'">'+label+'</label>',
+          '<select id="'+id+'" class="purchase-select">',
+            '<option value="">Select…</option>'
+      ];
+      options.forEach(function(opt){
+        var v = String(opt);
+        html.push('<option value="'+escapeHtml(v)+'">'+escapeHtml(v)+'</option>');
+      });
+      html.push('</select>','</div>');
+      return html.join('');
+    }
+
+    function renderOptions(panel, sizes, materials, kinds){
+      var body = panel.querySelector('#purchase-body');
+      if (!body) return;
+      body.innerHTML =
+        '<div class="purchase-stack">' +
+          selectHtml('Size', 'opt-size', sizes) +
+          selectHtml('Material', 'opt-material', materials) +
+          selectHtml('Edition', 'opt-kind', kinds) +
+          '<div class="purchase-row qty-row">' +
+            '<label class="purchase-label" for="qty">Qty</label>' +
+            '<div class="qty-control">' +
+              '<input id="qty" class="purchase-qty" type="number" min="1" value="1">' +
+              '<div class="qty-buttons">' +
+                '<button class="qtybtn" data-act="inc" type="button" aria-label="Increase">+</button>' +
+                '<button class="qtybtn" data-act="dec" type="button" aria-label="Decrease">−</button>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div id="price-row" class="purchase-price-row">Price: <strong id="price-value">—</strong></div>' +
+          '<div class="purchase-actions">' +
+            '<button id="add-to-cart" class="btn-primary" type="button" disabled>Add to basket</button>' +
+          '</div>' +
+        '</div>';
+    }
+
+    function getSelection(){
+      var size = ($('#opt-size')||{}).value || '';
+      var material = ($('#opt-material')||{}).value || '';
+      var kind = ($('#opt-kind')||{}).value || '';
+      var qty = Math.max(1, Number($('#qty') ? $('#qty').value : 1) || 1);
+      return { size:size, material:material, kind:kind, qty:qty };
+    }
+
+    function updatePriceAndButton(){
+      var sel = getSelection();
+      var priceEl = $('#price-value');
+      var btn = $('#add-to-cart');
+      var choseAll = !!sel.size && !!sel.material && !!sel.kind;
+      var unit = priceFor(sel.size, sel.material, sel.kind);
+      if (choseAll && typeof unit === 'number'){
+        var total = round2(unit * Math.max(1, Number(sel.qty) || 1));
+        priceEl.textContent = money(total);
+        btn.disabled = false;
+      } else {
+        priceEl.textContent = '—';
+        btn.disabled = true;
+      }
+    }
+
+    function openPurchasePanelUsing(dataRef){
+      if (!dataRef) return;
+
+      var opts = dataRef.options || {};
+
+      // Use the item’s allowed lists, but we will FILTER the "kinds" list dynamically
+      var sizes     = Array.isArray(opts.sizes)     && opts.sizes.length     ? opts.sizes.slice()     : SIZES.slice();
+      var materials = Array.isArray(opts.materials) && opts.materials.length ? opts.materials.slice() : MATERIALS.slice();
+      var kindsAll  = Array.isArray(opts.kinds)     && opts.kinds.length     ? opts.kinds.slice()     : KINDS.slice();
+
+      var panel = ensurePurchaseUI();
+      renderOptions(panel, sizes, materials, kindsAll);
+
+      // --- NEW: filter kinds based on selected size+material and PRICING ---
+      function setSelectOptions(selectEl, values){
+        if (!selectEl) return;
+        var current = selectEl.value;
+        var html = '<option value="">Select…</option>';
+        values.forEach(function(v){
+          var s = String(v);
+          html += '<option value="'+escapeHtml(s)+'">'+escapeHtml(s)+'</option>';
+        });
+        selectEl.innerHTML = html;
+
+        // Keep previous selection only if it still exists
+        if (values.indexOf(current) >= 0){
+          selectEl.value = current;
+        } else {
+          selectEl.value = '';
+        }
+      }
+
+      function pricedKindsFor(size, material){
+        if (!size || !material) return [];
+        var sk = resolveSizeKey(size);
+        var m = String(material).trim();
+        var bucket = (PRICING[sk] && PRICING[sk][m]) ? PRICING[sk][m] : null;
+        if (!bucket) return [];
+        return Object.keys(bucket);
+      }
+
+      function refreshKindDropdown(){
+        var sizeSel = $('#opt-size');
+        var matSel  = $('#opt-material');
+        var kindSel = $('#opt-kind');
+        if (!kindSel) return;
+
+        var chosenSize = sizeSel ? sizeSel.value : '';
+        var chosenMat  = matSel ? matSel.value : '';
+
+        // Intersection: (item's allowed kinds) ∩ (priced kinds for chosen size+material)
+        var priced = pricedKindsFor(chosenSize, chosenMat);
+        var nextKinds = kindsAll.filter(function(k){ return priced.indexOf(String(k)) >= 0; });
+
+        // If size/material not chosen yet, show all allowed kinds (so the UI doesn't look empty)
+        if (!chosenSize || !chosenMat) nextKinds = kindsAll.slice();
+
+        setSelectOptions(kindSel, nextKinds);
+      }
+
+      function wireOptionEvents(){
+        var s1 = $('#opt-size'), s2 = $('#opt-material'), s3 = $('#opt-kind'), qty = $('#qty');
+
+        if (s1) s1.addEventListener('change', function(){
+          refreshKindDropdown();
+          updatePriceAndButton();
+        });
+        if (s2) s2.addEventListener('change', function(){
+          refreshKindDropdown();
+          updatePriceAndButton();
+        });
+        if (s3) s3.addEventListener('change', updatePriceAndButton);
+
+        if (qty) qty.addEventListener('input', function(){
+          if (Number(qty.value) < 1) qty.value = 1;
+          updatePriceAndButton();
+        });
+
+        var panel = document.getElementById('purchase-panel');
+        if (panel){
+          panel.addEventListener('click', function(e){
+            var btn = e.target && e.target.closest && e.target.closest('.qtybtn');
+            if (!btn) return;
+            var input = document.getElementById('qty');
+            if (!input) return;
+            var val = Math.max(1, Number(input.value) || 1);
+            if (btn.getAttribute('data-act') === 'inc') val++;
+            if (btn.getAttribute('data-act') === 'dec') val = Math.max(1, val - 1);
+            input.value = val;
+            updatePriceAndButton();
+          });
+        }
+      }
+
+      function wireAddToCart(dataRef, sizes, materials, kinds){
+        var btn = $('#add-to-cart');
+        if (!btn) return;
+        btn.addEventListener('click', function(){
+          var sel = getSelection();
+          var unit = priceFor(sel.size, sel.material, sel.kind);
+          if (typeof unit !== 'number') return;
+
+          addToBasket({
+            id: dataRef.id,
+            title: dataRef.title,
+           thumb: dataRef.src || dataRef.context1 || '',
+            src: dataRef.src || '',
+            size: sel.size,
+            paper: sel.material,
+            kind: sel.kind,
+            qty: sel.qty,
+            options: { sizes: sizes.slice(), materials: materials.slice(), kinds: kinds.slice() },
+            pricing: (dataRef.pricing || PRICING),
+            unitPrice: round2(unit)
+          });
+
+          updateCartCount();
+          try { btn.textContent = 'Added!'; setTimeout(function(){ btn.textContent = 'Add to basket'; }, 900); } catch(_){}
+        });
+      }
+
+      wireOptionEvents();
+      wireAddToCart(dataRef, sizes, materials, kindsAll);
+
+      // Apply initial filtering once panel opens
+      refreshKindDropdown();
+      updatePriceAndButton();
+
+      document.body.classList.add('purchase-open');
+      panel.classList.add('open');
+
+      var closeBtn = panel.querySelector('#purchase-close');
+      function close(){
+        panel.classList.remove('open');
+        document.body.classList.remove('purchase-open');
+      }
+      if (closeBtn) closeBtn.onclick = close;
+      document.addEventListener('keydown', function esc(e){
+        if (e.key === 'Escape'){ close(); document.removeEventListener('keydown', esc); }
+      });
+    }
+
+    // Wire button immediately (works even before data arrives thanks to detailData)
+    purchaseBtn.addEventListener('click', function(){
+      openPurchasePanelUsing(detailData);
+    });
 
   }).catch(function(err){
     var hero = $('#hero');
