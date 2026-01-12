@@ -1416,10 +1416,52 @@ function updateCartAddressUI(){
     pp.style.opacity = country ? '1' : '0.4';
     pp.style.pointerEvents = country ? 'auto' : 'none';
   }
-  
-  if (typeof window.__UPDATE_SHIPPING__ === 'function') window.__UPDATE_SHIPPING__();
 
+  if (typeof window.__UPDATE_SHIPPING__ === 'function') window.__UPDATE_SHIPPING__();
 }
+
+function populateAddrCountries(){
+  var sel = document.getElementById('addr-country');
+  if (!sel) return;
+
+  // Keep the first "Select…" option, remove anything else (prevents duplicates)
+  while (sel.options.length > 1) sel.remove(1);
+
+  function fillCountriesFromRows(rows){
+    var map = Object.create(null); // lower -> display name
+    (rows || []).forEach(function(r){
+      var name = (r && typeof r === 'object') ? String(r.country || '').trim() : '';
+      if (!name) return;
+      var key = name.toLowerCase();
+      if (!map[key]) map[key] = name;
+    });
+
+    var list = Object.keys(map).map(function(k){ return map[k]; });
+    list.sort(function(a,b){ return a.localeCompare(b); });
+
+    list.forEach(function(name){
+      var o = document.createElement('option');
+      o.value = name;
+      o.textContent = name;
+      sel.appendChild(o);
+    });
+  }
+
+  if (typeof fetchShippingRates === 'function'){
+    fetchShippingRates()
+      .then(fillCountriesFromRows)
+      .catch(function(){
+        if (typeof ADDRESS_COUNTRIES !== 'undefined'){
+          fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
+        }
+      });
+  } else {
+    if (typeof ADDRESS_COUNTRIES !== 'undefined'){
+      fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
+    }
+  }
+}
+
 function openAddressPanel(){
   var overlay = document.getElementById('address-overlay');
 
@@ -1499,52 +1541,6 @@ function openAddressPanel(){
 
     document.body.appendChild(overlay);
 
-   // Populate country dropdown (from shipping.json)
-var sel = document.getElementById('addr-country');
-if (sel){
-
-  // Keep the first "Select…" option, remove anything else (prevents duplicates)
-  while (sel.options.length > 1) sel.remove(1);
-
-  function fillCountriesFromRows(rows){
-    var map = Object.create(null); // lower -> display name
-    (rows || []).forEach(function(r){
-      var name = '';
-      if (r && typeof r === 'object') name = String(r.country || '').trim();
-      if (!name) return;
-      var key = name.toLowerCase();
-      if (!map[key]) map[key] = name;
-    });
-
-    var list = Object.keys(map).map(function(k){ return map[k]; });
-    list.sort(function(a,b){ return a.localeCompare(b); });
-
-    list.forEach(function(name){
-      var o = document.createElement('option');
-      o.value = name;        // keep storing the country name (matches your current saveAddress schema)
-      o.textContent = name;
-      sel.appendChild(o);
-    });
-  }
-
-  // Prefer shipping.json as the source of truth
-  if (typeof fetchShippingRates === 'function'){
-    fetchShippingRates()
-      .then(fillCountriesFromRows)
-      .catch(function(){
-        // Fallback if shipping.json can’t be read for any reason
-        if (typeof ADDRESS_COUNTRIES !== 'undefined') fillCountriesFromRows(
-          (ADDRESS_COUNTRIES || []).map(function(c){ return { country: c }; })
-        );
-      });
-  } else {
-    // Last-resort fallback
-    if (typeof ADDRESS_COUNTRIES !== 'undefined') fillCountriesFromRows(
-      (ADDRESS_COUNTRIES || []).map(function(c){ return { country: c }; })
-    );
-  }
-}
-
     function close(){
       overlay.style.display = 'none';
     }
@@ -1605,6 +1601,10 @@ if (sel){
       });
     }
   }
+
+  // IMPORTANT: populate dropdown AFTER the overlay exists in the DOM
+  populateAddrCountries();
+
 
   // Show + preload
   overlay.style.display = 'flex';
