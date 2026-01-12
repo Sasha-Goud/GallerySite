@@ -1,93 +1,481 @@
-[
+{
+  "sizes": ["92 X 62 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Original"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":@
+}
+{
+  "sizes": ["85 x 50 cm"],
+  "materials": ["Canvas"],
+  "edition": [“Print”],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["85 x 50 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": [“Print”],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["85 x 55 cm"],
+  "materials": ["Canvas"],
+  "edition": [“Print”],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["85 x 55 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": [“Print”],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["90 x 60 cm"],
+  "materials": ["Canvas"],
+  "edition": [“Print”],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["90 x 60 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": [“Print”],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["30.5 X 61 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Original"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":@
+}
+{
+  "sizes": ["122 X 144 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Original"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":@
+}
+{
+  "sizes": ["80 x 90 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["80 x 90 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["80 x 100 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["80 x 100 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["100 x 125 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["100 x 125 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["120 x 150 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["120 x 150 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["152 X 102 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Original"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":@
+}
+{
+  "sizes": ["142 X 112 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Original"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":@
+}
+{
+  "sizes": ["80 x 55 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["80 x 55 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["80 x 60 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["80 x 60 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["90 x 80 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["90 x 80 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["100 x 85 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["100 x 85 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["140 X 105 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["140 X 105 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["100 X 80 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Original"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":@
+}
+{
+  "sizes": ["100 X 80 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["100 X 80 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["100 X 100 cm"],
+  "materials": ["Matt Archival"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["100 X 100 cm"],
+  "materials": ["Framed Matt Archival"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":32
+}
+{
+  "sizes": ["70 x 70 cm"],
+  "materials": ["Matt Archival"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["70 x 70 cm"],
+  "materials": ["Framed Matt Archival"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":32
+}
+{
+  "sizes": ["50 x 50 cm"],
+  "materials": ["Matt Archival"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["50 x 50 cm"],
+  "materials": ["Framed Matt Archival"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":10
+}
+{
+  "sizes": ["60 × 40 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["60 × 40 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["85 × 50 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["85 × 50 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["60 × 40 cm"],
+  "materials": ["Hahnemühle Photorag"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["80 × 60 cm"],
+  "materials": ["Hahnemühle Photorag"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["80 × 60 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["80 × 60 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["40 × 60 cm"],
+  "materials": ["Hahnemühle Photorag"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["60 × 80 cm"],
+  "materials": ["Hahnemühle Photorag"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["60 × 80 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["60 × 80 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["40 × 60 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["40 × 60 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["50 × 85 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["50 × 85 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["45 × 80 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["90 × 165 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["90 × 60 cm"],
+  "materials": ["Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["90 × 60 cm"],
+  "materials": ["Framed Canvas"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":8
+}
+{
+  "sizes": ["29.8 X 42 CM"],
+  "materials": ["Archival Gloss"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":??
+}
+{
+  "sizes": ["42 X 59.4 CM"],
+  "materials": ["Archival Gloss"],
+  "edition": ["Print"],
+  "country":"United Kingdom",
+  "country_code":"GB",
+  "cost":??
+}
 
-  { "size":"100 X 100 cm",
-    "material":"Framed Archival Print",
-    "edition":"Replica",
-    "country":"UK",
-    "country_code":"GB",
-    "cost":27 },
-  
-  
-  {
-    "size": "50 X 50 cm",
-    "material": "Framed Archival Print",
-    "edition": "Replica",
-    "country": "UK",
-    "country_code":"GB",
-    "cost": 7.80
-  },
-  {
-    "size": "100 X 100 cm",
-    "material": "Framed Archival Print",
-    "edition": "Replica",
-    "country": "France",
-    "country_code":"FR",
-    "cost": 27.00
-  },
-  {
-    "size": "50 X 50 cm",
-    "material": "Framed Archival Print",
-    "edition": "Replica",
-    "country": "France",
-    "country_code":"FR",
-    "cost": 7.80
-  },
-  {
-    "size": "100 X 100 cm",
-    "material": "Framed Archival Print",
-    "edition": "Replica",
-    "country": "USA",
-    "country_code":"US",
-    "cost": 25.00
-  },
-  {
-    "size": "50 X 50 cm",
-    "material": "Framed Archival Print",
-    "edition": "Replica",
-    "country": "USA",
-    "country_code":"US",
-    "cost": 10.50
-  },
-  {
-    "size": "100 X 100 cm",
-    "material": "Framed Archival Print",
-    "edition": "Replica",
-    "country": "Canada",
-    "country_code":"CA",
-    "cost": 35.00
-  },
-  {
-    "size": "50 X 50 cm",
-    "material": "Framed Archival Print",
-    "edition": "Replica",
-    "country": "Canada",
-    "country_code":"CA",
-    "cost": 13.00
-  },
-  {
-    "size": "100 X 100 cm",
-    "material": "Archival Print",
-    "edition": "Replica",
-    "country": "UK",
-    "country_code":"GB",
-    "cost": 7.00
-  },
-  
-  {
-    "size": "100 X 100 cm",
-    "material": "Canvas",
-    "edition": "Replica",
-    "country": "UK",
-    "country_code":"GB",
-    "cost": 7.00
-  },
-  
-  {
-    "size": "50 X 50 cm",
-    "material": "Archival Print",
-    "edition": "Replica",
-    "country": "UK",
-    "country_code":"GB",
-    "cost": 7.00
-  }
-]
