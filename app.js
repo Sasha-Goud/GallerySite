@@ -1208,33 +1208,23 @@ function renderCart(){
     fetchShippingRates().then(function(rates){
       rates = rates || [];
 
-  function matchRate(it){
-  // Normalisers
-  function normText(s){ return String(s || '').trim().toLowerCase(); }
-  function normSize(s){
-    // Uses your existing normSizeKey if present; otherwise fall back to simple normalisation
-    if (typeof normSizeKey === 'function') return normSizeKey(s);
-    return String(s || '').trim().replace(/\s+/g,' ').replace(/×/g,'X').replace(/x/ig,'X');
-  }
+      function matchRate(it){
+        var size     = String(it.size || '').trim();
+        var material = String(it.paper || '').trim(); // cart uses "paper" for material
+        var edition  = String(it.kind || '').trim();  // cart uses "kind" for edition
 
-  var sizeK     = normSize(it.size || '');
-  var materialK = normText(it.paper || ''); // cart uses "paper" for material
-  var editionK  = normText(it.kind || '');  // cart uses "kind" for edition
-  var countryK  = normText(country || '');
+        for (var i = 0; i < rates.length; i++){
+          var r = rates[i];
+          if (String(r.country  || '').trim() === country &&
+              String(r.size     || '').trim() === size &&
+              String(r.material || '').trim() === material &&
+              String(r.edition  || '').trim() === edition){
+            return r;
+          }
+        }
+        return null;
+      }
 
-  for (var i = 0; i < rates.length; i++){
-    var r = rates[i] || {};
-    if (
-      normText(r.country)  === countryK &&
-      normSize(r.size)     === sizeK &&
-      normText(r.material) === materialK &&
-      normText(r.edition)  === editionK
-    ){
-      return r;
-    }
-  }
-  return null;
-}
       var total = 0;
 
       for (var k = 0; k < list.length; k++){
