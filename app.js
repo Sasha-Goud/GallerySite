@@ -1209,42 +1209,29 @@ function renderCart(){
       rates = rates || [];
 
 function matchRate(it){
-
-  function norm(s){
-    return String(s || '').trim().toLowerCase();
-  }
-
-  // Canonicalise size so: "100 X 100 cm", "100 x 100 cm", "100×100 cm" all match
+  function normText(s){ return String(s || '').trim().toLowerCase(); }
   function normSize(s){
+    if (typeof normSizeKey === 'function') return normSizeKey(s);
     return String(s || '')
       .trim()
       .replace(/\s+/g, ' ')
-      .replace(/[×X]/g, 'x')
-      .replace(/\s*x\s*/g, ' x ')
-      .toLowerCase();
+      .replace(/×/g, 'X')
+      .replace(/x/ig, 'X');
   }
 
-  // Map your cart “kind” values to shipping “edition” values
-  function normEdition(s){
-    var k = norm(s);
-    if (k === 'print') return 'replica';
-    if (k === 'framed') return 'replica';
-    if (k === 'canvas') return 'replica';
-    if (k === 'replica') return 'replica';
-    if (k === 'original') return 'original';
-    return k; // fallback
-  }
-
-  var size     = normSize(it.size);
-  var material = norm(it.paper); // cart uses "paper" for material
-  var edition  = normEdition(it.kind); // cart uses "kind" for edition
+  var sizeK     = normSize(it.size || '');
+  var materialK = normText(it.paper || ''); // cart uses "paper" for material
+  var editionK  = normText(it.kind || '');  // cart uses "kind" for edition
+  var countryK  = normText(country || '');
 
   for (var i = 0; i < rates.length; i++){
     var r = rates[i] || {};
-    if (norm(r.country)  === norm(country) &&
-        normSize(r.size) === size &&
-        norm(r.material) === material &&
-        normEdition(r.edition) === edition){
+    if (
+      normText(r.country)  === countryK &&
+      normSize(r.size)     === sizeK &&
+      normText(r.material) === materialK &&
+      normText(r.edition)  === editionK
+    ){
       return r;
     }
   }
