@@ -1655,9 +1655,7 @@ function openAddressPanel(){
   (document.getElementById('addr-state')||{}).value    = addr.state    || '';
   (document.getElementById('addr-postcode')||{}).value = addr.postcode || '';
 
-  // Populate countries from shipping.json, then select the saved country (if present)
-  populateAddrCountries(addr.country || '');
-
+}
 
   if (!overlay){
     overlay = document.createElement('div');
@@ -1734,6 +1732,9 @@ function openAddressPanel(){
       '</div>';
 
     document.body.appendChild(overlay);
+    
+     // Populate countries from shipping.json, then select the saved country (if present)
+  populateAddrCountries(addr.country || '');
 
     function close(){
       overlay.style.display = 'none';
