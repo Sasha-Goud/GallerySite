@@ -551,234 +551,349 @@ function renderItem(id){
     })();
     /* ========= /MEDIA STRIP ========= */
 
-    // --- Purchase panel (DOM; styles via CSS) ---
-    function ensurePurchaseUI(){
-      var panel = document.getElementById('purchase-panel');
-      if (!panel){
-        panel = document.createElement('aside');
-        panel.id = 'purchase-panel';
-        panel.className = 'purchase-panel';
-        panel.innerHTML =
-          '<header class="purchase-head">' +
-            '<strong class="purchase-title">Purchase Options</strong>' +
-            '<button id="purchase-close" class="purchase-close" type="button" aria-label="Close">×</button>' +
-          '</header>' +
-          '<div id="purchase-body" class="purchase-body"></div>';
-        document.body.appendChild(panel);
+   // --- Purchase panel (DOM; styles via CSS) ---
+function ensurePurchaseUI(){
+  var panel = document.getElementById('purchase-panel');
+  if (!panel){
+    panel = document.createElement('aside');
+    panel.id = 'purchase-panel';
+    panel.className = 'purchase-panel';
+    panel.innerHTML =
+      '<header class="purchase-head">' +
+        '<strong class="purchase-title">Purchase Options</strong>' +
+        '<button id="purchase-close" class="purchase-close" type="button" aria-label="Close">×</button>' +
+      '</header>' +
+      '<div id="purchase-body" class="purchase-body"></div>';
+    document.body.appendChild(panel);
+  }
+  return panel;
+}
+
+function selectHtml(label, id, options, disabled){
+  var html = [
+    '<div class="purchase-field">',
+      '<label class="purchase-label" for="'+id+'">'+label+'</label>',
+      '<select id="'+id+'" class="purchase-select"'+(disabled ? ' disabled' : '')+'>',
+        '<option value="">Select…</option>'
+  ];
+  (options || []).forEach(function(opt){
+    var v = String(opt);
+    html.push('<option value="'+escapeHtml(v)+'">'+escapeHtml(v)+'</option>');
+  });
+  html.push('</select>','</div>');
+  return html.join('');
+}
+
+function renderOptions(panel, editions, materials, sizes){
+  var body = panel.querySelector('#purchase-body');
+  if (!body) return;
+
+  body.innerHTML =
+    '<div class="purchase-stack">' +
+      // NEW ORDER: Edition → Material → Size
+      selectHtml('Edition',  'opt-edition',  editions,  false) +
+      selectHtml('Material', 'opt-material', materials, true) +
+      selectHtml('Size',     'opt-size',     sizes,     true) +
+      '<div class="purchase-row qty-row">' +
+        '<label class="purchase-label" for="qty">Qty</label>' +
+        '<div class="qty-control">' +
+          '<input id="qty" class="purchase-qty" type="number" min="1" value="1">' +
+          '<div class="qty-buttons">' +
+            '<button class="qtybtn" data-act="inc" type="button" aria-label="Increase">+</button>' +
+            '<button class="qtybtn" data-act="dec" type="button" aria-label="Decrease">−</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div id="price-row" class="purchase-price-row">Price: <strong id="price-value">—</strong></div>' +
+      '<div class="purchase-actions">' +
+        '<button id="add-to-cart" class="btn-primary" type="button" disabled>Add to basket</button>' +
+      '</div>' +
+    '</div>';
+}
+
+function getSelection(){
+  var edition  = (($('#opt-edition')||{}).value  || '').trim();
+  var material = (($('#opt-material')||{}).value || '').trim();
+  var size     = (($('#opt-size')||{}).value     || '').trim();
+  var qty      = Math.max(1, Number($('#qty') ? $('#qty').value : 1) || 1);
+  return { edition:edition, material:material, size:size, qty:qty };
+}
+
+function openPurchasePanelUsing(dataRef){
+  if (!dataRef) return;
+
+  var panel = ensurePurchaseUI();
+
+  // Start with a minimal shell (edition list filled after we load variants)
+  renderOptions(panel, [], [], []);
+
+  var priceEl = $('#price-value');
+  var btnAdd  = $('#add-to-cart');
+
+  function setPriceDisplay(text){
+    if (priceEl) priceEl.textContent = text;
+  }
+  function setAddEnabled(on){
+    if (btnAdd) btnAdd.disabled = !on;
+  }
+
+  function setSelectOptions(selectEl, values, keepValue){
+    if (!selectEl) return;
+    var current = keepValue ? selectEl.value : '';
+    var html = '<option value="">Select…</option>';
+    (values || []).forEach(function(v){
+      var s = String(v);
+      html += '<option value="'+escapeHtml(s)+'">'+escapeHtml(s)+'</option>';
+    });
+    selectEl.innerHTML = html;
+    if (keepValue && (values || []).indexOf(current) >= 0){
+      selectEl.value = current;
+    } else {
+      selectEl.value = '';
+    }
+  }
+
+  function uniqPreserve(list){
+    var seen = Object.create(null);
+    var out = [];
+    (list || []).forEach(function(v){
+      var s = String(v || '').trim();
+      if (!s) return;
+      var k = s.toLowerCase();
+      if (seen[k]) return;
+      seen[k] = 1;
+      out.push(s);
+    });
+    return out;
+  }
+
+  function normKey(s){
+    return String(s || '').trim().toLowerCase();
+  }
+
+  function variantsToPricing(variants){
+    // Build pricing[size][material][edition] = price  (so existing cart logic keeps working)
+    var p = {};
+    (variants || []).forEach(function(v){
+      var ed  = String(v.edition  || '').trim();
+      var mat = String(v.material || '').trim();
+      var sz  = String(v.size     || '').trim();
+      var pr  = Number(v.price);
+      if (!ed || !mat || !sz || !isFinite(pr)) return;
+
+      if (!p[sz]) p[sz] = {};
+      if (!p[sz][mat]) p[sz][mat] = {};
+      p[sz][mat][ed] = pr;
+    });
+    return p;
+  }
+
+  function priceFromVariants(variants, edition, material, size){
+    var ed = normKey(edition), mat = normKey(material), sz = normKey(size);
+    for (var i = 0; i < (variants || []).length; i++){
+      var v = variants[i] || {};
+      if (normKey(v.edition) === ed && normKey(v.material) === mat && normKey(v.size) === sz){
+        var pr = Number(v.price);
+        return isFinite(pr) ? pr : null;
       }
-      return panel;
     }
+    return null;
+  }
 
-    function selectHtml(label, id, options){
-      var html = [
-        '<div class="purchase-field">',
-          '<label class="purchase-label" for="'+id+'">'+label+'</label>',
-          '<select id="'+id+'" class="purchase-select">',
-            '<option value="">Select…</option>'
-      ];
-      options.forEach(function(opt){
-        var v = String(opt);
-        html.push('<option value="'+escapeHtml(v)+'">'+escapeHtml(v)+'</option>');
-      });
-      html.push('</select>','</div>');
-      return html.join('');
-    }
+  // Load the per-artwork options.json (Option B)
+  var optUrl = 'assets/' + String(dataRef.id || '').trim() + '/options.json';
 
-    function renderOptions(panel, sizes, materials, kinds){
+  setPriceDisplay('…');
+  setAddEnabled(false);
+
+  fetchJSON(bust(optUrl)).then(function(opt){
+    var variants = (opt && Array.isArray(opt.variants)) ? opt.variants : [];
+
+    // If file exists but has no usable variants
+    if (!variants.length){
+      setPriceDisplay('N/A');
+      setAddEnabled(false);
       var body = panel.querySelector('#purchase-body');
-      if (!body) return;
+      if (body){
+        body.innerHTML =
+          '<div class="purchase-stack">' +
+            '<div class="sub">No purchasable variants found for this artwork.</div>' +
+          '</div>';
+      }
+      return;
+    }
+
+    // Derive top-level lists
+    var editionsAll = uniqPreserve(variants.map(function(v){ return v.edition; }));
+
+    // Re-render panel with editions; material/size start empty+disabled
+    renderOptions(panel, editionsAll, [], []);
+    setPriceDisplay('—');
+    setAddEnabled(false);
+
+    var edSel  = $('#opt-edition');
+    var matSel = $('#opt-material');
+    var szSel  = $('#opt-size');
+    var qtyEl  = $('#qty');
+
+    function materialsForEdition(edition){
+      return uniqPreserve(variants
+        .filter(function(v){ return normKey(v.edition) === normKey(edition); })
+        .map(function(v){ return v.material; })
+      );
+    }
+
+    function sizesFor(edition, material){
+      return uniqPreserve(variants
+        .filter(function(v){
+          return normKey(v.edition) === normKey(edition) &&
+                 normKey(v.material) === normKey(material);
+        })
+        .map(function(v){ return v.size; })
+      );
+    }
+
+    function refreshAll(){
+      var sel = getSelection();
+
+      // Material depends on edition
+      var mats = sel.edition ? materialsForEdition(sel.edition) : [];
+      if (matSel){
+        matSel.disabled = !sel.edition;
+        setSelectOptions(matSel, mats, true);
+        // If current material is no longer valid, clear it
+        if (sel.edition && mats.indexOf(matSel.value) === -1) matSel.value = '';
+      }
+
+      // Size depends on edition+material
+      sel.material = (matSel && matSel.value) ? matSel.value : '';
+      var sizes = (sel.edition && sel.material) ? sizesFor(sel.edition, sel.material) : [];
+      if (szSel){
+        szSel.disabled = !(sel.edition && sel.material);
+        setSelectOptions(szSel, sizes, true);
+        if (sel.edition && sel.material && sizes.indexOf(szSel.value) === -1) szSel.value = '';
+      }
+
+      // Price depends on all three
+      sel.size = (szSel && szSel.value) ? szSel.value : '';
+      var unit = (sel.edition && sel.material && sel.size)
+        ? priceFromVariants(variants, sel.edition, sel.material, sel.size)
+        : null;
+
+      if (typeof unit === 'number'){
+        var total = round2(unit * Math.max(1, Number(sel.qty) || 1));
+        setPriceDisplay(money(total));
+        setAddEnabled(true);
+      } else {
+        setPriceDisplay('—');
+        setAddEnabled(false);
+      }
+    }
+
+    // Wire change events
+    if (edSel) edSel.addEventListener('change', function(){
+      // Clear downstream selections on edition change
+      if (matSel) matSel.value = '';
+      if (szSel)  szSel.value  = '';
+      refreshAll();
+    });
+
+    if (matSel) matSel.addEventListener('change', function(){
+      // Clear size on material change
+      if (szSel) szSel.value = '';
+      refreshAll();
+    });
+
+    if (szSel) szSel.addEventListener('change', refreshAll);
+
+    if (qtyEl) qtyEl.addEventListener('input', function(){
+      if (Number(qtyEl.value) < 1) qtyEl.value = 1;
+      refreshAll();
+    });
+
+    var panelEl = document.getElementById('purchase-panel');
+    if (panelEl){
+      panelEl.addEventListener('click', function(e){
+        var b = e.target && e.target.closest && e.target.closest('.qtybtn');
+        if (!b) return;
+        var input = document.getElementById('qty');
+        if (!input) return;
+        var val = Math.max(1, Number(input.value) || 1);
+        if (b.getAttribute('data-act') === 'inc') val++;
+        if (b.getAttribute('data-act') === 'dec') val = Math.max(1, val - 1);
+        input.value = val;
+        refreshAll();
+      });
+    }
+
+    // Add to basket uses the NEW selection keys, but stores in existing basket schema:
+    // size -> size, paper -> material, kind -> edition
+    if (btnAdd){
+      btnAdd.addEventListener('click', function(){
+        var sel = getSelection();
+        var unit = priceFromVariants(variants, sel.edition, sel.material, sel.size);
+        if (typeof unit !== 'number') return;
+
+        // Preserve cart edit UI compatibility
+        var allSizes     = uniqPreserve(variants.map(function(v){ return v.size; }));
+        var allMaterials = uniqPreserve(variants.map(function(v){ return v.material; }));
+        var allEditions  = uniqPreserve(variants.map(function(v){ return v.edition; }));
+
+        addToBasket({
+          id: dataRef.id,
+          title: dataRef.title,
+          thumb: dataRef.src || dataRef.context1 || '',
+          src: dataRef.src || '',
+          size: sel.size,
+          paper: sel.material,
+          kind: sel.edition,
+          qty: sel.qty,
+          options: { sizes: allSizes.slice(), materials: allMaterials.slice(), kinds: allEditions.slice() },
+          pricing: variantsToPricing(variants),
+          unitPrice: round2(unit)
+        });
+
+        updateCartCount();
+        try { btnAdd.textContent = 'Added!'; setTimeout(function(){ btnAdd.textContent = 'Add to basket'; }, 900); } catch(_){}
+      });
+    }
+
+    // Initial state
+    refreshAll();
+
+    // Open UI
+    document.body.classList.add('purchase-open');
+    panel.classList.add('open');
+
+    var closeBtn = panel.querySelector('#purchase-close');
+    function close(){
+      panel.classList.remove('open');
+      document.body.classList.remove('purchase-open');
+    }
+    if (closeBtn) closeBtn.onclick = close;
+    document.addEventListener('keydown', function esc(e){
+      if (e.key === 'Escape'){ close(); document.removeEventListener('keydown', esc); }
+    });
+
+  }).catch(function(err){
+    // If options.json missing/unreadable, fail gracefully
+    setPriceDisplay('N/A');
+    setAddEnabled(false);
+    var body = panel.querySelector('#purchase-body');
+    if (body){
       body.innerHTML =
         '<div class="purchase-stack">' +
-          selectHtml('Size', 'opt-size', sizes) +
-          selectHtml('Material', 'opt-material', materials) +
-          selectHtml('Edition', 'opt-kind', kinds) +
-          '<div class="purchase-row qty-row">' +
-            '<label class="purchase-label" for="qty">Qty</label>' +
-            '<div class="qty-control">' +
-              '<input id="qty" class="purchase-qty" type="number" min="1" value="1">' +
-              '<div class="qty-buttons">' +
-                '<button class="qtybtn" data-act="inc" type="button" aria-label="Increase">+</button>' +
-                '<button class="qtybtn" data-act="dec" type="button" aria-label="Decrease">−</button>' +
-              '</div>' +
-            '</div>' +
-          '</div>' +
-          '<div id="price-row" class="purchase-price-row">Price: <strong id="price-value">—</strong></div>' +
-          '<div class="purchase-actions">' +
-            '<button id="add-to-cart" class="btn-primary" type="button" disabled>Add to basket</button>' +
-          '</div>' +
+          '<div class="sub">Purchase options are not available for this artwork.</div>' +
         '</div>';
     }
+    try { console.error('options.json load failed:', optUrl, err); } catch(_){}
+  });
+}
 
-    function getSelection(){
-      var size = ($('#opt-size')||{}).value || '';
-      var material = ($('#opt-material')||{}).value || '';
-      var kind = ($('#opt-kind')||{}).value || '';
-      var qty = Math.max(1, Number($('#qty') ? $('#qty').value : 1) || 1);
-      return { size:size, material:material, kind:kind, qty:qty };
-    }
-
-    function updatePriceAndButton(){
-      var sel = getSelection();
-      var priceEl = $('#price-value');
-      var btn = $('#add-to-cart');
-      var choseAll = !!sel.size && !!sel.material && !!sel.kind;
-      var unit = priceFor(sel.size, sel.material, sel.kind);
-      if (choseAll && typeof unit === 'number'){
-        var total = round2(unit * Math.max(1, Number(sel.qty) || 1));
-        priceEl.textContent = money(total);
-        btn.disabled = false;
-      } else {
-        priceEl.textContent = '—';
-        btn.disabled = true;
-      }
-    }
-
-    function openPurchasePanelUsing(dataRef){
-      if (!dataRef) return;
-
-      var opts = dataRef.options || {};
-
-      // Use the item’s allowed lists, but we will FILTER the "kinds" list dynamically
-      var sizes     = Array.isArray(opts.sizes)     && opts.sizes.length     ? opts.sizes.slice()     : SIZES.slice();
-      var materials = Array.isArray(opts.materials) && opts.materials.length ? opts.materials.slice() : MATERIALS.slice();
-      var kindsAll  = Array.isArray(opts.kinds)     && opts.kinds.length     ? opts.kinds.slice()     : KINDS.slice();
-
-      var panel = ensurePurchaseUI();
-      renderOptions(panel, sizes, materials, kindsAll);
-
-      // --- NEW: filter kinds based on selected size+material and PRICING ---
-      function setSelectOptions(selectEl, values){
-        if (!selectEl) return;
-        var current = selectEl.value;
-        var html = '<option value="">Select…</option>';
-        values.forEach(function(v){
-          var s = String(v);
-          html += '<option value="'+escapeHtml(s)+'">'+escapeHtml(s)+'</option>';
-        });
-        selectEl.innerHTML = html;
-
-        // Keep previous selection only if it still exists
-        if (values.indexOf(current) >= 0){
-          selectEl.value = current;
-        } else {
-          selectEl.value = '';
-        }
-      }
-
-      function pricedKindsFor(size, material){
-        if (!size || !material) return [];
-        var sk = resolveSizeKey(size);
-        var m = String(material).trim();
-        var bucket = (PRICING[sk] && PRICING[sk][m]) ? PRICING[sk][m] : null;
-        if (!bucket) return [];
-        return Object.keys(bucket);
-      }
-
-      function refreshKindDropdown(){
-        var sizeSel = $('#opt-size');
-        var matSel  = $('#opt-material');
-        var kindSel = $('#opt-kind');
-        if (!kindSel) return;
-
-        var chosenSize = sizeSel ? sizeSel.value : '';
-        var chosenMat  = matSel ? matSel.value : '';
-
-        // Intersection: (item's allowed kinds) ∩ (priced kinds for chosen size+material)
-        var priced = pricedKindsFor(chosenSize, chosenMat);
-        var nextKinds = kindsAll.filter(function(k){ return priced.indexOf(String(k)) >= 0; });
-
-        // If size/material not chosen yet, show all allowed kinds (so the UI doesn't look empty)
-        if (!chosenSize || !chosenMat) nextKinds = kindsAll.slice();
-
-        setSelectOptions(kindSel, nextKinds);
-      }
-
-      function wireOptionEvents(){
-        var s1 = $('#opt-size'), s2 = $('#opt-material'), s3 = $('#opt-kind'), qty = $('#qty');
-
-        if (s1) s1.addEventListener('change', function(){
-          refreshKindDropdown();
-          updatePriceAndButton();
-        });
-        if (s2) s2.addEventListener('change', function(){
-          refreshKindDropdown();
-          updatePriceAndButton();
-        });
-        if (s3) s3.addEventListener('change', updatePriceAndButton);
-
-        if (qty) qty.addEventListener('input', function(){
-          if (Number(qty.value) < 1) qty.value = 1;
-          updatePriceAndButton();
-        });
-
-        var panel = document.getElementById('purchase-panel');
-        if (panel){
-          panel.addEventListener('click', function(e){
-            var btn = e.target && e.target.closest && e.target.closest('.qtybtn');
-            if (!btn) return;
-            var input = document.getElementById('qty');
-            if (!input) return;
-            var val = Math.max(1, Number(input.value) || 1);
-            if (btn.getAttribute('data-act') === 'inc') val++;
-            if (btn.getAttribute('data-act') === 'dec') val = Math.max(1, val - 1);
-            input.value = val;
-            updatePriceAndButton();
-          });
-        }
-      }
-
-      function wireAddToCart(dataRef, sizes, materials, kinds){
-        var btn = $('#add-to-cart');
-        if (!btn) return;
-        btn.addEventListener('click', function(){
-          var sel = getSelection();
-          var unit = priceFor(sel.size, sel.material, sel.kind);
-          if (typeof unit !== 'number') return;
-
-          addToBasket({
-            id: dataRef.id,
-            title: dataRef.title,
-           thumb: dataRef.src || dataRef.context1 || '',
-            src: dataRef.src || '',
-            size: sel.size,
-            paper: sel.material,
-            kind: sel.kind,
-            qty: sel.qty,
-            options: { sizes: sizes.slice(), materials: materials.slice(), kinds: kinds.slice() },
-            pricing: (dataRef.pricing || PRICING),
-            unitPrice: round2(unit)
-          });
-
-          updateCartCount();
-          try { btn.textContent = 'Added!'; setTimeout(function(){ btn.textContent = 'Add to basket'; }, 900); } catch(_){}
-        });
-      }
-
-      wireOptionEvents();
-      wireAddToCart(dataRef, sizes, materials, kindsAll);
-
-      // Apply initial filtering once panel opens
-      refreshKindDropdown();
-      updatePriceAndButton();
-
-      document.body.classList.add('purchase-open');
-      panel.classList.add('open');
-
-      var closeBtn = panel.querySelector('#purchase-close');
-      function close(){
-        panel.classList.remove('open');
-        document.body.classList.remove('purchase-open');
-      }
-      if (closeBtn) closeBtn.onclick = close;
-      document.addEventListener('keydown', function esc(e){
-        if (e.key === 'Escape'){ close(); document.removeEventListener('keydown', esc); }
-      });
-    }
-
-    // Wire button immediately (works even before data arrives thanks to detailData)
-    purchaseBtn.addEventListener('click', function(){
-      openPurchasePanelUsing(detailData);
-    });
+// Wire button immediately (works even before data arrives thanks to detailData)
+purchaseBtn.addEventListener('click', function(){
+  openPurchasePanelUsing(detailData);
+});
 
   }).catch(function(err){
     var hero = $('#hero');
