@@ -1361,10 +1361,13 @@ function openAddressPanel(){
 
           '<div id="addr-error" style="color:#ffb4b4;font-size:12px;margin-top:10px;display:none;"></div>' +
 
-          '<div style="display:flex;gap:10px;justify-content:flex-end;margin-top:14px;">' +
-            '<button id="addr-cancel" type="button" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:10px;cursor:pointer;">Cancel</button>' +
-            '<button id="addr-save" type="submit" style="background:#fff;color:#111;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;">Save</button>' +
-          '</div>' +
+          '<div style="display:flex;gap:10px;justify-content:space-between;margin-top:14px;align-items:center;">' +
+  '<button id="addr-clear" type="button" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,.18);padding:10px 14px;border-radius:10px;cursor:pointer;">Clear address</button>' +
+  '<div style="display:flex;gap:10px;justify-content:flex-end;">' +
+    '<button id="addr-cancel" type="button" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:10px;cursor:pointer;">Cancel</button>' +
+    '<button id="addr-save" type="submit" style="background:#fff;color:#111;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;">Save</button>' +
+  '</div>' +
+'</div>' +
 
         '</form>' +
       '</div>';
@@ -1430,6 +1433,28 @@ if (sel){
 
     var cancelBtn = document.getElementById('addr-cancel');
     if (cancelBtn) cancelBtn.addEventListener('click', close);
+
+var clearBtn = document.getElementById('addr-clear');
+if (clearBtn){
+  clearBtn.addEventListener('click', function(){
+    // Clear saved address
+    try {
+      if (typeof saveAddress === 'function') saveAddress(null);
+      else if (typeof ADDRESS_KEY !== 'undefined') localStorage.removeItem(ADDRESS_KEY);
+    } catch(e){}
+
+    // Clear visible fields
+    ['addr-name','addr-email','addr-line1','addr-line2','addr-city','addr-state','addr-postcode','addr-country']
+      .forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+
+    close();
+    updateCartAddressUI();
+  });
+}
+
 
     var form = document.getElementById('addr-form');
     if (form){
