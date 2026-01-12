@@ -912,7 +912,7 @@ function renderCart(){
              'left:var(--addr-btn-x,0px);top:var(--addr-btn-y,0px);' +
              'background:var(--addr-btn-bg,#444);color:var(--addr-btn-fg,#fff);' +
              'border:0;padding:10px 14px;border-radius:10px;cursor:pointer;">' +
-      'Delivery Address</button>',
+'<button id="set-address" type="button">Delivery Address</button>',
     '<div id="ship-country" class="sub">Country: <strong>—</strong></div>',
   '</div>',
 
