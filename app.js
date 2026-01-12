@@ -1254,7 +1254,7 @@ function renderCart(){
 
 var ADDRESS_KEY = 'gallery_ship_address_v1';
 
-// Edit this list any time you like (dropdown values only)
+// (Fallback only — real list comes from shipping.json)
 var ADDRESS_COUNTRIES = ['UK', 'France', 'USA', 'Canada'];
 
 function loadAddress(){
@@ -1266,11 +1266,15 @@ function saveAddress(addr){
   localStorage.setItem(ADDRESS_KEY, JSON.stringify(addr || null));
 }
 
+function clearAddress(){
+  localStorage.removeItem(ADDRESS_KEY);
+}
+
 function updateCartAddressUI(){
   var addr = loadAddress();
   var country = (addr && addr.country) ? String(addr.country) : '';
 
-  // Country display
+  // Country display (cart UI)
   var shipCountryEl = document.getElementById('ship-country');
   if (shipCountryEl){
     var strong = shipCountryEl.querySelector('strong');
@@ -1288,10 +1292,54 @@ function updateCartAddressUI(){
     pp.style.opacity = country ? '1' : '0.4';
     pp.style.pointerEvents = country ? 'auto' : 'none';
   }
-  
-  if (typeof window.__UPDATE_SHIPPING__ === 'function') window.__UPDATE_SHIPPING__();
 
+  if (typeof window.__UPDATE_SHIPPING__ === 'function') window.__UPDATE_SHIPPING__();
 }
+
+function populateAddrCountries(savedCountry){
+  var sel = document.getElementById('addr-country');
+  if (!sel) return Promise.resolve();
+
+  // Keep the first "Select…" option, remove anything else (prevents duplicates)
+  while (sel.options.length > 1) sel.remove(1);
+
+  function fillCountriesFromRows(rows){
+    var map = Object.create(null); // lower -> display
+    (rows || []).forEach(function(r){
+      var name = (r && typeof r === 'object') ? String(r.country || '').trim() : '';
+      if (!name) return;
+      var key = name.toLowerCase();
+      if (!map[key]) map[key] = name;
+    });
+
+    var list = Object.keys(map).map(function(k){ return map[k]; });
+    list.sort(function(a,b){ return a.localeCompare(b); });
+
+    list.forEach(function(name){
+      var o = document.createElement('option');
+      o.value = name;
+      o.textContent = name;
+      sel.appendChild(o);
+    });
+
+    if (savedCountry){
+      sel.value = String(savedCountry).trim();
+      if (sel.value !== String(savedCountry).trim()) sel.value = '';
+    }
+  }
+
+  if (typeof fetchShippingRates === 'function'){
+    return fetchShippingRates()
+      .then(function(rows){ fillCountriesFromRows(rows || []); })
+      .catch(function(){
+        fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
+      });
+  }
+
+  fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
+  return Promise.resolve();
+}
+
 function openAddressPanel(){
   var overlay = document.getElementById('address-overlay');
 
@@ -1361,9 +1409,12 @@ function openAddressPanel(){
 
           '<div id="addr-error" style="color:#ffb4b4;font-size:12px;margin-top:10px;display:none;"></div>' +
 
-          '<div style="display:flex;gap:10px;justify-content:flex-end;margin-top:14px;">' +
-            '<button id="addr-cancel" type="button" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:10px;cursor:pointer;">Cancel</button>' +
-            '<button id="addr-save" type="submit" style="background:#fff;color:#111;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;">Save</button>' +
+          '<div style="display:flex;gap:10px;justify-content:space-between;margin-top:14px;align-items:center;">' +
+            '<button id="addr-clear" type="button" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,.18);padding:10px 14px;border-radius:10px;cursor:pointer;">Clear address</button>' +
+            '<div style="display:flex;gap:10px;justify-content:flex-end;">' +
+              '<button id="addr-cancel" type="button" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:10px;cursor:pointer;">Cancel</button>' +
+              '<button id="addr-save" type="submit" style="background:#fff;color:#111;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;">Save</button>' +
+            '</div>' +
           '</div>' +
 
         '</form>' +
@@ -1371,65 +1422,32 @@ function openAddressPanel(){
 
     document.body.appendChild(overlay);
 
-   // Populate country dropdown (from shipping.json)
-var sel = document.getElementById('addr-country');
-if (sel){
+    function close(){ overlay.style.display = 'none'; }
 
-  // Keep the first "Select…" option, remove anything else (prevents duplicates)
-  while (sel.options.length > 1) sel.remove(1);
-
-  function fillCountriesFromRows(rows){
-    var map = Object.create(null); // lower -> display name
-    (rows || []).forEach(function(r){
-      var name = '';
-      if (r && typeof r === 'object') name = String(r.country || '').trim();
-      if (!name) return;
-      var key = name.toLowerCase();
-      if (!map[key]) map[key] = name;
-    });
-
-    var list = Object.keys(map).map(function(k){ return map[k]; });
-    list.sort(function(a,b){ return a.localeCompare(b); });
-
-    list.forEach(function(name){
-      var o = document.createElement('option');
-      o.value = name;        // keep storing the country name (matches your current saveAddress schema)
-      o.textContent = name;
-      sel.appendChild(o);
-    });
-  }
-
-  // Prefer shipping.json as the source of truth
-  if (typeof fetchShippingRates === 'function'){
-    fetchShippingRates()
-      .then(fillCountriesFromRows)
-      .catch(function(){
-        // Fallback if shipping.json can’t be read for any reason
-        if (typeof ADDRESS_COUNTRIES !== 'undefined') fillCountriesFromRows(
-          (ADDRESS_COUNTRIES || []).map(function(c){ return { country: c }; })
-        );
-      });
-  } else {
-    // Last-resort fallback
-    if (typeof ADDRESS_COUNTRIES !== 'undefined') fillCountriesFromRows(
-      (ADDRESS_COUNTRIES || []).map(function(c){ return { country: c }; })
-    );
-  }
-}
-
-    function close(){
-      overlay.style.display = 'none';
-    }
-
-    overlay.addEventListener('click', function(e){
-      if (e.target === overlay) close();
-    });
+    overlay.addEventListener('click', function(e){ if (e.target === overlay) close(); });
 
     var closeBtn = document.getElementById('addr-close');
     if (closeBtn) closeBtn.addEventListener('click', close);
 
     var cancelBtn = document.getElementById('addr-cancel');
     if (cancelBtn) cancelBtn.addEventListener('click', close);
+
+    var clearBtn = document.getElementById('addr-clear');
+    if (clearBtn){
+      clearBtn.addEventListener('click', function(){
+        clearAddress();
+
+        // Clear the visible fields
+        var ids = ['addr-name','addr-email','addr-line1','addr-line2','addr-city','addr-state','addr-postcode','addr-country'];
+        ids.forEach(function(id){
+          var el = document.getElementById(id);
+          if (el) el.value = '';
+        });
+
+        close();
+        updateCartAddressUI();
+      });
+    }
 
     var form = document.getElementById('addr-form');
     if (form){
@@ -1489,17 +1507,12 @@ if (sel){
   if (document.getElementById('addr-city'))     document.getElementById('addr-city').value = addr.city || '';
   if (document.getElementById('addr-state'))    document.getElementById('addr-state').value = addr.state || '';
   if (document.getElementById('addr-postcode')) document.getElementById('addr-postcode').value = addr.postcode || '';
-  if (document.getElementById('addr-country'))  document.getElementById('addr-country').value = addr.country || '';
+
+  // Populate countries from shipping.json, then select saved country
+  populateAddrCountries(addr.country || '');
 }
 
-function wireAddressButtonInCart(){
-  var btn = document.getElementById('set-address');
-  if (btn && !btn.__addrWired){
-    btn.__addrWired = true;
-    btn.addEventListener('click', openAddressPanel);
-  }
-  updateCartAddressUI();
-}
+// ======== (end Address Panel) ========
 
 // ======== Lightbox ========
 var lightbox = $('#lightbox');
