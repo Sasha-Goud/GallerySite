@@ -1208,28 +1208,43 @@ function renderCart(){
     fetchShippingRates().then(function(rates){
       rates = rates || [];
 
-  function matchRate(it){
-  // Normalisers
-  function normText(s){ return String(s || '').trim().toLowerCase(); }
-  function normSize(s){
-    // Uses your existing normSizeKey if present; otherwise fall back to simple normalisation
-    if (typeof normSizeKey === 'function') return normSizeKey(s);
-    return String(s || '').trim().replace(/\s+/g,' ').replace(/×/g,'X').replace(/x/ig,'X');
+function matchRate(it){
+
+  function norm(s){
+    return String(s || '').trim().toLowerCase();
   }
 
-  var sizeK     = normSize(it.size || '');
-  var materialK = normText(it.paper || ''); // cart uses "paper" for material
-  var editionK  = normText(it.kind || '');  // cart uses "kind" for edition
-  var countryK  = normText(country || '');
+  // Canonicalise size so: "100 X 100 cm", "100 x 100 cm", "100×100 cm" all match
+  function normSize(s){
+    return String(s || '')
+      .trim()
+      .replace(/\s+/g, ' ')
+      .replace(/[×X]/g, 'x')
+      .replace(/\s*x\s*/g, ' x ')
+      .toLowerCase();
+  }
+
+  // Map your cart “kind” values to shipping “edition” values
+  function normEdition(s){
+    var k = norm(s);
+    if (k === 'print') return 'replica';
+    if (k === 'framed') return 'replica';
+    if (k === 'canvas') return 'replica';
+    if (k === 'replica') return 'replica';
+    if (k === 'original') return 'original';
+    return k; // fallback
+  }
+
+  var size     = normSize(it.size);
+  var material = norm(it.paper); // cart uses "paper" for material
+  var edition  = normEdition(it.kind); // cart uses "kind" for edition
 
   for (var i = 0; i < rates.length; i++){
     var r = rates[i] || {};
-    if (
-      normText(r.country)  === countryK &&
-      normSize(r.size)     === sizeK &&
-      normText(r.material) === materialK &&
-      normText(r.edition)  === editionK
-    ){
+    if (norm(r.country)  === norm(country) &&
+        normSize(r.size) === size &&
+        norm(r.material) === material &&
+        normEdition(r.edition) === edition){
       return r;
     }
   }
