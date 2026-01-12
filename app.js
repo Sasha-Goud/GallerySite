@@ -1657,7 +1657,7 @@ function openAddressPanel(){
 
   // Populate countries from shipping.json, then select the saved country (if present)
   populateAddrCountries(addr.country || '');
-}
+
 
   if (!overlay){
     overlay = document.createElement('div');
