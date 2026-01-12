@@ -1422,11 +1422,9 @@ function openAddressPanel(){
 
     document.body.appendChild(overlay);
 
-        function close(){ overlay.style.display = 'none'; }
+    function close(){ overlay.style.display = 'none'; }
 
-    overlay.addEventListener('click', function(e){
-      if (e.target === overlay) close();
-    });
+    overlay.addEventListener('click', function(e){ if (e.target === overlay) close(); });
 
     var closeBtn = document.getElementById('addr-close');
     if (closeBtn) closeBtn.addEventListener('click', close);
@@ -1437,11 +1435,9 @@ function openAddressPanel(){
     var clearBtn = document.getElementById('addr-clear');
     if (clearBtn){
       clearBtn.addEventListener('click', function(){
-        // clear saved address
-        if (typeof clearAddress === 'function') clearAddress();
-        else if (typeof saveAddress === 'function') saveAddress(null);
+        clearAddress();
 
-        // clear visible fields
+        // Clear the visible fields
         var ids = ['addr-name','addr-email','addr-line1','addr-line2','addr-city','addr-state','addr-postcode','addr-country'];
         ids.forEach(function(id){
           var el = document.getElementById(id);
@@ -1449,7 +1445,7 @@ function openAddressPanel(){
         });
 
         close();
-        if (typeof updateCartAddressUI === 'function') updateCartAddressUI();
+        updateCartAddressUI();
       });
     }
 
@@ -1483,29 +1479,41 @@ function openAddressPanel(){
         if (!postcode.trim()) return fail('Postcode / ZIP is required.');
         if (!country.trim()) return fail('Country is required.');
 
-        if (typeof saveAddress === 'function'){
-          saveAddress({
-            name: name.trim(),
-            email: email.trim(),
-            line1: line1.trim(),
-            line2: line2.trim(),
-            city: city.trim(),
-            state: state.trim(),
-            postcode: postcode.trim(),
-            country: country.trim()
-          });
-        }
+        saveAddress({
+          name: name.trim(),
+          email: email.trim(),
+          line1: line1.trim(),
+          line2: line2.trim(),
+          city: city.trim(),
+          state: state.trim(),
+          postcode: postcode.trim(),
+          country: country.trim()
+        });
 
         close();
-        if (typeof updateCartAddressUI === 'function') updateCartAddressUI();
+        updateCartAddressUI();
       });
     }
   }
 
-  // Show + preload (runs every time)
+  // Show + preload (must run every time, even when overlay already exists)
   overlay.style.display = 'flex';
 
-  var addr = (typeof loadAddress === 'function' ? (loadAddress() || {}) : {});
+  var addr = loadAddress() || {};
+  if (document.getElementById('addr-name'))     document.getElementById('addr-name').value = addr.name || '';
+  if (document.getElementById('addr-email'))    document.getElementById('addr-email').value = addr.email || '';
+  if (document.getElementById('addr-line1'))    document.getElementById('addr-line1').value = addr.line1 || '';
+  if (document.getElementById('addr-line2'))    document.getElementById('addr-line2').value = addr.line2 || '';
+  if (document.getElementById('addr-city'))     document.getElementById('addr-city').value = addr.city || '';
+  if (document.getElementById('addr-state'))    document.getElementById('addr-state').value = addr.state || '';
+  if (document.getElementById('addr-postcode')) document.getElementById('addr-postcode').value = addr.postcode || '';
+  if (document.getElementById('addr-country'))  document.getElementById('addr-country').value = addr.country || '';
+ 
+ 
+  // Show + preload
+  overlay.style.display = 'flex';
+
+  var addr = loadAddress() || {};
   if (document.getElementById('addr-name'))     document.getElementById('addr-name').value = addr.name || '';
   if (document.getElementById('addr-email'))    document.getElementById('addr-email').value = addr.email || '';
   if (document.getElementById('addr-line1'))    document.getElementById('addr-line1').value = addr.line1 || '';
@@ -1514,24 +1522,8 @@ function openAddressPanel(){
   if (document.getElementById('addr-state'))    document.getElementById('addr-state').value = addr.state || '';
   if (document.getElementById('addr-postcode')) document.getElementById('addr-postcode').value = addr.postcode || '';
 
-  // Populate countries, then apply saved country
-  if (typeof populateAddrCountries === 'function'){
-    try {
-      var savedCountry = addr.country || '';
-      var p = populateAddrCountries(savedCountry);
-      if (p && typeof p.then === 'function'){
-        p.then(function(){
-          if (document.getElementById('addr-country')) document.getElementById('addr-country').value = savedCountry || '';
-        });
-      } else {
-        if (document.getElementById('addr-country')) document.getElementById('addr-country').value = savedCountry || '';
-      }
-    } catch(_){
-      if (document.getElementById('addr-country')) document.getElementById('addr-country').value = addr.country || '';
-    }
-  } else {
-    if (document.getElementById('addr-country')) document.getElementById('addr-country').value = addr.country || '';
-  }
+  // Populate countries from shipping.json, then select saved country
+  populateAddrCountries(addr.country || '');
 }
 
 // ======== (end Address Panel) ========
