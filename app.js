@@ -1382,8 +1382,8 @@ function renderCart(){
 
 var ADDRESS_KEY = 'gallery_ship_address_v1';
 
-// Edit this list any time you like (dropdown values only)
-var ADDRESS_COUNTRIES = ['UK', 'France', 'USA', 'Canada'];
+// Fallback list ONLY if shipping.json cannot be read
+var ADDRESS_COUNTRIES = ['UK'];
 
 function loadAddress(){
   try { return JSON.parse(localStorage.getItem(ADDRESS_KEY)) || null; }
@@ -1420,9 +1420,24 @@ function updateCartAddressUI(){
   if (typeof window.__UPDATE_SHIPPING__ === 'function') window.__UPDATE_SHIPPING__();
 }
 
-function populateAddrCountries(){
+function getCountryCodeFromShipping(countryName){
+  try {
+    var want = String(countryName || '').trim().toLowerCase();
+    var rows = (typeof _shippingCache !== 'undefined' && Array.isArray(_shippingCache)) ? _shippingCache : [];
+    for (var i = 0; i < rows.length; i++){
+      var r = rows[i] || {};
+      if (String(r.country || '').trim().toLowerCase() === want){
+        var cc = String(r.country_code || '').trim().toUpperCase();
+        return cc || '';
+      }
+    }
+  } catch(e){}
+  return '';
+}
+
+function populateAddrCountries(savedCountry){
   var sel = document.getElementById('addr-country');
-  if (!sel) return;
+  if (!sel) return Promise.resolve();
 
   // Keep the first "Select…" option, remove anything else (prevents duplicates)
   while (sel.options.length > 1) sel.remove(1);
@@ -1441,29 +1456,208 @@ function populateAddrCountries(){
 
     list.forEach(function(name){
       var o = document.createElement('option');
-      o.value = name;
+      o.value = name;        // MUST match shipping.json row.country
       o.textContent = name;
       sel.appendChild(o);
     });
+
+    if (savedCountry){
+      sel.value = String(savedCountry).trim();
+      if (sel.value !== String(savedCountry).trim()) sel.value = '';
+    }
   }
 
   if (typeof fetchShippingRates === 'function'){
-    fetchShippingRates()
-      .then(fillCountriesFromRows)
+    return fetchShippingRates()
+      .then(function(rows){
+        fillCountriesFromRows(rows || []);
+      })
       .catch(function(){
-        if (typeof ADDRESS_COUNTRIES !== 'undefined'){
-          fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
-        }
+        fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
       });
-  } else {
-    if (typeof ADDRESS_COUNTRIES !== 'undefined'){
-      fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
-    }
   }
+
+  fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
+  return Promise.resolve();
 }
 
 function openAddressPanel(){
   var overlay = document.getElementById('address-overlay');
+
+  if (!overlay){
+    overlay = document.createElement('div');
+    overlay.id = 'address-overlay';
+    overlay.style.cssText =
+      'position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:9999;' +
+      'display:flex;align-items:center;justify-content:center;padding:16px;';
+
+    overlay.innerHTML =
+      '<div id="address-panel" style="width:min(680px,100%);background:#111;border:1px solid rgba(255,255,255,.12);' +
+        'border-radius:14px;padding:16px;box-shadow:0 10px 40px rgba(0,0,0,.5);">' +
+
+        '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;">' +
+          '<strong style="color:#fff;font-size:16px;">Delivery Address</strong>' +
+          '<button id="addr-close" type="button" style="background:transparent;color:#fff;border:0;font-size:22px;cursor:pointer;">×</button>' +
+        '</div>' +
+
+        '<form id="addr-form" autocomplete="on">' +
+
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Full name *</label>' +
+              '<input id="addr-name" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Email *</label>' +
+              '<input id="addr-email" type="email" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div style="grid-column:1 / -1;">' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Address line 1 *</label>' +
+              '<input id="addr-line1" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div style="grid-column:1 / -1;">' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Address line 2 (optional)</label>' +
+              '<input id="addr-line2" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">City / Town *</label>' +
+              '<input id="addr-city" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">County / State (optional)</label>' +
+              '<input id="addr-state" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Postcode / ZIP *</label>' +
+              '<input id="addr-postcode" type="text" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+            '</div>' +
+
+            '<div>' +
+              '<label style="display:block;color:#bbb;font-size:12px;margin:0 0 6px;">Country *</label>' +
+              '<select id="addr-country" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b0b0b;color:#fff;">' +
+                '<option value="">Select…</option>' +
+              '</select>' +
+            '</div>' +
+
+          '</div>' +
+
+          '<div id="addr-error" style="color:#ffb4b4;font-size:12px;margin-top:10px;display:none;"></div>' +
+
+          '<div style="display:flex;gap:10px;justify-content:flex-end;margin-top:14px;">' +
+            '<button id="addr-clear" type="button" style="background:#111;color:#fff;border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:10px;cursor:pointer;">Clear address</button>' +
+            '<button id="addr-cancel" type="button" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:10px;cursor:pointer;">Cancel</button>' +
+            '<button id="addr-save" type="submit" style="background:#fff;color:#111;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;">Save</button>' +
+          '</div>' +
+
+        '</form>' +
+      '</div>';
+
+    document.body.appendChild(overlay);
+
+    function close(){
+      overlay.style.display = 'none';
+    }
+
+    overlay.addEventListener('click', function(e){
+      if (e.target === overlay) close();
+    });
+
+    var closeBtn = document.getElementById('addr-close');
+    if (closeBtn) closeBtn.addEventListener('click', close);
+
+    var cancelBtn = document.getElementById('addr-cancel');
+    if (cancelBtn) cancelBtn.addEventListener('click', close);
+
+    var clearBtn = document.getElementById('addr-clear');
+    if (clearBtn){
+      clearBtn.addEventListener('click', function(){
+        saveAddress(null);
+
+        var ids = ['addr-name','addr-email','addr-line1','addr-line2','addr-city','addr-state','addr-postcode','addr-country'];
+        ids.forEach(function(id){
+          var el = document.getElementById(id);
+          if (!el) return;
+          if (el.tagName === 'SELECT') el.value = '';
+          else el.value = '';
+        });
+
+        updateCartAddressUI();
+      });
+    }
+
+    var form = document.getElementById('addr-form');
+    if (form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        var errEl = document.getElementById('addr-error');
+        function fail(msg){
+          if (errEl){
+            errEl.textContent = msg;
+            errEl.style.display = 'block';
+          }
+        }
+        if (errEl) errEl.style.display = 'none';
+
+        var name     = (document.getElementById('addr-name')||{}).value || '';
+        var email    = (document.getElementById('addr-email')||{}).value || '';
+        var line1    = (document.getElementById('addr-line1')||{}).value || '';
+        var line2    = (document.getElementById('addr-line2')||{}).value || '';
+        var city     = (document.getElementById('addr-city')||{}).value || '';
+        var state    = (document.getElementById('addr-state')||{}).value || '';
+        var postcode = (document.getElementById('addr-postcode')||{}).value || '';
+        var country  = (document.getElementById('addr-country')||{}).value || '';
+
+        if (!name.trim()) return fail('Full name is required.');
+        if (!email.trim()) return fail('Email is required.');
+        if (!line1.trim()) return fail('Address line 1 is required.');
+        if (!city.trim()) return fail('City / Town is required.');
+        if (!postcode.trim()) return fail('Postcode / ZIP is required.');
+        if (!country.trim()) return fail('Country is required.');
+
+        var cc = getCountryCodeFromShipping(country.trim());
+
+        saveAddress({
+          name: name.trim(),
+          email: email.trim(),
+          line1: line1.trim(),
+          line2: line2.trim(),
+          city: city.trim(),
+          state: state.trim(),
+          postcode: postcode.trim(),
+          country: country.trim(),
+          country_code: cc
+        });
+
+        close();
+        updateCartAddressUI();
+      });
+    }
+  }
+
+  // Show the overlay
+  overlay.style.display = 'flex';
+
+  // Prefill fields from saved address
+  var addr = loadAddress() || {};
+  (document.getElementById('addr-name')||{}).value     = addr.name     || '';
+  (document.getElementById('addr-email')||{}).value    = addr.email    || '';
+  (document.getElementById('addr-line1')||{}).value    = addr.line1    || '';
+  (document.getElementById('addr-line2')||{}).value    = addr.line2    || '';
+  (document.getElementById('addr-city')||{}).value     = addr.city     || '';
+  (document.getElementById('addr-state')||{}).value    = addr.state    || '';
+  (document.getElementById('addr-postcode')||{}).value = addr.postcode || '';
+
+  // Populate countries from shipping.json, then select the saved country (if present)
+  populateAddrCountries(addr.country || '');
+}
 
   if (!overlay){
     overlay = document.createElement('div');
