@@ -912,7 +912,7 @@ function renderCart(){
              'left:var(--addr-btn-x,0px);top:var(--addr-btn-y,0px);' +
              'background:var(--addr-btn-bg,#444);color:var(--addr-btn-fg,#fff);' +
              'border:0;padding:10px 14px;border-radius:10px;cursor:pointer;">' +
-'<button id="set-address" type="button">Delivery Address</button>',
+      'Delivery Address</button>',
     '<div id="ship-country" class="sub">Country: <strong>—</strong></div>',
   '</div>',
 
@@ -1496,6 +1496,20 @@ function openAddressPanel(){
     }
   }
 
+  // Show + preload (must run every time, even when overlay already exists)
+  overlay.style.display = 'flex';
+
+  var addr = loadAddress() || {};
+  if (document.getElementById('addr-name'))     document.getElementById('addr-name').value = addr.name || '';
+  if (document.getElementById('addr-email'))    document.getElementById('addr-email').value = addr.email || '';
+  if (document.getElementById('addr-line1'))    document.getElementById('addr-line1').value = addr.line1 || '';
+  if (document.getElementById('addr-line2'))    document.getElementById('addr-line2').value = addr.line2 || '';
+  if (document.getElementById('addr-city'))     document.getElementById('addr-city').value = addr.city || '';
+  if (document.getElementById('addr-state'))    document.getElementById('addr-state').value = addr.state || '';
+  if (document.getElementById('addr-postcode')) document.getElementById('addr-postcode').value = addr.postcode || '';
+  if (document.getElementById('addr-country'))  document.getElementById('addr-country').value = addr.country || '';
+ 
+ 
   // Show + preload
   overlay.style.display = 'flex';
 
