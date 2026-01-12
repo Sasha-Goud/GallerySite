@@ -1208,15 +1208,13 @@ function renderCart(){
     fetchShippingRates().then(function(rates){
       rates = rates || [];
 
-function matchRate(it){
+  function matchRate(it){
+  // Normalisers
   function normText(s){ return String(s || '').trim().toLowerCase(); }
   function normSize(s){
+    // Uses your existing normSizeKey if present; otherwise fall back to simple normalisation
     if (typeof normSizeKey === 'function') return normSizeKey(s);
-    return String(s || '')
-      .trim()
-      .replace(/\s+/g, ' ')
-      .replace(/×/g, 'X')
-      .replace(/x/ig, 'X');
+    return String(s || '').trim().replace(/\s+/g,' ').replace(/×/g,'X').replace(/x/ig,'X');
   }
 
   var sizeK     = normSize(it.size || '');
