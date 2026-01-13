@@ -1209,38 +1209,21 @@ function renderCart(){
       rates = rates || [];
 
       function matchRate(it){
-  function normText(s){
-    return String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
-  }
-  function normSize(s){
-    return String(s || '')
-      .trim()
-      .replace(/\s+/g, ' ')
-      .replace(/×/g, 'X')
-      .replace(/\s*X\s*/gi, ' X ')
-      .toUpperCase();
-  }
+        var size     = String(it.size || '').trim();
+        var material = String(it.paper || '').trim(); // cart uses "paper" for material
+        var edition  = String(it.kind || '').trim();  // cart uses "kind" for edition
 
-  var sizeK     = normSize(it.size || '');
-  var materialK = normText(it.paper || ''); // cart uses "paper"
-  var editionK  = normText(it.kind || '');  // cart uses "kind"
-  var countryK  = normText(country || '');
-
-  for (var i = 0; i < rates.length; i++){
-    var r = rates[i] || {};
-    var rCountry  = normText(r.country);
-    var rSize     = normSize(r.size);
-
-    // shipping.json uses material/edition, but tolerate other key names too
-    var rMaterial = normText(r.material || r.paper);
-    var rEdition  = normText(r.edition  || r.kind);
-
-    if (rCountry === countryK && rSize === sizeK && rMaterial === materialK && rEdition === editionK){
-      return r;
-    }
-  }
-  return null;
-}
+        for (var i = 0; i < rates.length; i++){
+          var r = rates[i];
+          if (String(r.country  || '').trim() === country &&
+              String(r.size     || '').trim() === size &&
+              String(r.material || '').trim() === material &&
+              String(r.edition  || '').trim() === edition){
+            return r;
+          }
+        }
+        return null;
+      }
 
       var total = 0;
 
@@ -1389,8 +1372,8 @@ function renderCart(){
 
 var ADDRESS_KEY = 'gallery_ship_address_v1';
 
-// Edit this list any time you like (dropdown values only)
-var ADDRESS_COUNTRIES = ['UK', 'France', 'USA', 'Canada'];
+// Fallback only (used only if shipping.json can't be read)
+var ADDRESS_COUNTRIES = [];
 
 function loadAddress(){
   try { return JSON.parse(localStorage.getItem(ADDRESS_KEY)) || null; }
@@ -1621,46 +1604,67 @@ if (clearBtn){
         if (!postcode.trim()) return fail('Postcode / ZIP is required.');
         if (!country.trim()) return fail('Country is required.');
 
-        var payload = {
-  name: name.trim(),
-  email: email.trim(),
-  line1: line1.trim(),
-  line2: line2.trim(),
-  city: city.trim(),
-  state: state.trim(),
-  postcode: postcode.trim(),
-  country: country.trim(),
-  country_code: ''
-};
+        saveAddress({
+          name: name.trim(),
+          email: email.trim(),
+          line1: line1.trim(),
+          line2: line2.trim(),
+          city: city.trim(),
+          state: state.trim(),
+          postcode: postcode.trim(),
+          country: country.trim()
+        });
 
-function finishSave(){
-  saveAddress(payload);
-  close();
-  updateCartAddressUI();
-}
-
-if (typeof fetchShippingRates === 'function'){
-  fetchShippingRates().then(function(rows){
-    rows = rows || [];
-    var want = String(payload.country || '').trim().toLowerCase();
-    for (var i = 0; i < rows.length; i++){
-      var row = rows[i] || {};
-      if (String(row.country || '').trim().toLowerCase() === want && row.country_code){
-        payload.country_code = String(row.country_code).trim().toUpperCase();
-        break;
-      }
-    }
-  }).catch(function(){ /* ignore */ })
-    .then(finishSave);
-} else {
-  finishSave();
-}
+        close();
+        updateCartAddressUI();
       });
     }
   }
 
   // Show + preload
   overlay.style.display = 'flex';
+
+// Refresh country dropdown every time panel opens (from shipping.json)
+(function(){
+  var sel = document.getElementById('addr-country');
+  if (!sel) return;
+
+  var saved = ((loadAddress() || {}).country || '').trim();
+
+  while (sel.options.length > 1) sel.remove(1);
+
+  function fillCountriesFromRows(rows){
+    var map = Object.create(null);
+    (rows || []).forEach(function(r){
+      var name = (r && typeof r === 'object') ? String(r.country || '').trim() : '';
+      if (!name) return;
+      var k = name.toLowerCase();
+      if (!map[k]) map[k] = name;
+    });
+
+    Object.keys(map).map(function(k){ return map[k]; })
+      .sort(function(a,b){ return a.localeCompare(b); })
+      .forEach(function(name){
+        var o = document.createElement('option');
+        o.value = name;
+        o.textContent = name;
+        sel.appendChild(o);
+      });
+
+    if (saved) sel.value = saved;
+  }
+
+  if (typeof fetchShippingRates === 'function'){
+    fetchShippingRates()
+      .then(function(rows){ fillCountriesFromRows(rows || []); })
+      .catch(function(){
+        fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
+      });
+  } else {
+    fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
+  }
+})();
+
 
   var addr = loadAddress() || {};
   if (document.getElementById('addr-name'))     document.getElementById('addr-name').value = addr.name || '';
