@@ -1,5 +1,5 @@
 {
-  "sizes": ["92 X 62 cm"],
+  "sizes": ["92 x 62 cm"],
   "materials": ["Canvas"],
   "edition": ["Original"],
   "country":"United Kingdom",
@@ -55,7 +55,7 @@
   "cost":8
 }
 {
-  "sizes": ["30.5 X 61 cm"],
+  "sizes": ["30.5 x 61 cm"],
   "materials": ["Canvas"],
   "edition": ["Original"],
   "country":"United Kingdom",
@@ -63,7 +63,7 @@
   "cost":@
 }
 {
-  "sizes": ["122 X 144 cm"],
+  "sizes": ["122 x 144 cm"],
   "materials": ["Canvas"],
   "edition": ["Original"],
   "country":"United Kingdom",
@@ -135,7 +135,7 @@
   "cost":8
 }
 {
-  "sizes": ["152 X 102 cm"],
+  "sizes": ["152 x 102 cm"],
   "materials": ["Canvas"],
   "edition": ["Original"],
   "country":"United Kingdom",
@@ -143,7 +143,7 @@
   "cost":@
 }
 {
-  "sizes": ["142 X 112 cm"],
+  "sizes": ["142 x 112 cm"],
   "materials": ["Canvas"],
   "edition": ["Original"],
   "country":"United Kingdom",
@@ -215,7 +215,7 @@
   "cost":8
 }
 {
-  "sizes": ["140 X 105 cm"],
+  "sizes": ["140 x 105 cm"],
   "materials": ["Canvas"],
   "edition": ["Print"],
   "country":"United Kingdom",
@@ -223,7 +223,7 @@
   "cost":8
 }
 {
-  "sizes": ["140 X 105 cm"],
+  "sizes": ["140 x 105 cm"],
   "materials": ["Framed Canvas"],
   "edition": ["Print"],
   "country":"United Kingdom",
@@ -231,7 +231,7 @@
   "cost":8
 }
 {
-  "sizes": ["100 X 80 cm"],
+  "sizes": ["100 x 80 cm"],
   "materials": ["Canvas"],
   "edition": ["Original"],
   "country":"United Kingdom",
@@ -239,7 +239,7 @@
   "cost":@
 }
 {
-  "sizes": ["100 X 80 cm"],
+  "sizes": ["100 x 80 cm"],
   "materials": ["Canvas"],
   "edition": ["Print"],
   "country":"United Kingdom",
@@ -247,7 +247,7 @@
   "cost":8
 }
 {
-  "sizes": ["100 X 80 cm"],
+  "sizes": ["100 x 80 cm"],
   "materials": ["Framed Canvas"],
   "edition": ["Print"],
   "country":"United Kingdom",
@@ -255,7 +255,7 @@
   "cost":8
 }
 {
-  "sizes": ["100 X 100 cm"],
+  "sizes": ["100 x 100 cm"],
   "materials": ["Matt Archival"],
   "edition": ["Print"],
   "country":"United Kingdom",
@@ -263,7 +263,7 @@
   "cost":8
 }
 {
-  "sizes": ["100 X 100 cm"],
+  "sizes": ["100 x 100 cm"],
   "materials": ["Framed Matt Archival"],
   "edition": ["Print"],
   "country":"United Kingdom",
@@ -463,7 +463,7 @@
   "cost":8
 }
 {
-  "sizes": ["29.8 X 42 CM"],
+  "sizes": ["29.8 x 42 CM"],
   "materials": ["Archival Gloss"],
   "edition": ["Print"],
   "country":"United Kingdom",
@@ -471,7 +471,7 @@
   "cost":??
 }
 {
-  "sizes": ["42 X 59.4 CM"],
+  "sizes": ["42 x 59.4 CM"],
   "materials": ["Archival Gloss"],
   "edition": ["Print"],
   "country":"United Kingdom",
