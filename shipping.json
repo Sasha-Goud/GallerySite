@@ -4,7 +4,7 @@
   "edition": ["Original"],
   "country":"United Kingdom",
   "country_code":"GB",
-  "cost":@
+  "cost":11
 }
 {
   "sizes": ["85 x 50 cm"],
@@ -60,7 +60,7 @@
   "edition": ["Original"],
   "country":"United Kingdom",
   "country_code":"GB",
-  "cost":@
+  "cost":11
 }
 {
   "sizes": ["122 x 144 cm"],
@@ -68,7 +68,7 @@
   "edition": ["Original"],
   "country":"United Kingdom",
   "country_code":"GB",
-  "cost":@
+  "cost":11
 }
 {
   "sizes": ["80 x 90 cm"],
@@ -140,7 +140,7 @@
   "edition": ["Original"],
   "country":"United Kingdom",
   "country_code":"GB",
-  "cost":@
+  "cost":11
 }
 {
   "sizes": ["142 x 112 cm"],
@@ -148,7 +148,7 @@
   "edition": ["Original"],
   "country":"United Kingdom",
   "country_code":"GB",
-  "cost":@
+  "cost":11
 }
 {
   "sizes": ["80 x 55 cm"],
@@ -236,7 +236,7 @@
   "edition": ["Original"],
   "country":"United Kingdom",
   "country_code":"GB",
-  "cost":@
+  "cost":11
 }
 {
   "sizes": ["100 x 80 cm"],
