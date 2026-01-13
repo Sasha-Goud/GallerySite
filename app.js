@@ -1631,9 +1631,10 @@ if (clearBtn){
 
   var saved = ((loadAddress() || {}).country || '').trim();
 
+  // reset to just "Select…"
   while (sel.options.length > 1) sel.remove(1);
 
-  function fillCountriesFromRows(rows){
+  function addCountries(rows){
     var map = Object.create(null);
     (rows || []).forEach(function(r){
       var name = (r && typeof r === 'object') ? String(r.country || '').trim() : '';
@@ -1654,15 +1655,19 @@ if (clearBtn){
     if (saved) sel.value = saved;
   }
 
-  if (typeof fetchShippingRates === 'function'){
-    fetchShippingRates()
-      .then(function(rows){ fillCountriesFromRows(rows || []); })
-      .catch(function(){
-        fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
-      });
-  } else {
-    fillCountriesFromRows((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
-  }
+  fetch('./shipping.json', { cache: 'no-store' })
+    .then(function(res){
+      if (!res.ok) throw new Error('shipping.json HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function(data){
+      addCountries(Array.isArray(data) ? data : []);
+    })
+    .catch(function(err){
+      console.error('Country list load failed:', err);
+      // fallback only
+      addCountries((ADDRESS_COUNTRIES || []).map(function(c){ return { country:c }; }));
+    });
 })();
 
 
