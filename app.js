@@ -1257,8 +1257,29 @@ if (!items.length) { updateCartCount(); return; }
       total = round2(total);
       window.__SHIP_TOTAL__ = total;
 
-      // Update UI
-      setShipUI(money(total), money(round2(itemsTotal + total)));
+     // Update UI (use basket subtotal, not PayPal itemsTotal)
+function basketSubtotal(list){
+  var sum = 0;
+  for (var i = 0; i < (list || []).length; i++){
+    var it  = list[i] || {};
+    var qty = Math.max(1, Number(it.qty) || 1);
+
+    // Prefer stored unitPrice (what your cart UI is using)
+    var unit = (typeof it.unitPrice === 'number') ? it.unitPrice : null;
+
+    // Fallback to priceFor if unitPrice missing
+    if (unit === null || !isFinite(unit)){
+      unit = priceFor(it.size, it.paper, it.kind);
+      if (typeof unit !== 'number') unit = Number(it.unitPrice || 0);
+    }
+
+    sum += Number(unit) * qty;
+  }
+  return round2(sum);
+}
+
+var sub = basketSubtotal(list);
+setShipUI(money(total), money(round2(sub + total)));
 
       // Re-show PayPal (and restore message)
       var pp2  = document.getElementById('paypal-button-container');
