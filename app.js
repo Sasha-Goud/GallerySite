@@ -1154,12 +1154,33 @@ if (!items.length) { updateCartCount(); return; }
   var fallback = $('#paypal-fallback');
   if (typeof window.paypal === 'undefined'){ fallback.style.display='block'; return; }
   
-  var fresh = loadBasket();
-  var itemsForPayPal = fresh.map(function(it){
-    var unit = priceFor(it.size, it.paper, it.kind);
-    if (typeof unit !== 'number') unit = Number(it.unitPrice || 0);
-    unit = round2(unit);
-    return {
+ var fresh = loadBasket();
+var itemsForPayPal = fresh.map(function(it){
+
+  // IMPORTANT: prefer the stored unitPrice (what the customer actually selected)
+  // Only fall back to priceFor if unitPrice isn't present/valid
+  var unit = null;
+
+  if (typeof it.unitPrice === 'number' && isFinite(it.unitPrice)){
+    unit = it.unitPrice;
+  } else {
+    var p = priceFor(it.size, it.paper, it.kind);
+    if (typeof p === 'number' && isFinite(p)) unit = p;
+    else unit = 0;
+  }
+
+  unit = round2(Number(unit) || 0);
+
+  return {
+    name: String(it.title).slice(0,127),
+    description: (it.size+' / '+it.paper+' / '+it.kind).slice(0,127),
+    sku: (it.id+'-'+it.size+'-'+it.paper+'-'+it.kind).toLowerCase().replace(/\s+/g,'-').slice(0,127),
+    category: 'PHYSICAL_GOODS',
+    unit_amount: { currency_code:'GBP', value: unit.toFixed(2) },
+    quantity: String(Math.max(1, Number(it.qty) || 1))
+  };
+});
+
       name: String(it.title).slice(0,127),
       description: (it.size+' / '+it.paper+' / '+it.kind).slice(0,127),
       sku: (it.id+'-'+it.size+'-'+it.paper+'-'+it.kind).toLowerCase().replace(/\s+/g,'-').slice(0,127),
