@@ -1046,10 +1046,13 @@ function renderCart(){
       ].join('') : '<p class="sub">Your basket is empty.</p>',
     '</section>'
 
-  ].join('');
-      wireAddressButtonInCart();
-  if (!items.length) { updateCartCount(); return; }
+ ].join('');
+    wireAddressButtonInCart();
 
+// Force a shipping refresh after the cart DOM exists
+if (typeof window.__UPDATE_SHIPPING__ === 'function') window.__UPDATE_SHIPPING__();
+
+if (!items.length) { updateCartCount(); return; }
 
 
 
