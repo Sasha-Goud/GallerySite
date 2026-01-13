@@ -1187,113 +1187,112 @@ if (!items.length) { updateCartCount(); return; }
   setShipUI('—', '—');
 
   // Make an updater we can also call after saving the address
-  window.__UPDATE_SHIPPING__ = function(){
-    var country = String(window.__SHIP_COUNTRY__ || '').trim();
-    if (!country) {
-      window.__SHIP_TOTAL__ = 0;
-      setShipUI('—', '—');
-      return;
-    }
-
-    // show "working" placeholders
-    setShipUI('…', '…');
-
-    // Get latest basket (so qty / options are current)
-    var list = loadBasket();
-
-    // Safety: if loader missing, do nothing
-    if (typeof fetchShippingRates !== 'function'){
-      window.__SHIP_TOTAL__ = 0;
-      setShipUI('—', '—');
-      return;
-    }
-
-    fetchShippingRates().then(function(rates){
-      rates = rates || [];
-
-      function matchRate(it){
-        var size     = String(it.size || '').trim();
-        var material = String(it.paper || '').trim(); // cart uses "paper" for material
-        var edition  = String(it.kind || '').trim();  // cart uses "kind" for edition
-
-        for (var i = 0; i < rates.length; i++){
-          var r = rates[i];
-          if (String(r.country  || '').trim() === country &&
-              String(r.size     || '').trim() === size &&
-              String(r.material || '').trim() === material &&
-              String(r.edition  || '').trim() === edition){
-            return r;
-          }
-        }
-        return null;
-      }
-
-      var total = 0;
-
-      for (var k = 0; k < list.length; k++){
-        var it  = list[k];
-        var qty = Math.max(1, Number(it.qty) || 1);
-
-        var r = matchRate(it);
-        if (!r || typeof r.cost !== 'number'){
-          window.__SHIP_TOTAL__ = 0;
-
-          // If we can't price shipping, show N/A and hide PayPal
-          setShipUI('N/A', 'N/A');
-
-          var pp  = document.getElementById('paypal-button-container');
-          var msg = document.getElementById('paypal-disabled-msg');
-          if (pp) pp.style.display = 'none';
-          if (msg){
-            msg.style.display = 'block';
-            msg.textContent = 'No shipping rate for the current selection.';
-          }
-          return;
-        }
-
-        total += Number(r.cost) * qty;
-      }
-
-      total = round2(total);
-      window.__SHIP_TOTAL__ = total;
-
-     // Update UI (use basket subtotal, not PayPal itemsTotal)
-function basketSubtotal(list){
-  var sum = 0;
-  for (var i = 0; i < (list || []).length; i++){
-    var it  = list[i] || {};
-    var qty = Math.max(1, Number(it.qty) || 1);
-
-    // Prefer stored unitPrice (what your cart UI is using)
-    var unit = (typeof it.unitPrice === 'number') ? it.unitPrice : null;
-
-    // Fallback to priceFor if unitPrice missing
-    if (unit === null || !isFinite(unit)){
-      unit = priceFor(it.size, it.paper, it.kind);
-      if (typeof unit !== 'number') unit = Number(it.unitPrice || 0);
-    }
-
-    sum += Number(unit) * qty;
+ window.__UPDATE_SHIPPING__ = function(){
+  var country = String(window.__SHIP_COUNTRY__ || '').trim();
+  if (!country) {
+    window.__SHIP_TOTAL__ = 0;
+    setShipUI('—', '—');
+    return;
   }
-  return round2(sum);
-}
 
-var sub = basketSubtotal(list);
-setShipUI(money(total), money(round2(sub + total)));
+  // show "working" placeholders
+  setShipUI('…', '…');
 
-      // Re-show PayPal (and restore message)
-      var pp2  = document.getElementById('paypal-button-container');
-      var msg2 = document.getElementById('paypal-disabled-msg');
-      if (pp2) pp2.style.display = 'block';
-      if (msg2){
-        msg2.textContent = 'Set the address (country) to enable PayPal.';
-        msg2.style.display = 'none';
+  // Get latest basket (so qty / options are current)
+  var list = loadBasket() || [];
+
+  // Basket subtotal (use stored unitPrice, fallback to priceFor)
+  function basketSubtotal(items){
+    var sum = 0;
+    for (var i = 0; i < (items || []).length; i++){
+      var it  = items[i] || {};
+      var qty = Math.max(1, Number(it.qty) || 1);
+
+      var unit = (typeof it.unitPrice === 'number') ? it.unitPrice : null;
+      if (unit === null || !isFinite(unit)){
+        unit = priceFor(it.size, it.paper, it.kind);
       }
-    }).catch(function(){
-      window.__SHIP_TOTAL__ = 0;
-      setShipUI('—', '—');
-    });
-  };
+      if (typeof unit !== 'number' || !isFinite(unit)) unit = 0;
+
+      sum += Number(unit) * qty;
+    }
+    return round2(sum);
+  }
+
+  var sub = basketSubtotal(list);
+
+  // Safety: if loader missing, do nothing
+  if (typeof fetchShippingRates !== 'function'){
+    window.__SHIP_TOTAL__ = 0;
+    setShipUI('—', money(sub));
+    return;
+  }
+
+  fetchShippingRates().then(function(rates){
+    rates = rates || [];
+
+    function matchRate(it){
+      var size     = String(it.size || '').trim();
+      var material = String(it.paper || '').trim(); // cart uses "paper" for material
+      var edition  = String(it.kind || '').trim();  // cart uses "kind" for edition
+
+      for (var i = 0; i < rates.length; i++){
+        var r = rates[i];
+        if (String(r.country  || '').trim() === country &&
+            String(r.size     || '').trim() === size &&
+            String(r.material || '').trim() === material &&
+            String(r.edition  || '').trim() === edition){
+          return r;
+        }
+      }
+      return null;
+    }
+
+    var total = 0;
+
+    for (var k = 0; k < list.length; k++){
+      var it  = list[k];
+      var qty = Math.max(1, Number(it.qty) || 1);
+
+      var r = matchRate(it);
+      if (!r || typeof r.cost !== 'number'){
+        window.__SHIP_TOTAL__ = 0;
+
+        // If we can't price shipping, show N/A and hide PayPal
+        setShipUI('N/A', 'N/A');
+
+        var pp  = document.getElementById('paypal-button-container');
+        var msg = document.getElementById('paypal-disabled-msg');
+        if (pp) pp.style.display = 'none';
+        if (msg){
+          msg.style.display = 'block';
+          msg.textContent = 'No shipping rate for the current selection.';
+        }
+        return;
+      }
+
+      total += Number(r.cost) * qty;
+    }
+
+    total = round2(total);
+    window.__SHIP_TOTAL__ = total;
+
+    // Update UI (IMPORTANT: use basket subtotal, not PayPal itemsTotal)
+    setShipUI(money(total), money(round2(sub + total)));
+
+    // Re-show PayPal (and restore message)
+    var pp2  = document.getElementById('paypal-button-container');
+    var msg2 = document.getElementById('paypal-disabled-msg');
+    if (pp2) pp2.style.display = 'block';
+    if (msg2){
+      msg2.textContent = 'Set the address (country) to enable PayPal.';
+      msg2.style.display = 'none';
+    }
+  }).catch(function(){
+    window.__SHIP_TOTAL__ = 0;
+    setShipUI('—', money(sub));
+  });
+};
 
   // Run once per render
   window.__UPDATE_SHIPPING__();
