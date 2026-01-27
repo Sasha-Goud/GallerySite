@@ -452,6 +452,12 @@
           "material": "Canvas",
           "size": "70 x 90 cm",
           "price": 163
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "122 x 144 cm",
+          "price": 1500
         }
       ]
     }
