@@ -9,33 +9,45 @@
       "Human",
       "Abstract"
     ],
-    "description": "Title: Lily (1998/2019)\n\nThis artwork began as a photograph taken in 1998 and was digitally transformed into wall art in 2019. It shows a cluster of lily pads floating on still water, with soft shadows and reflections giving a calm, natural feel.\n\nThe piece is printed on canvas and available in three sizes. It can be ordered framed or unframed. Prices include delivery to the UK, Europe, and the United States.\n\nDelivery is available to the following countries: [insert countries here].",
+    "description": "Lily (1998/2019)\nConception: Photography, 1998\nFinal Artwork: Digital transformation, 2019\nMedium: Canvas print\n\nAvailable:",
     "context1": "assets/001-lillies/context1.png",
     "options": {
       "variants": [
         {
           "edition": "Print",
-          "material": "Canvas",
-          "size": "50 \u00d7 75 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "40 \u00d7 60 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "50 \u00d7 75 cm",
-          "price": 150.0
+          "price": 144
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "40 \u00d7 60 cm",
-          "price": 80.0
+          "price": 109
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 74
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 53
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "42 x 59.4 cm",
+          "price": 24
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "29.7 x 42 cm",
+          "price": 19
         }
       ]
     }
@@ -50,33 +62,33 @@
       "Human",
       "Abstract"
     ],
-    "description": "Title: Le Marais (1978\u20132023)\n\nThis artwork is based on a photograph taken in 1978 in Le Marais, a historic district in Paris known for its narrow residential streets and timeless atmosphere. The image was later used as reference for an acrylic painting, completed in 2023.\n\nThe piece captures the quiet character of the area through simplified shapes and bold contrast, showing three figures walking toward the light at the end of a stone passage.\n\nPrinted on canvas and available in three sizes. You can order it framed or unframed. Prices include delivery to the UK, Europe, and the United States.\n\nDelivery is available to the following countries: [insert countries here].",
+    "description": "Le Marais (1978\u20132023)\nConception: Photography, 1978 (Le Marais, Paris)\nFinal Artwork: Acrylic painting, 2023\n\nAvailable:\nAcrylic painting - SOLD\nMedium: Canvas print",
     "context1": "assets/013-archigraph-2/context1.png",
     "options": {
       "variants": [
         {
           "edition": "Print",
-          "material": "Canvas",
-          "size": "50 \u00d7 75 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "40 \u00d7 60 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "50 \u00d7 75 cm",
-          "price": 150.0
+          "price": 144
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "40 \u00d7 60 cm",
-          "price": 80.0
+          "price": 109
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 74
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 53
         }
       ]
     }
@@ -97,27 +109,27 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Canvas",
-          "size": "50 \u00d7 75 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "40 \u00d7 60 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "50 \u00d7 75 cm",
-          "price": 150.0
+          "price": 144
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "40 \u00d7 60 cm",
-          "price": 80.0
+          "price": 109
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 74
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 53
         }
       ]
     }
@@ -138,15 +150,27 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Archival Gloss",
-          "size": "42 x 59.4 CM",
-          "price": 80.0
+          "material": "Archival Matt",
+          "size": "42 x 59.4 cm",
+          "price": 24
         },
         {
           "edition": "Print",
-          "material": "Archival Gloss",
-          "size": "29.7 x 42 CM",
-          "price": 65.0
+          "material": "Archival Matt",
+          "size": "29.7 x 42 cm",
+          "price": 19
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Archival Matt",
+          "size": "42 x 59.4 cm",
+          "price": 96
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Archival Matt",
+          "size": "29.7 x 42 cm",
+          "price": 61
         }
       ]
     }
@@ -167,15 +191,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Hahnem\u00fchle Photorag",
+          "material": "Framed Canvas",
           "size": "50 \u00d7 75 cm",
-          "price": 120.0
+          "price": 144
         },
         {
           "edition": "Print",
-          "material": "Hahnem\u00fchle Photorag",
+          "material": "Framed Canvas",
           "size": "40 \u00d7 60 cm",
-          "price": 50.0
+          "price": 109
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 74
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 53
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "42 x 59.4 cm",
+          "price": 24
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "29.7 x 42 cm",
+          "price": 19
         }
       ]
     }
@@ -196,39 +244,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Hahnem\u00fchle Photorag",
-          "size": "50 \u00d7 75 cm",
-          "price": 80.0
-        },
-        {
-          "edition": "Print",
-          "material": "Hahnem\u00fchle Photorag",
-          "size": "40 \u00d7 60 cm",
-          "price": 65.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "50 \u00d7 75 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "40 \u00d7 60 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "50 \u00d7 75 cm",
-          "price": 150.0
+          "price": 144
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "40 \u00d7 60 cm",
-          "price": 80.0
+          "price": 109
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 74
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 53
+        },
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "59.4 x 42 cm",
+          "price": 51
+        },
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "42 \u00d7 29.7 cm",
+          "price": 26
         }
       ]
     }
@@ -295,27 +343,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Canvas",
-          "size": "50 \u00d7 75 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "40 \u00d7 60 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "50 \u00d7 75 cm",
-          "price": 150.0
+          "price": 144
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "40 \u00d7 60 cm",
-          "price": 80.0
+          "price": 109
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 75 cm",
+          "price": 74
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "40 \u00d7 60 cm",
+          "price": 53
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "42 x 59.4 cm",
+          "price": 24
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "29.7 x 42 cm",
+          "price": 19
         }
       ]
     }
@@ -347,51 +407,51 @@
         },
         {
           "edition": "Print",
-          "material": "Canvas",
-          "size": "120 x 150 cm",
-          "price": 175.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "100 x 125 cm",
-          "price": 155.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 x 100 cm",
-          "price": 125.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "70 x 90 cm",
-          "price": 100.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "120 x 150 cm",
-          "price": 275.0
+          "price": 360
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "100 x 125 cm",
-          "price": 245.0
+          "price": 314
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "80 x 100 cm",
-          "price": 215.0
+          "price": 271
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "70 x 90 cm",
-          "price": 185.0
+          "price": 258
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "120 x 150 cm",
+          "price": 215
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 x 125 cm",
+          "price": 187
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 x 100 cm",
+          "price": 171
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "70 x 90 cm",
+          "price": 163
         }
       ]
     }
@@ -412,51 +472,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Canvas",
-          "size": "100 \u00d7 100 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 \u00d7 80 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "70 \u00d7 70 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "50 \u00d7 50 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "100 \u00d7 100 cm",
-          "price": 150.0
+          "price": 270
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "80 \u00d7 80 cm",
-          "price": 80.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "70 \u00d7 70 cm",
-          "price": 150.0
+          "price": 261
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "50 \u00d7 50 cm",
-          "price": 80.0
+          "price": 129
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 194
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 191
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 54
         }
       ]
     }
@@ -477,51 +525,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Canvas",
-          "size": "100 \u00d7 100 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 \u00d7 80 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "70 \u00d7 70 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "50 \u00d7 50 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "100 \u00d7 100 cm",
-          "price": 150.0
+          "price": 270
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "80 \u00d7 80 cm",
-          "price": 80.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "70 \u00d7 70 cm",
-          "price": 150.0
+          "price": 261
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "50 \u00d7 50 cm",
-          "price": 80.0
+          "price": 129
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 194
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 191
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 54
         }
       ]
     }
@@ -542,51 +578,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Canvas",
-          "size": "100 \u00d7 100 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 \u00d7 80 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "70 \u00d7 70 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "50 \u00d7 50 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "100 \u00d7 100 cm",
-          "price": 150.0
+          "price": 270
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "80 \u00d7 80 cm",
-          "price": 80.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "70 \u00d7 70 cm",
-          "price": 150.0
+          "price": 261
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "50 \u00d7 50 cm",
-          "price": 80.0
+          "price": 129
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 194
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 191
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 54
         }
       ]
     }
@@ -607,51 +631,57 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Archival",
+          "material": "Framed Canvas",
           "size": "100 \u00d7 100 cm",
-          "price": 120.0
+          "price": 270
         },
         {
           "edition": "Print",
-          "material": "Archival",
+          "material": "Framed Canvas",
           "size": "80 \u00d7 80 cm",
-          "price": 50.0
+          "price": 261
         },
         {
           "edition": "Print",
-          "material": "Archival",
-          "size": "70 \u00d7 70 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Archival",
+          "material": "Framed Canvas",
           "size": "50 \u00d7 50 cm",
-          "price": 50.0
+          "price": 129
         },
         {
           "edition": "Print",
-          "material": "Framed Archival",
+          "material": "Canvas",
           "size": "100 \u00d7 100 cm",
-          "price": 150.0
+          "price": 194
         },
         {
           "edition": "Print",
-          "material": "Framed Archival",
+          "material": "Canvas",
           "size": "80 \u00d7 80 cm",
-          "price": 80.0
+          "price": 191
         },
         {
           "edition": "Print",
-          "material": "Framed Archival",
-          "size": "70 \u00d7 70 cm",
-          "price": 150.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Archival",
+          "material": "Canvas",
           "size": "50 \u00d7 50 cm",
-          "price": 80.0
+          "price": 54
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "100 \u00d7 100 cm",
+          "price": 109
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "70 \u00d7 70 cm",
+          "price": 38
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "50 \u00d7 50 cm",
+          "price": 24
         }
       ]
     }
@@ -672,51 +702,57 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Archival",
+          "material": "Framed Canvas",
           "size": "100 \u00d7 100 cm",
-          "price": 120.0
+          "price": 270
         },
         {
           "edition": "Print",
-          "material": "Archival",
+          "material": "Framed Canvas",
           "size": "80 \u00d7 80 cm",
-          "price": 50.0
+          "price": 261
         },
         {
           "edition": "Print",
-          "material": "Archival",
-          "size": "70 \u00d7 70 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Archival",
+          "material": "Framed Canvas",
           "size": "50 \u00d7 50 cm",
-          "price": 50.0
+          "price": 129
         },
         {
           "edition": "Print",
-          "material": "Framed Archival",
+          "material": "Canvas",
           "size": "100 \u00d7 100 cm",
-          "price": 150.0
+          "price": 194
         },
         {
           "edition": "Print",
-          "material": "Framed Archival",
+          "material": "Canvas",
           "size": "80 \u00d7 80 cm",
-          "price": 80.0
+          "price": 191
         },
         {
           "edition": "Print",
-          "material": "Framed Archival",
-          "size": "70 \u00d7 70 cm",
-          "price": 150.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Archival",
+          "material": "Canvas",
           "size": "50 \u00d7 50 cm",
-          "price": 80.0
+          "price": 54
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "100 \u00d7 100 cm",
+          "price": 109
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "70 \u00d7 70 cm",
+          "price": 38
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "50 \u00d7 50 cm",
+          "price": 24
         }
       ]
     }
@@ -737,51 +773,57 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Canvas",
-          "size": "100 \u00d7 100 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 \u00d7 80 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "70 \u00d7 70 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "50 \u00d7 50 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "100 \u00d7 100 cm",
-          "price": 150.0
+          "price": 270
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "80 \u00d7 80 cm",
-          "price": 80.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "70 \u00d7 70 cm",
-          "price": 150.0
+          "price": 261
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "50 \u00d7 50 cm",
-          "price": 80.0
+          "price": 129
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 194
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 191
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 54
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "100 \u00d7 100 cm",
+          "price": 109
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "70 \u00d7 70 cm",
+          "price": 38
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "50 \u00d7 50 cm",
+          "price": 24
         }
       ]
     }
@@ -802,39 +844,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Matt Archival",
-          "size": "100 x 100 cm",
-          "price": 75.0
+          "material": "Framed Archival Matt",
+          "size": "100 \u00d7 100 cm",
+          "price": 352
         },
         {
           "edition": "Print",
-          "material": "Matt Archival",
-          "size": "80 x 80 cm",
-          "price": 55.0
+          "material": "Framed Archival Matt",
+          "size": "70 \u00d7 70 cm",
+          "price": 128
         },
         {
           "edition": "Print",
-          "material": "Matt Archival",
-          "size": "60 x 60 cm",
-          "price": 45.0
+          "material": "Framed Archival Matt",
+          "size": "50 \u00d7 50 cm",
+          "price": 86
         },
         {
           "edition": "Print",
-          "material": "Framed Matt Archival",
-          "size": "100 x 100 cm",
-          "price": 175.0
+          "material": "Archival Matt",
+          "size": "100 \u00d7 100 cm",
+          "price": 109
         },
         {
           "edition": "Print",
-          "material": "Framed Matt Archival",
-          "size": "80 x 80 cm",
-          "price": 155.0
+          "material": "Archival Matt",
+          "size": "70 \u00d7 70 cm",
+          "price": 38
         },
         {
           "edition": "Print",
-          "material": "Framed Matt Archival",
-          "size": "60 x 60 cm",
-          "price": 145.0
+          "material": "Archival Matt",
+          "size": "50 \u00d7 50 cm",
+          "price": 24
         }
       ]
     }
@@ -856,51 +898,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Canvas",
-          "size": "100 \u00d7 100 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 \u00d7 80 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "70 \u00d7 70 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "50 \u00d7 50 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "100 \u00d7 100 cm",
-          "price": 150.0
+          "price": 270
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "80 \u00d7 80 cm",
-          "price": 80.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "70 \u00d7 70 cm",
-          "price": 150.0
+          "price": 261
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "50 \u00d7 50 cm",
-          "price": 80.0
+          "price": 129
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 \u00d7 100 cm",
+          "price": 194
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 80 cm",
+          "price": 191
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "50 \u00d7 50 cm",
+          "price": 54
         }
       ]
     }
@@ -921,39 +951,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Hahnem\u00fchle Photorag",
-          "size": "80 \u00d7 60 cm",
-          "price": 80.0
-        },
-        {
-          "edition": "Print",
-          "material": "Hahnem\u00fchle Photorag",
-          "size": "60 \u00d7 40 cm",
-          "price": 65.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 \u00d7 60 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "60 \u00d7 40 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
-          "size": "80 \u00d7 60 cm",
-          "price": 150.0
+          "size": "85 x 55 cm",
+          "price": 190
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "60 \u00d7 40 cm",
-          "price": 80.0
+          "price": 144
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "85 x 55 cm",
+          "price": 149
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "60 \u00d7 40 cm",
+          "price": 74
+        },
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "59.4 x 42 cm",
+          "price": 51
+        },
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "42 \u00d7 29.7 cm",
+          "price": 26
         }
       ]
     }
@@ -974,39 +1004,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Hahnem\u00fchle Photorag",
-          "size": "80 \u00d7 60 cm",
-          "price": 80.0
-        },
-        {
-          "edition": "Print",
-          "material": "Hahnem\u00fchle Photorag",
-          "size": "60 \u00d7 40 cm",
-          "price": 65.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 \u00d7 60 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "60 \u00d7 40 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "80 \u00d7 60 cm",
-          "price": 150.0
+          "price": 243
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "60 \u00d7 40 cm",
-          "price": 80.0
+          "price": 109
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 \u00d7 60 cm",
+          "price": 169
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "60 \u00d7 40 cm",
+          "price": 53
+        },
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "59.4 x 42 cm",
+          "price": 51
+        },
+        {
+          "edition": "Print",
+          "material": "Hahnem\u00fchle Photorag",
+          "size": "42 \u00d7 29.7 cm",
+          "price": 26
         }
       ]
     }
@@ -1022,53 +1052,7 @@
       "Abstract"
     ],
     "description": "\u2642, 2025\n\n\nThis is one of two paintings, this version represents female, and the other, male. The pair takes a tongue-in-cheek look at behaviours associated with gender, but the real aim here is colour, rhythm, and movement.\n\nUnlike much of my work, which evolves slowly over time, these were both conceived and completed within a week\u2014uncharacteristic for me, but refreshing in its spontaneity.\n\nThough they were designed as a pair, each painting also works entirely on its own.\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nOriginal Painting\tAcrylic on canvas (unframed)\nPrint on Canvas\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
-    "context1": "assets/207-awakening/context1.png",
-    "options": {
-      "variants": [
-        {
-          "edition": "Original",
-          "material": "Canvas",
-          "size": "92 x 62 cm",
-          "price": 500.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "75 x 50 cm",
-          "price": 75.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "85 x 55 cm",
-          "price": 85.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "90 x 60 cm",
-          "price": 99.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "75 x 50 cm",
-          "price": 175.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "85 x 55 cm",
-          "price": 185.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "90 x 60 cm",
-          "price": 199.0
-        }
-      ]
-    }
+    "context1": "assets/207-awakening/context1.png"
   },
   {
     "id": "208-men",
@@ -1081,53 +1065,7 @@
       "Abstract"
     ],
     "description": "\u2640, 2025\n\n\nThis is one of two paintings, this version represents male, and the other, female. The pair takes a tongue-in-cheek look at behaviours associated with gender, but the real aim here is colour, rhythm, and movement.\n\nUnlike much of my work, which evolves slowly over time, these were both conceived and completed within a week\u2014uncharacteristic for me, but refreshing in its spontaneity.\n\nThough they were designed as a pair, each painting also works entirely on its own.\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nOriginal Painting\tAcrylic on canvas (unframed)\nPrint on Canvas\tAvailable framed or unframed\nSizes\tThree sizes available\n\nDelivery\nFree shipping available to the following countries:\n(List of countries to be inserted here)",
-    "context1": "assets/208-men/context1.png",
-    "options": {
-      "variants": [
-        {
-          "edition": "Original",
-          "material": "Canvas",
-          "size": "92 x 62 cm",
-          "price": 500.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "75 x 50 cm",
-          "price": 75.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "85 x 55 cm",
-          "price": 85.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "90 x 60 cm",
-          "price": 99.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "75 x 50 cm",
-          "price": 175.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "85 x 55 cm",
-          "price": 185.0
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "90 x 60 cm",
-          "price": 199.0
-        }
-      ]
-    }
+    "context1": "assets/208-men/context1.png"
   },
   {
     "id": "209-caspian-rice-farmers",
@@ -1140,7 +1078,59 @@
       "Abstract"
     ],
     "description": "Rice, 2001\u20132014\n\nBased on an original photograph taken on the shores of the Caspian Sea, this image depicts local women working on a rice farm. The composition remains faithful to the original moment, but while the photograph might be seen as interesting or documentary, this version transforms it into a bold, decorative graphic with strong visual impact.\n\nAvailable as a print on canvas in three sizes.",
-    "context1": "assets/209-caspian-rice-farmers/context1.png"
+    "context1": "assets/209-caspian-rice-farmers/context1.png",
+    "options": {
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "85 x 55 cm",
+          "price": 190
+        },
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "75 x 50 cm",
+          "price": 144
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "85 x 55 cm",
+          "price": 149
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "75 x 50 cm",
+          "price": 74
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "59 x 84 cm",
+          "price": 38
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "50 x 70 cm",
+          "price": 24
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "42 x 59 cm",
+          "price": 24
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "29 x 42 cm",
+          "price": 19
+        }
+      ]
+    }
   },
   {
     "id": "212-scargorough",
@@ -1158,39 +1148,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Hahnem\u00fchle Photorag",
-          "size": "80 \u00d7 60 cm",
-          "price": 80.0
-        },
-        {
-          "edition": "Print",
-          "material": "Hahnem\u00fchle Photorag",
-          "size": "60 \u00d7 40 cm",
-          "price": 65.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 \u00d7 60 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "60 \u00d7 40 cm",
-          "price": 50.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
-          "size": "80 \u00d7 60 cm",
-          "price": 150.0
+          "size": "85 x 55 cm",
+          "price": 190
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "60 \u00d7 40 cm",
-          "price": 80.0
+          "price": 144
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "85 x 55 cm",
+          "price": 149
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "60 \u00d7 40 cm",
+          "price": 74
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "84 \u00d7 59 cm",
+          "price": 38
+        },
+        {
+          "edition": "Print",
+          "material": "Archival Matt",
+          "size": "59 \u00d7 42 cm",
+          "price": 24
         }
       ]
     }
@@ -1211,39 +1201,39 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Canvas",
+          "material": "Framed Canvas",
           "size": "90 x 60 cm",
-          "price": 120.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "75 x 50 cm",
-          "price": 90.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "60 x 40 cm",
-          "price": 60.0
+          "price": 223
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
-          "size": "90 x 60 cm",
-          "price": 160.0
+          "size": "85 x 55 cm",
+          "price": 190
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "75 x 50 cm",
-          "price": 130.0
+          "price": 144
         },
         {
           "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "60 x 40 cm",
-          "price": 90.0
+          "material": "Canvas",
+          "size": "90 x 60 cm",
+          "price": 159
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "85 x 55 cm",
+          "price": 149
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "75 x 50 cm",
+          "price": 74
         }
       ]
     }
@@ -1259,7 +1249,23 @@
       "Abstract"
     ],
     "description": "Bipolarity, 2000\n\nThis piece began in early 2000 and was completed later that same year\u2014intentionally finished within the calendar year to mark the new millennium. It was worked on in short, scattered sessions over about ten months, fitting into the natural interruptions of everyday life.\n\nThe painting reflects the bipolar nature of the world around us: north-south, east-west, rich-poor, black-white, have-have-not. For me, both sides are equally valuable, different but balanced. There\u2019s no hierarchy. At its heart, though, the aim was simple: to create bold, colourful graphics that bring life to a wall.\n\n\u2e3b\n\nMedia\n\nFormat\tOptions\nOriginal\tAcrylic on canvas (unframed)\nReplica Prints\tCanvas, framed or unframed\n\nDelivery\nFree shipping available to the following countries:\n(Insert list here)",
-    "context1": "assets/214-Split/context1.png"
+    "context1": "assets/214-Split/context1.png",
+    "options": {
+      "variants": [
+        {
+          "edition": "Print",
+          "material": "Framed Canvas",
+          "size": "100 x 80 cm",
+          "price": 271
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 x 80 cm",
+          "price": 171
+        }
+      ]
+    }
   },
   {
     "id": "215-Dali",
@@ -1276,46 +1282,40 @@
     "options": {
       "variants": [
         {
-          "edition": "Original",
-          "material": "Canvas",
-          "size": "142 x 112 cm",
-          "price": 1500.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "140 x 105 cm",
-          "price": 175.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "100 x 75 cm",
-          "price": 155.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 x 60 cm",
-          "price": 125.0
-        },
-        {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "140 x 105 cm",
-          "price": 275.0
+          "price": 338
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "100 x 75 cm",
-          "price": 255.0
+          "price": 283
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "80 x 60 cm",
-          "price": 225.0
+          "price": 243
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "140 x 105 cm",
+          "price": 205
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 x 75 cm",
+          "price": 180
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 x 60 cm",
+          "price": 169
         }
       ]
     }
@@ -1335,46 +1335,40 @@
     "options": {
       "variants": [
         {
-          "edition": "Original",
-          "material": "Canvas",
-          "size": "142 x 112 cm",
-          "price": 1500.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "140 x 105 cm",
-          "price": 175.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "100 x 75 cm",
-          "price": 155.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 x 60 cm",
-          "price": 125.0
-        },
-        {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "140 x 105 cm",
-          "price": 275.0
+          "price": 338
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "100 x 75 cm",
-          "price": 255.0
+          "price": 283
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "80 x 60 cm",
-          "price": 225.0
+          "price": 243
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "140 x 105 cm",
+          "price": 205
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "100 x 75 cm",
+          "price": 180
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "80 x 60 cm",
+          "price": 169
         }
       ]
     }
@@ -1423,27 +1417,27 @@
       "variants": [
         {
           "edition": "Print",
-          "material": "Canvas",
-          "size": "90 x 165 cm",
-          "price": 200.0
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "45 x 80 cm",
-          "price": 90.0
-        },
-        {
-          "edition": "Print",
           "material": "Framed Canvas",
           "size": "90 x 165 cm",
-          "price": 275.0
+          "price": 335
         },
         {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "45 x 80 cm",
-          "price": 160.0
+          "price": 152
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "90 x 165 cm",
+          "price": 213
+        },
+        {
+          "edition": "Print",
+          "material": "Canvas",
+          "size": "45 x 80 cm",
+          "price": 86
         }
       ]
     }
