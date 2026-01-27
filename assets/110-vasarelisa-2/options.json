@@ -1,12 +1,11 @@
 {
   "variants": [
 
-    { "edition": "Print", "material": "Matt Archival", "size": "100 x 100 cm", "price": 75.00 },
-    { "edition": "Print", "material": "Matt Archival", "size": "80 x 80 cm", "price": 55.00 },
-    { "edition": "Print", "material": "Matt Archival", "size": "60 x 60 cm", "price": 45.00 },
-
-    { "edition": "Print", "material": "Framed Matt Archival", "size": "100 x 100 cm", "price": 175.00 },
-    { "edition": "Print", "material": "Framed Matt Archival", "size": "80 x 80 cm", "price": 155.00 },
-    { "edition": "Print", "material": "Framed Matt Archival", "size": "60 x 60 cm", "price": 145.00 }
+      { "edition": "Print", "material": "Framed Archival Matt", "size": "100 × 100 cm", "price": 352 },
+      { "edition": "Print", "material": "Framed Archival Matt", "size": "70 × 70 cm", "price": 128 },
+      { "edition": "Print", "material": "Framed Archival Matt", "size": "50 × 50 cm", "price": 86 },
+      { "edition": "Print", "material": "Archival Matt", "size": "100 × 100 cm", "price": 109 },
+      { "edition": "Print", "material": "Archival Matt", "size": "70 × 70 cm", "price": 38 },
+      { "edition": "Print", "material": "Archival Matt", "size": "50 × 50 cm", "price": 24 }
   ]
 }

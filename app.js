@@ -1172,16 +1172,7 @@ var itemsForPayPal = fresh.map(function(it){
   unit = round2(Number(unit) || 0);
 
   return {
-    name: String(it.title).slice(0,127),
-    description: (it.size+' / '+it.paper+' / '+it.kind).slice(0,127),
-    sku: (it.id+'-'+it.size+'-'+it.paper+'-'+it.kind).toLowerCase().replace(/\s+/g,'-').slice(0,127),
-    category: 'PHYSICAL_GOODS',
-    unit_amount: { currency_code:'GBP', value: unit.toFixed(2) },
-    quantity: String(Math.max(1, Number(it.qty) || 1))
-  };
-});
-
-      name: String(it.title).slice(0,127),
+  name: String(it.title).slice(0,127),
       description: (it.size+' / '+it.paper+' / '+it.kind).slice(0,127),
       sku: (it.id+'-'+it.size+'-'+it.paper+'-'+it.kind).toLowerCase().replace(/\s+/g,'-').slice(0,127),
       category: 'PHYSICAL_GOODS',

@@ -1,13 +1,11 @@
 {
   "variants": [
-    { "edition": "Original", "material": "Canvas", "size": "142 x 112 cm", "price": 1500.00 },
-
-    { "edition": "Print", "material": "Canvas", "size": "140 x 105 cm", "price": 175.00 },
-    { "edition": "Print", "material": "Canvas", "size": "100 x 75 cm", "price": 155.00 },
-    { "edition": "Print", "material": "Canvas", "size": "80 x 60 cm", "price": 125.00 },
-    
-    { "edition": "Print", "material": "Framed Canvas", "size": "140 x 105 cm", "price": 275.00 },
-    { "edition": "Print", "material": "Framed Canvas", "size": "100 x 75 cm", "price": 255.00 },
-    { "edition": "Print", "material": "Framed Canvas", "size": "80 x 60 cm", "price": 225.00 }
+      { "edition": "Print", "material": "Framed Canvas", "size": "140 x 105 cm", "price": 338 },
+      { "edition": "Print", "material": "Framed Canvas", "size": "100 x 75 cm", "price": 283 },
+      { "edition": "Print", "material": "Framed Canvas", "size": "80 x 60 cm", "price": 243 },
+      { "edition": "Print", "material": "Canvas", "size": "140 x 105 cm", "price": 205 },
+      { "edition": "Print", "material": "Canvas", "size": "100 x 75 cm", "price": 180 },
+      { "edition": "Print", "material": "Canvas", "size": "80 x 60 cm", "price": 169 }
   ]
 }
+

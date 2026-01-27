@@ -1,7 +1,11 @@
 {
   "variants": [
     
-    { "edition": "Print", "material": "Hahnemühle Photorag", "size": "50 × 75 cm", "price": 120.00 },
-    { "edition": "Print", "material": "Hahnemühle Photorag", "size": "40 × 60 cm", "price": 50.00 }
+    { "edition": "Print", "material": "Framed Canvas", "size": "50 × 75 cm", "price": 144 },
+    { "edition": "Print", "material": "Framed Canvas", "size": "40 × 60 cm", "price": 109 },
+    { "edition": "Print", "material": "Canvas", "size": "50 × 75 cm", "price": 74 },
+    { "edition": "Print", "material": "Canvas", "size": "40 × 60 cm", "price": 53 },
+    { "edition": "Print", "material": "Archival Matt", "size": "42 x 59.4 cm", "price": 24 },
+    { "edition": "Print", "material": "Archival Matt", "size": "29.7 x 42 cm", "price": 19 }
   ]
 }
