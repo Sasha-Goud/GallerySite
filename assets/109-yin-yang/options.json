@@ -9,7 +9,8 @@
     { "edition": "Print", "material": "Canvas", "size": "50 × 50 cm", "price": 54 },
     { "edition": "Print", "material": "Archival Matt", "size": "100 × 100 cm", "price": 109 },
     { "edition": "Print", "material": "Archival Matt", "size": "70 × 70 cm", "price": 38 },
-    { "edition": "Print", "material": "Archival Matt", "size": "50 × 50 cm", "price": 24 }
+    { "edition": "Print", "material": "Archival Matt", "size": "50 × 50 cm", "price": 24 },
+    { "edition": "Original", "material": "Digital File", "size": "100 × 100 cm", "price": 750 }
   ]
 }
 

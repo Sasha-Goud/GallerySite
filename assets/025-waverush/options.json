@@ -6,6 +6,7 @@
       { "edition": "Print", "material": "Canvas", "size": "50 × 75 cm", "price": 74 },
       { "edition": "Print", "material": "Canvas", "size": "40 × 60 cm", "price": 53 },
       { "edition": "Print", "material": "Hahnemühle Photorag", "size": "59.4 x 42 cm", "price": 51 },
-      { "edition": "Print", "material": "Hahnemühle Photorag", "size": "42 × 29.7 cm", "price": 26 }
+      { "edition": "Print", "material": "Hahnemühle Photorag", "size": "42 × 29.7 cm", "price": 26 },
+      { "edition": "Original", "material": "Digital File", "size": "59.4 x 42 cm", "price": 350 }
   ]
 }

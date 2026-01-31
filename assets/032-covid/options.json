@@ -10,6 +10,6 @@
     { "edition": "Print", "material": "Canvas", "size": "100 x 125 cm", "price": 187 },
     { "edition": "Print", "material": "Canvas", "size": "80 x 100 cm", "price": 171 },
     { "edition": "Print", "material": "Canvas", "size": "70 x 90 cm", "price": 163 },
-    { "edition": "Print", "material": "Canvas", "size": "122 x 144 cm", "price": 1500 }
+    { "edition": "Original", "material": "Canvas", "size": "122 x 144 cm", "price": 4500 }
   ]
 }

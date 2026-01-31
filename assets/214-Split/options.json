@@ -1,6 +1,7 @@
 {
   "variants": [
       { "edition": "Print", "material": "Framed Canvas", "size": "100 x 80 cm", "price": 271 },
-      { "edition": "Print", "material": "Canvas", "size": "100 x 80 cm", "price": 171 }
+      { "edition": "Print", "material": "Canvas", "size": "100 x 80 cm", "price": 171 },
+      { "edition": "Original", "material": "Canvas", "size": "80 x 100 cm", "price": 1200 }
   ]
 }

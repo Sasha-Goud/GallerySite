@@ -4,7 +4,8 @@
       { "edition": "Print", "material": "Archival Matt", "size": "42 x 59.4 cm", "price": 24 },
       { "edition": "Print", "material": "Archival Matt", "size": "29.7 x 42 cm", "price": 19 },
       { "edition": "Print", "material": "Framed Archival Matt", "size": "42 x 59.4 cm", "price": 96 },
-      { "edition": "Print", "material": "Framed Archival Matt", "size": "29.7 x 42 cm", "price": 61 }
+      { "edition": "Print", "material": "Framed Archival Matt", "size": "29.7 x 42 cm", "price": 61 },
+      { "edition": "Original", "material": "Digital File", "size": "42 x 59.4 cm", "price": 900 }
   ]
 }
 
