@@ -4,10 +4,10 @@
     { "edition": "Print", "material": "Framed Canvas", "size": "100 × 100 cm", "price": 270 },
     { "edition": "Print", "material": "Framed Canvas", "size": "80 × 80 cm", "price": 261 },
     { "edition": "Print", "material": "Framed Canvas", "size": "50 × 50 cm", "price": 129 },
+    { "edition": "Original", "material": "Digital File", "size": "100 × 100 cm", "price": 500 },
     { "edition": "Print", "material": "Canvas", "size": "100 × 100 cm", "price": 194 },
     { "edition": "Print", "material": "Canvas", "size": "80 × 80 cm", "price": 191 },
     { "edition": "Print", "material": "Canvas", "size": "50 × 50 cm", "price": 54 },
-    { "edition": "Original", "material": "Digital File", "size": "100 × 100 cm", "price": 500 },
     { "edition": "Original", "material": "Canvas", "size": "100 × 100 cm", "price": 0 }
   ]
 }

@@ -3,9 +3,9 @@
       { "edition": "Print", "material": "Framed Canvas", "size": "90 x 60 cm", "price": 223 },
       { "edition": "Print", "material": "Framed Canvas", "size": "85 x 55 cm", "price": 190 },
       { "edition": "Print", "material": "Framed Canvas", "size": "75 x 50 cm", "price": 144 },
+      { "edition": "Original", "material": "Digital File", "size": "90 x 60 cm", "price": 500 },
       { "edition": "Print", "material": "Canvas", "size": "90 x 60 cm", "price": 159 },
       { "edition": "Print", "material": "Canvas", "size": "85 x 55 cm", "price": 149 },
-      { "edition": "Print", "material": "Canvas", "size": "75 x 50 cm", "price": 74 },
-      { "edition": "Original", "material": "Digital File", "size": "90 x 60 cm", "price": 500 }
+      { "edition": "Print", "material": "Canvas", "size": "75 x 50 cm", "price": 74 }
   ]
 }
