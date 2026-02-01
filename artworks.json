@@ -241,13 +241,13 @@
           "edition": "Print",
           "material": "Archival Matt",
           "size": "42 x 59.4 cm",
-          "price": 24
+          "price": 36
         },
         {
           "edition": "Print",
           "material": "Archival Matt",
           "size": "29.7 x 42 cm",
-          "price": 19
+          "price": 24
         },
         {
           "edition": "Original",
@@ -443,12 +443,6 @@
     "options": {
       "variants": [
         {
-          "edition": "Original",
-          "material": "Canvas",
-          "size": "122 x 144 cm",
-          "price": 1500.0
-        },
-        {
           "edition": "Print",
           "material": "Framed Canvas",
           "size": "120 x 150 cm",
@@ -538,6 +532,12 @@
           "price": 129
         },
         {
+          "edition": "Original",
+          "material": "Digital File",
+          "size": "100 × 100 cm",
+          "price": 500
+        },
+        {
           "edition": "Print",
           "material": "Canvas",
           "size": "100 × 100 cm",
@@ -554,12 +554,6 @@
           "material": "Canvas",
           "size": "50 × 50 cm",
           "price": 54
-        },
-        {
-          "edition": "Original",
-          "material": "Digital File",
-          "size": "100 × 100 cm",
-          "price": 500
         },
         {
           "edition": "Original",
@@ -603,63 +597,10 @@
           "price": 129
         },
         {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "100 × 100 cm",
-          "price": 194
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "80 × 80 cm",
-          "price": 191
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "50 × 50 cm",
-          "price": 54
-        },
-        {
           "edition": "Original",
           "material": "Digital File",
           "size": "100 × 100 cm",
           "price": 500
-        }
-      ]
-    }
-  },
-  {
-    "id": "106-grafiti-berlin",
-    "title": "Berlin Wall",
-    "src": "assets/106-grafiti-berlin/106-grafiti-berlin.png",
-    "thumb": "thumbs/106-grafiti-berlin.png",
-    "tags": [
-      "Red",
-      "Human",
-      "Abstract"
-    ],
-    "description": "Berlin Wall\n2007 – by [Your Name]\n\nThis photograph was taken in 2007 in what was once East Berlin. Captured using an early iPhone and lightly enhanced for clarity, the image shows a vivid mix of graffiti, color, and texture on an exterior wall. Its strong visual elements and saturated tones make it an ideal piece to add a bright accent to any space.\n\n⸻\n\nMedia\n\nFormat\tFraming Options\nMatte print\tFramed / Unframed\nPrint on canvas\tFramed / Unframed\n\n\n⸻\n\nDelivery\nFree delivery is available to the following countries:\n[Insert list of countries here]",
-    "context1": "assets/106-grafiti-berlin/context1.png",
-    "options": {
-      "variants": [
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "100 × 100 cm",
-          "price": 270
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "80 × 80 cm",
-          "price": 261
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "50 × 50 cm",
-          "price": 129
         },
         {
           "edition": "Print",
@@ -715,6 +656,12 @@
           "price": 129
         },
         {
+          "edition": "Original",
+          "material": "Digital File",
+          "size": "100 × 100 cm",
+          "price": 750
+        },
+        {
           "edition": "Print",
           "material": "Canvas",
           "size": "100 × 100 cm",
@@ -749,12 +696,6 @@
           "material": "Archival Matt",
           "size": "50 × 50 cm",
           "price": 24
-        },
-        {
-          "edition": "Original",
-          "material": "Digital File",
-          "size": "100 × 100 cm",
-          "price": 750
         }
       ]
     }
@@ -792,6 +733,12 @@
           "price": 129
         },
         {
+          "edition": "Original",
+          "material": "Digital File",
+          "size": "100 × 100 cm",
+          "price": 750
+        },
+        {
           "edition": "Print",
           "material": "Canvas",
           "size": "100 × 100 cm",
@@ -826,12 +773,6 @@
           "material": "Archival Matt",
           "size": "50 × 50 cm",
           "price": 24
-        },
-        {
-          "edition": "Original",
-          "material": "Digital File",
-          "size": "100 × 100 cm",
-          "price": 750
         }
       ]
     }
@@ -869,6 +810,12 @@
           "price": 129
         },
         {
+          "edition": "Original",
+          "material": "Digital File",
+          "size": "100 × 100 cm",
+          "price": 750
+        },
+        {
           "edition": "Print",
           "material": "Canvas",
           "size": "100 × 100 cm",
@@ -903,12 +850,6 @@
           "material": "Archival Matt",
           "size": "50 × 50 cm",
           "price": 24
-        },
-        {
-          "edition": "Original",
-          "material": "Digital File",
-          "size": "100 × 100 cm",
-          "price": 750
         }
       ]
     }
@@ -946,6 +887,12 @@
           "price": 86
         },
         {
+          "edition": "Original",
+          "material": "Digital File",
+          "size": "100 × 100 cm",
+          "price": 1200
+        },
+        {
           "edition": "Print",
           "material": "Archival Matt",
           "size": "100 × 100 cm",
@@ -962,12 +909,6 @@
           "material": "Archival Matt",
           "size": "50 × 50 cm",
           "price": 24
-        },
-        {
-          "edition": "Original",
-          "material": "Digital File",
-          "size": "100 × 100 cm",
-          "price": 1200
         }
       ]
     }
@@ -1006,6 +947,12 @@
           "price": 129
         },
         {
+          "edition": "Original",
+          "material": "Digital File",
+          "size": "100 × 100 cm",
+          "price": 900
+        },
+        {
           "edition": "Print",
           "material": "Canvas",
           "size": "100 × 100 cm",
@@ -1022,12 +969,6 @@
           "material": "Canvas",
           "size": "50 × 50 cm",
           "price": 54
-        },
-        {
-          "edition": "Original",
-          "material": "Digital File",
-          "size": "100 × 100 cm",
-          "price": 900
         }
       ]
     }
@@ -1431,6 +1372,12 @@
           "price": 144
         },
         {
+          "edition": "Original",
+          "material": "Digital File",
+          "size": "90 x 60 cm",
+          "price": 500
+        },
+        {
           "edition": "Print",
           "material": "Canvas",
           "size": "90 x 60 cm",
@@ -1447,12 +1394,6 @@
           "material": "Canvas",
           "size": "75 x 50 cm",
           "price": 74
-        },
-        {
-          "edition": "Original",
-          "material": "Digital File",
-          "size": "90 x 60 cm",
-          "price": 500
         }
       ]
     }
@@ -1525,6 +1466,12 @@
           "price": 243
         },
         {
+          "edition": "Original",
+          "material": "Canvas",
+          "size": "142 x 112 cm",
+          "price": 1500
+        },
+        {
           "edition": "Print",
           "material": "Canvas",
           "size": "140 x 105 cm",
@@ -1541,12 +1488,6 @@
           "material": "Canvas",
           "size": "80 x 60 cm",
           "price": 169
-        },
-        {
-          "edition": "Original",
-          "material": "Canvas",
-          "size": "142 x 112 cm",
-          "price": 1500
         }
       ]
     }
@@ -1584,6 +1525,12 @@
           "price": 243
         },
         {
+          "edition": "Original",
+          "material": "Canvas",
+          "size": "142 x 112 cm",
+          "price": 1500
+        },
+        {
           "edition": "Print",
           "material": "Canvas",
           "size": "140 x 105 cm",
@@ -1600,12 +1547,6 @@
           "material": "Canvas",
           "size": "80 x 60 cm",
           "price": 169
-        },
-        {
-          "edition": "Original",
-          "material": "Canvas",
-          "size": "142 x 112 cm",
-          "price": 1500
         }
       ]
     }
@@ -1680,7 +1621,7 @@
           "edition": "Original",
           "material": "Digital File",
           "size": "90 x 165 cm",
-          "price": 700
+          "price": 500
         }
       ]
     }
