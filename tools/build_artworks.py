@@ -92,6 +92,7 @@ def build():
 
         title = read_text_safe(assets_dir / "title.txt") or f"Untitled ({id_})"
         desc  = read_text_safe(assets_dir / "desc.txt")
+        desc_mobile = read_text_safe(assets_dir / "desc-mobile.txt")
         tags  = read_tags(assets_dir / "tags.txt")
 
         video = detect_video(assets_dir)
@@ -105,6 +106,9 @@ def build():
             "tags": tags,
             "description": desc
         }
+
+        if desc_mobile:
+            item["description_mobile"] = desc_mobile
 
         if video:
             item["video"] = f"assets/{id_}/{video.name}"
