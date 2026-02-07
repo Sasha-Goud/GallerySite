@@ -526,8 +526,7 @@ items.push({ type:'desc', text: descText, title:'Description' });
 
 function showDesc(text){
   hero.innerHTML = '<div class="hero-desc">'+formatDesc(text||'')+'</div>';
-
-      }
+}
 
       // Render thumbs + initial hero
       items.forEach(function(it, idx){
