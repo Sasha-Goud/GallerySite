@@ -512,20 +512,32 @@ items.push({ type:'desc', text: descText, title:'Description' });
         var v = $('video', hero);
         if (v){ try { v.play().catch(function(){}); } catch(e){} }
       }
-         function showDesc(text){
-        function formatDesc(t){
-          // Escape everything first (so no HTML can slip through)
-          var s = escapeHtml(String(t || ''));
+        function showDesc(text){
+  function formatDesc(t){
+    var raw = String(t || '');
 
-          // Then allow ONLY explicit, rigid markers you type in the txt
-          s = s.replace(/\[b\]([\s\S]*?)\[\/b\]/g, '<strong>$1</strong>');
-          s = s.replace(/\[i\]([\s\S]*?)\[\/i\]/g, '<em>$1</em>');
+    // 1) Protect our formatting tokens BEFORE escaping
+    raw = raw
+      .replace(/\[b\]/g, '__B_OPEN__')
+      .replace(/\[\/b\]/g, '__B_CLOSE__')
+      .replace(/\[i\]/g, '__I_OPEN__')
+      .replace(/\[\/i\]/g, '__I_CLOSE__');
 
-          return s;
-        }
+    // 2) Escape everything else (prevents any HTML injection)
+    var s = escapeHtml(raw);
 
-        hero.innerHTML = '<div class="hero-desc">'+formatDesc(text||'')+'</div>';
-      }
+    // 3) Turn placeholders into actual tags
+    s = s
+      .replace(/__B_OPEN__/g, '<strong>')
+      .replace(/__B_CLOSE__/g, '</strong>')
+      .replace(/__I_OPEN__/g, '<em>')
+      .replace(/__I_CLOSE__/g, '</em>');
+
+    return s;
+  }
+
+  hero.innerHTML = '<div class="hero-desc">' + formatDesc(text) + '</div>';
+}
 
       // Render thumbs + initial hero
       items.forEach(function(it, idx){
