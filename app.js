@@ -497,6 +497,8 @@ var descText = (isPhoneLike && data.description_mobile)
   ? data.description_mobile
   : (data.description || '');
 
+var isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches;
+var descText = (isMobile && data.description_mobile) ? data.description_mobile : (data.description || '');
 items.push({ type:'desc', text: descText, title:'Description' });
 
       function showImage(src, alt){
@@ -512,53 +514,11 @@ items.push({ type:'desc', text: descText, title:'Description' });
         var v = $('video', hero);
         if (v){ try { v.play().catch(function(){}); } catch(e){} }
       }
-   function showDesc(text){
-  // Clear hero
-  hero.innerHTML = '';
-
-  // Create the description container
-  var box = document.createElement('div');
-  box.className = 'hero-desc';
-
-  // Parse [b]...[/b] and [i]...[/i] into DOM nodes (no innerHTML)
-  var s = String(text || '');
-  var re = /\[\/?b\]|\[\/?i\]/ig;
-
-  var stack = [box];
-  var last = 0;
-  var m;
-
-  function addText(t){
-    if (!t) return;
-    stack[stack.length - 1].appendChild(document.createTextNode(t));
-  }
-
-  while ((m = re.exec(s)) !== null){
-    addText(s.slice(last, m.index));
-    var tok = m[0].toLowerCase();
-
-    if (tok === '[b]'){
-      var el = document.createElement('strong');
-      stack[stack.length - 1].appendChild(el);
-      stack.push(el);
-    } else if (tok === '[/b]'){
-      if (stack.length > 1 && stack[stack.length - 1].tagName === 'STRONG') stack.pop();
-      else addText(m[0]); // unmatched: keep literal
-    } else if (tok === '[i]'){
-      var el2 = document.createElement('em');
-      stack[stack.length - 1].appendChild(el2);
-      stack.push(el2);
-    } else if (tok === '[/i]'){
-      if (stack.length > 1 && stack[stack.length - 1].tagName === 'EM') stack.pop();
-      else addText(m[0]); // unmatched: keep literal
-    }
-
-    last = re.lastIndex;
-  }
-  addText(s.slice(last));
-
-  hero.appendChild(box);
-}
+      function showDesc(text){
+        hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text||'')+'</div>';
+      }
+      
+      
 
       // Render thumbs + initial hero
       items.forEach(function(it, idx){
