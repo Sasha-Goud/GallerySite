@@ -512,21 +512,9 @@ items.push({ type:'desc', text: descText, title:'Description' });
         var v = $('video', hero);
         if (v){ try { v.play().catch(function(){}); } catch(e){} }
       }
-     function formatDesc(text){
-  var s = escapeHtml(String(text || ''));
-
-  // **bold**
-  s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-
-  // _italic_  (you can also add *italic* if you want)
-  s = s.replace(/_([^_]+)_/g, '<em>$1</em>');
-
-  return s;
-}
-
-function showDesc(text){
-  hero.innerHTML = '<div class="hero-desc">'+formatDesc(text||'')+'</div>';
-}
+      function showDesc(text){
+        hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text||'')+'</div>';
+      }
 
       // Render thumbs + initial hero
       items.forEach(function(it, idx){
