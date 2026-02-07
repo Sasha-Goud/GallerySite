@@ -366,7 +366,7 @@ code{
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(360px, 58%, 980px);
+  width: clamp(320px, 40%, 780px);
   max-height: 80vh;
   padding: 18px 22px;
 
@@ -1987,33 +1987,3 @@ width: 100%;       /* keeps it fluid up to the max-width */
     transform: none !important;
   }
 }
-
-@media (max-width: 560px){
-  .hero-media .hero-desc{
-    position: static;          /* stop absolute centering on iPhone */
-    transform: none;
-    width: 92vw;               /* use screen width */
-    max-height: none;
-    margin: 14px auto 0;       /* nice spacing */
-    padding: 14px 16px;
-    letter-spacing: 0.6px;     /* slightly calmer for mobile */
-  }
-
-  .hero-media{
-    height: auto;              /* avoid fighting the description height */
-    min-height: 60vh;          /* optional: keeps some “hero” feel */
-  }
-}
-
-/* Markdown rendering inside description panel */
-.hero-media .hero-desc.prose{
-  white-space: normal; /* override pre-wrap for HTML blocks */
-}
-
-.hero-media .hero-desc.prose h1{ font-size: 1.35rem; margin: 0.2em 0 0.6em; }
-.hero-media .hero-desc.prose h2{ font-size: 1.2rem;  margin: 0.2em 0 0.6em; }
-.hero-media .hero-desc.prose h3{ font-size: 1.05rem; margin: 0.2em 0 0.6em; }
-
-.hero-media .hero-desc.prose p{ margin: 0.6em 0; }
-.hero-media .hero-desc.prose strong{ font-weight: 700; }
-.hero-media .hero-desc.prose em{ font-style: italic; }
