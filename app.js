@@ -515,22 +515,8 @@ items.push({ type:'desc', text: descText, title:'Description' });
         if (v){ try { v.play().catch(function(){}); } catch(e){} }
       }
       function showDesc(text){
-  hero.innerHTML = '<div class="hero-desc">'+escapeHtmlWithInlineMarkup(text||'')+'</div>';
-}
-
-// Escape HTML, then allow ONLY **bold** and *italic* inline markers.
-// Keeps all original newlines/tabs/spacing intact (because .hero-desc uses pre-wrap).
-function escapeHtmlWithInlineMarkup(s){
-  s = escapeHtml(String(s || ''));
-
-  // **bold**
-  s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-
-  // *italic*  (simple, avoids **bold**)
-  s = s.replace(/\*(?!\*)(.+?)\*(?!\*)/g, '<em>$1</em>');
-
-  return s;
-}
+        hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text||'')+'</div>';
+      }
       
       
 
