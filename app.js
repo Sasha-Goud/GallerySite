@@ -512,8 +512,19 @@ items.push({ type:'desc', text: descText, title:'Description' });
         var v = $('video', hero);
         if (v){ try { v.play().catch(function(){}); } catch(e){} }
       }
-      function showDesc(text){
-        hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text||'')+'</div>';
+         function showDesc(text){
+        function formatDesc(t){
+          // Escape everything first (so no HTML can slip through)
+          var s = escapeHtml(String(t || ''));
+
+          // Then allow ONLY explicit, rigid markers you type in the txt
+          s = s.replace(/\[b\]([\s\S]*?)\[\/b\]/g, '<strong>$1</strong>');
+          s = s.replace(/\[i\]([\s\S]*?)\[\/i\]/g, '<em>$1</em>');
+
+          return s;
+        }
+
+        hero.innerHTML = '<div class="hero-desc">'+formatDesc(text||'')+'</div>';
       }
 
       // Render thumbs + initial hero
