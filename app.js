@@ -514,10 +514,47 @@ items.push({ type:'desc', text: descText, title:'Description' });
         var v = $('video', hero);
         if (v){ try { v.play().catch(function(){}); } catch(e){} }
       }
-      function showDesc(text){
-        hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text||'')+'</div>';
-      }
-      
+     function showDesc(text){
+  hero.innerHTML = '<div class="hero-desc prose">' + markdownToSafeHtml(text || '') + '</div>';
+}
+
+/* --- Minimal Markdown → safe HTML (bold/italic/headings/paragraphs) --- */
+function markdownToSafeHtml(md){
+  md = String(md || '').replace(/\r\n/g, '\n');
+
+  // escape EVERYTHING first (so users can't inject HTML)
+  var esc = escapeHtml(md);
+
+  // split into blocks by blank lines
+  var blocks = esc.split(/\n{2,}/);
+
+  function inline(s){
+    // **bold**
+    s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    // *italic*  (avoid matching inside words)
+    s = s.replace(/(^|[^*])\*(?!\s)(.+?)(?!\s)\*(?!\*)/g, '$1<em>$2</em>');
+    return s;
+  }
+
+  var out = blocks.map(function(b){
+    b = b.replace(/\n+$/,'').replace(/^\n+/,'');
+    if (!b) return '';
+
+    // headings (#, ##, ###)
+    var m = b.match(/^(#{1,3})\s+([\s\S]+)$/);
+    if (m){
+      var level = m[1].length; // 1..3
+      var txt = inline(m[2].replace(/\n/g,' ').trim());
+      return '<h' + level + '>' + txt + '</h' + level + '>';
+    }
+
+    // normal paragraph: keep single line breaks as <br>
+    b = inline(b).replace(/\n/g, '<br>');
+    return '<p>' + b + '</p>';
+  }).filter(Boolean);
+
+  return out.join('\n');
+}
       
 
       // Render thumbs + initial hero
