@@ -489,8 +489,14 @@ function renderItem(id){
       });
       if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
 
-var isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches;
-var descText = (isMobile && data.description_mobile) ? data.description_mobile : (data.description || '');
+var isPhoneLike =
+  (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) &&
+  (window.matchMedia && window.matchMedia('(max-width: 560px)').matches);
+
+var descText = (isPhoneLike && data.description_mobile)
+  ? data.description_mobile
+  : (data.description || '');
+
 items.push({ type:'desc', text: descText, title:'Description' });
 
       function showImage(src, alt){
