@@ -366,7 +366,7 @@ code{
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(360px, 58%, 980px);
+  width: clamp(320px, 40%, 780px);
   max-height: 80vh;
   padding: 18px 22px;
 
@@ -1985,22 +1985,5 @@ width: 100%;       /* keeps it fluid up to the max-width */
   #paypal-button-container{
     width: 100% !important;
     transform: none !important;
-  }
-}
-
-@media (max-width: 560px){
-  .hero-media .hero-desc{
-    position: static;          /* stop absolute centering on iPhone */
-    transform: none;
-    width: 92vw;               /* use screen width */
-    max-height: none;
-    margin: 14px auto 0;       /* nice spacing */
-    padding: 14px 16px;
-    letter-spacing: 0.6px;     /* slightly calmer for mobile */
-  }
-
-  .hero-media{
-    height: auto;              /* avoid fighting the description height */
-    min-height: 60vh;          /* optional: keeps some “hero” feel */
   }
 }

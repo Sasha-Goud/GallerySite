@@ -1,0 +1,13 @@
+{
+  "variants": [
+      { "edition": "Print", "material": "Framed Canvas", "size": "85 x 55 cm", "price": 190 },
+      { "edition": "Print", "material": "Framed Canvas", "size": "75 x 50 cm", "price": 144 },
+      { "edition": "Print", "material": "Canvas", "size": "85 x 55 cm", "price": 149 },
+      { "edition": "Print", "material": "Canvas", "size": "75 x 50 cm", "price": 74 },
+      { "edition": "Print", "material": "Archival Matt", "size": "59 x 84 cm", "price": 38 },
+      { "edition": "Print", "material": "Archival Matt", "size": "50 x 70 cm", "price": 24 },
+      { "edition": "Print", "material": "Archival Matt", "size": "42 x 59 cm", "price": 24 },
+      { "edition": "Print", "material": "Archival Matt", "size": "29 x 42 cm", "price": 19 },
+      { "edition": "Original", "material": "Digital File", "size": "59 x 84 cm", "price": 500 }
+  ]
+}

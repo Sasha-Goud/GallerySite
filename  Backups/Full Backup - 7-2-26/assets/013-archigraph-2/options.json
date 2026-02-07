@@ -1,0 +1,12 @@
+{
+  "variants": [
+    
+    { "edition": "Print", "material": "Framed Canvas", "size": "50 × 75 cm", "price": 144 },
+    { "edition": "Print", "material": "Framed Canvas", "size": "40 × 60 cm", "price": 109 },
+    { "edition": "Print", "material": "Canvas", "size": "50 × 75 cm", "price": 74 },
+    { "edition": "Print", "material": "Canvas", "size": "40 × 60 cm", "price": 53 },
+    { "edition": "Original", "material": "Canvas", "size": "50 × 75 cm", "price": 0 },
+    { "edition": "Original", "material": "Digital File", "size": "50 × 75 cm", "price": 350 }
+  ]
+}
+

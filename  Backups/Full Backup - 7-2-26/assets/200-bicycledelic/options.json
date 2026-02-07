@@ -1,0 +1,12 @@
+{
+  "variants": [
+
+      { "edition": "Print", "material": "Framed Canvas", "size": "85 x 55 cm", "price": 190 },
+      { "edition": "Print", "material": "Framed Canvas", "size": "60 × 40 cm", "price": 144 },
+      { "edition": "Print", "material": "Canvas", "size": "85 x 55 cm", "price": 149 },
+      { "edition": "Print", "material": "Canvas", "size": "60 × 40 cm", "price": 74 },
+      { "edition": "Print", "material": "Hahnemühle German Etching", "size": "59.4 x 42 cm", "price": 51 },
+      { "edition": "Print", "material": "Hahnemühle German Etching", "size": "42 × 29.7 cm", "price": 26 },
+      { "edition": "Original", "material": "Digital File", "size": "42 x 59.4 cm", "price": 1500 }
+  ]
+}
