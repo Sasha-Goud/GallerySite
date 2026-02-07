@@ -512,32 +512,9 @@ items.push({ type:'desc', text: descText, title:'Description' });
         var v = $('video', hero);
         if (v){ try { v.play().catch(function(){}); } catch(e){} }
       }
-        function showDesc(text){
-  function formatDesc(t){
-    var raw = String(t || '');
-
-    // 1) Protect our formatting tokens BEFORE escaping
-    raw = raw
-      .replace(/\[b\]/g, '__B_OPEN__')
-      .replace(/\[\/b\]/g, '__B_CLOSE__')
-      .replace(/\[i\]/g, '__I_OPEN__')
-      .replace(/\[\/i\]/g, '__I_CLOSE__');
-
-    // 2) Escape everything else (prevents any HTML injection)
-    var s = escapeHtml(raw);
-
-    // 3) Turn placeholders into actual tags
-    s = s
-      .replace(/__B_OPEN__/g, '<strong>')
-      .replace(/__B_CLOSE__/g, '</strong>')
-      .replace(/__I_OPEN__/g, '<em>')
-      .replace(/__I_CLOSE__/g, '</em>');
-
-    return s;
-  }
-
-  hero.innerHTML = '<div class="hero-desc">' + formatDesc(text) + '</div>';
-}
+      function showDesc(text){
+        hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text||'')+'</div>';
+      }
 
       // Render thumbs + initial hero
       items.forEach(function(it, idx){
