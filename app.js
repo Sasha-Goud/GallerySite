@@ -518,8 +518,8 @@ items.push({
         var v = $('video', hero);
         if (v){ try { v.play().catch(function(){}); } catch(e){} }
       }
-    function showDesc(text){
-  hero.innerHTML = '<div class="hero-desc">'+formatDesc(text||'')+'</div>';
+   function showDesc(text){
+  hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text||'')+'</div>';
 }
       
       
