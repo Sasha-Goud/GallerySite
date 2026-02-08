@@ -366,7 +366,7 @@ code{
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(320px, 40%, 780px);
+  width: clamp(360px, 58%, 980px);
   max-height: 80vh;
   padding: 18px 22px;
 
