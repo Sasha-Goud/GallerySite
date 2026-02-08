@@ -1987,3 +1987,8 @@ width: 100%;       /* keeps it fluid up to the max-width */
     transform: none !important;
   }
 }
+
+.hero-media .hero-desc .desc-tab{
+  display:inline-block;
+  width: 2.2em;   /* tweak 1.6–3.0em to taste */
+}
