@@ -489,21 +489,25 @@ function renderItem(id){
       });
       if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
 
-var isPhoneLike =
-  (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) &&
-  (window.matchMedia && window.matchMedia('(max-width: 560px)').matches);
-
-var descText = (isPhoneLike && data.description_mobile)
+// Choose description text: mobile uses description_mobile if present
+var isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches;
+var descText = (isMobile && data.description_mobile && String(data.description_mobile).trim())
   ? data.description_mobile
   : (data.description || '');
 
+items.push({ type:'desc', text: descText, title:'Description' });
+
 var isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches;
-var descText = (isMobile && data.description_mobile) ? data.description_mobile : (data.description || '');
-var isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches;
+
+var descText =
+  (isMobile && data.description_mobile && String(data.description_mobile).trim())
+    ? data.description_mobile
+    : (data.description || '');
+
 items.push({
-  type:'desc',
-  text: isMobile ? (data.description_mobile || data.description || '') : (data.description || ''),
-  title:'Description'
+  type: 'desc',
+  text: descText,
+  title: 'Description'
 });
       function showImage(src, alt){
         hero.innerHTML = '<img src="'+bust(src)+'" alt="'+escapeHtml(data.title||alt||"")+'" loading="eager" decoding="async">';
