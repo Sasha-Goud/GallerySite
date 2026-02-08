@@ -1790,22 +1790,23 @@ function escapeHtml(s){
 }
 
 function formatDesc(text){
-  // 1) Escape EVERYTHING first (so any <script>, <div>, etc. becomes harmless text)
+  // Escape EVERYTHING first (so any <script>, <div>, etc. becomes harmless text)
   var s = escapeHtml(String(text || ''));
 
-  // 2) Then apply a tiny, rigid “markup” on the escaped text:
-  //    **bold**  -> <strong>bold</strong>
-  //    *italic*  -> <em>italic</em>
-  //
-  // Notes:
-  // - non-greedy matches so it doesn’t gobble huge spans
-  // - requires at least one character inside
-  s = s.replace(/\*\*([^*][\s\S]*?)\*\*/g, '<strong>$1</strong>');
-  s = s.replace(/\*([^*][\s\S]*?)\*/g, '<em>$1</em>');
+  // Apply rigid markup PER LINE only (so formatting can’t “run away” across paragraphs)
+  var lines = s.split('\n').map(function(line){
 
-  return s;
+    // **bold** on a single line only
+    line = line.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+
+    // *italic* on a single line only, and NOT **bold**
+    line = line.replace(/\*(?!\*)([^*\n]+)\*(?!\*)/g, '<em>$1</em>');
+
+    return line;
+  });
+
+  return lines.join('\n');
 }
-
 // ======== Boot ========
 (function boot(){
   try {
