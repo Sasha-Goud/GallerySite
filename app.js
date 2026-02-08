@@ -499,8 +499,15 @@ var descText = (isPhoneLike && data.description_mobile)
 
 var isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches;
 var descText = (isMobile && data.description_mobile) ? data.description_mobile : (data.description || '');
-items.push({ type:'desc', text: descText, title:'Description' });
+var isPhoneLike =
+  (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) &&
+  (window.matchMedia && window.matchMedia('(max-width: 560px)').matches);
 
+var descText = (isPhoneLike && data.description_mobile)
+  ? data.description_mobile
+  : (data.description || '');
+
+items.push({ type:'desc', text: descText, title:'Description' });
       function showImage(src, alt){
         hero.innerHTML = '<img src="'+bust(src)+'" alt="'+escapeHtml(data.title||alt||"")+'" loading="eager" decoding="async">';
         var img = $('img', hero);
