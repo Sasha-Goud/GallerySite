@@ -483,23 +483,44 @@ function renderItem(id){
         if (data[key]) images.push(String(data[key]));
       }
 
-// Build the items list: images → optional video → description
-var items = images.map(function(src, i){
-  return { type:'img', src: src, title:'Image '+(i+1), active: i===0 };
-});
-if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
+      // Build the items list: images → optional video → description
+      var items = images.map(function(src, i){
+        return { type:'img', src: src, title:'Image '+(i+1), active: i===0 };
+      });
+      if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
 
-// Mobile detection (matches your CSS breakpoint)
-var isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches;
+var isPhoneLike =
+  (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) &&
+  (window.matchMedia && window.matchMedia('(max-width: 560px)').matches);
 
-// Choose description text:
-// - on mobile: prefer description_mobile if present, else fallback to description
-// - on desktop: always use description
-var descText = isMobile
-  ? (data.description_mobile || data.description || '')
+var descText = (isPhoneLike && data.description_mobile)
+  ? data.description_mobile
   : (data.description || '');
 
-items.push({ type:'desc', text: descText, title:'Description' });
+var isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches;
+var descText = (isMobile && data.description_mobile) ? data.description_mobile : (data.description || '');
+var isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches;
+items.push({
+  type:'desc',
+  text: isMobile ? (data.description_mobile || data.description || '') : (data.description || ''),
+  title:'Description'
+});
+      function showImage(src, alt){
+        hero.innerHTML = '<img src="'+bust(src)+'" alt="'+escapeHtml(data.title||alt||"")+'" loading="eager" decoding="async">';
+        var img = $('img', hero);
+        if (img){
+          img.addEventListener('click', function(){ openLightbox(src, alt || data.title || ''); });
+          img.addEventListener('error', function(){ img.src = 'https://picsum.photos/seed/placeholder/1200/900'; });
+        }
+      }
+      function showVideo(src){
+        hero.innerHTML = '<video src="'+src+'" class="paper-video" controls playsinline preload="metadata"></video>';
+        var v = $('video', hero);
+        if (v){ try { v.play().catch(function(){}); } catch(e){} }
+      }
+    function showDesc(text){
+  hero.innerHTML = '<div class="hero-desc">'+formatDesc(text||'')+'</div>';
+}
       
       
 
@@ -1772,22 +1793,8 @@ function escapeHtml(s){
     .replace(/'/g,'&#039;');
 }
 
-function formatDesc(text){
-  // Escape everything first
-  var s = escapeHtml(String(text || ''));
 
-  // Apply formatting per-line only (prevents cross-line “scramble”)
-  var lines = s.split('\n');
-  for (var i = 0; i < lines.length; i++){
-    // **bold** (within the line only)
-    lines[i] = lines[i].replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
 
-    // *italic* (within the line only), and do NOT treat ** as italic markers
-    lines[i] = lines[i].replace(/\*(?!\*)([^*\n]+)\*(?!\*)/g, '<em>$1</em>');
-  }
-
-  return lines.join('\n');
-}
 // ======== Boot ========
 (function boot(){
   try {
