@@ -514,9 +514,9 @@ items.push({ type:'desc', text: descText, title:'Description' });
         var v = $('video', hero);
         if (v){ try { v.play().catch(function(){}); } catch(e){} }
       }
-      function showDesc(text){
-        hero.innerHTML = '<div class="hero-desc">'+escapeHtml(text||'')+'</div>';
-      }
+    function showDesc(text){
+  hero.innerHTML = '<div class="hero-desc">'+formatDesc(text||'')+'</div>';
+}
       
       
 
@@ -1787,6 +1787,23 @@ function escapeHtml(s){
     .replace(/>/g,'&gt;')
     .replace(/"/g,'&quot;')
     .replace(/'/g,'&#039;');
+}
+
+function formatDesc(text){
+  // 1) Escape EVERYTHING first (so any <script>, <div>, etc. becomes harmless text)
+  var s = escapeHtml(String(text || ''));
+
+  // 2) Then apply a tiny, rigid “markup” on the escaped text:
+  //    **bold**  -> <strong>bold</strong>
+  //    *italic*  -> <em>italic</em>
+  //
+  // Notes:
+  // - non-greedy matches so it doesn’t gobble huge spans
+  // - requires at least one character inside
+  s = s.replace(/\*\*([^*][\s\S]*?)\*\*/g, '<strong>$1</strong>');
+  s = s.replace(/\*([^*][\s\S]*?)\*/g, '<em>$1</em>');
+
+  return s;
 }
 
 // ======== Boot ========
