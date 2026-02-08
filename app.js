@@ -515,7 +515,17 @@ items.push({ type:'desc', text: descText, title:'Description' });
         if (v){ try { v.play().catch(function(){}); } catch(e){} }
       }
     function showDesc(text){
-  hero.innerHTML = '<div class="hero-desc">'+formatDesc(text||'')+'</div>';
+  // Clear hero
+  hero.innerHTML = '';
+
+  // Create the same container you already style (.hero-desc)
+  var box = document.createElement('div');
+  box.className = 'hero-desc';
+
+  // Build DOM safely (NO innerHTML)
+  box.appendChild(buildDescDom(text || ''));
+
+  hero.appendChild(box);
 }
       
       
@@ -1789,21 +1799,71 @@ function escapeHtml(s){
     .replace(/'/g,'&#039;');
 }
 
-function formatDesc(text){
-  // Escape everything first
-  var s = escapeHtml(String(text || ''));
-
-  // Apply formatting per-line only (prevents cross-line “scramble”)
-  var lines = s.split('\n');
-  for (var i = 0; i < lines.length; i++){
-    // **bold** (within the line only)
-    lines[i] = lines[i].replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
-
-    // *italic* (within the line only), and do NOT treat ** as italic markers
-    lines[i] = lines[i].replace(/\*(?!\*)([^*\n]+)\*(?!\*)/g, '<em>$1</em>');
+function buildDescDom(raw){
+  // Expand tabs into spaces so alignment is deterministic
+  // (change 4 to 2/6 if you want different tab width)
+  var TAB_SPACES = 4;
+  function expandTabs(s){
+    return String(s).replace(/\t/g, ' '.repeat(TAB_SPACES));
   }
 
-  return lines.join('\n');
+  // We keep newlines by inserting text nodes containing "\n"
+  // Your existing CSS uses white-space: pre-wrap, so this displays correctly.
+  var frag = document.createDocumentFragment();
+  var text = expandTabs(String(raw || ''));
+
+  // Fast path: if there are no markers at all, return as pure text (unchanged look)
+  if (text.indexOf('*') === -1){
+    frag.appendChild(document.createTextNode(text));
+    return frag;
+  }
+
+  var lines = text.split('\n');
+
+  for (var li = 0; li < lines.length; li++){
+    var line = lines[li];
+
+    // Parse only within the line (prevents cross-line weirdness)
+    var i = 0;
+    while (i < line.length){
+      // Bold: **...**
+      if (line[i] === '*' && line[i+1] === '*'){
+        var endBold = line.indexOf('**', i+2);
+        if (endBold !== -1){
+          var strong = document.createElement('strong');
+          strong.textContent = line.slice(i+2, endBold);
+          frag.appendChild(strong);
+          i = endBold + 2;
+          continue;
+        }
+      }
+
+      // Italic: *...* (but not **)
+      if (line[i] === '*' && line[i+1] !== '*'){
+        var endIt = line.indexOf('*', i+1);
+        if (endIt !== -1 && line[endIt-1] !== '*'){
+          var em = document.createElement('em');
+          em.textContent = line.slice(i+1, endIt);
+          frag.appendChild(em);
+          i = endIt + 1;
+          continue;
+        }
+      }
+
+      // Normal text chunk until next marker
+      var next = line.indexOf('*', i);
+      if (next === -1) next = line.length;
+      frag.appendChild(document.createTextNode(line.slice(i, next)));
+      i = next;
+    }
+
+    // Re-add newline except after last line
+    if (li < lines.length - 1){
+      frag.appendChild(document.createTextNode('\n'));
+    }
+  }
+
+  return frag;
 }
 // ======== Boot ========
 (function boot(){
