@@ -1790,16 +1790,19 @@ function escapeHtml(s){
 }
 
 function formatDesc(text){
+  // Escape everything first
   var s = escapeHtml(String(text || ''));
 
-  // Turn real tab characters into fixed-width blocks
-  s = s.replace(/\t/g, '<span class="desc-tab"></span>');
-
+  // Apply formatting per-line only (prevents cross-line “scramble”)
   var lines = s.split('\n');
   for (var i = 0; i < lines.length; i++){
+    // **bold** (within the line only)
     lines[i] = lines[i].replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+
+    // *italic* (within the line only), and do NOT treat ** as italic markers
     lines[i] = lines[i].replace(/\*(?!\*)([^*\n]+)\*(?!\*)/g, '<em>$1</em>');
   }
+
   return lines.join('\n');
 }
 // ======== Boot ========
