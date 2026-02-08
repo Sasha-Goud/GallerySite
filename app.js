@@ -1790,20 +1790,18 @@ function escapeHtml(s){
 }
 
 function formatDesc(text){
-  // Escape EVERYTHING first (so any <script>, <div>, etc. becomes harmless text)
+  // Escape everything first
   var s = escapeHtml(String(text || ''));
 
-  // Apply rigid markup PER LINE only (so formatting can’t “run away” across paragraphs)
-  var lines = s.split('\n').map(function(line){
+  // Apply formatting per-line only (prevents cross-line “scramble”)
+  var lines = s.split('\n');
+  for (var i = 0; i < lines.length; i++){
+    // **bold** (within the line only)
+    lines[i] = lines[i].replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
 
-    // **bold** on a single line only
-    line = line.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
-
-    // *italic* on a single line only, and NOT **bold**
-    line = line.replace(/\*(?!\*)([^*\n]+)\*(?!\*)/g, '<em>$1</em>');
-
-    return line;
-  });
+    // *italic* (within the line only), and do NOT treat ** as italic markers
+    lines[i] = lines[i].replace(/\*(?!\*)([^*\n]+)\*(?!\*)/g, '<em>$1</em>');
+  }
 
   return lines.join('\n');
 }
