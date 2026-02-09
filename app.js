@@ -470,6 +470,16 @@ function renderItem(id){
 } catch (e) {}
 
     detailData = data;
+    
+    console.log('UA:', navigator.userAgent);
+console.log('has description_mobile:', !!(data && data.description_mobile));
+
+try {
+  console.log('[desc check] has description:', !!data.description, 'len:', (data.description||'').length);
+  console.log('[desc check] has description_mobile:', !!data.description_mobile, 'len:', (data.description_mobile||'').length);
+  console.log('[desc check] using isPhoneLike:', isPhoneLike);
+  console.log('[desc check] descText head:', (descText||'').slice(0,40));
+} catch(e){}
 
     /* ========= MEDIA STRIP (use JSON fields only) ========= */
     strip.innerHTML = '';
