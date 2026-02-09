@@ -470,6 +470,8 @@ function renderItem(id){
 } catch (e) {}
 
     detailData = data;
+    
+    
 
     /* ========= MEDIA STRIP (use JSON fields only) ========= */
     strip.innerHTML = '';
@@ -482,25 +484,29 @@ function renderItem(id){
         var key = 'context' + i;
         if (data[key]) images.push(String(data[key]));
       }
+// Build the items list: images → optional video → description
+var items = images.map(function(src, i){
+  return { type:'img', src: src, title:'Image '+(i+1), active: i===0 };
+});
+if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
 
-      // Build the items list: images → optional video → description
-      var items = images.map(function(src, i){
-        return { type:'img', src: src, title:'Image '+(i+1), active: i===0 };
-      });
-      if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
+// Pick description: mobile uses description_mobile if present, else description.
+var isMobileDesc = false;
+try {
+  isMobileDesc =
+    !!(window.matchMedia &&
+       window.matchMedia('(pointer: coarse)').matches &&
+       window.matchMedia('(max-width: 560px)').matches);
+} catch(e) {}
 
-var isPhoneLike =
-  (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) &&
-  (window.matchMedia && window.matchMedia('(max-width: 560px)').matches);
+var descText =
+  (isMobileDesc &&
+   typeof data.description_mobile === 'string' &&
+   data.description_mobile.trim() !== '')
+    ? data.description_mobile
+    : (data.description || '');
 
-var descText = (isPhoneLike && data.description_mobile)
-  ? data.description_mobile
-  : (data.description || '');
-
-var isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches;
-var descText = (isMobile && data.description_mobile) ? data.description_mobile : (data.description || '');
 items.push({ type:'desc', text: descText, title:'Description' });
-
       function showImage(src, alt){
         hero.innerHTML = '<img src="'+bust(src)+'" alt="'+escapeHtml(data.title||alt||"")+'" loading="eager" decoding="async">';
         var img = $('img', hero);

@@ -471,15 +471,6 @@ function renderItem(id){
 
     detailData = data;
     
-    console.log('UA:', navigator.userAgent);
-console.log('has description_mobile:', !!(data && data.description_mobile));
-
-try {
-  console.log('[desc check] has description:', !!data.description, 'len:', (data.description||'').length);
-  console.log('[desc check] has description_mobile:', !!data.description_mobile, 'len:', (data.description_mobile||'').length);
-  console.log('[desc check] using isPhoneLike:', isPhoneLike);
-  console.log('[desc check] descText head:', (descText||'').slice(0,40));
-} catch(e){}
 
     /* ========= MEDIA STRIP (use JSON fields only) ========= */
     strip.innerHTML = '';
@@ -498,23 +489,24 @@ var items = images.map(function(src, i){
 });
 if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
 
-// Pick description: mobile uses description_mobile if present, else description.
-var isMobileDesc = false;
-try {
-  isMobileDesc =
-    !!(window.matchMedia &&
-       window.matchMedia('(pointer: coarse)').matches &&
-       window.matchMedia('(max-width: 560px)').matches);
-} catch(e) {}
+// Pick description: iPhone/mobile uses description_mobile if present, else description.
+var isPhoneLike = !!(
+  (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
+  /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+);
 
-var descText =
-  (isMobileDesc &&
-   typeof data.description_mobile === 'string' &&
-   data.description_mobile.trim() !== '')
-    ? data.description_mobile
-    : (data.description || '');
+var descText = (isPhoneLike && data.description_mobile)
+  ? data.description_mobile
+  : (data.description || '');
+
+console.log('[desc check] isPhoneLike:', isPhoneLike);
+console.log('[desc check] chosen:', (descText === data.description_mobile) ? 'MOBILE' : 'DESKTOP');
+console.log('[desc check] chosen preview:', String(descText).slice(0, 40));
 
 items.push({ type:'desc', text: descText, title:'Description' });
+
+
+
       function showImage(src, alt){
         hero.innerHTML = '<img src="'+bust(src)+'" alt="'+escapeHtml(data.title||alt||"")+'" loading="eager" decoding="async">';
         var img = $('img', hero);
