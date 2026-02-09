@@ -1988,3 +1988,19 @@ width: 100%;       /* keeps it fluid up to the max-width */
   }
 }
 
+@media (max-width: 560px){
+  .hero-media .hero-desc{
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    transform: none;
+
+    width: auto;
+    max-height: none;
+
+    /* Make sure it scrolls inside the box */
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
