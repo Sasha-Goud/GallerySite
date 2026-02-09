@@ -482,26 +482,16 @@ function renderItem(id){
         var key = 'context' + i;
         if (data[key]) images.push(String(data[key]));
       }
+// Build the items list: images → optional video → description
+var items = images.map(function(src, i){
+  return { type:'img', src: src, title:'Image '+(i+1), active: i===0 };
+});
+if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
 
-      // Build the items list: images → optional video → description
-      var items = images.map(function(src, i){
-        return { type:'img', src: src, title:'Image '+(i+1), active: i===0 };
-      });
-      if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
-
+// Pick description: mobile uses description_mobile if present, else description.
 var isPhoneLike =
-  (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) &&
-  (window.matchMedia && window.matchMedia('(max-width: 560px)').matches);
-
-var descText = (isPhoneLike && data.description_mobile)
-  ? data.description_mobile
-  : (data.description || '');
-
-var isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches;
-var descText = (isMobile && data.description_mobile) ? data.description_mobile : (data.description || '');
-var isPhoneLike =
-  (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) &&
-  (window.matchMedia && window.matchMedia('(max-width: 560px)').matches);
+  (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
+  /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 var descText = (isPhoneLike && data.description_mobile)
   ? data.description_mobile
