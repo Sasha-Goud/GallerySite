@@ -489,13 +489,20 @@ var items = images.map(function(src, i){
 if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' });
 
 // Pick description: mobile uses description_mobile if present, else description.
-var isPhoneLike =
-  (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
-  /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+var isMobileDesc = false;
+try {
+  isMobileDesc =
+    !!(window.matchMedia &&
+       window.matchMedia('(pointer: coarse)').matches &&
+       window.matchMedia('(max-width: 560px)').matches);
+} catch(e) {}
 
-var descText = (isPhoneLike && data.description_mobile)
-  ? data.description_mobile
-  : (data.description || '');
+var descText =
+  (isMobileDesc &&
+   typeof data.description_mobile === 'string' &&
+   data.description_mobile.trim() !== '')
+    ? data.description_mobile
+    : (data.description || '');
 
 items.push({ type:'desc', text: descText, title:'Description' });
       function showImage(src, alt){
