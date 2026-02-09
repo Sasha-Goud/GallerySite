@@ -1987,55 +1987,36 @@ width: 100%;       /* keeps it fluid up to the max-width */
     transform: none !important;
   }
 }
-
-@media (max-width: 560px){
-  .hero-media .hero-desc{
-    top: 12px;
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    transform: none;
-
-    width: auto;
-    max-height: none;
-
-    /* Make sure it scrolls inside the box */
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-
 /* ===== iPhone: description must fit viewport (no off-screen top/bottom) ===== */
 @media (max-width: 560px){
 
-  /* Make the hero area a real anchor */
   .hero-media{
     position: relative;
-    height: auto;           /* don't force a tall fixed hero */
-    min-height: 0;          /* IMPORTANT: don't force extra height */
+    height: auto;
+    min-height: 0;
     align-items: flex-start;
   }
 
-  /* Override the desktop "centered absolute" behavior */
   .hero-media .hero-desc{
     position: relative !important;
     top: auto !important;
     left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
     transform: none !important;
 
     width: 92vw !important;
     max-width: none !important;
 
-    /* iPhone Safari-safe viewport sizing */
-    max-height: calc(100dvh - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
-    max-height: calc(100svh - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important; /* fallback */
-    max-height: calc(100vh  - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important; /* last resort */
+    /* Use HEIGHT (stronger) instead of max-height */
+    height: calc(100dvh - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+    height: calc(100svh - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+    height: calc(100vh  - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
 
     overflow: auto !important;
-
-    padding: 16px 16px !important;
-    margin: 12px auto 18px !important;
     -webkit-overflow-scrolling: touch;
+
+    padding: 16px !important;
+    margin: 12px auto 18px !important;
   }
 }
