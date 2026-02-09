@@ -1987,7 +1987,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
     transform: none !important;
   }
 }
-/* ===== iPhone: description must fit viewport (no off-screen top/bottom) ===== */
+/* ===== iPhone: description must fit viewport (Safari-safe) ===== */
 @media (max-width: 560px){
 
   .hero-media{
@@ -1997,26 +1997,27 @@ width: 100%;       /* keeps it fluid up to the max-width */
     align-items: flex-start;
   }
 
+  /* Make the description a fixed "viewport panel" so Safari can't crop it */
   .hero-media .hero-desc{
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
+    position: fixed !important;
 
-    width: 92vw !important;
+    left: 12px !important;
+    right: 12px !important;
+
+    /* leave room for your header/nav + safe areas */
+    top: calc(140px + 12px + env(safe-area-inset-top)) !important;
+    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+
+    width: auto !important;
     max-width: none !important;
 
-    /* Use HEIGHT (stronger) instead of max-height */
-    height: calc(100dvh - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
-    height: calc(100svh - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
-    height: calc(100vh  - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+    transform: none !important;
+    margin: 0 !important;
 
     overflow: auto !important;
     -webkit-overflow-scrolling: touch;
 
     padding: 16px !important;
-    margin: 12px auto 18px !important;
+    z-index: 999 !important;
   }
 }
