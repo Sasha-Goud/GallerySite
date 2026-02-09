@@ -2004,3 +2004,34 @@ width: 100%;       /* keeps it fluid up to the max-width */
     -webkit-overflow-scrolling: touch;
   }
 }
+
+
+/* ===== iPhone: description must fit viewport (no off-screen top/bottom) ===== */
+@media (max-width: 560px){
+
+  /* Make the hero area a real anchor */
+  .hero-media{
+    position: relative;
+    height: auto;           /* don't force a tall fixed hero */
+    min-height: 70vh;       /* gives room but still flexible */
+    align-items: flex-start;
+  }
+
+  /* Override the desktop "centered absolute" behavior */
+  .hero-media .hero-desc{
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+
+    width: 92vw !important;
+    max-width: none !important;
+
+    max-height: calc(100vh - 140px) !important; /* leaves room for header/address bar */
+    overflow: auto !important;
+
+    padding: 16px 16px !important;
+    margin: 12px auto 18px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
