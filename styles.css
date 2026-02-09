@@ -2013,7 +2013,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
   .hero-media{
     position: relative;
     height: auto;           /* don't force a tall fixed hero */
-    min-height: 70vh;       /* gives room but still flexible */
+    min-height: 0;          /* IMPORTANT: don't force extra height */
     align-items: flex-start;
   }
 
@@ -2027,7 +2027,11 @@ width: 100%;       /* keeps it fluid up to the max-width */
     width: 92vw !important;
     max-width: none !important;
 
-    max-height: calc(100vh - 140px) !important; /* leaves room for header/address bar */
+    /* iPhone Safari-safe viewport sizing */
+    max-height: calc(100dvh - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+    max-height: calc(100svh - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important; /* fallback */
+    max-height: calc(100vh  - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important; /* last resort */
+
     overflow: auto !important;
 
     padding: 16px 16px !important;
