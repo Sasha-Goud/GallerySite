@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sasha-goud.github.io/GallerySite/sitemap.xml
+Sitemap: https://50and.co.uk/sitemap.xml
