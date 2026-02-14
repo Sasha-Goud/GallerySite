@@ -210,21 +210,47 @@ function priceFor(size, material, kind){
 function renderHome(){
   app.innerHTML = [
     '<section class="section home">',
-      '<h1 class="hidden">50&</h1>',
 
-      '<div class="home-hero">',
-        '<img src="assets/hero.png" alt="50& gallery hero" loading="eager" decoding="async">',
-      '</div>',
+      // SEO-visible H1 (keep hidden if you prefer)
+      '<h1 class="hidden">50& | Wall Art for Interior Design</h1>',
 
-      '<div class="home-copy">',
-        '<h2>50&</h2>',
-        '<p>A minimalist, modern gallery spanning five decades. Explore and purchase prints.</p>',
-        '<p>UK, EU and USA delivery available. Delivery is calculated at checkout.</p>',
-        '<p><a class="btn" href="#/gallery">Enter the gallery</a></p>',
+      '<div class="home-layout">',
+
+        // LEFT: text panel
+        '<div class="home-text">',
+
+          // Headline + subtitle are separate so you can style/tweak independently
+          '<div class="home-head">',
+            '<div class="home-headline">50 Years in the Making</div>',
+            '<div class="home-subhead">with Life Filling the Gaps</div>',
+          '</div>',
+
+          // Body is ONE single block (edit once)
+          '<div class="home-body">',
+            'A curated selection of wall art made across fifty years, and sometimes taking that long to complete, with life happening in between.',
+            '<br><br>',
+            'Photography, paintings, prints and mixed media, created first and foremost for decorative impact: colour, tone, and how a piece sits in a space.',
+            '<br><br>',
+            'Made for interior design and decor, each work is offered only in the sizes and materials that suit it, so it arrives in the format it’s meant to be displayed.',
+          '</div>',
+
+          // Delivery line is separate (tweak independently)
+          '<div class="home-delivery">',
+            'Delivery cost to UK, EU and USA is calculated at checkout.',
+          '</div>',
+
+        '</div>',
+
+        // RIGHT: photo (never overlaps text)
+        '<div class="home-photo">',
+          '<img src="assets/hero.png" alt="50& wall art in an interior setting" loading="eager" decoding="async">',
+        '</div>',
+
       '</div>',
     '</section>'
   ].join('');
 }
+
 function renderAbout(){
   app.innerHTML = '<section class="section"><h1>About the Artist</h1><div class="prose"><p>Some projects began decades ago and were completed much later — life in between. This site presents that journey through images.</p></div></section>';
 }
