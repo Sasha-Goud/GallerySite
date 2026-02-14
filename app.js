@@ -208,7 +208,22 @@ function priceFor(size, material, kind){
 
 // ======== Static pages ========
 function renderHome(){
-  app.innerHTML = '<section class="section"><h1>Welcome</h1><p>A minimalist, modern gallery of display art spanning five decades. Click Gallery to explore and purchase prints.</p></section>';
+  app.innerHTML = [
+    '<section class="section home">',
+      '<h1 class="hidden">50&</h1>',
+
+      '<div class="home-hero">',
+        '<img src="assets/hero.png" alt="50& gallery hero" loading="eager" decoding="async">',
+      '</div>',
+
+      '<div class="home-copy">',
+        '<h2>50&</h2>',
+        '<p>A minimalist, modern gallery spanning five decades. Explore and purchase prints.</p>',
+        '<p>UK, EU and USA delivery available. Delivery is calculated at checkout.</p>',
+        '<p><a class="btn" href="#/gallery">Enter the gallery</a></p>',
+      '</div>',
+    '</section>'
+  ].join('');
 }
 function renderAbout(){
   app.innerHTML = '<section class="section"><h1>About the Artist</h1><div class="prose"><p>Some projects began decades ago and were completed much later — life in between. This site presents that journey through images.</p></div></section>';

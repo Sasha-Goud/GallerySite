@@ -48,6 +48,14 @@ body{
   opacity: 0.75;
 }
 
+.home-hero img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+.home-copy{ margin-top: 18px; }
+
 
 
 /* ==== Brand logo block ==== */
