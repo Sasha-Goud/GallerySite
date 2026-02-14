@@ -1,5 +1,0 @@
-{
-  "sizes": ["A4", "A3", "A2"],
-  "materials": ["Matte", "Glossy", "Canvas", "Velvet"],
-  "kinds": ["Print", "Framed", "Canvas"]
-}

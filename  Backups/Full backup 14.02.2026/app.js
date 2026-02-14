@@ -42,27 +42,16 @@ window.addEventListener('popstate', function(){
   if (routes[route]) {
     setActive(route);
     routes[route](param);
- } else {
-  setActive('home');
-  renderHome();
-}
-});
-(function boot(){
-  var rp = getHashRoute();
-  var route = rp[0], param = rp[1];
-  if (routes[route]) {
-    setActive(route);
-    routes[route](param);
   } else {
-    setActive('home');
-    renderHome();
+    setActive('gallery');
+    renderGallery();
   }
-})();
+});
 
 function getHashRoute(){
-  var hash = (location.hash || '#/home').replace(/^#\//,'');
+  var hash = (location.hash || '#/gallery').replace(/^#\//,'');
   var parts = hash.split('/');
-var route = parts[0] || 'home';
+  var route = parts[0] || 'gallery';
   var param = parts[1];
   return [route, param];
 }
