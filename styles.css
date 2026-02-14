@@ -38,7 +38,15 @@ body{
 }
 
 
+/* Logo hover/focus feedback (match nav-link subtle dim) */
+.brand{
+  transition: opacity 160ms ease;
+}
 
+.brand:hover,
+.brand:focus-visible{
+  opacity: 0.75;
+}
 
 
 
