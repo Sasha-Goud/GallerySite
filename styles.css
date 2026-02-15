@@ -2096,18 +2096,27 @@ width: 100%;       /* keeps it fluid up to the max-width */
   }
 }
 
-/* ===== Home page: mobile layout (photo above text) ===== */
+/* ===== Home page: mobile layout (photo above text) — NO CROP ===== */
 @media (max-width: 560px){
 
   .section.home .home-layout{
     grid-template-columns: 1fr !important;  /* single column */
-    grid-template-rows: auto auto;         /* photo then text */
+    grid-template-rows: auto auto;          /* photo then text */
   }
 
+  /* Let the photo panel size itself (no forced height) */
   .section.home .home-photo{
     order: 1;
-    height: 48vh;                          /* tweak 40–60vh */
-    min-height: 260px;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Preserve the image’s aspect ratio */
+  .section.home .home-photo img{
+    width: 100% !important;
+    height: auto !important;        /* key: natural ratio */
+    object-fit: contain !important; /* key: no crop */
+    display: block;
   }
 
   .section.home .home-text{
