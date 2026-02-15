@@ -457,6 +457,10 @@ code{
   object-fit: cover;
   display: block;
 }
+.section.home .home-photo{
+  padding-top: 18px;   /* increase/decrease to taste */
+  box-sizing: border-box;
+}
 
 .media-bar{
   margin-top: 28px;
