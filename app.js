@@ -227,7 +227,7 @@ function renderHome(){
 
           // Body is ONE single block (edit once)
           '<div class="home-body">',
-            'A curated selection of wall art made across fifty years, and sometimes taking that long to complete, with life happening in between.',
+            'A curated selection of wall art made across fifty years, and sometimes taking that long to complete.',
             '<br><br>',
             'Photography, paintings, prints and mixed media, created first and foremost for decorative impact: colour, tone, and how a piece sits in a space.',
             '<br><br>',

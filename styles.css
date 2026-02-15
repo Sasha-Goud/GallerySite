@@ -458,7 +458,7 @@ code{
   display: block;
 }
 .section.home .home-photo{
-  padding-top: 28px;   /* increase/decrease to taste */
+  padding-top: 48px;   /* increase/decrease to taste */
   box-sizing: border-box;
 }
 
