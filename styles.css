@@ -2095,3 +2095,23 @@ width: 100%;       /* keeps it fluid up to the max-width */
     margin: 12px 12px 24px !important;
   }
 }
+
+/* ===== Home page: mobile layout (photo above text) ===== */
+@media (max-width: 560px){
+
+  .section.home .home-layout{
+    grid-template-columns: 1fr !important;  /* single column */
+    grid-template-rows: auto auto;         /* photo then text */
+  }
+
+  .section.home .home-photo{
+    order: 1;
+    height: 48vh;                          /* tweak 40–60vh */
+    min-height: 260px;
+  }
+
+  .section.home .home-text{
+    order: 2;
+    margin-top: 0 !important;
+  }
+}
