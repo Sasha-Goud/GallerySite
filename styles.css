@@ -426,6 +426,7 @@ code{
 }
 .section.home .home-subhead{
   font-size: 16px;
+  font-style: italic;   /* italic */
   font-weight: 300;
   opacity: 0.85;
   margin: 0 0 22px 0;

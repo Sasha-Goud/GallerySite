@@ -222,7 +222,7 @@ function renderHome(){
           // Headline + subtitle are separate so you can style/tweak independently
           '<div class="home-head">',
             '<div class="home-headline">50 Years in the Making</div>',
-            '<div class="home-subhead">with Life Filling the Gaps</div>',
+            '<div class="home-subhead">Life Filling the Gaps</div>',
           '</div>',
 
           // Body is ONE single block (edit once)
@@ -234,10 +234,6 @@ function renderHome(){
             'Made for interior design and decor, each work is offered only in the sizes and materials that suit it, so it arrives in the format it’s meant to be displayed.',
           '</div>',
 
-          // Delivery line is separate (tweak independently)
-          '<div class="home-delivery">',
-            'Delivery cost to UK, EU and USA is calculated at checkout.',
-          '</div>',
 
         '</div>',
 
