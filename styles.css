@@ -2151,3 +2151,29 @@ width: 100%;       /* keeps it fluid up to the max-width */
     margin-left: auto !important;
   }
 }
+@media (pointer: coarse){
+
+  /* make description push layout normally on touch devices */
+  .hero-media{
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    align-items: flex-start !important;
+  }
+
+  .hero-media .hero-desc{
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    margin: 12px 0 18px 0 !important;  /* bottom gap before strip */
+  }
+
+  /* undo the absolute-centred thumb strip on touch devices */
+  .media-bar .thumb-strip{
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+  }
+}
