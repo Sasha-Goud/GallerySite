@@ -2130,30 +2130,13 @@ width: 100%;       /* keeps it fluid up to the max-width */
   }
 }
 
-/* put at the VERY END */
-@media (pointer: coarse){
-  .media-bar{
-    position: static !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    margin-top: 16px !important;
-  }
-  .media-bar .thumb-strip{
-    position: static !important;
-    transform: none !important;
-    left: auto !important;
-    margin: 0 auto !important;
-    flex: 1 1 auto !important;
-    justify-content: center !important;
-  }
-  .media-bar .btn-purchase{
-    margin-left: auto !important;
-  }
-}
 @media (pointer: coarse){
 
-  /* make description push layout normally on touch devices */
+  .section{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
   .hero-media{
     height: auto !important;
     min-height: 0 !important;
@@ -2164,18 +2147,38 @@ width: 100%;       /* keeps it fluid up to the max-width */
   .hero-media .hero-desc{
     position: static !important;
     transform: none !important;
+    box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100% !important;
     display: block !important;
-    margin: 12px 0 18px 0 !important;  /* bottom gap before strip */
+    overflow: visible !important;
+    margin: 12px 0 24px 0 !important;
   }
 
- @media (pointer: coarse){
-  .media-bar{ position: static !important; }
+  .media-bar{
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    margin-top: 16px !important;
+  }
+
   .media-bar .thumb-strip{
     position: static !important;
     left: auto !important;
     transform: none !important;
+    display: flex !important;
+    gap: 8px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 1 auto !important;
+    margin: 0 !important;
   }
- }
+
+  .media-bar .btn-purchase{
+    position: static !important;
+    margin-left: auto !important;
+    z-index: 2 !important;
+  }
 }
