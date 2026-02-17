@@ -2130,9 +2130,8 @@ width: 100%;       /* keeps it fluid up to the max-width */
   }
 }
 
-@media (max-width: 560px){
-  .hero-wrap{ display:flex !important; flex-direction:column !important; }
-  .hero-media{ height:auto !important; overflow: visible !important; }
-  .hero-media .hero-desc{ position: static !important; transform:none !important; width:100% !important; }
-  .media-bar{ position: static !important; margin-top: 16px !important; }
+/* Put this at the VERY END of styles.css */
+@media (max-width: 768px){
+  .hero-media .hero-desc{ margin: 12px 0 24px 0 !important; }
+  .media-bar{ margin-top: 0 !important; }
 }
