@@ -2130,3 +2130,8 @@ width: 100%;       /* keeps it fluid up to the max-width */
   }
 }
 
+@media (max-width: 560px){
+  .hero-media{ display: block !important; }
+  .hero-media .hero-desc{ display: block !important; }
+  .media-bar{ display: block !important; clear: both !important; margin-top: 14px !important; }
+}
