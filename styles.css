@@ -2073,26 +2073,27 @@ width: 100%;       /* keeps it fluid up to the max-width */
   .hero-media{
     height: auto !important;
     min-height: 0 !important;
-    overflow: visible !important;      /* important: undo any hidden clipping */
+    overflow: visible !important;
     align-items: flex-start !important;
   }
 
   /* Make the description part of the normal page flow */
   .hero-media .hero-desc{
-    position: static !important;       /* overrides desktop absolute */
+    position: static !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
     transform: none !important;
 
-    width: auto !important;
-    max-width: none !important;
+    box-sizing: border-box !important;
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
     max-height: none !important;
 
-    display: block !important;         /* overrides desktop flex */
-    overflow: visible !important;      /* let the page scroll */
-    margin: 12px 2px 24px !important;
+    display: block !important;
+    overflow: visible !important;
+    margin: 12px auto 24px !important;
   }
 }
 
