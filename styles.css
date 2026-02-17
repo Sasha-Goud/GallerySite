@@ -2071,8 +2071,8 @@ width: 100%;       /* keeps it fluid up to the max-width */
 
   /* This is the real “gutter” on mobile: .section padding */
   .section{
-    padding-left: 8px !important;   /* change this number to widen/narrow */
-    padding-right: 8px !important;  /* change this number to widen/narrow */
+    padding-left: 0px !important;   /* change this number to widen/narrow */
+    padding-right: 0px !important;  /* change this number to widen/narrow */
   }
 
   /* Ensure the hero area doesn't clip description */
