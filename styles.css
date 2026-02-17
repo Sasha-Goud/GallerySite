@@ -2130,8 +2130,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
   }
 }
 
-/* Put this at the VERY END of styles.css */
+/* TEMP TEST — add at the VERY END of the file you believe is loaded */
 @media (max-width: 768px){
-  .hero-media .hero-desc{ margin: 12px 0 24px 0 !important; }
-  .media-bar{ margin-top: 0 !important; }
+  .media-bar{ outline: 4px solid red !important; }
 }
