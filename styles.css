@@ -2170,10 +2170,12 @@ width: 100%;       /* keeps it fluid up to the max-width */
     margin: 12px 0 18px 0 !important;  /* bottom gap before strip */
   }
 
-  /* undo the absolute-centred thumb strip on touch devices */
+ @media (pointer: coarse){
+  .media-bar{ position: static !important; }
   .media-bar .thumb-strip{
     position: static !important;
     left: auto !important;
     transform: none !important;
   }
+ }
 }
