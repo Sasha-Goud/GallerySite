@@ -2130,7 +2130,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
   }
 }
 
-/* TEMP TEST — add at the VERY END of the file you believe is loaded */
-@media (max-width: 768px){
+/* TEMP TEST — add at the VERY END */
+@media (pointer: coarse){
   .media-bar{ outline: 4px solid red !important; }
 }
