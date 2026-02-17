@@ -2066,10 +2066,16 @@ width: 100%;       /* keeps it fluid up to the max-width */
     transform: none !important;
   }
 }
-/* ===== Mobile (<=560px): description must NOT be absolutely centered or clipped ===== */
+/* ===== Mobile (<=560px): item description should use full content width ===== */
 @media (max-width: 560px){
 
-  /* Let the hero area grow naturally so the page can scroll */
+  /* This is the real “gutter” on mobile: .section padding */
+  .section{
+    padding-left: 8px !important;   /* change this number to widen/narrow */
+    padding-right: 8px !important;  /* change this number to widen/narrow */
+  }
+
+  /* Ensure the hero area doesn't clip description */
   .hero-media{
     height: auto !important;
     min-height: 0 !important;
@@ -2077,31 +2083,18 @@ width: 100%;       /* keeps it fluid up to the max-width */
     align-items: flex-start !important;
   }
 
-  /* Description: normal flow, full usable width with simple side gutters */
+  /* Description: normal flow, full available width */
   .hero-media .hero-desc{
     position: static !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
     transform: none !important;
 
-    display: block !important;
-
-    /* THIS is the width control on mobile:
-       - width:100% uses the container width (more reliable than 100vw on iOS)
-       - margin provides the left/right gutter */
     box-sizing: border-box !important;
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
 
-    /* Adjust these two numbers to widen/narrow:
-       smaller = wider text box */
-    margin: 12px 2px 24px !important;
-
-    /* Keep it readable and avoid weird clipping */
+    display: block !important;
     overflow: visible !important;
-    max-height: none !important;
+    margin: 12px 0 24px 0 !important;
   }
 }
 
