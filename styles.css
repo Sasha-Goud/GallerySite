@@ -2092,7 +2092,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 
     display: block !important;         /* overrides desktop flex */
     overflow: visible !important;      /* let the page scroll */
-    margin: 4px 4px 24px !important;
+    margin: 12px 2px 24px !important;
   }
 }
 
