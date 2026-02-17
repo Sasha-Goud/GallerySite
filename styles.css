@@ -2069,7 +2069,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
 /* ===== Mobile (<=560px): description must NOT be absolutely centered or clipped ===== */
 @media (max-width: 560px){
 
-  /* Kill the desktop fixed/clipping behaviour */
+  /* Let the hero area grow naturally so the page can scroll */
   .hero-media{
     height: auto !important;
     min-height: 0 !important;
@@ -2077,7 +2077,7 @@ width: 100%;       /* keeps it fluid up to the max-width */
     align-items: flex-start !important;
   }
 
-  /* Make the description part of the normal page flow */
+  /* Description: normal flow, full usable width with simple side gutters */
   .hero-media .hero-desc{
     position: static !important;
     top: auto !important;
@@ -2086,14 +2086,22 @@ width: 100%;       /* keeps it fluid up to the max-width */
     bottom: auto !important;
     transform: none !important;
 
-    box-sizing: border-box !important;
-    width: calc(100vw - 16px) !important;
-    max-width: calc(100vw - 16px) !important;
-    max-height: none !important;
-
     display: block !important;
+
+    /* THIS is the width control on mobile:
+       - width:100% uses the container width (more reliable than 100vw on iOS)
+       - margin provides the left/right gutter */
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: none !important;
+
+    /* Adjust these two numbers to widen/narrow:
+       smaller = wider text box */
+    margin: 12px 2px 24px !important;
+
+    /* Keep it readable and avoid weird clipping */
     overflow: visible !important;
-    margin: 12px auto 24px !important;
+    max-height: none !important;
   }
 }
 
@@ -2101,23 +2109,21 @@ width: 100%;       /* keeps it fluid up to the max-width */
 @media (max-width: 560px){
 
   .section.home .home-layout{
-    grid-template-columns: 1fr !important;  /* single column */
-    grid-template-rows: auto auto;          /* photo then text */
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto !important;
   }
 
-  /* Let the photo panel size itself (no forced height) */
   .section.home .home-photo{
     order: 1;
     height: auto !important;
     min-height: 0 !important;
   }
 
-  /* Preserve the image’s aspect ratio */
   .section.home .home-photo img{
     width: 100% !important;
-    height: auto !important;        /* key: natural ratio */
-    object-fit: contain !important; /* key: no crop */
-    display: block;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
   }
 
   .section.home .home-text{
