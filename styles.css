@@ -2130,7 +2130,24 @@ width: 100%;       /* keeps it fluid up to the max-width */
   }
 }
 
-/* TEMP TEST — add at the VERY END */
+/* put at the VERY END */
 @media (pointer: coarse){
-  .media-bar{ outline: 4px solid red !important; }
+  .media-bar{
+    position: static !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: 16px !important;
+  }
+  .media-bar .thumb-strip{
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    margin: 0 auto !important;
+    flex: 1 1 auto !important;
+    justify-content: center !important;
+  }
+  .media-bar .btn-purchase{
+    margin-left: auto !important;
+  }
 }
