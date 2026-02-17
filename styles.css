@@ -2130,8 +2130,4 @@ width: 100%;       /* keeps it fluid up to the max-width */
   }
 }
 
-@media (max-width: 560px){
-  .hero-media{ padding-bottom: 16px !important; }
-  .hero-media .hero-desc{ margin: 12px 0 0 0 !important; }
-  .media-bar{ margin-top: 0 !important; }
-}
+
