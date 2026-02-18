@@ -2154,6 +2154,11 @@ width: 100%;       /* keeps it fluid up to the max-width */
     overflow: visible !important;
     margin: 12px 0 24px 0 !important;
   }
+  
+	.hero-wrap{
+	display: flex !important;
+	flex-direction: column !important;
+  }
 
   .media-bar{
     position: static !important;
