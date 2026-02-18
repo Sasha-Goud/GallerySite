@@ -2155,9 +2155,15 @@ width: 100%;       /* keeps it fluid up to the max-width */
     margin: 12px 0 24px 0 !important;
   }
   
-	.hero-wrap{
-	display: flex !important;
-	flex-direction: column !important;
+    .hero-wrap{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .media-bar{
+    width: 100% !important;
+    clear: both !important;
   }
 
   .media-bar{
