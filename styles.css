@@ -2193,3 +2193,8 @@ width: 100%;       /* keeps it fluid up to the max-width */
     z-index: 2 !important;
   }
 }
+
+/* Mobile: hide hero arrows (keep desktop) */
+@media (max-width: 560px){
+  .hero-nav{ display: none !important; }
+}

@@ -550,7 +550,11 @@ var descText = (isPhoneLike && data.description_mobile)
 console.log('[desc check] isPhoneLike:', isPhoneLike);
 console.log('[desc check] chosen:', (descText === data.description_mobile) ? 'MOBILE' : 'DESKTOP');
 console.log('[desc check] chosen preview:', String(descText).slice(0, 40));
-
+console.log('[desc check] has description:', !!data.description, 'len:', (data.description||'').length);
+console.log('[desc check] has description_mobile:', !!data.description_mobile, 'len:', (data.description_mobile||'').length);
+console.log('[desc check] mobile head:', String(data.description_mobile||'').slice(0,40));
+console.log('[desc check] desktop head:', String(data.description||'').slice(0,40));
+console.log('[desc check] chosen head:', String(descText||'').slice(0,40));
 items.push({ type:'desc', text: descText, title:'Description' });
 
 
@@ -1861,4 +1865,49 @@ function escapeHtml(s){
   } catch (e){
     try { setActive('gallery'); renderGallery(); } catch(_) {}
   }
+})();
+
+
+
+// Mobile swipe: left/right to navigate (uses existing buttons)
+(() => {
+  let startX = 0, startY = 0, startT = 0;
+
+  function onTouchStart(e){
+    const t = e.touches[0];
+    startX = t.clientX;
+    startY = t.clientY;
+    startT = Date.now();
+  }
+
+  function onTouchEnd(e){
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX;
+    const dy = t.clientY - startY;
+    const dt = Date.now() - startT;
+
+    // ignore slow/short swipes + mostly-vertical gestures
+    if (dt > 500) return;
+    if (Math.abs(dx) < 50) return;
+    if (Math.abs(dx) < Math.abs(dy) * 1.2) return;
+
+    const nextBtn = document.getElementById("hero-next");
+    const prevBtn = document.getElementById("hero-prev");
+
+    if (dx < 0 && nextBtn) nextBtn.click();   // swipe left => next
+    if (dx > 0 && prevBtn) prevBtn.click();   // swipe right => prev
+  }
+
+  // attach once, works across re-renders
+  document.addEventListener("touchstart", (e) => {
+    const hero = e.target.closest?.(".hero-wrap, .hero-media");
+    if (!hero) return;
+    onTouchStart(e);
+  }, { passive: true });
+
+  document.addEventListener("touchend", (e) => {
+    const hero = e.target.closest?.(".hero-wrap, .hero-media");
+    if (!hero) return;
+    onTouchEnd(e);
+  }, { passive: true });
 })();
