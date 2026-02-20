@@ -248,10 +248,10 @@ function renderHome(){
 }
 
 function renderAbout(){
-  app.innerHTML = '<section class="section"><h1>About the Artist</h1><div class="prose"><p>Some projects began decades ago and were completed much later — life in between. This site presents that journey through images.</p></div></section>';
+  app.innerHTML = '<section class="section"><h1>•</h1><div class="prose"><p>Some projects began decades ago and were completed much later — life in between. This site presents that journey through images.</p></div></section>';
 }
 function renderContact(){
-  app.innerHTML = '<section class="section"><h1>Contact</h1><p>Email: <a href="mailto:you@example.com">you@example.com</a></p></section>';
+  app.innerHTML = '<section class="section"><h1>Contact</h1><p>Email: <a href="mehrdad.goudarzi@gmail.com">mehrdad.goudarzi@gmail.com</a></p></section>';
 }
 
 
