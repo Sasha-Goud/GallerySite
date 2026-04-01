@@ -253,17 +253,17 @@ function renderAbout(){
       '<h1>The Collective</h1>',
       '<div class="prose">',
 
-        '<p>This site is a home for artists over fifty who have kept making work over the years—often quietly, outside the professional art world. Because life gets in the way, there is often a gap between the start and finish of a piece; some works are paused for years, and some remain unfinished. Part of the spirit of this collective is giving those pieces a reason to be completed and finally shared.</p>',
+        '<p>This site is a home for artists over fifty-ish who have kept making art over the years, outside the professional art world. Because life gets in the way, there is often a gap between the start and finish of a piece; some works are paused for years, and some remain unfinished. Part of the spirit of this collective is giving those pieces a reason to be completed and finally shared.</p>',
 
-        '<p>The work here isn’t manufactured or produced on a conveyor belt. It’s made in the margins of real life, shaped by time, and carrying that human presence within it. The focus is on paintings and photographs valued as decorative art: pieces chosen for colour, tone, and the way they live in a room, rather than for status in the fine-art market.</p>',
+        '<p>The work here isn’t manufactured or produced on a conveyor belt. It’s made in the margins of real life, shaped by time, and carrying that human presence within it. The focus is on paintings and photographs valued as decorative art: chosen for colour, tone, and the way they live in a room, rather than for status in the fine-art market.</p>',
 
-        '<p>The mood is intentionally bright and uplifting. We’re not looking for dowdy, depressive, or dark subject matter, and we avoid heavy, gloomy palettes. The aim is art that brings warmth, energy, and a sense of ease to an interior.</p>',
+        '<p>The mood is bright and uplifting. We’re not looking for deep, depressive, or dark subject matter, and we avoid heavy, gloomy palettes. The aim is art that brings warmth, energy, and a sense of ease to an interior.</p>',
 
         '<h2>Membership</h2>',
-        '<p>If you’d like to join, email me at <a href="mailto:you@example.com">you@example.com</a>. Once I receive your message, I’ll take it from there. Members can display up to five works in the gallery at any one time. There is no fee to join.</p>',
+        '<p>If you’d like to showcase your work, email me at <a href="mailto:you@example.com">you@example.com</a>. I’ll take it from there.</p>',
 
         '<h2>Sales and commission</h2>',
-        '<p>There are no charges unless a work sells. When a sale is made, the gallery takes a commission of 25%, and the artist receives the remainder.</p>',
+        '<p> Members can display up to five works in the gallery at any one time. There is no fee to join. There are no charges unless a work sells. When a sale is made, the gallery takes a commission of 25%, and the artist receives the remainder.</p>',
 
       '</div>',
     '</section>'
