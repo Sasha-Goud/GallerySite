@@ -2283,3 +2283,12 @@ width: 100%;       /* keeps it fluid up to the max-width */
 .section > h1{
   margin-left: var(--about-left-margin);
 }
+
+
+:root{
+  --about-top-offset: 30px;  /* increase to move down */
+}
+
+.section{
+  padding-top: calc(16px + var(--about-top-offset));
+}
