@@ -2206,13 +2206,13 @@ width: 100%;       /* keeps it fluid up to the max-width */
   --about-h1-size: 28px;
   --about-h1-weight: 500;
   --about-h1-letter: 1px;
-  --about-h1-color: rgb(255,210,200);
+  --about-h1-color: rgb(255,210,90);
 
   --about-body-size: 16px;
   --about-body-weight: 300;
   --about-body-line: 1.75;
   --about-body-letter: 0.3px;
-  --about-body-color: rgb(255,255,255);
+  --about-body-color: rgb(200,200,200);
 
   --about-max-width: 72ch;
   --about-top-gap: 12px;
