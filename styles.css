@@ -2270,9 +2270,16 @@ width: 100%;       /* keeps it fluid up to the max-width */
 }
 
 :root{
-  --about-left-margin: 30px;  /* adjust this */
+  --about-left-margin: 40px;  /* adjust this */
 }
 
 .section .prose{
+  margin-left: var(--about-left-margin);
+}
+:root{
+  --about-left-margin: 20px;
+}
+
+.section > h1{
   margin-left: var(--about-left-margin);
 }
