@@ -2198,3 +2198,73 @@ width: 100%;       /* keeps it fluid up to the max-width */
 @media (max-width: 560px){
   .hero-nav{ display: none !important; }
 }
+
+/* ===== ABOUT PAGE TUNING (paste at very end of styles.css) =====
+   Adjust the variables below to taste.
+*/
+:root{
+  --about-h1-size: 28px;
+  --about-h1-weight: 500;
+  --about-h1-letter: 1px;
+  --about-h1-color: rgb(255,210,200);
+
+  --about-body-size: 16px;
+  --about-body-weight: 300;
+  --about-body-line: 1.75;
+  --about-body-letter: 0.3px;
+  --about-body-color: rgb(255,255,255);
+
+  --about-max-width: 72ch;
+  --about-top-gap: 12px;
+  --about-h1-bottom-gap: 18px;
+  --about-paragraph-gap: 14px;
+
+  --about-h2-size: 18px;
+  --about-h2-weight: 500;
+  --about-h2-letter: 0.8px;
+  --about-h2-color: rgb(255,210,90);
+  --about-h2-top-gap: 22px;
+  --about-h2-bottom-gap: 10px;
+
+  --about-link-color: rgb(122,162,255);
+  --about-link-hover: rgb(61,108,243);
+}
+
+.section .prose{
+  max-width: var(--about-max-width);
+  margin-top: var(--about-top-gap);
+}
+
+.section .prose p{
+  margin: 0 0 var(--about-paragraph-gap) 0;
+  font-size: var(--about-body-size);
+  font-weight: var(--about-body-weight);
+  line-height: var(--about-body-line);
+  letter-spacing: var(--about-body-letter);
+  color: var(--about-body-color);
+}
+
+.section > h1{
+  margin: 16px 0 var(--about-h1-bottom-gap) 0;
+  font-size: var(--about-h1-size);
+  font-weight: var(--about-h1-weight);
+  letter-spacing: var(--about-h1-letter);
+  color: var(--about-h1-color);
+}
+
+.section .prose h2{
+  margin: var(--about-h2-top-gap) 0 var(--about-h2-bottom-gap) 0;
+  font-size: var(--about-h2-size);
+  font-weight: var(--about-h2-weight);
+  letter-spacing: var(--about-h2-letter);
+  color: var(--about-h2-color);
+}
+
+.section .prose a{
+  color: var(--about-link-color);
+  text-decoration: none;
+}
+.section .prose a:hover{
+  color: var(--about-link-hover);
+  text-decoration: underline;
+}
