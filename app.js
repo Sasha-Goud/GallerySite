@@ -265,6 +265,8 @@ function renderAbout(){
         '<h2>Sales and commission</h2>',
         '<p> Members can display up to five works in the gallery at any one time. There is no fee to join. There are no charges unless a work sells. When a sale is made, the gallery takes a commission of 25%, and the artist receives the remainder.</p>',
 
+        '<p>Terms and conditions: <a href="50& T&C.pdf" target="_blank" rel="noopener">Artist Submission Conditions (PDF)</a></p>',
+
       '</div>',
     '</section>'
   ].join('');
