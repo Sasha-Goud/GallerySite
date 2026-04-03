@@ -259,10 +259,11 @@ function renderAbout(){
 
         '<p>The focus is on paintings and photographs valued as decorative art: chosen for colour, tone, and the way they live in a room, rather than for status in the fine-art market.</p>',
 
-        '<p>The mood is bright and uplifting. There are no deep, depressive, or dark subjects, and we avoid heavy, gloomy palettes. The aim is art that brings warmth, energy, and a sense of ease to an interior.</p>',
+        '<p>The mood is bright and uplifting. There are no deep, depressive, or dark subjects, and we avoid heavy, gloomy palettes. The aim is art that brings warmth, energy and a sense of ease to an interior.</p>',
 
         '<h2>Membership</h2>',
-        '<p>If you’d like to showcase your work, email me at <a href="mailto:mehrdad.goudarzi@gmail.com">mehrdad.goudarzi@gmail.com</a>. I’ll take it from there.</p>',
+        '<p>If you’d like to showcase your work, email me at <a href="mailto:mehrdad.goudarzi@gmail.com">mehrdad.goudarzi@gmail.com</a>. 
+        I’ll take it from there.</p>',
 
         '<h2>Sales and commission</h2>',
         '<p>Members can display up to five works in the gallery at any one time. There is no fee to join. There are no charges unless a work sells. When a sale is made, the gallery takes a commission of 25%, and the artist receives the remainder.</p>',
