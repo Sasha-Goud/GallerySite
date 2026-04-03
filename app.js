@@ -253,24 +253,21 @@ function renderAbout(){
       '<h1>The Collective</h1>',
       '<div class="prose">',
 
-        '<p>This site is a home for artists whose work stretches from first idea to final finish across many years, outside the professional art world. Part of the spirit of this collective is giving those pieces a reason to be completed and finally shared.
-</p>',
+        '<p>This site is a home for artists whose work stretches from first idea to final finish across many years, outside the professional art world. Part of the spirit of this collective is giving those pieces a reason to be completed and finally shared.</p>',
 
-        '<p>The work here isn’t manufactured or produced on a conveyor belt. It’s made in the margins of real life, shaped by time, and carrying that human presence within it.
-</p>',
+        '<p>The work here isn’t manufactured or produced on a conveyor belt. It’s made in the margins of real life, shaped by time, and carrying that human presence within it.</p>',
 
- '<p>The focus is on paintings and photographs valued as decorative art: chosen for colour, tone, and the way they live in a room, rather than for status in the fine-art market.</p>',
- 
- 
-        '<p>The mood is bright and uplifting. There are no deep, depressive, or dark subjects, and we avoid heavy, gloomy palettes. The aim is art that brings warmth, energy, and a sense of ease to an interior.
-</p>',
+        '<p>The focus is on paintings and photographs valued as decorative art: chosen for colour, tone, and the way they live in a room, rather than for status in the fine-art market.</p>',
+
+        '<p>The mood is bright and uplifting. There are no deep, depressive, or dark subjects, and we avoid heavy, gloomy palettes. The aim is art that brings warmth, energy, and a sense of ease to an interior.</p>',
 
         '<h2>Membership</h2>',
         '<p>If you’d like to showcase your work, email me at <a href="mailto:mehrdad.goudarzi@gmail.com">mehrdad.goudarzi@gmail.com</a>. I’ll take it from there.</p>',
 
         '<h2>Sales and commission</h2>',
-        '<p> Members can display up to five works in the gallery at any one time. There is no fee to join. There are no charges unless a work sells. When a sale is made, the gallery takes a commission of 25%, and the artist receives the remainder.</p>',
-        '<p>Terms and conditions: <a href="assets/50& T&C.pdf" target="_blank" rel="noopener">50& T&C (PDF)</a></p>',
+        '<p>Members can display up to five works in the gallery at any one time. There is no fee to join. There are no charges unless a work sells. When a sale is made, the gallery takes a commission of 25%, and the artist receives the remainder.</p>',
+
+        '<p>Terms and conditions: <a href="assets/artist-terms.pdf" target="_blank" rel="noopener">Artist Submission Conditions (PDF)</a></p>',
 
       '</div>',
     '</section>'
