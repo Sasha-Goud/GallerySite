@@ -2286,9 +2286,9 @@ width: 100%;       /* keeps it fluid up to the max-width */
 
 
 :root{
-  --about-top-offset: 30px;  /* increase to move down */
+  --about-top-offset: 0px;  /* increase to move down */
 }
 
-.section{
+.section.about-page{
   padding-top: calc(16px + var(--about-top-offset));
 }
