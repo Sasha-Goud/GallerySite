@@ -563,6 +563,8 @@ if (data.video) items.push({ type:'vid', src: String(data.video), title:'Video' 
 
 // Pick description: iPhone/mobile uses description_mobile if present, else description.
 var isPhoneLike = !!(
+  (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) ||
+  (window.innerWidth && window.innerWidth <= 768) ||
   (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
   /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
 );
