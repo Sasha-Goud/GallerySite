@@ -47,17 +47,7 @@ window.addEventListener('popstate', function(){
   renderHome();
 }
 });
-(function boot(){
-  var rp = getHashRoute();
-  var route = rp[0], param = rp[1];
-  if (routes[route]) {
-    setActive(route);
-    routes[route](param);
-  } else {
-    setActive('home');
-    renderHome();
-  }
-})();
+
 
 function getHashRoute(){
   var hash = (location.hash || '#/home').replace(/^#\//,'');
