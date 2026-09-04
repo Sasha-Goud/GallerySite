@@ -40,15 +40,13 @@ PY
 echo "☁️  Uploading new or changed artwork media to Cloudflare..."
 aws s3 sync assets "$R2_BUCKET/assets" \
   --endpoint-url "$R2_ENDPOINT" \
-  --exclude "*" \
-  --include "*.jpg" --include "*.jpeg" --include "*.png" --include "*.webp" \
-  --include "*.gif" --include "*.mp4" --include "*.m4v" --include "*.webm"
+  --exclude ".DS_Store" --exclude "*/.DS_Store" \
+  --delete
 
 aws s3 sync thumbs "$R2_BUCKET/thumbs" \
   --endpoint-url "$R2_ENDPOINT" \
-  --exclude "*" \
-  --include "*.jpg" --include "*.jpeg" --include "*.png" --include "*.webp" \
-  --include "*.gif" --include "*.mp4" --include "*.m4v" --include "*.webm"
+  --exclude ".DS_Store" --exclude "*/.DS_Store" \
+  --delete
 
 echo "🔄 Rebuilding artworks.json..."
 python3 tools/build_artworks.py
