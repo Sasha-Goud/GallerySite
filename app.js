@@ -239,7 +239,7 @@ function renderHome(){
 
         // RIGHT: photo (never overlaps text)
         '<div class="home-photo">',
-          '<img src="assets/hero.png" alt="50& wall art in an interior setting" loading="eager" decoding="async">',
+          '<img src="https://images.50and.co.uk/assets/hero.png" alt="50& wall art in an interior setting" loading="eager" decoding="async">',
         '</div>',
 
       '</div>',
