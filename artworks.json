@@ -1655,52 +1655,5 @@
         }
       ]
     }
-  },
-  {
-    "id": "400-jump",
-    "title": "SE1",
-    "src": "https://images.50and.co.uk/assets/400-jump/400-jump.png",
-    "thumb": "https://images.50and.co.uk/thumbs/400-jump.png",
-    "tags": [
-      "Artist: Mehrdad Goudarzi",
-      "Format: Landscape",
-      "Medium: Photography"
-    ],
-    "description": "SE1 - 2004-2023\n\nFrom a photograph I took in 2004, this piece was completed as a posterised image in 2023. The original scene, shot along London’s South Bank, already had a striking composition of lines, reflections, and colour blocks. Posterising it enhanced the graphic quality I saw in the moment.\n\n\n• Media:\n\n\tOriginal Art:\t• 35 mm Transparency\n\n\tPrints:\t\t• Mounted Canvas (framed or unframed)\n\n\n• Delivery:\nDelivery is available to the UK, EU and USA. Charges are calculated at checkout. If an item cannot be delivered to the selected country, no charge will be shown, though other options may be available.",
-    "description_mobile": "SE1 - 2004-2023\n\nFrom a photograph I took in 2004, this piece was completed as a posterised image in 2023. The original scene, shot along London’s South Bank, already had a striking composition of lines, reflections, and colour blocks. Posterising it enhanced the graphic quality I saw in the moment.\n\n• Media:\n\nOriginal Art:\n35 mm Transparency\n\nPrints:\nPrint on Mounted Canvas\n(framed or unframed)",
-    "options": {
-      "variants": [
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "90 x 165 cm",
-          "price": 335
-        },
-        {
-          "edition": "Print",
-          "material": "Framed Canvas",
-          "size": "45 x 80 cm",
-          "price": 152
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "90 x 165 cm",
-          "price": 213
-        },
-        {
-          "edition": "Print",
-          "material": "Canvas",
-          "size": "45 x 80 cm",
-          "price": 86
-        },
-        {
-          "edition": "Original",
-          "material": "Digital File",
-          "size": "90 x 165 cm",
-          "price": 500
-        }
-      ]
-    }
   }
 ]

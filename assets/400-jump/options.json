@@ -1,9 +1,0 @@
-{
-  "variants": [
-      { "edition": "Print", "material": "Framed Canvas", "size": "90 x 165 cm", "price": 335 },
-      { "edition": "Print", "material": "Framed Canvas", "size": "45 x 80 cm", "price": 152 },
-      { "edition": "Print", "material": "Canvas", "size": "90 x 165 cm", "price": 213 },
-      { "edition": "Print", "material": "Canvas", "size": "45 x 80 cm", "price": 86 },
-      { "edition": "Original", "material": "Digital File", "size": "90 x 165 cm", "price": 500 }
-  ]
-}
