@@ -1,3 +1,14 @@
 .DS_Store
 .venv/
 node_modules/
+
+# Artwork media is stored locally and served from Cloudflare.
+assets/**/*.jpg
+assets/**/*.jpeg
+assets/**/*.png
+assets/**/*.webp
+assets/**/*.gif
+assets/**/*.mp4
+assets/**/*.m4v
+assets/**/*.webm
+thumbs/

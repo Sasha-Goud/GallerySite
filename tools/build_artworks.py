@@ -5,6 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]  # repo root
 THUMBS = ROOT / "thumbs"
 ASSETS = ROOT / "assets"
 OUT = ROOT / "artworks.json"
+IMAGE_BASE = "https://images.50and.co.uk"
 
 def read_text_safe(p: Path) -> str:
     try:
@@ -101,8 +102,8 @@ def build():
         item = {
             "id": id_,
             "title": title,
-            "src": f"assets/{id_}/{hero.name}",
-            "thumb": f"thumbs/{thumb.name}" if thumb else f"assets/{id_}/{hero.name}",
+            "src": f"{IMAGE_BASE}/assets/{id_.lower()}/{hero.name.lower()}",
+            "thumb": f"{IMAGE_BASE}/thumbs/{thumb.name.lower()}" if thumb else f"{IMAGE_BASE}/assets/{id_.lower()}/{hero.name.lower()}",
             "tags": tags,
             "description": desc
         }
@@ -111,10 +112,10 @@ def build():
             item["description_mobile"] = desc_mobile
 
         if video:
-            item["video"] = f"assets/{id_}/{video.name}"
+            item["video"] = f"{IMAGE_BASE}/assets/{id_.lower()}/{video.name.lower()}"
 
         for i, p in enumerate(ctx, start=1):
-            item[f"context{i}"] = f"assets/{id_}/{p.name}"
+            item[f"context{i}"] = f"{IMAGE_BASE}/assets/{id_.lower()}/{p.name.lower()}"
 
         opt = assets_dir / "options.json"
         if opt.exists():
